@@ -25,12 +25,12 @@ endif?>
                 <h3 class="a11y"><?php echo $lang['user_tools'] ?></h3>
                 <ul>
                     <?php
-if (!empty($_SERVER['REMOTE_USER'])) {
-    echo '<li class="user">';
-    tpl_userinfo(); /* 'Logged in as ...' */
-    echo '</li>';
-}
-?>
+                    if (!empty($_SERVER['REMOTE_USER'])) {
+                        echo '<li class="user">';
+                        tpl_userinfo(); /* 'Logged in as ...' */
+                        echo '</li>';
+                    }
+                    ?>
                     <?php /* the optional second parameter of tpl_action() switches between a link and a button,
 e.g. a button inside a <li> would be: tpl_action('edit', 0, 'li') */
 ?>
@@ -52,25 +52,17 @@ endif?>
                 <?php tpl_searchform()?>
                 <ul>
                     <?php tpl_toolsevent('sitetools', array(
-    'recent' => tpl_action('recent', 1, 'li', 1),
-    'media' => tpl_action('media', 1, 'li', 1),
-    'index' => tpl_action('index', 1, 'li', 1),
-));?>
+                        'recent' => tpl_action('recent', 1, 'li', 1),
+                        'media' => tpl_action('media', 1, 'li', 1),
+                        'index' => tpl_action('index', 1, 'li', 1),
+                    ));?>
                 </ul>
             </div>
 
         </div>
         <div class="clearer"></div>
 
-        <!-- BREADCRUMBS -->
-        <?php if ($conf['breadcrumbs']) {?>
-        <div class="breadcrumbs"><?php tpl_breadcrumbs()?></div>
-        <?php
-}?>
-        <?php if ($conf['youarehere']) {?>
-        <div class="breadcrumbs"><?php tpl_youarehere()?></div>
-        <?php
-}?>
+        
 
         <div class="clearer"></div>
         <hr class="a11y" />
