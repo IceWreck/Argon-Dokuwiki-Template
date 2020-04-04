@@ -150,6 +150,34 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 								</ul>
 							</div>
 							<?php endif; ?> 
+							
+							<div class="ct-toc-item active">
+								<ul class="nav ct-sidenav">
+								<a class="ct-toc-link">
+										<?php echo $lang['site_tools'] ?>
+									</a>
+								<?php tpl_toolsevent('sitetools', array(
+										'recent' => tpl_action('recent', 1, 'li', 1),
+										'media' => tpl_action('media', 1, 'li', 1),
+										'index' => tpl_action('index', 1, 'li', 1),
+								));?>
+								</ul>
+							</div>
+
+
+
+							<?php if ($showSidebar): ?>
+								<div id="dokuwiki__aside" class="ct-toc-item active">
+								<a class="ct-toc-link">
+										<?php echo "Sidebar" ?>
+								</a>
+								<div class="nav ct-sidenav">
+										<?php tpl_includeFile('sidebarheader.html') ?>
+										<?php tpl_include_page($conf['sidebar'], 1, 1) /* includes the nearest sidebar page */ ?>
+										<?php tpl_includeFile('sidebarfooter.html') ?>
+								</div>
+								</div><!-- /aside -->
+							<?php endif; ?>
 						</nav>
 					</div>
 
