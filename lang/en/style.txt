@@ -1,0 +1,1 @@
+If you'd like to change the favicon, simply use the Media Manager to upload a ''favicon.ico'' into the ''wiki'' or the root namespace and it will automatically be used. If you use a closed wiki it is recommended to make the ''wiki'' (or root) namespace world readable in the ACL settings or your favicon will not be shown to logged-out users.

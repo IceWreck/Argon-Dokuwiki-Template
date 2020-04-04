@@ -1,0 +1,452 @@
+/**
+ * This file provides the most basic styles.
+ *
+ * If you integrate DokuWiki into another project, you might either
+ * want to integrate this file into the other project as well, or use
+ * the other project's basic CSS for DokuWiki instead of this one.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ */
+
+html {
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+html,
+body {
+    background-color: __background__;
+    color: __text__;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: normal 100%/1.4 Frutiger, Calibri, "Myriad Pro", Myriad, "Nimbus Sans L", Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* default font size: 100% => 16px; 93.75% => 15px; 87.5% => 14px; 81.25% => 13px; 75% => 12px */
+    -webkit-text-size-adjust: 100%;
+}
+
+
+/*____________ headers ____________*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Constantia, Utopia, Lucidabright, Lucida, Georgia, "Nimbus Roman No9 L", serif;
+    font-weight: bold;
+    color: __text_neu__;
+    background-color: inherit;
+    padding: 0;
+    line-height: 1.2;
+    clear: left; /* ideally 'both', but problems with toc */
+}
+[dir=rtl] h1,
+[dir=rtl] h2,
+[dir=rtl] h3,
+[dir=rtl] h4,
+[dir=rtl] h5,
+[dir=rtl] h6 {
+    clear: right;
+}
+
+h1 {
+    font-size: 2.25em;
+    margin: 0 0 0.444em;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 0 0 0.666em;
+}
+h3 {
+    font-size: 1.125em;
+    margin: 0 0 0.888em;
+}
+h4 {
+    font-size: 1em;
+    margin: 0 0 1.0em;
+}
+h5 {
+    font-size: .875em;
+    margin: 0 0 1.1428em;
+}
+h6 {
+    font-size: .75em;
+    margin: 0 0 1.333em;
+}
+/* bottom margin = 1 / font-size */
+
+caption,
+figcaption,
+summary,
+legend {
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0 0 .35em;
+}
+
+
+/*____________ basic margins and paddings ____________*/
+
+p,
+ul,
+ol,
+dl,
+pre,
+table,
+hr,
+blockquote,
+figure,
+details,
+fieldset,
+address {
+    margin: 0 0 1.4em 0; /* bottom margin = line-height */
+    padding: 0;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*____________ lists ____________*/
+
+ul,
+ol {
+    padding: 0 0 0 1.5em;
+}
+[dir=rtl] ul,
+[dir=rtl] ol {
+    padding: 0 1.5em 0 0;
+}
+
+li,
+dd {
+    padding: 0;
+    margin: 0 0 0 1.5em;
+}
+[dir=rtl] li,
+[dir=rtl] dd {
+    margin: 0 1.5em 0 0;
+}
+
+dt {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+li ul,
+li ol,
+li dl,
+dl ul,
+dl ol,
+dl dl {
+    margin-bottom: 0;
+    padding: 0;
+}
+li li {
+    font-size: 100%;
+}
+
+ul {
+    list-style: disc outside;
+}
+ol {
+    list-style: decimal outside;
+}
+ol ol {
+    list-style-type: lower-alpha;
+}
+ol ol ol {
+    list-style-type: upper-roman;
+}
+ol ol ol ol {
+    list-style-type: upper-alpha;
+}
+ol ol ol ol ol {
+    list-style-type: lower-roman;
+}
+
+
+/*____________ tables ____________*/
+
+table {
+    border-collapse: collapse;
+    empty-cells: show;
+    border-spacing: 0;
+    border: 1px solid __border__;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+}
+[dir=rtl] caption {
+    text-align: right;
+}
+
+th,
+td {
+    padding: .3em .5em;
+    margin: 0;
+    vertical-align: top;
+    border: 1px solid __border__;
+}
+th {
+    font-weight: bold;
+    background-color: __background_alt__;
+    color: inherit;
+    text-align: left;
+}
+[dir=rtl] th {
+    text-align: right;
+}
+
+
+/*____________ links ____________*/
+
+a {
+}
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #00c; /* §colour */
+}
+a:link:hover,
+a:visited:hover,
+a:link:focus,
+a:visited:focus,
+a:link:active,
+a:visited:active {
+    text-decoration: underline;
+}
+a:link:focus,
+a:visited:focus {
+    outline: 1px dotted;
+}
+a:link:active,
+a:visited:active {
+    color: #c00; /* §colour */
+}
+
+
+/*____________ misc ____________*/
+
+img {
+    border-width: 0;
+    vertical-align: middle;
+    color: #666;
+    background-color: transparent;
+    font-style: italic;
+    height: auto;
+}
+
+img,
+object,
+embed,
+iframe,
+video,
+audio {
+    max-width: 100%;
+}
+
+iframe {
+    border-width: 0;
+    background-color: inherit;
+}
+
+/* IE8 and below won't display the images otherwise */
+#IE8 img,
+button img {
+    max-width: none;
+}
+
+hr {
+    border-style: solid;
+    border-width: 1px 0 0;
+    text-align: center;
+    height: 0;
+    width: 100%;
+    clear: both;
+}
+
+acronym,
+abbr {
+    font-style: normal;
+}
+acronym[title],
+abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted;
+}
+em acronym,
+em abbr {
+    font-style: italic;
+}
+
+mark {
+    background: __highlight__;
+    color: inherit;
+}
+
+pre,
+code,
+samp,
+kbd {
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New", monospace;
+    /* same font stack should be used for ".dokuwiki table.diff td" in _diff.css */
+    font-size: 1em;
+    background-color: __background_alt__;
+    color: __text__;
+    direction: ltr;
+    text-align: left;
+}
+pre {
+    border: 1px solid __border__;
+    padding: 0 .2em;
+    overflow: auto;
+    word-wrap: normal;
+}
+
+blockquote {
+    padding: 0 .5em;
+    border: solid __border__;
+    border-width: 0 0 0 .25em;
+}
+[dir=rtl] blockquote {
+    border-width: 0 .25em 0 0;
+}
+q:before,
+q:after {
+    content: '';
+}
+
+sub,
+sup {
+    font-size: .8em;
+    line-height: 1;
+}
+sub {
+    vertical-align: sub;
+}
+sup {
+    vertical-align: super;
+}
+
+small {
+    font-size: .8em;
+}
+
+/*____________ forms ____________*/
+
+form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    padding: .7em 1em 0;
+    padding: .7rem 1rem; /* for those browsers understanding :last-child */
+    border: 1px solid #999;
+}
+fieldset > :last-child {
+    margin-bottom: 0;
+}
+legend {
+    padding: 0 .1em;
+}
+
+label {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input,
+textarea,
+button,
+select,
+optgroup,
+option,
+keygen,
+output,
+meter,
+progress {
+    font: inherit;
+    color: inherit;
+    /* background-color destroys button look */
+    line-height: normal;
+    margin: 0;
+    vertical-align: middle;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input,
+button,
+select,
+keygen,
+textarea {
+    padding: .1em;
+}
+input[type=radio],
+input[type=checkbox],
+input[type=image],
+input.check {
+    padding: 0;
+}
+
+input[type=submit],
+input[type=button],
+input[type=reset],
+input.button,
+button {
+    cursor: pointer;
+    overflow: visible;
+    padding: .1em .4em;
+}
+
+input[disabled],
+button[disabled],
+select[disabled],
+textarea[disabled],
+option[disabled],
+input[readonly],
+button[readonly],
+select[readonly],
+textarea[readonly] {
+    cursor: auto;
+    opacity: .5;
+}
+
+input:focus,
+button:focus,
+select:focus,
+keygen:focus,
+textarea:focus {
+    box-shadow: 0 0 5px #999;
+    outline: 0;
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+select {
+    max-width: 100%;
+}
+optgroup {
+    font-style: italic;
+    font-weight: bold;
+}
+option {
+    font-style: normal;
+    font-weight: normal;
+}

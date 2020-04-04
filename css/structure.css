@@ -1,0 +1,81 @@
+/**
+ * This file provides styles for the general layout structure.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ */
+
+body {
+    margin: 0 auto;
+}
+#dokuwiki__site {
+    margin: 0 auto;
+    max-width: __site_width__;
+    padding: 1.4em 1em;
+}
+#dokuwiki__site > .site {
+}
+
+#dokuwiki__header {
+}
+#dokuwiki__header > .pad {
+}
+    #dokuwiki__header .headings {
+        float: left;
+    }
+    [dir=rtl] #dokuwiki__header .headings {
+        float: right;
+    }
+
+    #dokuwiki__header .tools {
+        float: right;
+        text-align: right;
+    }
+    [dir=rtl] #dokuwiki__header .tools {
+        float: left;
+        text-align: left;
+    }
+
+#dokuwiki__site .wrapper {
+    position: relative;
+}
+
+    #dokuwiki__aside {
+        width: __sidebar_width__;
+        float: left;
+        position: relative;
+        display: block;
+    }
+    [dir=rtl] #dokuwiki__aside {
+        float: right;
+    }
+    #dokuwiki__aside > .pad {
+        margin: 0 1.5em 0 0;
+    }
+    [dir=rtl] #dokuwiki__aside > .pad {
+        margin: 0 0 0 1.5em;
+    }
+
+    /* make content wider when there's no sidebar */
+    .hasSidebar #dokuwiki__content {
+        float: right;
+        margin-left: -__sidebar_width__;
+        width: 100%;
+    }
+    [dir=rtl] .hasSidebar #dokuwiki__content {
+        float: left;
+        margin-left: 0;
+        margin-right: -__sidebar_width__;
+    }
+    .hasSidebar #dokuwiki__content > .pad {
+        margin-left: __sidebar_width__;
+    }
+    [dir=rtl] .hasSidebar #dokuwiki__content > .pad {
+        margin-left: 0;
+        margin-right: __sidebar_width__;
+    }
+
+#dokuwiki__footer {
+    clear: both;
+}
+#dokuwiki__footer > .pad {
+}

@@ -1,0 +1,7 @@
+base     argon-doku
+author   Anchit
+email    ab@abifog.com
+date     2015-08-01
+name     Argon Dokuwiki
+desc     The template that gets you started
+url      https://www.dokuwiki.org/template:starter

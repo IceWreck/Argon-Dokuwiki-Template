@@ -1,0 +1,248 @@
+/**
+ * This file provides the main design styles for the
+ * bits that surround the content.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ * @author Andreas Gohr <andi@splitbrain.org>
+ */
+
+
+/* header
+********************************************************************/
+
+#dokuwiki__header {
+    margin: 1em 0 0;
+}
+
+#dokuwiki__header .headings {
+    margin-bottom: 2.1em;
+}
+#dokuwiki__header h1 {
+    margin-bottom: 0;
+    font-size: 1.5em;
+}
+#dokuwiki__header h1 a {
+    text-decoration: none;
+    color: #00c;
+    background-color: inherit;
+}
+#dokuwiki__header p.claim {
+    margin-bottom: 0;
+}
+#dokuwiki__header h2 {
+    margin-bottom: 0;
+    font-size: 1.125em;
+}
+
+#dokuwiki__header .tools {
+    margin-bottom: 2.1em;
+}
+#dokuwiki__header .tools ul {
+    margin-bottom: 0;
+}
+#dokuwiki__header .tools ul li {
+    display: inline;
+}
+
+#dokuwiki__header form.search {
+    margin: .5em 0 0;
+    display: block;
+}
+#dokuwiki__header form.search #qsearch__in {
+    width: 12em;
+    margin-right: .5em;
+}
+[dir=rtl] #dokuwiki__header form.search #qsearch__in {
+    margin-right: 0;
+    margin-left: .5em;
+}
+
+#dokuwiki__header div.breadcrumbs {
+    margin-bottom: .3em;
+}
+#dokuwiki__header div.breadcrumbs a {
+    color: __existing__;
+    background-color: inherit;
+}
+
+
+/* tools
+********************************************************************/
+
+/* make wiki links look the same as tool links in tool bars */
+#dokuwiki__usertools a.wikilink1,
+#dokuwiki__pagetools a.wikilink1,
+#dokuwiki__usertools a.wikilink2,
+#dokuwiki__pagetools a.wikilink2 {
+    color: #00c;
+    border-bottom-width: 0;
+}
+#dokuwiki__usertools a.wikilink2:hover,
+#dokuwiki__pagetools a.wikilink2:hover,
+#dokuwiki__usertools a.wikilink2:active,
+#dokuwiki__pagetools a.wikilink2:active,
+#dokuwiki__usertools a.wikilink2:focus,
+#dokuwiki__pagetools a.wikilink2:focus {
+    text-decoration: underline;
+}
+
+/* highlight selected tool */
+.mode_admin a.action.admin,
+.mode_login a.action.login,
+.mode_register a.action.register,
+.mode_profile a.action.profile,
+.mode_recent a.action.recent,
+.mode_index a.action.index,
+.mode_media a.action.media,
+.mode_revisions a.action.revs,
+.mode_backlink a.action.backlink,
+.mode_subscribe a.action.subscribe {
+    font-weight: bold;
+}
+
+/*____________ user tools ____________*/
+
+#dokuwiki__usertools {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom: 1px solid __border__;
+    background-color: __background_alt__;
+    width: 100%;
+}
+#dokuwiki__usertools ul,
+#dokuwiki__pagetools ul {
+    /* imitate #dokuwiki__site */
+    margin: 0 auto;
+    max-width: __site_width__;
+    padding: 0 1em;
+}
+#dokuwiki__usertools ul li.user {
+    float: left;
+    margin-left: 0;
+}
+[dir=rtl] #dokuwiki__usertools ul li.user {
+    float: right;
+    margin-right: 0;
+}
+
+/*____________ page tools ____________*/
+
+#dokuwiki__pagetools {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid __border__;
+    background-color: __background_alt__;
+    width: 100%;
+    z-index: 10;
+}
+#dokuwiki__pagetools ul li {
+    display: inline;
+    margin: 0 1.5em 0 0;
+}
+#dokuwiki__pagetools ul li a.action.top {
+    float: right;
+}
+[dir=rtl] #dokuwiki__pagetools ul li a.action.top {
+    float: left;
+}
+
+
+/* sidebar
+********************************************************************/
+
+#dokuwiki__aside {
+    padding-top: .4em;
+}
+
+.dokuwiki .aside {
+    overflow: hidden;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+/* make sidebar more condensed */
+
+.dokuwiki .aside h1 {
+    margin-bottom: .222em;
+}
+.dokuwiki .aside h2 {
+    margin-bottom: .333em;
+}
+.dokuwiki .aside h3 {
+    margin-bottom: .444em;
+}
+.dokuwiki .aside h4 {
+    margin-bottom: .5em;
+}
+.dokuwiki .aside h5 {
+    margin-bottom: .5714em;
+}
+
+.dokuwiki .aside p,
+.dokuwiki .aside ul,
+.dokuwiki .aside ol,
+.dokuwiki .aside dl,
+.dokuwiki .aside pre,
+.dokuwiki .aside table,
+.dokuwiki .aside fieldset,
+.dokuwiki .aside hr,
+.dokuwiki .aside blockquote,
+.dokuwiki .aside address {
+    margin-bottom: .7em;
+}
+
+.dokuwiki .aside ul,
+.dokuwiki .aside ol {
+    padding-left: .5em;
+}
+[dir=rtl] .dokuwiki .aside ul,
+[dir=rtl] .dokuwiki .aside ol {
+    padding-right: .5em;
+}
+.dokuwiki .aside li ul,
+.dokuwiki .aside li ol {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+
+/* content
+********************************************************************/
+
+.dokuwiki .page {
+    word-wrap: break-word;
+}
+
+/* license note in footer and under edit window */
+.dokuwiki div.license {
+    font-size: 93.75%;
+}
+
+
+/* footer
+********************************************************************/
+
+.dokuwiki .wrapper {
+    margin-bottom: 2.8em;
+}
+
+#dokuwiki__footer {
+    margin-bottom: 1em;
+}
+
+#dokuwiki__footer .doc {
+    float: left;
+}
+#dokuwiki__footer .top {
+    float: right;
+}
+
+#dokuwiki__footer .license {
+    clear: both;
+}
+#dokuwiki__footer .license img {
+    margin: 0 .5em 0 0;
+    float: none;
+}
