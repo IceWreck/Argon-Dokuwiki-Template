@@ -48,11 +48,11 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 		<link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />
 		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
 		<!-- CSS Files -->
-		<link href="<?php echo tpl_basedir(); ?>assets/css/argon-design-system.css" rel="stylesheet" />
+		<link href="<?php echo tpl_basedir(); ?>assets/css/doku.css" rel="stylesheet" />
 
 		<script src="<?php echo tpl_basedir(); ?>assets/js/core/jquery.min.js" type="text/javascript"></script>
 		<script src="<?php echo tpl_basedir(); ?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-		<script src="<?php echo tpl_basedir(); ?>assets/js/argon-design-system.min.js?v=1.2.0" type="text/javascript"></script> 
+		<script src="<?php echo tpl_basedir(); ?>assets/js/argon-design-system.min.js" type="text/javascript"></script> 
 
 		<!-- Documentation extras -->
 		<style>

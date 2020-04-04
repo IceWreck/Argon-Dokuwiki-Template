@@ -1,0 +1,86 @@
+@import 'argon-design-system';
+
+::-moz-selection {
+    text-shadow: none;
+    background: #dfe2f1;
+}
+
+::selection {
+    text-shadow: none;
+    background: #dfe2f1;
+}
+
+
+#dokuwiki__content {
+
+    // Edit Button
+    .secedit button {
+        @extend .btn; 
+        @extend .btn-primary;
+        @extend .btn-sm;
+        margin-bottom: 1em;
+        float: right;
+    }
+
+    // Page Revisions Button
+    #page__revisions button {
+        @extend .btn; 
+        @extend .btn-primary;
+    }
+
+    // .editButtons button{
+    //     @extend .btn; 
+    //     @extend .btn-primary;
+    //     @extend .btn-sm;
+    //     margin-top: 1em;
+    //     margin-bottom: 1em;
+    // }
+
+    
+    // Inline Code
+    :not(pre)>code {
+        background-color: inherit;
+        padding: .1em;
+        border-radius: .3em;
+
+        
+    }
+
+    // Code Blocks
+    pre {
+        font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+        font-size: 14px;
+        line-height: 1.375;
+        direction: ltr;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+        background: #f5f7ff;
+        color: #5e6687;
+        border: 0;
+        border-radius: .55rem;
+        padding: 1.25rem;
+        margin: 0;
+        margin-bottom: 1rem;
+        overflow: auto;
+
+    }
+    
+}
+
+// Tool Bar Buttons
+#tool__bar button {
+    @extend .btn; 
+    @extend .btn-secondary;
+    @extend .btn-sm;
+    margin-bottom: 2em;
+}
+
