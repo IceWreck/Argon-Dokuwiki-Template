@@ -14,15 +14,6 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 
- <?php
-
-if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
-@require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
-header('X-UA-Compatible: IE=edge,chrome=1');
-
-$showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && !empty($_SERVER['REMOTE_USER']) );
-$showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
-?>
  <!DOCTYPE html>
  <html lang="en">
 
@@ -31,27 +22,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
      <link rel="icon" type="image/png" href="assets/img/favicon.png">
-     <title><?php tpl_pagetitle() ?> [<?php echo strip_tags($conf['title']) ?>]</title>
-     <?php tpl_metaheaders() ?>
-     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
-     <?php tpl_includeFile('meta.html') ?>
-
-              <!--     Fonts and icons     -->
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-      <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-      <!-- Nucleo Icons -->
-      <link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
-      <link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
-      <!-- Font Awesome Icons -->
-      <link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />
-      <link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
-      <!-- CSS Files -->
-      <link href="<?php echo tpl_basedir(); ?>assets/css/argon-design-system.css" rel="stylesheet" />
+     <title></title>
 
 
 
 
-     <!-- Documentation extras -->
      <style>
        .navbar-absolute-logo {
          padding-left: 45px;
@@ -66,15 +41,25 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
        body {
          background: white;
        }
-     
+
      </style>
+      <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link href="../../assets/css/font-awesome.css" rel="stylesheet" />
+  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="../../assets/css/argon-design-system.min.css?v=1.2.0" rel="stylesheet" />
 
    </head>
 
-   <body class="docs ">
+   <body>
 
-     <div id="dokuwiki__site">
-
+     <!-- <div id="dokuwiki__site"> -->
 
        <header
          class="navbar navbar-horizontal navbar-expand navbar-dark flex-row align-items-md-center ct-navbar bg-primary py-2">
@@ -145,40 +130,84 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
            <span class="navbar-toggler-icon"></span>
          </button>
        
+    
        
-      </header>
+        </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
        <div class="container-fluid">
          <div class="row flex-xl-nowrap">
 
-         <!-- left sidebar -->
+
+
+            <!-- sidebar left -->
            <div class="col-12 col-md-3 col-xl-2 ct-sidebar">
              <nav class="collapse ct-links" id="ct-docs-nav">
-               
-                                 
-                  <!-- PAGE ACTIONS -->
-                  <?php if ($showTools): ?>
-                      <div id="dokuwiki__pagetools" class="ct-toc-item active">
-                       <a class="ct-toc-link"><?php echo $lang['page_tools'] ?></a>
-                       <ul class="nav ct-sidenav">
-                              <?php tpl_toolsevent('pagetools', array(
-                                'edit' => tpl_action('edit', 1, 'li', 1) ,
-                                'revisions' => tpl_action('revisions', 1, 'li', 1) ,
-                                'backlink' => tpl_action('backlink', 1, 'li', 1) ,
-                                'subscribe' => tpl_action('subscribe', 1, 'li', 1) ,
-                                'revert' => tpl_action('revert', 1, 'li', 1) ,
-                                'top' => tpl_action('top', 1, 'li', 1) ,
-                              )); ?>
-                          </ul>
-                      </div>
-                  <?php endif; ?>
+                <div class="ct-toc-item active">
+                    <a class="ct-toc-link" href="#docs">
+                      Getting started
+                    </a>
+                    <ul class="nav ct-sidenav">
+                      <li class="active ct-sidenav-active">
+                        <a href="../../docs/getting-started/overview.html">
+                          Overview
+                        </a>
+                      </li>
+                      <li class="">
+                        <a href="../../docs/getting-started/download.html">
+                          Download
+                        </a>
+                      </li>
+                      <li class="">
+                        <a href="../../docs/getting-started/quick-start.html">
+                          Quick Start
+                        </a>
+                      </li>
+                      <li class="">
+                        <a href="../../docs/getting-started/license.html">
+                          License
+                        </a>
+                      </li>
+                      <li class="">
+                        <a href="../../docs/getting-started/contents.html">
+                          Contents
+                        </a>
+                      </li>
+                      <li class="">
+                        <a href="../../docs/getting-started/build-tools.html">
+                          Build Tools
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  
 
+                 
              </nav>
            </div>
 
-            <!-- right sidebar -->
-           <div class="d-none d-xl-block col-xl-2 ct-toc">
 
+          <!-- sidebar right -->
+           <div class="d-none d-xl-block col-xl-2 ct-toc">
 
              <ul class="section-nav">
                <li class="toc-entry toc-h6"><a href="#developer-first">Developer First</a></li>
@@ -191,61 +220,153 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                  </ul>
                </li>
              </ul>
-           </div>
+          </div>
 
 
-          <!-- main contentet -->
+
+
+
+
            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
+
+
              <div class="ct-page-title">
                <h1 class="ct-title" id="content">Argon - Design System</h1>
              </div>
 
-             <div id="dokuwiki__top"
-              class="site <?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>"> 
-              </div>
-            <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
-            <?php tpl_includeFile('header.html') ?>
 
-              <!-- ********** ASIDE ********** -->
-              <?php if ($showSidebar): ?>
-                  <div id="dokuwiki__aside"><div class="pad aside include group">
-                      <?php tpl_includeFile('sidebarheader.html') ?>
-                      <?php tpl_include_page($conf['sidebar'], 1, 1) /* includes the nearest sidebar page */ ?>
-                      <?php tpl_includeFile('sidebarfooter.html') ?>
-                      <div class="clearer"></div>
-                  </div></div><!-- /aside -->
-              <?php
-              endif; ?>
+
+             <div id="dokuwiki__top"
+              class="site"> 
+            </div>
+
+
+
+
+
+              <hr/>
+
+
+
+
+
+
+
+
+    HTTP (Hypertext Transfer Protocol) is the system the internet uses to interact and communicate between computers and servers. When a URL is entered into a browser, an HTTP request is sent to a server, which interprets the request and sends appropriate HTTP response, which, if all goes as expected, contains the requested information to be displayed by the web browser.
+    Having already begun to design websites, the next step is to write the code that takes care of the server-side processing: receiving and interpreting requests, and generating a response for the user.
+    Flask a microframework written in Python that makes it easy to get a simple web application up and running with some features that can be useful in the development process.
+
+A Simple App
+
+    Flask code is generally stored inside application.py, and might look like so:
+
+  from flask import Flask # Import the class `Flask` from the `flask` module, written by someone else.
+
+  app = Flask(__name__) # Instantiate a new web application called `app`, with `__name__` representing the current file
+
+  @app.route("/") # A decorator; when the user goes to the route `/`, exceute the function immediately below
+  def index():
+      return "Hello, world!"
+
+    Flask is designed in terms of routes. A route is the part of the URL that determines which page is being requested. The route for the default page is simply /.
+
+    To start up a flask application, run flask run in the directory where application.py is located, with flask being the web server. Flask will print out the URL the server is running on and where the website can be accessed at.
+
+    flask run produces an error, try running export FLASK_APP=application.py to make sure it knows to look for application.py as the web server.
+
+Fancier Flask and Jinja2
+
+    @app.route("/<string:name>")
+    def hello(name):
+        return f"Hello, {name}!"
+
+    When any string is entered as a route, that will be stored as name, which is can then be used inside the decorated function.
+    Since Python code is rendering the website, anything Python is capable of can be used. For example, name can be capitalized before it’s displayed:
+
+name = name.capitalize()
+
+    HTML can also be used inside the return value:
+
+return f"<h1>Hello, {name}!</h1>".
+
+    Inline HTML isn’t that useful, though. Separate HTML files can be used like so:
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+    index.html and any other template files should be stored in a directory named templates.
+    Variables can be defined as Python variables in application.py and used in HTML templates by passing them in as arguments to render_template. These templates are rendered using a separate templating language called Jinja2:
+    In application.py:
+
+headline = "Hello, world!"
+return render_template("index.html", headline=headline)
+
+    In index.html:
+
+<h1>{{ headline }}</h1>
+
+    Jinja2 also allows for conditional statements:
+
+{% if new_year %}
+    <h1>Yes! Happy New Year!</h1>
+{% else %}
+    <h1>No.</h1>
+{% endif %}
+
+    Loops:
+
+{% for name in names %}
+    <li>{{ name }}</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
 
 
               <!-- ********** CONTENT ********** -->
               <div id="dokuwiki__content">
                 <div class="pad">
-                  <?php tpl_flush() /* flush the output buffer */ ?>
-                  <?php tpl_includeFile('pageheader.html') ?>
 
                   <div class="page">
                       <!-- wikipage start -->
-                      <?php tpl_content() /* the main content */ ?>
                       <!-- wikipage stop -->
                       <div class="clearer"></div>
                   </div>
 
-                  <?php tpl_flush() ?>
-                  <?php tpl_includeFile('pagefooter.html') ?>
+  
               </div>
-            </div>
-            <!-- /content -->
+              </div>
+              <!-- /content -->
+
 
 
            </main>
 
 
-           
          </div>
        </div>
 
-     </div>
+     <!-- </div> -->
 
 
 
