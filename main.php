@@ -72,33 +72,39 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 		<div id="dokuwiki__site">
 
 
-			<header class="navbar navbar-horizontal navbar-expand navbar-dark flex-row align-items-md-center ct-navbar bg-primary py-2"> <a class="navbar-brand mr-0 mr-md-2" href="index.html" aria-label="Bootstrap">
-           <img src="assets/img/brand/white.png">
-           <sup>DOCS</sup>
-         </a>
+			<header class="navbar navbar-horizontal navbar-expand navbar-dark flex-row align-items-md-center ct-navbar bg-primary py-2"> 
+				
+			
+			
+		
+
+		 <li class="nav-item d-none d-lg-block ml-lg-4"> <div class="btn btn-neutral btn-icon">
+             <span class="btn-inner--icon">
+			   <i class="fa fa-book"></i>
+             </span>
+             <span class="nav-link-inner--text"><?php tpl_link(wl(), $conf['title'], 'accesskey="h" title="[H]"')?></span>
+			</div></li>
+
+		   
+
+
+
 				<ul class="navbar-nav flex-row mr-auto ml-4 d-none d-md-flex">
-					<li class="nav-item"> <a class="nav-link" href="index.html">Live Preview</a> </li>
+			
 					<li class="nav-item"> <a class="nav-link" href="https://github.com/creativetimofficial/ct-argon-design-system-pro/issues" rel="nofollow" target="_blank">Support</a> </li>
 					<li class="nav-item">
 						<div class="search-form">
 							<?php tpl_searchform()?>
 						</div>
 					</li>
+					<?php echo (new \dokuwiki\Menu\UserMenu())->getListItems();?>
+					
 				</ul>
 				<div class="d-none d-sm-block ml-auto">
 					<ul class="navbar-nav ct-navbar-nav flex-row align-items-center">
 						<li class="nav-item"> <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" rel="nofollow" target="_blank">
                  <i class="fab fa-facebook-square"></i>
-               </a> </li>
-						<li class="nav-item"> <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" rel="nofollow" target="_blank">
-                 <i class="fab fa-twitter"></i>
-               </a> </li>
-						<li class="nav-item"> <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial/" rel="nofollow" target="_blank">
-                 <i class="fab fa-instagram"></i>
-               </a> </li>
-						<li class="nav-item"> <a class="nav-link nav-link-icon" href="https://dribbble.com/creativetim" rel="nofollow" target="_blank">
-                 <i class="fab fa-dribbble"></i>
-               </a> </li>
+               </a> 
 						<li class="nav-item"> <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial" rel="nofollow" target="_blank">
                  <i class="fab fa-github"></i>
                </a> </li>
@@ -117,6 +123,7 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
            </a> </li> <button class="navbar-toggler ct-search-docs-toggle d-block d-md-none ml-auto ml-sm-0" type="button" data-toggle="collapse" data-target="#ct-docs-nav" aria-controls="ct-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
            <span class="navbar-toggler-icon"></span>
 		 </button> 
+
 		
 		
 		</header>
@@ -131,6 +138,13 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 					<!-- left sidebar -->
 					<div class="col-12 col-md-3 col-xl-2 ct-sidebar">
 						<nav class="collapse ct-links" id="ct-docs-nav">
+						<?php
+						if (!empty($_SERVER['REMOTE_USER'])) {
+							echo '<li class="nav-item nav-link"> ';
+							tpl_userinfo();
+							echo '</li>';
+						}
+						?>
 							<!-- PAGE ACTIONS -->
 							<?php if ($showTools): ?>
 							<div id="dokuwiki__pagetools" class="ct-toc-item active">

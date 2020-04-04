@@ -34,13 +34,7 @@ endif?>
                     <?php /* the optional second parameter of tpl_action() switches between a link and a button,
 e.g. a button inside a <li> would be: tpl_action('edit', 0, 'li') */
 ?>
-                    <?php tpl_toolsevent('usertools', array(
-    'admin' => tpl_action('admin', 1, 'li', 1),
-    'userpage' => _tpl_action('userpage', 1, 'li', 1),
-    'profile' => tpl_action('profile', 1, 'li', 1),
-    'register' => tpl_action('register', 1, 'li', 1),
-    'login' => tpl_action('login', 1, 'li', 1),
-));?>
+
                 </ul>
             </div>
             <?php
