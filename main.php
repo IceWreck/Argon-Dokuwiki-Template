@@ -173,10 +173,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							<?php endif;?>
 
 							<div class="ct-toc-item active">
-								<ul class="nav ct-sidenav">
+								
 									<a class="ct-toc-link">
 										<?php echo $lang['site_tools'] ?>
 									</a>
+									<ul class="nav ct-sidenav">
 									<?php tpl_toolsevent('sitetools', array(
 										'recent' => tpl_action('recent', 1, 'li', 1),
 										'media' => tpl_action('media', 1, 'li', 1),
@@ -252,6 +253,19 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								</div>
 							</div>
 							<!-- /content -->
+							<!-- ********** FOOTER ********** -->
+							<hr/>
+									<div id="dokuwiki__footer">
+										<div class="pad">
+										<div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
+										<?php tpl_license('0') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+									</div>
+									</div>
+							<!-- /footer -->
+
+
+						</div>
+						
 					</main>
 
 
@@ -279,6 +293,15 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						</div>
 
 					</div>
+
+
+
+
+
+
+
+
+					
 
 
 
