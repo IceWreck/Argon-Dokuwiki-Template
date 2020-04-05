@@ -1,4 +1,4 @@
-base     argon-doku
+base     argon-dokuwiki
 author   Anchit
 email    ab@abifog.com
 date     2015-08-01

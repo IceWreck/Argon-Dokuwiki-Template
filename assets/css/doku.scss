@@ -1,9 +1,10 @@
+
+@import 'argon-design-system';
+
 button {
     @extend .btn;
     @extend .btn-neutral;
 }
-
-@import 'argon-design-system';
 
 
 // Selection
@@ -241,5 +242,32 @@ textarea {
 .ui-admin {
     ul li {
         list-style-type: none;
+    }
+}
+
+.tabs {
+    li {
+        list-style-type: disclosure-closed;
+    }
+}
+
+.qq-upload-button{
+    @extend .btn;
+    @extend .btn-neutral;
+}
+
+#dw__register, #dw__profiledelete {
+    text-align: left !important; 
+    legend {
+        @extend .h3;
+        font-style: normal;
+    }
+    label {
+        font-size: 1.15rem;
+        width: 95%;
+        input {
+            float: right;
+            
+        }
     }
 }
