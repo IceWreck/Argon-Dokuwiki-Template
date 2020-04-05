@@ -25121,11 +25121,16 @@ pre > code.highlight {
 }
 
 .advancedOptions {
-  margin-left: 50px;
-}
-.advancedOptions .toggle > ul > li {
+  width: 30%;
   border-style: dotted;
   border-width: 0.01rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  margin-left: 5rem;
+}
+.advancedOptions .toggle > ul > li {
+  list-style-type: disclosure-closed;
 }
 
 textarea {

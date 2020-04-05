@@ -217,10 +217,15 @@ button {
 }
 
 .advancedOptions {
-    margin-left: 50px;
+    width: 30%;
+    border-style: dotted;
+    border-width: 0.01rem;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-left: 5rem;
     .toggle > ul > li {
-        border-style: dotted;
-        border-width: 0.01rem;
+        list-style-type: disclosure-closed ;
     }
 }
 
