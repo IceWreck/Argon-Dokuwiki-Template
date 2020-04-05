@@ -1,5 +1,12 @@
+button {
+    @extend .btn;
+    @extend .btn-neutral;
+}
+
 @import 'argon-design-system';
 
+
+// Selection
 ::-moz-selection {
     text-shadow: none;
     background: #dfe2f1;
@@ -11,6 +18,7 @@
 }
 
 
+// Main Content
 #dokuwiki__content {
 
     // Edit Button
@@ -86,6 +94,7 @@
     margin-bottom: 2em;
 }
 
+// Right Sidebar Table of Contents
 .ct-toc {
     #dw__toc {
 
@@ -100,7 +109,6 @@
         border-left: 1px solid #eee;
 
         
-
         h3 {
             display: none;
         }
@@ -133,23 +141,93 @@
             list-style-image: none;
             list-style-type: disc;
         }
-        
-
-
     }
-    .clear {
+    // .clear {
+    //     @extend .section-nav;    
+    //     .li {
+    //         @extend .toc-entry;
+    //         @extend .toc-h6 !optional;    
+    //     }
+    //     display: content;
+    // }
 
-        @extend .section-nav;
-        
-        // .li {
-        //     @extend .toc-entry;
-        //     @extend .toc-h6 !optional;
-            
-        // }
+}
 
-        // display: content;
 
-        
+// Search Bar
+.doku_form{
+    .no {
+        @extend .form-group;
+        @extend .input-group;
+        @extend .mb-4;
+        margin: 0rem;
+        height: 1.5rem;
+
+        #qsearch__in {
+            @extend .form-control;
+            width: 10rem; 
+            height:1.5rem;
+            margin: 0rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            border-radius: 0.25rem !important;
+        }
+        button {
+            @extend .btn;
+            @extend .btn-neutral;
+            margin: 0rem;
+        }
+    }
+    
+}
+
+// Search Form
+.search-form {
+    top:50%;
+    position: relative;
+}
+
+
+.toggleAssistant {
+    @extend .btn;
+    @extend .btn-default;
+}
+
+.search-results-form{
+    button {
+        @extend .btn;
+        @extend .btn-primary;
     }
 
+    .toggleAssistant {
+        @extend .btn;
+        @extend .btn-default;
+    }
+
+    fieldset input {
+        @extend .form-control;
+        display: block;
+        width: 90%; 
+        height:1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 5%;
+        margin-right: 5%;
+    } 
+}
+
+.advancedOptions {
+    margin-left: 50px;
+    .toggle > ul > li {
+        border-style: dotted;
+        border-width: 0.01rem;
+    }
+}
+
+// Edit Area
+
+textarea {
+    @extend .form-control;
+    width: 95%;
+    max-width: 100%;
 }
