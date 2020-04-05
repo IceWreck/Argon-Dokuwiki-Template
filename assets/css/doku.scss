@@ -194,10 +194,10 @@ button {
 }
 
 .search-results-form{
-    button {
-        @extend .btn;
-        @extend .btn-primary;
-    }
+    // button {
+    //     @extend .btn;
+    //     @extend .btn-primary;
+    // }
 
     .toggleAssistant {
         @extend .btn;
@@ -220,12 +220,12 @@ button {
     width: 30%;
     border-style: dotted;
     border-width: 0.01rem;
-    border-radius: 0.25rem;
+    border-radius: 0.45rem;
     margin-top: 1rem;
     padding: 1rem;
     margin-left: 5rem;
     .toggle > ul > li {
-        list-style-type: disclosure-closed ;
+        list-style-type: disclosure-closed;
     }
 }
 
@@ -235,4 +235,11 @@ textarea {
     @extend .form-control;
     width: 95%;
     max-width: 100%;
+}
+
+
+.ui-admin {
+    ul li {
+        list-style-type: none;
+    }
 }
