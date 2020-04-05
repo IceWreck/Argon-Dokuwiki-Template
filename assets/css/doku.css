@@ -406,6 +406,7 @@ h6,
 .h3,
 #dw__register legend,
 #dw__profiledelete legend,
+legend,
 .h4,
 .h5,
 .h6 {
@@ -430,7 +431,8 @@ h2,
 h3,
 .h3,
 #dw__register legend,
-#dw__profiledelete legend {
+#dw__profiledelete legend,
+legend {
   font-size: 1.75rem;
 }
 
@@ -5538,7 +5540,7 @@ input[type=button].btn-block {
     transition: none;
   }
 }
-.nav {
+.nav, .leftsidebar .leftsidebar ul {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -19541,12 +19543,12 @@ a.btn-icon-only {
   margin-bottom: 1rem;
 }
 
-.footer .nav .nav-item .nav-link,
+.footer .nav .nav-item .nav-link, .footer .leftsidebar .leftsidebar ul .nav-item .nav-link, .leftsidebar .leftsidebar .footer ul .nav-item .nav-link,
 .footer .footer-link {
   color: #8898aa !important;
 }
 
-.footer .nav .nav-item .nav-link:hover,
+.footer .nav .nav-item .nav-link:hover, .footer .leftsidebar .leftsidebar ul .nav-item .nav-link:hover, .leftsidebar .leftsidebar .footer ul .nav-item .nav-link:hover,
 .footer .footer-link:hover {
   color: #525f7f !important;
 }
@@ -21745,7 +21747,7 @@ textarea[resize=horizontal] {
   margin-top: 0.5rem;
 }
 
-.section-components > .nav + .nav,
+.section-components > .nav + .nav, .leftsidebar .leftsidebar .section-components > ul + .nav, .leftsidebar .leftsidebar .section-components > .nav + ul, .leftsidebar .leftsidebar .section-components > ul + ul,
 .section-components > .alert + .alert,
 .section-components > .navbar + .navbar,
 .section-components > .progress + .progress,
@@ -23951,7 +23953,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   margin-top: 0.5rem;
 }
 
-.ct-example > .nav + .nav,
+.ct-example > .nav + .nav, .leftsidebar .leftsidebar .ct-example > ul + .nav, .leftsidebar .leftsidebar .ct-example > .nav + ul, .leftsidebar .leftsidebar .ct-example > ul + ul,
 .ct-example > .alert + .alert,
 .ct-example > .navbar + .navbar,
 .ct-example > .progress + .progress,
@@ -25083,7 +25085,7 @@ pre > code.highlight {
   color: #212529;
 }
 
-.ct-sidenav {
+.ct-sidenav, .leftsidebar .leftsidebar ul {
   display: none;
 }
 
@@ -25116,24 +25118,24 @@ pre > code.highlight {
   background-color: transparent;
 }
 
-.ct-toc-item.active > .ct-sidenav {
+.ct-toc-item.active > .ct-sidenav, .leftsidebar .leftsidebar .ct-toc-item.active > ul {
   display: block;
 }
 
-.ct-sidebar .nav > li > a {
+.ct-sidebar .nav > li > a, .ct-sidebar .leftsidebar .leftsidebar ul > li > a, .leftsidebar .leftsidebar .ct-sidebar ul > li > a {
   display: block;
   padding: 0.25rem 1.5rem;
   font-size: 84%;
   color: #4c555a;
 }
 
-.ct-sidebar .nav > li > a:hover {
+.ct-sidebar .nav > li > a:hover, .ct-sidebar .leftsidebar .leftsidebar ul > li > a:hover, .leftsidebar .leftsidebar .ct-sidebar ul > li > a:hover {
   color: rgba(0, 0, 0, 0.85);
   text-decoration: none;
   background-color: transparent;
 }
 
-.ct-sidebar .nav > .active > a {
+.ct-sidebar .nav > .active > a, .ct-sidebar .leftsidebar .leftsidebar ul > .active > a, .leftsidebar .leftsidebar .ct-sidebar ul > .active > a {
   font-weight: 500;
   color: #0099e5;
   background-color: transparent;
@@ -25141,7 +25143,7 @@ pre > code.highlight {
   position: relative;
 }
 
-.ct-sidebar .nav > .active > a:before {
+.ct-sidebar .nav > .active > a:before, .ct-sidebar .leftsidebar .leftsidebar ul > .active > a:before, .leftsidebar .leftsidebar .ct-sidebar ul > .active > a:before {
   content: "";
   position: absolute;
   height: 16px;
@@ -25152,7 +25154,7 @@ pre > code.highlight {
   transform: translateY(-50%);
 }
 
-.ct-sidebar .nav > .active:hover > a {
+.ct-sidebar .nav > .active:hover > a, .ct-sidebar .leftsidebar .leftsidebar ul > .active:hover > a, .leftsidebar .leftsidebar .ct-sidebar ul > .active:hover > a {
   color: #0099e5;
 }
 
@@ -25189,6 +25191,10 @@ pre > code.highlight {
 }
 
 /*# sourceMappingURL=kit-free.css.map */
+legend {
+  font-style: normal;
+}
+
 ::-moz-selection {
   text-shadow: none;
   background: #dfe2f1;
@@ -25389,6 +25395,21 @@ textarea {
 }
 #dw__login label[for=remember__me] {
   margin-left: unset !important;
+}
+.leftsidebar li {
+  list-style-type: none;
+  display: block;
+  font-size: 84%;
+  padding: 0.25rem;
+  color: #4c555a;
+  font-weight: 400;
+}
+.leftsidebar a:link, .leftsidebar a:visited {
+  text-decoration: none;
+  color: #4c555a;
+}
+.leftsidebar a:hover {
+  color: #212529;
 }
 
 /*# sourceMappingURL=doku.css.map */

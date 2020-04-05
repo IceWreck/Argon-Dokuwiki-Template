@@ -6,6 +6,10 @@ button {
     @extend .btn-neutral;
 }
 
+legend {
+    @extend .h3;
+    font-style: normal;
+}
 
 // Selection
 ::-moz-selection {
@@ -332,3 +336,27 @@ textarea {
     }
 }
 
+// Left Sidebar
+
+.leftsidebar {
+    .leftsidebar ul {
+        @extend .nav, .ct-sidenav;
+    }
+    li {
+        list-style-type: none;
+        display: block;
+        font-size: 84%;
+        padding: 0.25rem;
+        color:#4c555a;
+        font-weight: 400;
+    }
+
+    a:link, a:visited {
+        text-decoration: none;
+        color:#4c555a;
+    }
+    a:hover {
+        color: #212529;
+    }
+
+}

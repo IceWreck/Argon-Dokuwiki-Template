@@ -192,7 +192,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								<a class="ct-toc-link">
 									<?php echo "Sidebar" ?>
 								</a>
-								<div class="nav ct-sidenav">
+								<div class="leftsidebar">
 									<?php tpl_includeFile('sidebarheader.html')?>
 									<?php tpl_include_page($conf['sidebar'], 1, 1) /* includes the nearest sidebar page */?>
 									<?php tpl_includeFile('sidebarfooter.html')?>
