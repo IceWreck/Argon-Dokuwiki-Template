@@ -239,6 +239,7 @@ textarea {
 }
 
 
+// Admin Area
 .ui-admin {
     ul li {
         list-style-type: none;
@@ -251,10 +252,14 @@ textarea {
     }
 }
 
+// Media Uploads
+
 .qq-upload-button{
     @extend .btn;
     @extend .btn-neutral;
 }
+
+// Registration and User Forms
 
 #dw__register, #dw__profiledelete {
     text-align: left !important; 
@@ -271,3 +276,59 @@ textarea {
         }
     }
 }
+
+// Login
+#dw__login {
+    width: 100%;
+    float: left;
+        left: 0%;
+    margin:0%;
+    @extend .card;
+    @extend .bg-secondary, .shadow, .border-0;
+    label {
+        width: 90%;
+    }
+
+    legend {
+        @extend .card-header, .bg-white, .pb-5;
+        font-size: 2rem;
+        label {
+            @extend .h2;
+        }
+        margin-bottom: 5%;
+        font-style: normal;
+    }
+    span {
+        float: left;
+        font-size: 1.15rem;
+    }
+    input{
+        display: block;
+        float: right ;
+        @extend .form-control;
+        width: 90%;
+        height: 1.15rem;
+        top: 50%;
+        
+    }
+    .simple {
+        width: 50%;
+        margin-left: unset !important;
+        
+    }
+    #remember__me {
+        width: unset;
+        float: unset;
+        height: unset;
+        margin-top: 1rem;
+    }
+    label[for="remember__me"] {
+        margin-left: unset !important;
+    }
+    button {
+        // margin-top: 5rem;
+        @extend .btn;
+        @extend .btn-primary;
+    }
+}
+

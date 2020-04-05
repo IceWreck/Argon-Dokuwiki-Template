@@ -1,18 +1,11 @@
 <!--
 =========================================================
-
-*  Argon Design System - v1.2.0
-
+*  Argon Dokuwiki Template
+*  Based on the Argon Design System by Creative Tim
+*  Ported to Dokuwiki by Anchit (@IceWreck)
 =========================================================
+ -->
 
-* Product Page: https://www.creative-tim.com/product/argon-design-system
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <?php
 if (!defined('DOKU_INC')) {
     die();
@@ -126,6 +119,9 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 					</ul>
 				</div>
+					<button class="navbar-toggler ct-search-docs-toggle d-block d-md-none ml-auto ml-sm-0" type="button" data-toggle="collapse" data-target="#ct-docs-nav" aria-controls="ct-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 			
 			</header>
 

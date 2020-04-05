@@ -402,6 +402,7 @@ h5,
 h6,
 .h1,
 .h2,
+#dw__login legend label,
 .h3,
 #dw__register legend,
 #dw__profiledelete legend,
@@ -421,7 +422,8 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+#dw__login legend label {
   font-size: 2rem;
 }
 
@@ -2067,7 +2069,7 @@ pre code {
   border: 0;
 }
 
-.form-control, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
+.form-control, #dw__login input, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
   display: block;
   width: 100%;
   height: calc(1.5em + 1.25rem + 2px);
@@ -2085,16 +2087,16 @@ pre code {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .form-control, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
+  .form-control, #dw__login input, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
     transition: none;
   }
 }
-.form-control::-ms-expand, textarea::-ms-expand, .search-results-form fieldset input::-ms-expand, .doku_form .no #qsearch__in::-ms-expand {
+.form-control::-ms-expand, #dw__login input::-ms-expand, textarea::-ms-expand, .search-results-form fieldset input::-ms-expand, .doku_form .no #qsearch__in::-ms-expand {
   background-color: transparent;
   border: 0;
 }
 
-.form-control:focus, textarea:focus, .search-results-form fieldset input:focus, .doku_form .no #qsearch__in:focus {
+.form-control:focus, #dw__login input:focus, textarea:focus, .search-results-form fieldset input:focus, .doku_form .no #qsearch__in:focus {
   color: #8898aa;
   background-color: #fff;
   border-color: rgba(50, 151, 211, 0.25);
@@ -2102,13 +2104,14 @@ pre code {
   box-shadow: none, none;
 }
 
-.form-control::placeholder, textarea::placeholder, .search-results-form fieldset input::placeholder, .doku_form .no #qsearch__in::placeholder {
+.form-control::placeholder, #dw__login input::placeholder, textarea::placeholder, .search-results-form fieldset input::placeholder, .doku_form .no #qsearch__in::placeholder {
   color: #adb5bd;
   opacity: 1;
 }
 
-.form-control:disabled, textarea:disabled, .search-results-form fieldset input:disabled, .doku_form .no #qsearch__in:disabled,
+.form-control:disabled, #dw__login input:disabled, textarea:disabled, .search-results-form fieldset input:disabled, .doku_form .no #qsearch__in:disabled,
 .form-control[readonly],
+#dw__login input[readonly],
 textarea[readonly],
 .search-results-form fieldset input[readonly],
 .doku_form .no [readonly]#qsearch__in {
@@ -2273,8 +2276,9 @@ textarea.form-control, textarea, .doku_form .no textarea#qsearch__in {
   border-radius: 0.25rem;
 }
 
-.was-validated .form-control:valid, .was-validated textarea:valid, .was-validated .search-results-form fieldset input:valid, .search-results-form fieldset .was-validated input:valid, .was-validated .doku_form .no #qsearch__in:valid, .doku_form .no .was-validated #qsearch__in:valid,
+.was-validated .form-control:valid, .was-validated #dw__login input:valid, #dw__login .was-validated input:valid, .was-validated textarea:valid, .was-validated .search-results-form fieldset input:valid, .search-results-form fieldset .was-validated input:valid, .was-validated .doku_form .no #qsearch__in:valid, .doku_form .no .was-validated #qsearch__in:valid,
 .form-control.is-valid,
+#dw__login input.is-valid,
 textarea.is-valid,
 .search-results-form fieldset input.is-valid,
 .doku_form .no .is-valid#qsearch__in {
@@ -2286,8 +2290,9 @@ textarea.is-valid,
   background-size: calc(0.75em + 0.625rem) calc(0.75em + 0.625rem);
 }
 
-.was-validated .form-control:valid:focus, .was-validated textarea:valid:focus, .was-validated .search-results-form fieldset input:valid:focus, .search-results-form fieldset .was-validated input:valid:focus, .was-validated .doku_form .no #qsearch__in:valid:focus, .doku_form .no .was-validated #qsearch__in:valid:focus,
+.was-validated .form-control:valid:focus, .was-validated #dw__login input:valid:focus, #dw__login .was-validated input:valid:focus, .was-validated textarea:valid:focus, .was-validated .search-results-form fieldset input:valid:focus, .search-results-form fieldset .was-validated input:valid:focus, .was-validated .doku_form .no #qsearch__in:valid:focus, .doku_form .no .was-validated #qsearch__in:valid:focus,
 .form-control.is-valid:focus,
+#dw__login input.is-valid:focus,
 textarea.is-valid:focus,
 .search-results-form fieldset input.is-valid:focus,
 .doku_form .no .is-valid#qsearch__in:focus {
@@ -2295,18 +2300,22 @@ textarea.is-valid:focus,
   box-shadow: 0 0 0 0 rgba(45, 206, 137, 0.25);
 }
 
-.was-validated .form-control:valid ~ .valid-feedback, .was-validated textarea:valid ~ .valid-feedback, .was-validated .search-results-form fieldset input:valid ~ .valid-feedback, .search-results-form fieldset .was-validated input:valid ~ .valid-feedback, .was-validated .doku_form .no #qsearch__in:valid ~ .valid-feedback, .doku_form .no .was-validated #qsearch__in:valid ~ .valid-feedback,
+.was-validated .form-control:valid ~ .valid-feedback, .was-validated #dw__login input:valid ~ .valid-feedback, #dw__login .was-validated input:valid ~ .valid-feedback, .was-validated textarea:valid ~ .valid-feedback, .was-validated .search-results-form fieldset input:valid ~ .valid-feedback, .search-results-form fieldset .was-validated input:valid ~ .valid-feedback, .was-validated .doku_form .no #qsearch__in:valid ~ .valid-feedback, .doku_form .no .was-validated #qsearch__in:valid ~ .valid-feedback,
 .was-validated .form-control:valid ~ .valid-tooltip,
+.was-validated #dw__login input:valid ~ .valid-tooltip,
+#dw__login .was-validated input:valid ~ .valid-tooltip,
 .was-validated textarea:valid ~ .valid-tooltip,
 .was-validated .search-results-form fieldset input:valid ~ .valid-tooltip,
 .search-results-form fieldset .was-validated input:valid ~ .valid-tooltip,
 .was-validated .doku_form .no #qsearch__in:valid ~ .valid-tooltip,
 .doku_form .no .was-validated #qsearch__in:valid ~ .valid-tooltip,
 .form-control.is-valid ~ .valid-feedback,
+#dw__login input.is-valid ~ .valid-feedback,
 textarea.is-valid ~ .valid-feedback,
 .search-results-form fieldset input.is-valid ~ .valid-feedback,
 .doku_form .no .is-valid#qsearch__in ~ .valid-feedback,
 .form-control.is-valid ~ .valid-tooltip,
+#dw__login input.is-valid ~ .valid-tooltip,
 textarea.is-valid ~ .valid-tooltip,
 .search-results-form fieldset input.is-valid ~ .valid-tooltip,
 .doku_form .no .is-valid#qsearch__in ~ .valid-tooltip {
@@ -2434,8 +2443,9 @@ textarea.is-valid,
   border-radius: 0.25rem;
 }
 
-.was-validated .form-control:invalid, .was-validated textarea:invalid, .was-validated .search-results-form fieldset input:invalid, .search-results-form fieldset .was-validated input:invalid, .was-validated .doku_form .no #qsearch__in:invalid, .doku_form .no .was-validated #qsearch__in:invalid,
+.was-validated .form-control:invalid, .was-validated #dw__login input:invalid, #dw__login .was-validated input:invalid, .was-validated textarea:invalid, .was-validated .search-results-form fieldset input:invalid, .search-results-form fieldset .was-validated input:invalid, .was-validated .doku_form .no #qsearch__in:invalid, .doku_form .no .was-validated #qsearch__in:invalid,
 .form-control.is-invalid,
+#dw__login input.is-invalid,
 textarea.is-invalid,
 .search-results-form fieldset input.is-invalid,
 .doku_form .no .is-invalid#qsearch__in {
@@ -2447,8 +2457,9 @@ textarea.is-invalid,
   background-size: calc(0.75em + 0.625rem) calc(0.75em + 0.625rem);
 }
 
-.was-validated .form-control:invalid:focus, .was-validated textarea:invalid:focus, .was-validated .search-results-form fieldset input:invalid:focus, .search-results-form fieldset .was-validated input:invalid:focus, .was-validated .doku_form .no #qsearch__in:invalid:focus, .doku_form .no .was-validated #qsearch__in:invalid:focus,
+.was-validated .form-control:invalid:focus, .was-validated #dw__login input:invalid:focus, #dw__login .was-validated input:invalid:focus, .was-validated textarea:invalid:focus, .was-validated .search-results-form fieldset input:invalid:focus, .search-results-form fieldset .was-validated input:invalid:focus, .was-validated .doku_form .no #qsearch__in:invalid:focus, .doku_form .no .was-validated #qsearch__in:invalid:focus,
 .form-control.is-invalid:focus,
+#dw__login input.is-invalid:focus,
 textarea.is-invalid:focus,
 .search-results-form fieldset input.is-invalid:focus,
 .doku_form .no .is-invalid#qsearch__in:focus {
@@ -2456,18 +2467,22 @@ textarea.is-invalid:focus,
   box-shadow: 0 0 0 0 rgba(251, 99, 64, 0.25);
 }
 
-.was-validated .form-control:invalid ~ .invalid-feedback, .was-validated textarea:invalid ~ .invalid-feedback, .was-validated .search-results-form fieldset input:invalid ~ .invalid-feedback, .search-results-form fieldset .was-validated input:invalid ~ .invalid-feedback, .was-validated .doku_form .no #qsearch__in:invalid ~ .invalid-feedback, .doku_form .no .was-validated #qsearch__in:invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-feedback, .was-validated #dw__login input:invalid ~ .invalid-feedback, #dw__login .was-validated input:invalid ~ .invalid-feedback, .was-validated textarea:invalid ~ .invalid-feedback, .was-validated .search-results-form fieldset input:invalid ~ .invalid-feedback, .search-results-form fieldset .was-validated input:invalid ~ .invalid-feedback, .was-validated .doku_form .no #qsearch__in:invalid ~ .invalid-feedback, .doku_form .no .was-validated #qsearch__in:invalid ~ .invalid-feedback,
 .was-validated .form-control:invalid ~ .invalid-tooltip,
+.was-validated #dw__login input:invalid ~ .invalid-tooltip,
+#dw__login .was-validated input:invalid ~ .invalid-tooltip,
 .was-validated textarea:invalid ~ .invalid-tooltip,
 .was-validated .search-results-form fieldset input:invalid ~ .invalid-tooltip,
 .search-results-form fieldset .was-validated input:invalid ~ .invalid-tooltip,
 .was-validated .doku_form .no #qsearch__in:invalid ~ .invalid-tooltip,
 .doku_form .no .was-validated #qsearch__in:invalid ~ .invalid-tooltip,
 .form-control.is-invalid ~ .invalid-feedback,
+#dw__login input.is-invalid ~ .invalid-feedback,
 textarea.is-invalid ~ .invalid-feedback,
 .search-results-form fieldset input.is-invalid ~ .invalid-feedback,
 .doku_form .no .is-invalid#qsearch__in ~ .invalid-feedback,
 .form-control.is-invalid ~ .invalid-tooltip,
+#dw__login input.is-invalid ~ .invalid-tooltip,
 textarea.is-invalid ~ .invalid-tooltip,
 .search-results-form fieldset input.is-invalid ~ .invalid-tooltip,
 .doku_form .no .is-invalid#qsearch__in ~ .invalid-tooltip {
@@ -2598,7 +2613,7 @@ textarea.is-invalid,
     margin-bottom: 0;
   }
 
-  .form-inline .form-control, .form-inline textarea, .form-inline .search-results-form fieldset input, .search-results-form fieldset .form-inline input, .form-inline .doku_form .no #qsearch__in, .doku_form .no .form-inline #qsearch__in {
+  .form-inline .form-control, .form-inline #dw__login input, #dw__login .form-inline input, .form-inline textarea, .form-inline .search-results-form fieldset input, .search-results-form fieldset .form-inline input, .form-inline .doku_form .no #qsearch__in, .doku_form .no .form-inline #qsearch__in {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -2638,7 +2653,7 @@ textarea.is-invalid,
     margin-bottom: 0;
   }
 }
-.btn, .qq-upload-button, .search-results-form .toggleAssistant, .toggleAssistant, .doku_form .no button, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button, button {
+.btn, #dw__login button, .qq-upload-button, .search-results-form .toggleAssistant, .toggleAssistant, .doku_form .no button, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button, button {
   display: inline-block;
   font-weight: 600;
   color: #525f7f;
@@ -2655,17 +2670,18 @@ textarea.is-invalid,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn, .qq-upload-button, .search-results-form .toggleAssistant, .toggleAssistant, .doku_form .no button, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button, button {
+  .btn, #dw__login button, .qq-upload-button, .search-results-form .toggleAssistant, .toggleAssistant, .doku_form .no button, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button, button {
     transition: none;
   }
 }
-.btn:hover, .qq-upload-button:hover, .toggleAssistant:hover, .doku_form .no button:hover, #tool__bar button:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover, button:hover {
+.btn:hover, #dw__login button:hover, .qq-upload-button:hover, .toggleAssistant:hover, .doku_form .no button:hover, #tool__bar button:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover, button:hover {
   color: #525f7f;
   text-decoration: none;
 }
 
-.btn:focus, .qq-upload-button:focus, .toggleAssistant:focus, .doku_form .no button:focus, #tool__bar button:focus, #dokuwiki__content .editButtons button:focus, #dokuwiki__content #page__revisions button:focus, #dokuwiki__content .secedit button:focus, button:focus,
+.btn:focus, #dw__login button:focus, .qq-upload-button:focus, .toggleAssistant:focus, .doku_form .no button:focus, #tool__bar button:focus, #dokuwiki__content .editButtons button:focus, #dokuwiki__content #page__revisions button:focus, #dokuwiki__content .secedit button:focus, button:focus,
 .btn.focus,
+#dw__login button.focus,
 .focus.qq-upload-button,
 .focus.toggleAssistant,
 .doku_form .no button.focus,
@@ -2678,8 +2694,9 @@ button.focus {
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-.btn.disabled, .disabled.qq-upload-button, .disabled.toggleAssistant, .doku_form .no button.disabled, #tool__bar button.disabled, #dokuwiki__content .editButtons button.disabled, #dokuwiki__content #page__revisions button.disabled, #dokuwiki__content .secedit button.disabled, button.disabled,
+.btn.disabled, #dw__login button.disabled, .disabled.qq-upload-button, .disabled.toggleAssistant, .doku_form .no button.disabled, #tool__bar button.disabled, #dokuwiki__content .editButtons button.disabled, #dokuwiki__content #page__revisions button.disabled, #dokuwiki__content .secedit button.disabled, button.disabled,
 .btn:disabled,
+#dw__login button:disabled,
 .qq-upload-button:disabled,
 .toggleAssistant:disabled,
 .doku_form .no button:disabled,
@@ -2692,8 +2709,9 @@ button:disabled {
   box-shadow: none;
 }
 
-.btn:not(:disabled):not(.disabled):active, .qq-upload-button:not(:disabled):not(.disabled):active, .toggleAssistant:not(:disabled):not(.disabled):active, #tool__bar button:not(:disabled):not(.disabled):active, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active, button:not(:disabled):not(.disabled):active,
+.btn:not(:disabled):not(.disabled):active, #dw__login button:not(:disabled):not(.disabled):active, .qq-upload-button:not(:disabled):not(.disabled):active, .toggleAssistant:not(:disabled):not(.disabled):active, #tool__bar button:not(:disabled):not(.disabled):active, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active, button:not(:disabled):not(.disabled):active,
 .btn:not(:disabled):not(.disabled).active,
+#dw__login button:not(:disabled):not(.disabled).active,
 .qq-upload-button:not(:disabled):not(.disabled).active,
 .toggleAssistant:not(:disabled):not(.disabled).active,
 #tool__bar button:not(:disabled):not(.disabled).active,
@@ -2704,8 +2722,9 @@ button:not(:disabled):not(.disabled).active {
   box-shadow: none;
 }
 
-.btn:not(:disabled):not(.disabled):active:focus, .qq-upload-button:not(:disabled):not(.disabled):active:focus, .toggleAssistant:not(:disabled):not(.disabled):active:focus, #tool__bar button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus, button:not(:disabled):not(.disabled):active:focus,
+.btn:not(:disabled):not(.disabled):active:focus, #dw__login button:not(:disabled):not(.disabled):active:focus, .qq-upload-button:not(:disabled):not(.disabled):active:focus, .toggleAssistant:not(:disabled):not(.disabled):active:focus, #tool__bar button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus, button:not(:disabled):not(.disabled):active:focus,
 .btn:not(:disabled):not(.disabled).active:focus,
+#dw__login button:not(:disabled):not(.disabled).active:focus,
 .qq-upload-button:not(:disabled):not(.disabled).active:focus,
 .toggleAssistant:not(:disabled):not(.disabled).active:focus,
 #tool__bar button:not(:disabled):not(.disabled).active:focus,
@@ -2723,29 +2742,31 @@ fieldset:disabled a.toggleAssistant {
   pointer-events: none;
 }
 
-.btn-primary, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
+.btn-primary, #dw__login button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
   color: #fff;
   background-color: #5e72e4;
   border-color: #5e72e4;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.btn-primary:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover {
+.btn-primary:hover, #dw__login button:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover {
   color: #fff;
   background-color: #3d55df;
   border-color: #324cdd;
 }
 
-.btn-primary:focus, #dokuwiki__content .editButtons button:focus, #dokuwiki__content #page__revisions button:focus, #dokuwiki__content .secedit button:focus,
+.btn-primary:focus, #dw__login button:focus, #dokuwiki__content .editButtons button:focus, #dokuwiki__content #page__revisions button:focus, #dokuwiki__content .secedit button:focus,
 .btn-primary.focus,
+#dw__login button.focus,
 #dokuwiki__content .editButtons button.focus,
 #dokuwiki__content #page__revisions button.focus,
 #dokuwiki__content .secedit button.focus {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 0 rgba(118, 135, 232, 0.5);
 }
 
-.btn-primary.disabled, #dokuwiki__content .editButtons button.disabled, #dokuwiki__content #page__revisions button.disabled, #dokuwiki__content .secedit button.disabled,
+.btn-primary.disabled, #dw__login button.disabled, #dokuwiki__content .editButtons button.disabled, #dokuwiki__content #page__revisions button.disabled, #dokuwiki__content .secedit button.disabled,
 .btn-primary:disabled,
+#dw__login button:disabled,
 #dokuwiki__content .editButtons button:disabled,
 #dokuwiki__content #page__revisions button:disabled,
 #dokuwiki__content .secedit button:disabled {
@@ -2754,12 +2775,14 @@ fieldset:disabled a.toggleAssistant {
   border-color: #5e72e4;
 }
 
-.btn-primary:not(:disabled):not(.disabled):active, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active, #dw__login button:not(:disabled):not(.disabled):active, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
+#dw__login button:not(:disabled):not(.disabled).active,
 #dokuwiki__content .editButtons button:not(:disabled):not(.disabled).active,
 #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled).active,
 #dokuwiki__content .secedit button:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle,
+#dw__login .show > button.dropdown-toggle,
 #dokuwiki__content .editButtons .show > button.dropdown-toggle,
 #dokuwiki__content #page__revisions .show > button.dropdown-toggle,
 #dokuwiki__content .secedit .show > button.dropdown-toggle {
@@ -2768,12 +2791,14 @@ fieldset:disabled a.toggleAssistant {
   border-color: #2742db;
 }
 
-.btn-primary:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus, #dw__login button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
+#dw__login button:not(:disabled):not(.disabled).active:focus,
 #dokuwiki__content .editButtons button:not(:disabled):not(.disabled).active:focus,
 #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled).active:focus,
 #dokuwiki__content .secedit button:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus,
+#dw__login .show > button.dropdown-toggle:focus,
 #dokuwiki__content .editButtons .show > button.dropdown-toggle:focus,
 #dokuwiki__content #page__revisions .show > button.dropdown-toggle:focus,
 #dokuwiki__content .secedit .show > button.dropdown-toggle:focus {
@@ -3696,6 +3721,7 @@ button:not(:disabled):not(.disabled).active:focus,
 
 .btn-lg,
 .btn-group-lg > .btn,
+#dw__login .btn-group-lg > button,
 .btn-group-lg > .qq-upload-button,
 .search-results-form .btn-group-lg > .toggleAssistant,
 .btn-group-lg > .toggleAssistant,
@@ -3713,6 +3739,7 @@ button:not(:disabled):not(.disabled).active:focus,
 
 .btn-sm, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content .secedit button,
 .btn-group-sm > .btn,
+#dw__login .btn-group-sm > button,
 .btn-group-sm > .qq-upload-button,
 .search-results-form .btn-group-sm > .toggleAssistant,
 .btn-group-sm > .toggleAssistant,
@@ -4031,8 +4058,9 @@ input[type=button].btn-block {
   vertical-align: middle;
 }
 
-.btn-group > .btn, .btn-group > .qq-upload-button, .search-results-form .btn-group > .toggleAssistant, .btn-group > .toggleAssistant, .doku_form .no .btn-group > button, #tool__bar .btn-group > button, #dokuwiki__content .editButtons .btn-group > button, #dokuwiki__content #page__revisions .btn-group > button, #dokuwiki__content .secedit .btn-group > button, .btn-group > button,
+.btn-group > .btn, #dw__login .btn-group > button, .btn-group > .qq-upload-button, .search-results-form .btn-group > .toggleAssistant, .btn-group > .toggleAssistant, .doku_form .no .btn-group > button, #tool__bar .btn-group > button, #dokuwiki__content .editButtons .btn-group > button, #dokuwiki__content #page__revisions .btn-group > button, #dokuwiki__content .secedit .btn-group > button, .btn-group > button,
 .btn-group-vertical > .btn,
+#dw__login .btn-group-vertical > button,
 .btn-group-vertical > .qq-upload-button,
 .search-results-form .btn-group-vertical > .toggleAssistant,
 .btn-group-vertical > .toggleAssistant,
@@ -4046,8 +4074,9 @@ input[type=button].btn-block {
   flex: 1 1 auto;
 }
 
-.btn-group > .btn:hover, .btn-group > .qq-upload-button:hover, .search-results-form .btn-group > .toggleAssistant:hover, .btn-group > .toggleAssistant:hover, .doku_form .no .btn-group > button:hover, #tool__bar .btn-group > button:hover, #dokuwiki__content .editButtons .btn-group > button:hover, #dokuwiki__content #page__revisions .btn-group > button:hover, #dokuwiki__content .secedit .btn-group > button:hover, .btn-group > button:hover,
+.btn-group > .btn:hover, #dw__login .btn-group > button:hover, .btn-group > .qq-upload-button:hover, .search-results-form .btn-group > .toggleAssistant:hover, .btn-group > .toggleAssistant:hover, .doku_form .no .btn-group > button:hover, #tool__bar .btn-group > button:hover, #dokuwiki__content .editButtons .btn-group > button:hover, #dokuwiki__content #page__revisions .btn-group > button:hover, #dokuwiki__content .secedit .btn-group > button:hover, .btn-group > button:hover,
 .btn-group-vertical > .btn:hover,
+#dw__login .btn-group-vertical > button:hover,
 .btn-group-vertical > .qq-upload-button:hover,
 .search-results-form .btn-group-vertical > .toggleAssistant:hover,
 .btn-group-vertical > .toggleAssistant:hover,
@@ -4060,8 +4089,9 @@ input[type=button].btn-block {
   z-index: 1;
 }
 
-.btn-group > .btn:focus, .btn-group > .qq-upload-button:focus, .search-results-form .btn-group > .toggleAssistant:focus, .btn-group > .toggleAssistant:focus, .doku_form .no .btn-group > button:focus, #tool__bar .btn-group > button:focus, #dokuwiki__content .editButtons .btn-group > button:focus, #dokuwiki__content #page__revisions .btn-group > button:focus, #dokuwiki__content .secedit .btn-group > button:focus, .btn-group > button:focus,
+.btn-group > .btn:focus, #dw__login .btn-group > button:focus, .btn-group > .qq-upload-button:focus, .search-results-form .btn-group > .toggleAssistant:focus, .btn-group > .toggleAssistant:focus, .doku_form .no .btn-group > button:focus, #tool__bar .btn-group > button:focus, #dokuwiki__content .editButtons .btn-group > button:focus, #dokuwiki__content #page__revisions .btn-group > button:focus, #dokuwiki__content .secedit .btn-group > button:focus, .btn-group > button:focus,
 .btn-group > .btn:active,
+#dw__login .btn-group > button:active,
 .btn-group > .qq-upload-button:active,
 .search-results-form .btn-group > .toggleAssistant:active,
 .btn-group > .toggleAssistant:active,
@@ -4072,6 +4102,7 @@ input[type=button].btn-block {
 #dokuwiki__content .secedit .btn-group > button:active,
 .btn-group > button:active,
 .btn-group > .btn.active,
+#dw__login .btn-group > button.active,
 .btn-group > .active.qq-upload-button,
 .search-results-form .btn-group > .active.toggleAssistant,
 .btn-group > .active.toggleAssistant,
@@ -4082,6 +4113,7 @@ input[type=button].btn-block {
 #dokuwiki__content .secedit .btn-group > button.active,
 .btn-group > button.active,
 .btn-group-vertical > .btn:focus,
+#dw__login .btn-group-vertical > button:focus,
 .btn-group-vertical > .qq-upload-button:focus,
 .search-results-form .btn-group-vertical > .toggleAssistant:focus,
 .btn-group-vertical > .toggleAssistant:focus,
@@ -4092,6 +4124,7 @@ input[type=button].btn-block {
 #dokuwiki__content .secedit .btn-group-vertical > button:focus,
 .btn-group-vertical > button:focus,
 .btn-group-vertical > .btn:active,
+#dw__login .btn-group-vertical > button:active,
 .btn-group-vertical > .qq-upload-button:active,
 .search-results-form .btn-group-vertical > .toggleAssistant:active,
 .btn-group-vertical > .toggleAssistant:active,
@@ -4102,6 +4135,7 @@ input[type=button].btn-block {
 #dokuwiki__content .secedit .btn-group-vertical > button:active,
 .btn-group-vertical > button:active,
 .btn-group-vertical > .btn.active,
+#dw__login .btn-group-vertical > button.active,
 .btn-group-vertical > .active.qq-upload-button,
 .search-results-form .btn-group-vertical > .active.toggleAssistant,
 .btn-group-vertical > .active.toggleAssistant,
@@ -4124,13 +4158,14 @@ input[type=button].btn-block {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), .btn-group > .qq-upload-button:not(:first-child), .search-results-form .btn-group > .toggleAssistant:not(:first-child), .btn-group > .toggleAssistant:not(:first-child), .doku_form .no .btn-group > button:not(:first-child), #tool__bar .btn-group > button:not(:first-child), #dokuwiki__content .editButtons .btn-group > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group > button:not(:first-child), #dokuwiki__content .secedit .btn-group > button:not(:first-child), .btn-group > button:not(:first-child),
+.btn-group > .btn:not(:first-child), #dw__login .btn-group > button:not(:first-child), .btn-group > .qq-upload-button:not(:first-child), .search-results-form .btn-group > .toggleAssistant:not(:first-child), .btn-group > .toggleAssistant:not(:first-child), .doku_form .no .btn-group > button:not(:first-child), #tool__bar .btn-group > button:not(:first-child), #dokuwiki__content .editButtons .btn-group > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group > button:not(:first-child), #dokuwiki__content .secedit .btn-group > button:not(:first-child), .btn-group > button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .qq-upload-button:not(:last-child):not(.dropdown-toggle), .search-results-form .btn-group > .toggleAssistant:not(:last-child):not(.dropdown-toggle), .btn-group > .toggleAssistant:not(:last-child):not(.dropdown-toggle), .doku_form .no .btn-group > button:not(:last-child):not(.dropdown-toggle), #tool__bar .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .editButtons .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content #page__revisions .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .secedit .btn-group > button:not(:last-child):not(.dropdown-toggle), .btn-group > button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), #dw__login .btn-group > button:not(:last-child):not(.dropdown-toggle), .btn-group > .qq-upload-button:not(:last-child):not(.dropdown-toggle), .search-results-form .btn-group > .toggleAssistant:not(:last-child):not(.dropdown-toggle), .btn-group > .toggleAssistant:not(:last-child):not(.dropdown-toggle), .doku_form .no .btn-group > button:not(:last-child):not(.dropdown-toggle), #tool__bar .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .editButtons .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content #page__revisions .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .secedit .btn-group > button:not(:last-child):not(.dropdown-toggle), .btn-group > button:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
+#dw__login .btn-group > .btn-group:not(:last-child) > button,
 .btn-group > .btn-group:not(:last-child) > .qq-upload-button,
 .btn-group > .btn-group:not(:last-child) > .toggleAssistant,
 #tool__bar .btn-group > .btn-group:not(:last-child) > button,
@@ -4142,8 +4177,9 @@ input[type=button].btn-block {
   border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn:not(:first-child), .btn-group > .qq-upload-button:not(:first-child), .search-results-form .btn-group > .toggleAssistant:not(:first-child), .btn-group > .toggleAssistant:not(:first-child), .doku_form .no .btn-group > button:not(:first-child), #tool__bar .btn-group > button:not(:first-child), #dokuwiki__content .editButtons .btn-group > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group > button:not(:first-child), #dokuwiki__content .secedit .btn-group > button:not(:first-child), .btn-group > button:not(:first-child),
+.btn-group > .btn:not(:first-child), #dw__login .btn-group > button:not(:first-child), .btn-group > .qq-upload-button:not(:first-child), .search-results-form .btn-group > .toggleAssistant:not(:first-child), .btn-group > .toggleAssistant:not(:first-child), .doku_form .no .btn-group > button:not(:first-child), #tool__bar .btn-group > button:not(:first-child), #dokuwiki__content .editButtons .btn-group > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group > button:not(:first-child), #dokuwiki__content .secedit .btn-group > button:not(:first-child), .btn-group > button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn,
+#dw__login .btn-group > .btn-group:not(:first-child) > button,
 .btn-group > .btn-group:not(:first-child) > .qq-upload-button,
 .btn-group > .btn-group:not(:first-child) > .toggleAssistant,
 #tool__bar .btn-group > .btn-group:not(:first-child) > button,
@@ -4172,6 +4208,7 @@ input[type=button].btn-block {
 
 .btn-sm + .dropdown-toggle-split, #tool__bar button + .dropdown-toggle-split, #dokuwiki__content .editButtons button + .dropdown-toggle-split, #dokuwiki__content .secedit button + .dropdown-toggle-split,
 .btn-group-sm > .btn + .dropdown-toggle-split,
+#dw__login .btn-group-sm > button + .dropdown-toggle-split,
 .btn-group-sm > .qq-upload-button + .dropdown-toggle-split,
 .btn-group-sm > .toggleAssistant + .dropdown-toggle-split,
 #tool__bar .btn-group-sm > button + .dropdown-toggle-split,
@@ -4185,6 +4222,7 @@ input[type=button].btn-block {
 
 .btn-lg + .dropdown-toggle-split,
 .btn-group-lg > .btn + .dropdown-toggle-split,
+#dw__login .btn-group-lg > button + .dropdown-toggle-split,
 .btn-group-lg > .qq-upload-button + .dropdown-toggle-split,
 .btn-group-lg > .toggleAssistant + .dropdown-toggle-split,
 #tool__bar .btn-group-lg > button + .dropdown-toggle-split,
@@ -4210,18 +4248,19 @@ input[type=button].btn-block {
   justify-content: center;
 }
 
-.btn-group-vertical > .btn, .btn-group-vertical > .qq-upload-button, .search-results-form .btn-group-vertical > .toggleAssistant, .btn-group-vertical > .toggleAssistant, .doku_form .no .btn-group-vertical > button, #tool__bar .btn-group-vertical > button, #dokuwiki__content .editButtons .btn-group-vertical > button, #dokuwiki__content #page__revisions .btn-group-vertical > button, #dokuwiki__content .secedit .btn-group-vertical > button, .btn-group-vertical > button,
+.btn-group-vertical > .btn, #dw__login .btn-group-vertical > button, .btn-group-vertical > .qq-upload-button, .search-results-form .btn-group-vertical > .toggleAssistant, .btn-group-vertical > .toggleAssistant, .doku_form .no .btn-group-vertical > button, #tool__bar .btn-group-vertical > button, #dokuwiki__content .editButtons .btn-group-vertical > button, #dokuwiki__content #page__revisions .btn-group-vertical > button, #dokuwiki__content .secedit .btn-group-vertical > button, .btn-group-vertical > button,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
 
-.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .qq-upload-button:not(:first-child), .search-results-form .btn-group-vertical > .toggleAssistant:not(:first-child), .btn-group-vertical > .toggleAssistant:not(:first-child), .doku_form .no .btn-group-vertical > button:not(:first-child), #tool__bar .btn-group-vertical > button:not(:first-child), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:first-child), #dokuwiki__content .secedit .btn-group-vertical > button:not(:first-child), .btn-group-vertical > button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), #dw__login .btn-group-vertical > button:not(:first-child), .btn-group-vertical > .qq-upload-button:not(:first-child), .search-results-form .btn-group-vertical > .toggleAssistant:not(:first-child), .btn-group-vertical > .toggleAssistant:not(:first-child), .doku_form .no .btn-group-vertical > button:not(:first-child), #tool__bar .btn-group-vertical > button:not(:first-child), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:first-child), #dokuwiki__content .secedit .btn-group-vertical > button:not(:first-child), .btn-group-vertical > button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .qq-upload-button:not(:last-child):not(.dropdown-toggle), .search-results-form .btn-group-vertical > .toggleAssistant:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .toggleAssistant:not(:last-child):not(.dropdown-toggle), .doku_form .no .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #tool__bar .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .secedit .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), #dw__login .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .qq-upload-button:not(:last-child):not(.dropdown-toggle), .search-results-form .btn-group-vertical > .toggleAssistant:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .toggleAssistant:not(:last-child):not(.dropdown-toggle), .doku_form .no .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #tool__bar .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .secedit .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+#dw__login .btn-group-vertical > .btn-group:not(:last-child) > button,
 .btn-group-vertical > .btn-group:not(:last-child) > .qq-upload-button,
 .btn-group-vertical > .btn-group:not(:last-child) > .toggleAssistant,
 #tool__bar .btn-group-vertical > .btn-group:not(:last-child) > button,
@@ -4233,8 +4272,9 @@ input[type=button].btn-block {
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .qq-upload-button:not(:first-child), .search-results-form .btn-group-vertical > .toggleAssistant:not(:first-child), .btn-group-vertical > .toggleAssistant:not(:first-child), .doku_form .no .btn-group-vertical > button:not(:first-child), #tool__bar .btn-group-vertical > button:not(:first-child), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:first-child), #dokuwiki__content .secedit .btn-group-vertical > button:not(:first-child), .btn-group-vertical > button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), #dw__login .btn-group-vertical > button:not(:first-child), .btn-group-vertical > .qq-upload-button:not(:first-child), .search-results-form .btn-group-vertical > .toggleAssistant:not(:first-child), .btn-group-vertical > .toggleAssistant:not(:first-child), .doku_form .no .btn-group-vertical > button:not(:first-child), #tool__bar .btn-group-vertical > button:not(:first-child), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:first-child), #dokuwiki__content .secedit .btn-group-vertical > button:not(:first-child), .btn-group-vertical > button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+#dw__login .btn-group-vertical > .btn-group:not(:first-child) > button,
 .btn-group-vertical > .btn-group:not(:first-child) > .qq-upload-button,
 .btn-group-vertical > .btn-group:not(:first-child) > .toggleAssistant,
 #tool__bar .btn-group-vertical > .btn-group:not(:first-child) > button,
@@ -4246,8 +4286,9 @@ input[type=button].btn-block {
   border-top-right-radius: 0;
 }
 
-.btn-group-toggle > .btn, .btn-group-toggle > .qq-upload-button, .search-results-form .btn-group-toggle > .toggleAssistant, .btn-group-toggle > .toggleAssistant, .doku_form .no .btn-group-toggle > button, #tool__bar .btn-group-toggle > button, #dokuwiki__content .editButtons .btn-group-toggle > button, #dokuwiki__content #page__revisions .btn-group-toggle > button, #dokuwiki__content .secedit .btn-group-toggle > button, .btn-group-toggle > button,
+.btn-group-toggle > .btn, #dw__login .btn-group-toggle > button, .btn-group-toggle > .qq-upload-button, .search-results-form .btn-group-toggle > .toggleAssistant, .btn-group-toggle > .toggleAssistant, .doku_form .no .btn-group-toggle > button, #tool__bar .btn-group-toggle > button, #dokuwiki__content .editButtons .btn-group-toggle > button, #dokuwiki__content #page__revisions .btn-group-toggle > button, #dokuwiki__content .secedit .btn-group-toggle > button, .btn-group-toggle > button,
 .btn-group-toggle > .btn-group > .btn,
+#dw__login .btn-group-toggle > .btn-group > button,
 .btn-group-toggle > .btn-group > .qq-upload-button,
 .btn-group-toggle > .btn-group > .toggleAssistant,
 #tool__bar .btn-group-toggle > .btn-group > button,
@@ -4258,8 +4299,9 @@ input[type=button].btn-block {
   margin-bottom: 0;
 }
 
-.btn-group-toggle > .btn input[type=radio], .btn-group-toggle > .qq-upload-button input[type=radio], .btn-group-toggle > .toggleAssistant input[type=radio], #tool__bar .btn-group-toggle > button input[type=radio], #dokuwiki__content .editButtons .btn-group-toggle > button input[type=radio], #dokuwiki__content #page__revisions .btn-group-toggle > button input[type=radio], #dokuwiki__content .secedit .btn-group-toggle > button input[type=radio], .btn-group-toggle > button input[type=radio],
+.btn-group-toggle > .btn input[type=radio], #dw__login .btn-group-toggle > button input[type=radio], .btn-group-toggle > .qq-upload-button input[type=radio], .btn-group-toggle > .toggleAssistant input[type=radio], #tool__bar .btn-group-toggle > button input[type=radio], #dokuwiki__content .editButtons .btn-group-toggle > button input[type=radio], #dokuwiki__content #page__revisions .btn-group-toggle > button input[type=radio], #dokuwiki__content .secedit .btn-group-toggle > button input[type=radio], .btn-group-toggle > button input[type=radio],
 .btn-group-toggle > .btn input[type=checkbox],
+#dw__login .btn-group-toggle > button input[type=checkbox],
 .btn-group-toggle > .qq-upload-button input[type=checkbox],
 .btn-group-toggle > .toggleAssistant input[type=checkbox],
 #tool__bar .btn-group-toggle > button input[type=checkbox],
@@ -4282,7 +4324,7 @@ input[type=button].btn-block {
   width: 100%;
 }
 
-.input-group > .form-control, .input-group > textarea, .search-results-form fieldset .input-group > input, .doku_form .no .input-group > #qsearch__in, .doku_form .no > .form-control, .doku_form .no > textarea, .doku_form .search-results-form fieldset .no > input, .search-results-form fieldset .doku_form .no > input, .doku_form .no > #qsearch__in,
+.input-group > .form-control, #dw__login .input-group > input, .input-group > textarea, .search-results-form fieldset .input-group > input, .doku_form .no .input-group > #qsearch__in, .doku_form .no > .form-control, .doku_form #dw__login .no > input, #dw__login .doku_form .no > input, .doku_form .no > textarea, .doku_form .search-results-form fieldset .no > input, .search-results-form fieldset .doku_form .no > input, .doku_form .no > #qsearch__in,
 .input-group > .form-control-plaintext,
 .doku_form .no > .form-control-plaintext,
 .input-group > .custom-select,
@@ -4295,30 +4337,39 @@ input[type=button].btn-block {
   margin-bottom: 0;
 }
 
-.input-group > .form-control + .form-control, .input-group > textarea + .form-control, .input-group > .form-control + textarea, .input-group > textarea + textarea, .search-results-form fieldset .input-group > input + .form-control, .search-results-form fieldset .input-group > input + textarea, .search-results-form fieldset .input-group > .form-control + input, .search-results-form fieldset .input-group > textarea + input, .search-results-form fieldset .input-group > input + input, .doku_form .no .input-group > #qsearch__in + .form-control, .doku_form .no .input-group > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .input-group > #qsearch__in + input, .search-results-form fieldset .doku_form .no .input-group > #qsearch__in + input, .doku_form .no .input-group > .form-control + #qsearch__in, .doku_form .no .input-group > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .input-group > input + #qsearch__in, .search-results-form fieldset .doku_form .no .input-group > input + #qsearch__in, .doku_form .no .input-group > #qsearch__in + #qsearch__in, .doku_form .no > .form-control + .form-control, .doku_form .no > textarea + .form-control, .doku_form .no > .form-control + textarea, .doku_form .no > textarea + textarea, .doku_form .search-results-form fieldset .no > input + .form-control, .doku_form .search-results-form fieldset .no > input + textarea, .search-results-form fieldset .doku_form .no > input + .form-control, .search-results-form fieldset .doku_form .no > input + textarea, .doku_form .search-results-form fieldset .no > .form-control + input, .doku_form .search-results-form fieldset .no > textarea + input, .search-results-form fieldset .doku_form .no > .form-control + input, .search-results-form fieldset .doku_form .no > textarea + input, .doku_form .search-results-form fieldset .no > input + input, .search-results-form fieldset .doku_form .no > input + input, .doku_form .no > #qsearch__in + .form-control, .doku_form .no > #qsearch__in + textarea, .doku_form .search-results-form fieldset .no > #qsearch__in + input, .search-results-form fieldset .doku_form .no > #qsearch__in + input, .doku_form .no > .form-control + #qsearch__in, .doku_form .no > textarea + #qsearch__in, .doku_form .search-results-form fieldset .no > input + #qsearch__in, .search-results-form fieldset .doku_form .no > input + #qsearch__in, .doku_form .no > #qsearch__in + #qsearch__in,
+.input-group > .form-control + .form-control, #dw__login .input-group > input + .form-control, #dw__login .input-group > .form-control + input, #dw__login .input-group > input + input, .input-group > textarea + .form-control, #dw__login .input-group > textarea + input, .input-group > .form-control + textarea, #dw__login .input-group > input + textarea, .input-group > textarea + textarea, .search-results-form fieldset .input-group > input + .form-control, .search-results-form fieldset #dw__login .input-group > input + input, #dw__login .search-results-form fieldset .input-group > input + input, .search-results-form fieldset .input-group > input + textarea, .search-results-form fieldset .input-group > .form-control + input, .search-results-form fieldset #dw__login .input-group > input + input, #dw__login .search-results-form fieldset .input-group > input + input, .search-results-form fieldset .input-group > textarea + input, .search-results-form fieldset .input-group > input + input, .doku_form .no .input-group > #qsearch__in + .form-control, .doku_form .no #dw__login .input-group > #qsearch__in + input, #dw__login .doku_form .no .input-group > #qsearch__in + input, .doku_form .no .input-group > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .input-group > #qsearch__in + input, .search-results-form fieldset .doku_form .no .input-group > #qsearch__in + input, .doku_form .no .input-group > .form-control + #qsearch__in, .doku_form .no #dw__login .input-group > input + #qsearch__in, #dw__login .doku_form .no .input-group > input + #qsearch__in, .doku_form .no .input-group > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .input-group > input + #qsearch__in, .search-results-form fieldset .doku_form .no .input-group > input + #qsearch__in, .doku_form .no .input-group > #qsearch__in + #qsearch__in, .doku_form .no > .form-control + .form-control, .doku_form #dw__login .no > input + .form-control, #dw__login .doku_form .no > input + .form-control, .doku_form #dw__login .no > .form-control + input, #dw__login .doku_form .no > .form-control + input, .doku_form #dw__login .no > input + input, #dw__login .doku_form .no > input + input, .doku_form .no > textarea + .form-control, .doku_form #dw__login .no > textarea + input, #dw__login .doku_form .no > textarea + input, .doku_form .no > .form-control + textarea, .doku_form #dw__login .no > input + textarea, #dw__login .doku_form .no > input + textarea, .doku_form .no > textarea + textarea, .doku_form .search-results-form fieldset .no > input + .form-control, .doku_form .search-results-form fieldset #dw__login .no > input + input, #dw__login .doku_form .search-results-form fieldset .no > input + input, .doku_form .search-results-form fieldset .no > input + textarea, .search-results-form fieldset .doku_form .no > input + .form-control, .search-results-form fieldset .doku_form #dw__login .no > input + input, #dw__login .search-results-form fieldset .doku_form .no > input + input, .search-results-form fieldset .doku_form .no > input + textarea, .doku_form .search-results-form fieldset .no > .form-control + input, .doku_form .search-results-form fieldset #dw__login .no > input + input, #dw__login .doku_form .search-results-form fieldset .no > input + input, .doku_form .search-results-form fieldset .no > textarea + input, .search-results-form fieldset .doku_form .no > .form-control + input, .search-results-form fieldset .doku_form #dw__login .no > input + input, #dw__login .search-results-form fieldset .doku_form .no > input + input, .search-results-form fieldset .doku_form .no > textarea + input, .doku_form .search-results-form fieldset .no > input + input, .search-results-form fieldset .doku_form .no > input + input, .doku_form .no > #qsearch__in + .form-control, .doku_form #dw__login .no > #qsearch__in + input, #dw__login .doku_form .no > #qsearch__in + input, .doku_form .no > #qsearch__in + textarea, .doku_form .search-results-form fieldset .no > #qsearch__in + input, .search-results-form fieldset .doku_form .no > #qsearch__in + input, .doku_form .no > .form-control + #qsearch__in, .doku_form #dw__login .no > input + #qsearch__in, #dw__login .doku_form .no > input + #qsearch__in, .doku_form .no > textarea + #qsearch__in, .doku_form .search-results-form fieldset .no > input + #qsearch__in, .search-results-form fieldset .doku_form .no > input + #qsearch__in, .doku_form .no > #qsearch__in + #qsearch__in,
 .input-group > .form-control + .custom-select,
+#dw__login .input-group > input + .custom-select,
 .input-group > textarea + .custom-select,
 .search-results-form fieldset .input-group > input + .custom-select,
 .doku_form .no .input-group > #qsearch__in + .custom-select,
 .doku_form .no > .form-control + .custom-select,
+.doku_form #dw__login .no > input + .custom-select,
+#dw__login .doku_form .no > input + .custom-select,
 .doku_form .no > textarea + .custom-select,
 .doku_form .search-results-form fieldset .no > input + .custom-select,
 .search-results-form fieldset .doku_form .no > input + .custom-select,
 .doku_form .no > #qsearch__in + .custom-select,
 .input-group > .form-control + .custom-file,
+#dw__login .input-group > input + .custom-file,
 .input-group > textarea + .custom-file,
 .search-results-form fieldset .input-group > input + .custom-file,
 .doku_form .no .input-group > #qsearch__in + .custom-file,
 .doku_form .no > .form-control + .custom-file,
+.doku_form #dw__login .no > input + .custom-file,
+#dw__login .doku_form .no > input + .custom-file,
 .doku_form .no > textarea + .custom-file,
 .doku_form .search-results-form fieldset .no > input + .custom-file,
 .search-results-form fieldset .doku_form .no > input + .custom-file,
 .doku_form .no > #qsearch__in + .custom-file,
 .input-group > .form-control-plaintext + .form-control,
+#dw__login .input-group > .form-control-plaintext + input,
 .input-group > .form-control-plaintext + textarea,
 .search-results-form fieldset .input-group > .form-control-plaintext + input,
 .doku_form .no .input-group > .form-control-plaintext + #qsearch__in,
 .doku_form .no > .form-control-plaintext + .form-control,
+.doku_form #dw__login .no > .form-control-plaintext + input,
+#dw__login .doku_form .no > .form-control-plaintext + input,
 .doku_form .no > .form-control-plaintext + textarea,
 .doku_form .search-results-form fieldset .no > .form-control-plaintext + input,
 .search-results-form fieldset .doku_form .no > .form-control-plaintext + input,
@@ -4328,10 +4379,13 @@ input[type=button].btn-block {
 .input-group > .form-control-plaintext + .custom-file,
 .doku_form .no > .form-control-plaintext + .custom-file,
 .input-group > .custom-select + .form-control,
+#dw__login .input-group > .custom-select + input,
 .input-group > .custom-select + textarea,
 .search-results-form fieldset .input-group > .custom-select + input,
 .doku_form .no .input-group > .custom-select + #qsearch__in,
 .doku_form .no > .custom-select + .form-control,
+.doku_form #dw__login .no > .custom-select + input,
+#dw__login .doku_form .no > .custom-select + input,
 .doku_form .no > .custom-select + textarea,
 .doku_form .search-results-form fieldset .no > .custom-select + input,
 .search-results-form fieldset .doku_form .no > .custom-select + input,
@@ -4341,10 +4395,13 @@ input[type=button].btn-block {
 .input-group > .custom-select + .custom-file,
 .doku_form .no > .custom-select + .custom-file,
 .input-group > .custom-file + .form-control,
+#dw__login .input-group > .custom-file + input,
 .input-group > .custom-file + textarea,
 .search-results-form fieldset .input-group > .custom-file + input,
 .doku_form .no .input-group > .custom-file + #qsearch__in,
 .doku_form .no > .custom-file + .form-control,
+.doku_form #dw__login .no > .custom-file + input,
+#dw__login .doku_form .no > .custom-file + input,
 .doku_form .no > .custom-file + textarea,
 .doku_form .search-results-form fieldset .no > .custom-file + input,
 .search-results-form fieldset .doku_form .no > .custom-file + input,
@@ -4356,7 +4413,7 @@ input[type=button].btn-block {
   margin-left: -1px;
 }
 
-.input-group > .form-control:focus, .input-group > textarea:focus, .search-results-form fieldset .input-group > input:focus, .doku_form .no .input-group > #qsearch__in:focus, .doku_form .no > .form-control:focus, .doku_form .no > textarea:focus, .doku_form .search-results-form fieldset .no > input:focus, .search-results-form fieldset .doku_form .no > input:focus, .doku_form .no > #qsearch__in:focus,
+.input-group > .form-control:focus, #dw__login .input-group > input:focus, .input-group > textarea:focus, .search-results-form fieldset .input-group > input:focus, .doku_form .no .input-group > #qsearch__in:focus, .doku_form .no > .form-control:focus, .doku_form #dw__login .no > input:focus, #dw__login .doku_form .no > input:focus, .doku_form .no > textarea:focus, .doku_form .search-results-form fieldset .no > input:focus, .search-results-form fieldset .doku_form .no > input:focus, .doku_form .no > #qsearch__in:focus,
 .input-group > .custom-select:focus,
 .doku_form .no > .custom-select:focus,
 .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label,
@@ -4368,14 +4425,14 @@ input[type=button].btn-block {
   z-index: 4;
 }
 
-.input-group > .form-control:not(:last-child), .input-group > textarea:not(:last-child), .search-results-form fieldset .input-group > input:not(:last-child), .doku_form .no .input-group > #qsearch__in:not(:last-child), .doku_form .no > .form-control:not(:last-child), .doku_form .no > textarea:not(:last-child), .doku_form .search-results-form fieldset .no > input:not(:last-child), .search-results-form fieldset .doku_form .no > input:not(:last-child), .doku_form .no > #qsearch__in:not(:last-child),
+.input-group > .form-control:not(:last-child), #dw__login .input-group > input:not(:last-child), .input-group > textarea:not(:last-child), .search-results-form fieldset .input-group > input:not(:last-child), .doku_form .no .input-group > #qsearch__in:not(:last-child), .doku_form .no > .form-control:not(:last-child), .doku_form #dw__login .no > input:not(:last-child), #dw__login .doku_form .no > input:not(:last-child), .doku_form .no > textarea:not(:last-child), .doku_form .search-results-form fieldset .no > input:not(:last-child), .search-results-form fieldset .doku_form .no > input:not(:last-child), .doku_form .no > #qsearch__in:not(:last-child),
 .input-group > .custom-select:not(:last-child),
 .doku_form .no > .custom-select:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.input-group > .form-control:not(:first-child), .input-group > textarea:not(:first-child), .search-results-form fieldset .input-group > input:not(:first-child), .doku_form .no .input-group > #qsearch__in:not(:first-child), .doku_form .no > .form-control:not(:first-child), .doku_form .no > textarea:not(:first-child), .doku_form .search-results-form fieldset .no > input:not(:first-child), .search-results-form fieldset .doku_form .no > input:not(:first-child), .doku_form .no > #qsearch__in:not(:first-child),
+.input-group > .form-control:not(:first-child), #dw__login .input-group > input:not(:first-child), .input-group > textarea:not(:first-child), .search-results-form fieldset .input-group > input:not(:first-child), .doku_form .no .input-group > #qsearch__in:not(:first-child), .doku_form .no > .form-control:not(:first-child), .doku_form #dw__login .no > input:not(:first-child), #dw__login .doku_form .no > input:not(:first-child), .doku_form .no > textarea:not(:first-child), .doku_form .search-results-form fieldset .no > input:not(:first-child), .search-results-form fieldset .doku_form .no > input:not(:first-child), .doku_form .no > #qsearch__in:not(:first-child),
 .input-group > .custom-select:not(:first-child),
 .doku_form .no > .custom-select:not(:first-child) {
   border-top-left-radius: 0;
@@ -4404,8 +4461,10 @@ input[type=button].btn-block {
   display: flex;
 }
 
-.input-group-prepend .btn, .input-group-prepend .qq-upload-button, .input-group-prepend .toggleAssistant, .input-group-prepend .doku_form .no button, .doku_form .no .input-group-prepend button, .input-group-prepend #tool__bar button, #tool__bar .input-group-prepend button, .input-group-prepend #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .input-group-prepend button, .input-group-prepend #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .input-group-prepend button, .input-group-prepend #dokuwiki__content .secedit button, #dokuwiki__content .secedit .input-group-prepend button, .input-group-prepend button,
+.input-group-prepend .btn, .input-group-prepend #dw__login button, #dw__login .input-group-prepend button, .input-group-prepend .qq-upload-button, .input-group-prepend .toggleAssistant, .input-group-prepend .doku_form .no button, .doku_form .no .input-group-prepend button, .input-group-prepend #tool__bar button, #tool__bar .input-group-prepend button, .input-group-prepend #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .input-group-prepend button, .input-group-prepend #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .input-group-prepend button, .input-group-prepend #dokuwiki__content .secedit button, #dokuwiki__content .secedit .input-group-prepend button, .input-group-prepend button,
 .input-group-append .btn,
+.input-group-append #dw__login button,
+#dw__login .input-group-append button,
 .input-group-append .qq-upload-button,
 .input-group-append .toggleAssistant,
 .input-group-append .doku_form .no button,
@@ -4423,8 +4482,10 @@ input[type=button].btn-block {
   z-index: 2;
 }
 
-.input-group-prepend .btn:focus, .input-group-prepend .qq-upload-button:focus, .input-group-prepend .toggleAssistant:focus, .input-group-prepend #tool__bar button:focus, #tool__bar .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content .editButtons button:focus, #dokuwiki__content .editButtons .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content #page__revisions button:focus, #dokuwiki__content #page__revisions .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content .secedit button:focus, #dokuwiki__content .secedit .input-group-prepend button:focus, .input-group-prepend button:focus,
+.input-group-prepend .btn:focus, .input-group-prepend #dw__login button:focus, #dw__login .input-group-prepend button:focus, .input-group-prepend .qq-upload-button:focus, .input-group-prepend .toggleAssistant:focus, .input-group-prepend #tool__bar button:focus, #tool__bar .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content .editButtons button:focus, #dokuwiki__content .editButtons .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content #page__revisions button:focus, #dokuwiki__content #page__revisions .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content .secedit button:focus, #dokuwiki__content .secedit .input-group-prepend button:focus, .input-group-prepend button:focus,
 .input-group-append .btn:focus,
+.input-group-append #dw__login button:focus,
+#dw__login .input-group-append button:focus,
 .input-group-append .qq-upload-button:focus,
 .input-group-append .toggleAssistant:focus,
 .input-group-append #tool__bar button:focus,
@@ -4439,8 +4500,10 @@ input[type=button].btn-block {
   z-index: 3;
 }
 
-.input-group-prepend .btn + .btn, .input-group-prepend .qq-upload-button + .btn, .input-group-prepend .btn + .qq-upload-button, .input-group-prepend .qq-upload-button + .qq-upload-button, .input-group-prepend .search-results-form .toggleAssistant + .btn, .input-group-prepend .search-results-form .toggleAssistant + .qq-upload-button, .search-results-form .input-group-prepend .toggleAssistant + .btn, .search-results-form .input-group-prepend .toggleAssistant + .qq-upload-button, .input-group-prepend .search-results-form .btn + .toggleAssistant, .input-group-prepend .search-results-form .qq-upload-button + .toggleAssistant, .search-results-form .input-group-prepend .btn + .toggleAssistant, .search-results-form .input-group-prepend .qq-upload-button + .toggleAssistant, .input-group-prepend .search-results-form .toggleAssistant + .toggleAssistant, .search-results-form .input-group-prepend .toggleAssistant + .toggleAssistant, .input-group-prepend .toggleAssistant + .btn, .input-group-prepend .toggleAssistant + .qq-upload-button, .input-group-prepend .search-results-form .toggleAssistant + .toggleAssistant, .search-results-form .input-group-prepend .toggleAssistant + .toggleAssistant, .input-group-prepend .btn + .toggleAssistant, .input-group-prepend .qq-upload-button + .toggleAssistant, .input-group-prepend .search-results-form .toggleAssistant + .toggleAssistant, .search-results-form .input-group-prepend .toggleAssistant + .toggleAssistant, .input-group-prepend .toggleAssistant + .toggleAssistant, .input-group-prepend .doku_form .no button + .btn, .input-group-prepend .doku_form .no button + .qq-upload-button, .input-group-prepend .doku_form .no .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend .doku_form .no button + .toggleAssistant, .input-group-prepend .doku_form .no button + .toggleAssistant, .doku_form .no .input-group-prepend button + .btn, .doku_form .no .input-group-prepend button + .qq-upload-button, .doku_form .no .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form .doku_form .no .input-group-prepend button + .toggleAssistant, .doku_form .no .input-group-prepend button + .toggleAssistant, .input-group-prepend .doku_form .no .btn + button, .input-group-prepend .doku_form .no .qq-upload-button + button, .input-group-prepend .doku_form .no .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend .doku_form .no .toggleAssistant + button, .input-group-prepend .doku_form .no .toggleAssistant + button, .doku_form .no .input-group-prepend .btn + button, .doku_form .no .input-group-prepend .qq-upload-button + button, .doku_form .no .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form .doku_form .no .input-group-prepend .toggleAssistant + button, .doku_form .no .input-group-prepend .toggleAssistant + button, .input-group-prepend .doku_form .no button + button, .doku_form .no .input-group-prepend button + button, .input-group-prepend #tool__bar button + .btn, .input-group-prepend #tool__bar button + .qq-upload-button, .input-group-prepend #tool__bar .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend #tool__bar button + .toggleAssistant, .input-group-prepend #tool__bar button + .toggleAssistant, .input-group-prepend #tool__bar .doku_form .no button + button, .doku_form .no .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + .btn, #tool__bar .input-group-prepend button + .qq-upload-button, #tool__bar .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form #tool__bar .input-group-prepend button + .toggleAssistant, #tool__bar .input-group-prepend button + .toggleAssistant, #tool__bar .input-group-prepend .doku_form .no button + button, .doku_form .no #tool__bar .input-group-prepend button + button, .input-group-prepend #tool__bar .btn + button, .input-group-prepend #tool__bar .qq-upload-button + button, .input-group-prepend #tool__bar .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend #tool__bar .toggleAssistant + button, .input-group-prepend #tool__bar .toggleAssistant + button, .input-group-prepend #tool__bar .doku_form .no button + button, .doku_form .no .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend .btn + button, #tool__bar .input-group-prepend .qq-upload-button + button, #tool__bar .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form #tool__bar .input-group-prepend .toggleAssistant + button, #tool__bar .input-group-prepend .toggleAssistant + button, #tool__bar .input-group-prepend .doku_form .no button + button, .doku_form .no #tool__bar .input-group-prepend button + button, .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + .btn, .input-group-prepend #dokuwiki__content .editButtons button + .qq-upload-button, .input-group-prepend #dokuwiki__content .editButtons .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend #dokuwiki__content .editButtons button + .toggleAssistant, .input-group-prepend #dokuwiki__content .editButtons button + .toggleAssistant, .input-group-prepend #dokuwiki__content .editButtons .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + .btn, #dokuwiki__content .editButtons .input-group-prepend button + .qq-upload-button, #dokuwiki__content .editButtons .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form #dokuwiki__content .editButtons .input-group-prepend button + .toggleAssistant, #dokuwiki__content .editButtons .input-group-prepend button + .toggleAssistant, #dokuwiki__content .editButtons .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content .editButtons .input-group-prepend button + button, #dokuwiki__content .editButtons .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons .btn + button, .input-group-prepend #dokuwiki__content .editButtons .qq-upload-button + button, .input-group-prepend #dokuwiki__content .editButtons .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend #dokuwiki__content .editButtons .toggleAssistant + button, .input-group-prepend #dokuwiki__content .editButtons .toggleAssistant + button, .input-group-prepend #dokuwiki__content .editButtons .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend .btn + button, #dokuwiki__content .editButtons .input-group-prepend .qq-upload-button + button, #dokuwiki__content .editButtons .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form #dokuwiki__content .editButtons .input-group-prepend .toggleAssistant + button, #dokuwiki__content .editButtons .input-group-prepend .toggleAssistant + button, #dokuwiki__content .editButtons .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content .editButtons .input-group-prepend button + button, #dokuwiki__content .editButtons .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions button + .btn, .input-group-prepend #dokuwiki__content #page__revisions button + .qq-upload-button, .input-group-prepend #dokuwiki__content #page__revisions .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend #dokuwiki__content #page__revisions button + .toggleAssistant, .input-group-prepend #dokuwiki__content #page__revisions button + .toggleAssistant, .input-group-prepend #dokuwiki__content #page__revisions .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend button + .btn, #dokuwiki__content #page__revisions .input-group-prepend button + .qq-upload-button, #dokuwiki__content #page__revisions .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form #dokuwiki__content #page__revisions .input-group-prepend button + .toggleAssistant, #dokuwiki__content #page__revisions .input-group-prepend button + .toggleAssistant, #dokuwiki__content #page__revisions .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions .btn + button, .input-group-prepend #dokuwiki__content #page__revisions .qq-upload-button + button, .input-group-prepend #dokuwiki__content #page__revisions .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend #dokuwiki__content #page__revisions .toggleAssistant + button, .input-group-prepend #dokuwiki__content #page__revisions .toggleAssistant + button, .input-group-prepend #dokuwiki__content #page__revisions .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend .btn + button, #dokuwiki__content #page__revisions .input-group-prepend .qq-upload-button + button, #dokuwiki__content #page__revisions .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form #dokuwiki__content #page__revisions .input-group-prepend .toggleAssistant + button, #dokuwiki__content #page__revisions .input-group-prepend .toggleAssistant + button, #dokuwiki__content #page__revisions .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .secedit button + .btn, .input-group-prepend #dokuwiki__content .secedit button + .qq-upload-button, .input-group-prepend #dokuwiki__content .secedit .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend #dokuwiki__content .secedit button + .toggleAssistant, .input-group-prepend #dokuwiki__content .secedit button + .toggleAssistant, .input-group-prepend #dokuwiki__content .secedit .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons .secedit button + button, .input-group-prepend #dokuwiki__content #page__revisions .secedit button + button, #dokuwiki__content .secedit .input-group-prepend button + .btn, #dokuwiki__content .secedit .input-group-prepend button + .qq-upload-button, #dokuwiki__content .secedit .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form #dokuwiki__content .secedit .input-group-prepend button + .toggleAssistant, #dokuwiki__content .secedit .input-group-prepend button + .toggleAssistant, #dokuwiki__content .secedit .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend #page__revisions button + button, .input-group-prepend #dokuwiki__content .secedit .btn + button, .input-group-prepend #dokuwiki__content .secedit .qq-upload-button + button, .input-group-prepend #dokuwiki__content .secedit .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend #dokuwiki__content .secedit .toggleAssistant + button, .input-group-prepend #dokuwiki__content .secedit .toggleAssistant + button, .input-group-prepend #dokuwiki__content .secedit .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons .secedit button + button, #dokuwiki__content .secedit .input-group-prepend .btn + button, #dokuwiki__content .secedit .input-group-prepend .qq-upload-button + button, #dokuwiki__content .secedit .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form #dokuwiki__content .secedit .input-group-prepend .toggleAssistant + button, #dokuwiki__content .secedit .input-group-prepend .toggleAssistant + button, #dokuwiki__content .secedit .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons .secedit .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .secedit button + button, #dokuwiki__content .secedit .input-group-prepend button + button, .input-group-prepend button + .btn, .input-group-prepend button + .qq-upload-button, .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend button + .toggleAssistant, .input-group-prepend button + .toggleAssistant, .input-group-prepend .doku_form .no button + button, .doku_form .no .input-group-prepend button + button, .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend .btn + button, .input-group-prepend .qq-upload-button + button, .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend .toggleAssistant + button, .input-group-prepend .toggleAssistant + button, .input-group-prepend .doku_form .no button + button, .doku_form .no .input-group-prepend button + button, .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend button + button,
+.input-group-prepend .btn + .btn, .input-group-prepend #dw__login button + .btn, #dw__login .input-group-prepend button + .btn, .input-group-prepend #dw__login .btn + button, #dw__login .input-group-prepend .btn + button, .input-group-prepend #dw__login button + button, #dw__login .input-group-prepend button + button, .input-group-prepend .qq-upload-button + .btn, .input-group-prepend #dw__login .qq-upload-button + button, #dw__login .input-group-prepend .qq-upload-button + button, .input-group-prepend .btn + .qq-upload-button, .input-group-prepend #dw__login button + .qq-upload-button, #dw__login .input-group-prepend button + .qq-upload-button, .input-group-prepend .qq-upload-button + .qq-upload-button, .input-group-prepend .search-results-form .toggleAssistant + .btn, .input-group-prepend .search-results-form #dw__login .toggleAssistant + button, #dw__login .input-group-prepend .search-results-form .toggleAssistant + button, .input-group-prepend .search-results-form .toggleAssistant + .qq-upload-button, .search-results-form .input-group-prepend .toggleAssistant + .btn, .search-results-form .input-group-prepend #dw__login .toggleAssistant + button, #dw__login .search-results-form .input-group-prepend .toggleAssistant + button, .search-results-form .input-group-prepend .toggleAssistant + .qq-upload-button, .input-group-prepend .search-results-form .btn + .toggleAssistant, .input-group-prepend .search-results-form #dw__login button + .toggleAssistant, #dw__login .input-group-prepend .search-results-form button + .toggleAssistant, .input-group-prepend .search-results-form .qq-upload-button + .toggleAssistant, .search-results-form .input-group-prepend .btn + .toggleAssistant, .search-results-form .input-group-prepend #dw__login button + .toggleAssistant, #dw__login .search-results-form .input-group-prepend button + .toggleAssistant, .search-results-form .input-group-prepend .qq-upload-button + .toggleAssistant, .input-group-prepend .search-results-form .toggleAssistant + .toggleAssistant, .search-results-form .input-group-prepend .toggleAssistant + .toggleAssistant, .input-group-prepend .toggleAssistant + .btn, .input-group-prepend #dw__login .toggleAssistant + button, #dw__login .input-group-prepend .toggleAssistant + button, .input-group-prepend .toggleAssistant + .qq-upload-button, .input-group-prepend .search-results-form .toggleAssistant + .toggleAssistant, .search-results-form .input-group-prepend .toggleAssistant + .toggleAssistant, .input-group-prepend .btn + .toggleAssistant, .input-group-prepend #dw__login button + .toggleAssistant, #dw__login .input-group-prepend button + .toggleAssistant, .input-group-prepend .qq-upload-button + .toggleAssistant, .input-group-prepend .search-results-form .toggleAssistant + .toggleAssistant, .search-results-form .input-group-prepend .toggleAssistant + .toggleAssistant, .input-group-prepend .toggleAssistant + .toggleAssistant, .input-group-prepend .doku_form .no button + .btn, .input-group-prepend .doku_form .no #dw__login button + button, #dw__login .input-group-prepend .doku_form .no button + button, .input-group-prepend .doku_form .no button + .qq-upload-button, .input-group-prepend .doku_form .no .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend .doku_form .no button + .toggleAssistant, .input-group-prepend .doku_form .no button + .toggleAssistant, .doku_form .no .input-group-prepend button + .btn, .doku_form .no .input-group-prepend #dw__login button + button, #dw__login .doku_form .no .input-group-prepend button + button, .doku_form .no .input-group-prepend button + .qq-upload-button, .doku_form .no .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form .doku_form .no .input-group-prepend button + .toggleAssistant, .doku_form .no .input-group-prepend button + .toggleAssistant, .input-group-prepend .doku_form .no .btn + button, .input-group-prepend .doku_form .no #dw__login button + button, #dw__login .input-group-prepend .doku_form .no button + button, .input-group-prepend .doku_form .no .qq-upload-button + button, .input-group-prepend .doku_form .no .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend .doku_form .no .toggleAssistant + button, .input-group-prepend .doku_form .no .toggleAssistant + button, .doku_form .no .input-group-prepend .btn + button, .doku_form .no .input-group-prepend #dw__login button + button, #dw__login .doku_form .no .input-group-prepend button + button, .doku_form .no .input-group-prepend .qq-upload-button + button, .doku_form .no .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form .doku_form .no .input-group-prepend .toggleAssistant + button, .doku_form .no .input-group-prepend .toggleAssistant + button, .input-group-prepend .doku_form .no button + button, .doku_form .no .input-group-prepend button + button, .input-group-prepend #tool__bar button + .btn, .input-group-prepend #tool__bar #dw__login button + button, #dw__login .input-group-prepend #tool__bar button + button, .input-group-prepend #tool__bar button + .qq-upload-button, .input-group-prepend #tool__bar .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend #tool__bar button + .toggleAssistant, .input-group-prepend #tool__bar button + .toggleAssistant, .input-group-prepend #tool__bar .doku_form .no button + button, .doku_form .no .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + .btn, #tool__bar .input-group-prepend #dw__login button + button, #dw__login #tool__bar .input-group-prepend button + button, #tool__bar .input-group-prepend button + .qq-upload-button, #tool__bar .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form #tool__bar .input-group-prepend button + .toggleAssistant, #tool__bar .input-group-prepend button + .toggleAssistant, #tool__bar .input-group-prepend .doku_form .no button + button, .doku_form .no #tool__bar .input-group-prepend button + button, .input-group-prepend #tool__bar .btn + button, .input-group-prepend #tool__bar #dw__login button + button, #dw__login .input-group-prepend #tool__bar button + button, .input-group-prepend #tool__bar .qq-upload-button + button, .input-group-prepend #tool__bar .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend #tool__bar .toggleAssistant + button, .input-group-prepend #tool__bar .toggleAssistant + button, .input-group-prepend #tool__bar .doku_form .no button + button, .doku_form .no .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend .btn + button, #tool__bar .input-group-prepend #dw__login button + button, #dw__login #tool__bar .input-group-prepend button + button, #tool__bar .input-group-prepend .qq-upload-button + button, #tool__bar .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form #tool__bar .input-group-prepend .toggleAssistant + button, #tool__bar .input-group-prepend .toggleAssistant + button, #tool__bar .input-group-prepend .doku_form .no button + button, .doku_form .no #tool__bar .input-group-prepend button + button, .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + .btn, .input-group-prepend #dokuwiki__content .editButtons #dw__login button + button, #dw__login .input-group-prepend #dokuwiki__content .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons button + .qq-upload-button, .input-group-prepend #dokuwiki__content .editButtons .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend #dokuwiki__content .editButtons button + .toggleAssistant, .input-group-prepend #dokuwiki__content .editButtons button + .toggleAssistant, .input-group-prepend #dokuwiki__content .editButtons .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + .btn, #dokuwiki__content .editButtons .input-group-prepend #dw__login button + button, #dw__login #dokuwiki__content .editButtons .input-group-prepend button + button, #dokuwiki__content .editButtons .input-group-prepend button + .qq-upload-button, #dokuwiki__content .editButtons .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form #dokuwiki__content .editButtons .input-group-prepend button + .toggleAssistant, #dokuwiki__content .editButtons .input-group-prepend button + .toggleAssistant, #dokuwiki__content .editButtons .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content .editButtons .input-group-prepend button + button, #dokuwiki__content .editButtons .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons .btn + button, .input-group-prepend #dokuwiki__content .editButtons #dw__login button + button, #dw__login .input-group-prepend #dokuwiki__content .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons .qq-upload-button + button, .input-group-prepend #dokuwiki__content .editButtons .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend #dokuwiki__content .editButtons .toggleAssistant + button, .input-group-prepend #dokuwiki__content .editButtons .toggleAssistant + button, .input-group-prepend #dokuwiki__content .editButtons .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend .btn + button, #dokuwiki__content .editButtons .input-group-prepend #dw__login button + button, #dw__login #dokuwiki__content .editButtons .input-group-prepend button + button, #dokuwiki__content .editButtons .input-group-prepend .qq-upload-button + button, #dokuwiki__content .editButtons .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form #dokuwiki__content .editButtons .input-group-prepend .toggleAssistant + button, #dokuwiki__content .editButtons .input-group-prepend .toggleAssistant + button, #dokuwiki__content .editButtons .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content .editButtons .input-group-prepend button + button, #dokuwiki__content .editButtons .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions button + .btn, .input-group-prepend #dokuwiki__content #page__revisions #dw__login button + button, #dw__login .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions button + .qq-upload-button, .input-group-prepend #dokuwiki__content #page__revisions .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend #dokuwiki__content #page__revisions button + .toggleAssistant, .input-group-prepend #dokuwiki__content #page__revisions button + .toggleAssistant, .input-group-prepend #dokuwiki__content #page__revisions .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend button + .btn, #dokuwiki__content #page__revisions .input-group-prepend #dw__login button + button, #dw__login #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend button + .qq-upload-button, #dokuwiki__content #page__revisions .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form #dokuwiki__content #page__revisions .input-group-prepend button + .toggleAssistant, #dokuwiki__content #page__revisions .input-group-prepend button + .toggleAssistant, #dokuwiki__content #page__revisions .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions .btn + button, .input-group-prepend #dokuwiki__content #page__revisions #dw__login button + button, #dw__login .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions .qq-upload-button + button, .input-group-prepend #dokuwiki__content #page__revisions .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend #dokuwiki__content #page__revisions .toggleAssistant + button, .input-group-prepend #dokuwiki__content #page__revisions .toggleAssistant + button, .input-group-prepend #dokuwiki__content #page__revisions .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend .btn + button, #dokuwiki__content #page__revisions .input-group-prepend #dw__login button + button, #dw__login #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend .qq-upload-button + button, #dokuwiki__content #page__revisions .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form #dokuwiki__content #page__revisions .input-group-prepend .toggleAssistant + button, #dokuwiki__content #page__revisions .input-group-prepend .toggleAssistant + button, #dokuwiki__content #page__revisions .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .secedit button + .btn, .input-group-prepend #dokuwiki__content .secedit #dw__login button + button, #dw__login .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit button + .qq-upload-button, .input-group-prepend #dokuwiki__content .secedit .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend #dokuwiki__content .secedit button + .toggleAssistant, .input-group-prepend #dokuwiki__content .secedit button + .toggleAssistant, .input-group-prepend #dokuwiki__content .secedit .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons .secedit button + button, .input-group-prepend #dokuwiki__content #page__revisions .secedit button + button, #dokuwiki__content .secedit .input-group-prepend button + .btn, #dokuwiki__content .secedit .input-group-prepend #dw__login button + button, #dw__login #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend button + .qq-upload-button, #dokuwiki__content .secedit .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form #dokuwiki__content .secedit .input-group-prepend button + .toggleAssistant, #dokuwiki__content .secedit .input-group-prepend button + .toggleAssistant, #dokuwiki__content .secedit .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend #page__revisions button + button, .input-group-prepend #dokuwiki__content .secedit .btn + button, .input-group-prepend #dokuwiki__content .secedit #dw__login button + button, #dw__login .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit .qq-upload-button + button, .input-group-prepend #dokuwiki__content .secedit .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend #dokuwiki__content .secedit .toggleAssistant + button, .input-group-prepend #dokuwiki__content .secedit .toggleAssistant + button, .input-group-prepend #dokuwiki__content .secedit .doku_form .no button + button, .doku_form .no .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons .secedit button + button, #dokuwiki__content .secedit .input-group-prepend .btn + button, #dokuwiki__content .secedit .input-group-prepend #dw__login button + button, #dw__login #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend .qq-upload-button + button, #dokuwiki__content .secedit .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form #dokuwiki__content .secedit .input-group-prepend .toggleAssistant + button, #dokuwiki__content .secedit .input-group-prepend .toggleAssistant + button, #dokuwiki__content .secedit .input-group-prepend .doku_form .no button + button, .doku_form .no #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons .secedit .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .secedit button + button, #dokuwiki__content .secedit .input-group-prepend button + button, .input-group-prepend button + .btn, .input-group-prepend #dw__login button + button, #dw__login .input-group-prepend button + button, .input-group-prepend button + .qq-upload-button, .input-group-prepend .search-results-form button + .toggleAssistant, .search-results-form .input-group-prepend button + .toggleAssistant, .input-group-prepend button + .toggleAssistant, .input-group-prepend .doku_form .no button + button, .doku_form .no .input-group-prepend button + button, .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend .btn + button, .input-group-prepend #dw__login button + button, #dw__login .input-group-prepend button + button, .input-group-prepend .qq-upload-button + button, .input-group-prepend .search-results-form .toggleAssistant + button, .search-results-form .input-group-prepend .toggleAssistant + button, .input-group-prepend .toggleAssistant + button, .input-group-prepend .doku_form .no button + button, .doku_form .no .input-group-prepend button + button, .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend button + button,
 .input-group-prepend .btn + .input-group-text,
+.input-group-prepend #dw__login button + .input-group-text,
+#dw__login .input-group-prepend button + .input-group-text,
 .input-group-prepend .qq-upload-button + .input-group-text,
 .input-group-prepend .search-results-form .toggleAssistant + .input-group-text,
 .search-results-form .input-group-prepend .toggleAssistant + .input-group-text,
@@ -4458,6 +4521,8 @@ input[type=button].btn-block {
 .input-group-prepend button + .input-group-text,
 .input-group-prepend .input-group-text + .input-group-text,
 .input-group-prepend .input-group-text + .btn,
+.input-group-prepend #dw__login .input-group-text + button,
+#dw__login .input-group-prepend .input-group-text + button,
 .input-group-prepend .input-group-text + .qq-upload-button,
 .input-group-prepend .search-results-form .input-group-text + .toggleAssistant,
 .search-results-form .input-group-prepend .input-group-text + .toggleAssistant,
@@ -4474,44 +4539,74 @@ input[type=button].btn-block {
 #dokuwiki__content .secedit .input-group-prepend .input-group-text + button,
 .input-group-prepend .input-group-text + button,
 .input-group-append .btn + .btn,
+.input-group-append #dw__login button + .btn,
+#dw__login .input-group-append button + .btn,
+.input-group-append #dw__login .btn + button,
+#dw__login .input-group-append .btn + button,
+.input-group-append #dw__login button + button,
+#dw__login .input-group-append button + button,
 .input-group-append .qq-upload-button + .btn,
+.input-group-append #dw__login .qq-upload-button + button,
+#dw__login .input-group-append .qq-upload-button + button,
 .input-group-append .btn + .qq-upload-button,
+.input-group-append #dw__login button + .qq-upload-button,
+#dw__login .input-group-append button + .qq-upload-button,
 .input-group-append .qq-upload-button + .qq-upload-button,
 .input-group-append .search-results-form .toggleAssistant + .btn,
+.input-group-append .search-results-form #dw__login .toggleAssistant + button,
+#dw__login .input-group-append .search-results-form .toggleAssistant + button,
 .input-group-append .search-results-form .toggleAssistant + .qq-upload-button,
 .search-results-form .input-group-append .toggleAssistant + .btn,
+.search-results-form .input-group-append #dw__login .toggleAssistant + button,
+#dw__login .search-results-form .input-group-append .toggleAssistant + button,
 .search-results-form .input-group-append .toggleAssistant + .qq-upload-button,
 .input-group-append .search-results-form .btn + .toggleAssistant,
+.input-group-append .search-results-form #dw__login button + .toggleAssistant,
+#dw__login .input-group-append .search-results-form button + .toggleAssistant,
 .input-group-append .search-results-form .qq-upload-button + .toggleAssistant,
 .search-results-form .input-group-append .btn + .toggleAssistant,
+.search-results-form .input-group-append #dw__login button + .toggleAssistant,
+#dw__login .search-results-form .input-group-append button + .toggleAssistant,
 .search-results-form .input-group-append .qq-upload-button + .toggleAssistant,
 .input-group-append .search-results-form .toggleAssistant + .toggleAssistant,
 .search-results-form .input-group-append .toggleAssistant + .toggleAssistant,
 .input-group-append .toggleAssistant + .btn,
+.input-group-append #dw__login .toggleAssistant + button,
+#dw__login .input-group-append .toggleAssistant + button,
 .input-group-append .toggleAssistant + .qq-upload-button,
 .input-group-append .search-results-form .toggleAssistant + .toggleAssistant,
 .search-results-form .input-group-append .toggleAssistant + .toggleAssistant,
 .input-group-append .btn + .toggleAssistant,
+.input-group-append #dw__login button + .toggleAssistant,
+#dw__login .input-group-append button + .toggleAssistant,
 .input-group-append .qq-upload-button + .toggleAssistant,
 .input-group-append .search-results-form .toggleAssistant + .toggleAssistant,
 .search-results-form .input-group-append .toggleAssistant + .toggleAssistant,
 .input-group-append .toggleAssistant + .toggleAssistant,
 .input-group-append .doku_form .no button + .btn,
+.input-group-append .doku_form .no #dw__login button + button,
+#dw__login .input-group-append .doku_form .no button + button,
 .input-group-append .doku_form .no button + .qq-upload-button,
 .input-group-append .doku_form .no .search-results-form button + .toggleAssistant,
 .search-results-form .input-group-append .doku_form .no button + .toggleAssistant,
 .input-group-append .doku_form .no button + .toggleAssistant,
 .doku_form .no .input-group-append button + .btn,
+.doku_form .no .input-group-append #dw__login button + button,
+#dw__login .doku_form .no .input-group-append button + button,
 .doku_form .no .input-group-append button + .qq-upload-button,
 .doku_form .no .input-group-append .search-results-form button + .toggleAssistant,
 .search-results-form .doku_form .no .input-group-append button + .toggleAssistant,
 .doku_form .no .input-group-append button + .toggleAssistant,
 .input-group-append .doku_form .no .btn + button,
+.input-group-append .doku_form .no #dw__login button + button,
+#dw__login .input-group-append .doku_form .no button + button,
 .input-group-append .doku_form .no .qq-upload-button + button,
 .input-group-append .doku_form .no .search-results-form .toggleAssistant + button,
 .search-results-form .input-group-append .doku_form .no .toggleAssistant + button,
 .input-group-append .doku_form .no .toggleAssistant + button,
 .doku_form .no .input-group-append .btn + button,
+.doku_form .no .input-group-append #dw__login button + button,
+#dw__login .doku_form .no .input-group-append button + button,
 .doku_form .no .input-group-append .qq-upload-button + button,
 .doku_form .no .input-group-append .search-results-form .toggleAssistant + button,
 .search-results-form .doku_form .no .input-group-append .toggleAssistant + button,
@@ -4519,6 +4614,8 @@ input[type=button].btn-block {
 .input-group-append .doku_form .no button + button,
 .doku_form .no .input-group-append button + button,
 .input-group-append #tool__bar button + .btn,
+.input-group-append #tool__bar #dw__login button + button,
+#dw__login .input-group-append #tool__bar button + button,
 .input-group-append #tool__bar button + .qq-upload-button,
 .input-group-append #tool__bar .search-results-form button + .toggleAssistant,
 .search-results-form .input-group-append #tool__bar button + .toggleAssistant,
@@ -4526,6 +4623,8 @@ input[type=button].btn-block {
 .input-group-append #tool__bar .doku_form .no button + button,
 .doku_form .no .input-group-append #tool__bar button + button,
 #tool__bar .input-group-append button + .btn,
+#tool__bar .input-group-append #dw__login button + button,
+#dw__login #tool__bar .input-group-append button + button,
 #tool__bar .input-group-append button + .qq-upload-button,
 #tool__bar .input-group-append .search-results-form button + .toggleAssistant,
 .search-results-form #tool__bar .input-group-append button + .toggleAssistant,
@@ -4533,6 +4632,8 @@ input[type=button].btn-block {
 #tool__bar .input-group-append .doku_form .no button + button,
 .doku_form .no #tool__bar .input-group-append button + button,
 .input-group-append #tool__bar .btn + button,
+.input-group-append #tool__bar #dw__login button + button,
+#dw__login .input-group-append #tool__bar button + button,
 .input-group-append #tool__bar .qq-upload-button + button,
 .input-group-append #tool__bar .search-results-form .toggleAssistant + button,
 .search-results-form .input-group-append #tool__bar .toggleAssistant + button,
@@ -4540,6 +4641,8 @@ input[type=button].btn-block {
 .input-group-append #tool__bar .doku_form .no button + button,
 .doku_form .no .input-group-append #tool__bar button + button,
 #tool__bar .input-group-append .btn + button,
+#tool__bar .input-group-append #dw__login button + button,
+#dw__login #tool__bar .input-group-append button + button,
 #tool__bar .input-group-append .qq-upload-button + button,
 #tool__bar .input-group-append .search-results-form .toggleAssistant + button,
 .search-results-form #tool__bar .input-group-append .toggleAssistant + button,
@@ -4549,6 +4652,8 @@ input[type=button].btn-block {
 .input-group-append #tool__bar button + button,
 #tool__bar .input-group-append button + button,
 .input-group-append #dokuwiki__content .editButtons button + .btn,
+.input-group-append #dokuwiki__content .editButtons #dw__login button + button,
+#dw__login .input-group-append #dokuwiki__content .editButtons button + button,
 .input-group-append #dokuwiki__content .editButtons button + .qq-upload-button,
 .input-group-append #dokuwiki__content .editButtons .search-results-form button + .toggleAssistant,
 .search-results-form .input-group-append #dokuwiki__content .editButtons button + .toggleAssistant,
@@ -4558,6 +4663,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content .editButtons #tool__bar button + button,
 #tool__bar .input-group-append #dokuwiki__content .editButtons button + button,
 #dokuwiki__content .editButtons .input-group-append button + .btn,
+#dokuwiki__content .editButtons .input-group-append #dw__login button + button,
+#dw__login #dokuwiki__content .editButtons .input-group-append button + button,
 #dokuwiki__content .editButtons .input-group-append button + .qq-upload-button,
 #dokuwiki__content .editButtons .input-group-append .search-results-form button + .toggleAssistant,
 .search-results-form #dokuwiki__content .editButtons .input-group-append button + .toggleAssistant,
@@ -4567,6 +4674,8 @@ input[type=button].btn-block {
 #dokuwiki__content .editButtons .input-group-append #tool__bar button + button,
 #tool__bar #dokuwiki__content .editButtons .input-group-append button + button,
 .input-group-append #dokuwiki__content .editButtons .btn + button,
+.input-group-append #dokuwiki__content .editButtons #dw__login button + button,
+#dw__login .input-group-append #dokuwiki__content .editButtons button + button,
 .input-group-append #dokuwiki__content .editButtons .qq-upload-button + button,
 .input-group-append #dokuwiki__content .editButtons .search-results-form .toggleAssistant + button,
 .search-results-form .input-group-append #dokuwiki__content .editButtons .toggleAssistant + button,
@@ -4576,6 +4685,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content .editButtons #tool__bar button + button,
 #tool__bar .input-group-append #dokuwiki__content .editButtons button + button,
 #dokuwiki__content .editButtons .input-group-append .btn + button,
+#dokuwiki__content .editButtons .input-group-append #dw__login button + button,
+#dw__login #dokuwiki__content .editButtons .input-group-append button + button,
 #dokuwiki__content .editButtons .input-group-append .qq-upload-button + button,
 #dokuwiki__content .editButtons .input-group-append .search-results-form .toggleAssistant + button,
 .search-results-form #dokuwiki__content .editButtons .input-group-append .toggleAssistant + button,
@@ -4587,6 +4698,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content .editButtons button + button,
 #dokuwiki__content .editButtons .input-group-append button + button,
 .input-group-append #dokuwiki__content #page__revisions button + .btn,
+.input-group-append #dokuwiki__content #page__revisions #dw__login button + button,
+#dw__login .input-group-append #dokuwiki__content #page__revisions button + button,
 .input-group-append #dokuwiki__content #page__revisions button + .qq-upload-button,
 .input-group-append #dokuwiki__content #page__revisions .search-results-form button + .toggleAssistant,
 .search-results-form .input-group-append #dokuwiki__content #page__revisions button + .toggleAssistant,
@@ -4598,6 +4711,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content #page__revisions .editButtons button + button,
 .input-group-append #dokuwiki__content .editButtons #page__revisions button + button,
 #dokuwiki__content #page__revisions .input-group-append button + .btn,
+#dokuwiki__content #page__revisions .input-group-append #dw__login button + button,
+#dw__login #dokuwiki__content #page__revisions .input-group-append button + button,
 #dokuwiki__content #page__revisions .input-group-append button + .qq-upload-button,
 #dokuwiki__content #page__revisions .input-group-append .search-results-form button + .toggleAssistant,
 .search-results-form #dokuwiki__content #page__revisions .input-group-append button + .toggleAssistant,
@@ -4609,6 +4724,8 @@ input[type=button].btn-block {
 #dokuwiki__content #page__revisions .input-group-append .editButtons button + button,
 #dokuwiki__content .editButtons #page__revisions .input-group-append button + button,
 .input-group-append #dokuwiki__content #page__revisions .btn + button,
+.input-group-append #dokuwiki__content #page__revisions #dw__login button + button,
+#dw__login .input-group-append #dokuwiki__content #page__revisions button + button,
 .input-group-append #dokuwiki__content #page__revisions .qq-upload-button + button,
 .input-group-append #dokuwiki__content #page__revisions .search-results-form .toggleAssistant + button,
 .search-results-form .input-group-append #dokuwiki__content #page__revisions .toggleAssistant + button,
@@ -4620,6 +4737,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content #page__revisions .editButtons button + button,
 .input-group-append #dokuwiki__content .editButtons #page__revisions button + button,
 #dokuwiki__content #page__revisions .input-group-append .btn + button,
+#dokuwiki__content #page__revisions .input-group-append #dw__login button + button,
+#dw__login #dokuwiki__content #page__revisions .input-group-append button + button,
 #dokuwiki__content #page__revisions .input-group-append .qq-upload-button + button,
 #dokuwiki__content #page__revisions .input-group-append .search-results-form .toggleAssistant + button,
 .search-results-form #dokuwiki__content #page__revisions .input-group-append .toggleAssistant + button,
@@ -4633,6 +4752,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content #page__revisions button + button,
 #dokuwiki__content #page__revisions .input-group-append button + button,
 .input-group-append #dokuwiki__content .secedit button + .btn,
+.input-group-append #dokuwiki__content .secedit #dw__login button + button,
+#dw__login .input-group-append #dokuwiki__content .secedit button + button,
 .input-group-append #dokuwiki__content .secedit button + .qq-upload-button,
 .input-group-append #dokuwiki__content .secedit .search-results-form button + .toggleAssistant,
 .search-results-form .input-group-append #dokuwiki__content .secedit button + .toggleAssistant,
@@ -4645,6 +4766,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content .editButtons .secedit button + button,
 .input-group-append #dokuwiki__content #page__revisions .secedit button + button,
 #dokuwiki__content .secedit .input-group-append button + .btn,
+#dokuwiki__content .secedit .input-group-append #dw__login button + button,
+#dw__login #dokuwiki__content .secedit .input-group-append button + button,
 #dokuwiki__content .secedit .input-group-append button + .qq-upload-button,
 #dokuwiki__content .secedit .input-group-append .search-results-form button + .toggleAssistant,
 .search-results-form #dokuwiki__content .secedit .input-group-append button + .toggleAssistant,
@@ -4657,6 +4780,8 @@ input[type=button].btn-block {
 #dokuwiki__content .editButtons .secedit .input-group-append button + button,
 #dokuwiki__content .secedit .input-group-append #page__revisions button + button,
 .input-group-append #dokuwiki__content .secedit .btn + button,
+.input-group-append #dokuwiki__content .secedit #dw__login button + button,
+#dw__login .input-group-append #dokuwiki__content .secedit button + button,
 .input-group-append #dokuwiki__content .secedit .qq-upload-button + button,
 .input-group-append #dokuwiki__content .secedit .search-results-form .toggleAssistant + button,
 .search-results-form .input-group-append #dokuwiki__content .secedit .toggleAssistant + button,
@@ -4668,6 +4793,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content .secedit .editButtons button + button,
 .input-group-append #dokuwiki__content .editButtons .secedit button + button,
 #dokuwiki__content .secedit .input-group-append .btn + button,
+#dokuwiki__content .secedit .input-group-append #dw__login button + button,
+#dw__login #dokuwiki__content .secedit .input-group-append button + button,
 #dokuwiki__content .secedit .input-group-append .qq-upload-button + button,
 #dokuwiki__content .secedit .input-group-append .search-results-form .toggleAssistant + button,
 .search-results-form #dokuwiki__content .secedit .input-group-append .toggleAssistant + button,
@@ -4681,6 +4808,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content .secedit button + button,
 #dokuwiki__content .secedit .input-group-append button + button,
 .input-group-append button + .btn,
+.input-group-append #dw__login button + button,
+#dw__login .input-group-append button + button,
 .input-group-append button + .qq-upload-button,
 .input-group-append .search-results-form button + .toggleAssistant,
 .search-results-form .input-group-append button + .toggleAssistant,
@@ -4692,6 +4821,8 @@ input[type=button].btn-block {
 .input-group-append #dokuwiki__content .editButtons button + button,
 #dokuwiki__content .editButtons .input-group-append button + button,
 .input-group-append .btn + button,
+.input-group-append #dw__login button + button,
+#dw__login .input-group-append button + button,
 .input-group-append .qq-upload-button + button,
 .input-group-append .search-results-form .toggleAssistant + button,
 .search-results-form .input-group-append .toggleAssistant + button,
@@ -4704,6 +4835,8 @@ input[type=button].btn-block {
 #dokuwiki__content .editButtons .input-group-append button + button,
 .input-group-append button + button,
 .input-group-append .btn + .input-group-text,
+.input-group-append #dw__login button + .input-group-text,
+#dw__login .input-group-append button + .input-group-text,
 .input-group-append .qq-upload-button + .input-group-text,
 .input-group-append .search-results-form .toggleAssistant + .input-group-text,
 .search-results-form .input-group-append .toggleAssistant + .input-group-text,
@@ -4721,6 +4854,8 @@ input[type=button].btn-block {
 .input-group-append button + .input-group-text,
 .input-group-append .input-group-text + .input-group-text,
 .input-group-append .input-group-text + .btn,
+.input-group-append #dw__login .input-group-text + button,
+#dw__login .input-group-append .input-group-text + button,
 .input-group-append .input-group-text + .qq-upload-button,
 .input-group-append .search-results-form .input-group-text + .toggleAssistant,
 .search-results-form .input-group-append .input-group-text + .toggleAssistant,
@@ -4768,16 +4903,17 @@ input[type=button].btn-block {
   margin-top: 0;
 }
 
-.input-group-lg > .form-control:not(textarea), .input-group-lg > textarea:not(textarea), .search-results-form fieldset .input-group-lg > input:not(textarea), .doku_form .no .input-group-lg > #qsearch__in:not(textarea),
+.input-group-lg > .form-control:not(textarea), #dw__login .input-group-lg > input:not(textarea), .input-group-lg > textarea:not(textarea), .search-results-form fieldset .input-group-lg > input:not(textarea), .doku_form .no .input-group-lg > #qsearch__in:not(textarea),
 .input-group-lg > .custom-select {
   height: calc(1.5em + 1.75rem + 2px);
 }
 
-.input-group-lg > .form-control, .input-group-lg > textarea, .search-results-form fieldset .input-group-lg > input, .doku_form .no .input-group-lg > #qsearch__in,
+.input-group-lg > .form-control, #dw__login .input-group-lg > input, .input-group-lg > textarea, .search-results-form fieldset .input-group-lg > input, .doku_form .no .input-group-lg > #qsearch__in,
 .input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
+#dw__login .input-group-lg > .input-group-prepend > button,
 .input-group-lg > .input-group-prepend > .qq-upload-button,
 .input-group-lg > .input-group-prepend > .toggleAssistant,
 #tool__bar .input-group-lg > .input-group-prepend > button,
@@ -4786,6 +4922,7 @@ input[type=button].btn-block {
 #dokuwiki__content .secedit .input-group-lg > .input-group-prepend > button,
 .input-group-lg > .input-group-prepend > button,
 .input-group-lg > .input-group-append > .btn,
+#dw__login .input-group-lg > .input-group-append > button,
 .input-group-lg > .input-group-append > .qq-upload-button,
 .input-group-lg > .input-group-append > .toggleAssistant,
 #tool__bar .input-group-lg > .input-group-append > button,
@@ -4799,16 +4936,17 @@ input[type=button].btn-block {
   border-radius: 0.3rem;
 }
 
-.input-group-sm > .form-control:not(textarea), .input-group-sm > textarea:not(textarea), .search-results-form fieldset .input-group-sm > input:not(textarea), .doku_form .no .input-group-sm > #qsearch__in:not(textarea),
+.input-group-sm > .form-control:not(textarea), #dw__login .input-group-sm > input:not(textarea), .input-group-sm > textarea:not(textarea), .search-results-form fieldset .input-group-sm > input:not(textarea), .doku_form .no .input-group-sm > #qsearch__in:not(textarea),
 .input-group-sm > .custom-select {
   height: calc(1.5em + 0.5rem + 2px);
 }
 
-.input-group-sm > .form-control, .input-group-sm > textarea, .search-results-form fieldset .input-group-sm > input, .doku_form .no .input-group-sm > #qsearch__in,
+.input-group-sm > .form-control, #dw__login .input-group-sm > input, .input-group-sm > textarea, .search-results-form fieldset .input-group-sm > input, .doku_form .no .input-group-sm > #qsearch__in,
 .input-group-sm > .custom-select,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
+#dw__login .input-group-sm > .input-group-prepend > button,
 .input-group-sm > .input-group-prepend > .qq-upload-button,
 .input-group-sm > .input-group-prepend > .toggleAssistant,
 #tool__bar .input-group-sm > .input-group-prepend > button,
@@ -4817,6 +4955,7 @@ input[type=button].btn-block {
 #dokuwiki__content .secedit .input-group-sm > .input-group-prepend > button,
 .input-group-sm > .input-group-prepend > button,
 .input-group-sm > .input-group-append > .btn,
+#dw__login .input-group-sm > .input-group-append > button,
 .input-group-sm > .input-group-append > .qq-upload-button,
 .input-group-sm > .input-group-append > .toggleAssistant,
 #tool__bar .input-group-sm > .input-group-append > button,
@@ -4835,13 +4974,16 @@ input[type=button].btn-block {
   padding-right: 1.75rem;
 }
 
-.input-group > .input-group-prepend > .btn, .input-group > .input-group-prepend > .qq-upload-button, .input-group > .input-group-prepend > .toggleAssistant, .doku_form .no > .input-group-prepend > .btn, .doku_form .no > .input-group-prepend > .qq-upload-button, .doku_form .no > .input-group-prepend > .toggleAssistant, .doku_form .no > .input-group-prepend > button, #tool__bar .input-group > .input-group-prepend > button, #tool__bar .doku_form .no > .input-group-prepend > button, .doku_form #tool__bar .no > .input-group-prepend > button, #dokuwiki__content .editButtons .input-group > .input-group-prepend > button, #dokuwiki__content .editButtons .doku_form .no > .input-group-prepend > button, .doku_form #dokuwiki__content .editButtons .no > .input-group-prepend > button, #dokuwiki__content #page__revisions .input-group > .input-group-prepend > button, #dokuwiki__content #page__revisions .doku_form .no > .input-group-prepend > button, .doku_form #dokuwiki__content #page__revisions .no > .input-group-prepend > button, #dokuwiki__content .secedit .input-group > .input-group-prepend > button, #dokuwiki__content .secedit .doku_form .no > .input-group-prepend > button, .doku_form #dokuwiki__content .secedit .no > .input-group-prepend > button, .input-group > .input-group-prepend > button,
+.input-group > .input-group-prepend > .btn, #dw__login .input-group > .input-group-prepend > button, .input-group > .input-group-prepend > .qq-upload-button, .input-group > .input-group-prepend > .toggleAssistant, .doku_form .no > .input-group-prepend > .btn, .doku_form #dw__login .no > .input-group-prepend > button, #dw__login .doku_form .no > .input-group-prepend > button, .doku_form .no > .input-group-prepend > .qq-upload-button, .doku_form .no > .input-group-prepend > .toggleAssistant, .doku_form .no > .input-group-prepend > button, #tool__bar .input-group > .input-group-prepend > button, #tool__bar .doku_form .no > .input-group-prepend > button, .doku_form #tool__bar .no > .input-group-prepend > button, #dokuwiki__content .editButtons .input-group > .input-group-prepend > button, #dokuwiki__content .editButtons .doku_form .no > .input-group-prepend > button, .doku_form #dokuwiki__content .editButtons .no > .input-group-prepend > button, #dokuwiki__content #page__revisions .input-group > .input-group-prepend > button, #dokuwiki__content #page__revisions .doku_form .no > .input-group-prepend > button, .doku_form #dokuwiki__content #page__revisions .no > .input-group-prepend > button, #dokuwiki__content .secedit .input-group > .input-group-prepend > button, #dokuwiki__content .secedit .doku_form .no > .input-group-prepend > button, .doku_form #dokuwiki__content .secedit .no > .input-group-prepend > button, .input-group > .input-group-prepend > button,
 .input-group > .input-group-prepend > .input-group-text,
 .doku_form .no > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
+#dw__login .input-group > .input-group-append:not(:last-child) > button,
 .input-group > .input-group-append:not(:last-child) > .qq-upload-button,
 .input-group > .input-group-append:not(:last-child) > .toggleAssistant,
 .doku_form .no > .input-group-append:not(:last-child) > .btn,
+.doku_form #dw__login .no > .input-group-append:not(:last-child) > button,
+#dw__login .doku_form .no > .input-group-append:not(:last-child) > button,
 .doku_form .no > .input-group-append:not(:last-child) > .qq-upload-button,
 .doku_form .no > .input-group-append:not(:last-child) > .toggleAssistant,
 .doku_form .no > .input-group-append:not(:last-child) > button,
@@ -4861,9 +5003,12 @@ input[type=button].btn-block {
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .doku_form .no > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+#dw__login .input-group > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .qq-upload-button:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .toggleAssistant:not(:last-child):not(.dropdown-toggle),
 .doku_form .no > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.doku_form #dw__login .no > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
+#dw__login .doku_form .no > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
 .doku_form .no > .input-group-append:last-child > .qq-upload-button:not(:last-child):not(.dropdown-toggle),
 .doku_form .no > .input-group-append:last-child > .toggleAssistant:not(:last-child):not(.dropdown-toggle),
 .doku_form .no > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
@@ -4886,13 +5031,16 @@ input[type=button].btn-block {
   border-bottom-right-radius: 0;
 }
 
-.input-group > .input-group-append > .btn, .input-group > .input-group-append > .qq-upload-button, .input-group > .input-group-append > .toggleAssistant, .doku_form .no > .input-group-append > .btn, .doku_form .no > .input-group-append > .qq-upload-button, .doku_form .no > .input-group-append > .toggleAssistant, .doku_form .no > .input-group-append > button, #tool__bar .input-group > .input-group-append > button, #tool__bar .doku_form .no > .input-group-append > button, .doku_form #tool__bar .no > .input-group-append > button, #dokuwiki__content .editButtons .input-group > .input-group-append > button, #dokuwiki__content .editButtons .doku_form .no > .input-group-append > button, .doku_form #dokuwiki__content .editButtons .no > .input-group-append > button, #dokuwiki__content #page__revisions .input-group > .input-group-append > button, #dokuwiki__content #page__revisions .doku_form .no > .input-group-append > button, .doku_form #dokuwiki__content #page__revisions .no > .input-group-append > button, #dokuwiki__content .secedit .input-group > .input-group-append > button, #dokuwiki__content .secedit .doku_form .no > .input-group-append > button, .doku_form #dokuwiki__content .secedit .no > .input-group-append > button, .input-group > .input-group-append > button,
+.input-group > .input-group-append > .btn, #dw__login .input-group > .input-group-append > button, .input-group > .input-group-append > .qq-upload-button, .input-group > .input-group-append > .toggleAssistant, .doku_form .no > .input-group-append > .btn, .doku_form #dw__login .no > .input-group-append > button, #dw__login .doku_form .no > .input-group-append > button, .doku_form .no > .input-group-append > .qq-upload-button, .doku_form .no > .input-group-append > .toggleAssistant, .doku_form .no > .input-group-append > button, #tool__bar .input-group > .input-group-append > button, #tool__bar .doku_form .no > .input-group-append > button, .doku_form #tool__bar .no > .input-group-append > button, #dokuwiki__content .editButtons .input-group > .input-group-append > button, #dokuwiki__content .editButtons .doku_form .no > .input-group-append > button, .doku_form #dokuwiki__content .editButtons .no > .input-group-append > button, #dokuwiki__content #page__revisions .input-group > .input-group-append > button, #dokuwiki__content #page__revisions .doku_form .no > .input-group-append > button, .doku_form #dokuwiki__content #page__revisions .no > .input-group-append > button, #dokuwiki__content .secedit .input-group > .input-group-append > button, #dokuwiki__content .secedit .doku_form .no > .input-group-append > button, .doku_form #dokuwiki__content .secedit .no > .input-group-append > button, .input-group > .input-group-append > button,
 .input-group > .input-group-append > .input-group-text,
 .doku_form .no > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
+#dw__login .input-group > .input-group-prepend:not(:first-child) > button,
 .input-group > .input-group-prepend:not(:first-child) > .qq-upload-button,
 .input-group > .input-group-prepend:not(:first-child) > .toggleAssistant,
 .doku_form .no > .input-group-prepend:not(:first-child) > .btn,
+.doku_form #dw__login .no > .input-group-prepend:not(:first-child) > button,
+#dw__login .doku_form .no > .input-group-prepend:not(:first-child) > button,
 .doku_form .no > .input-group-prepend:not(:first-child) > .qq-upload-button,
 .doku_form .no > .input-group-prepend:not(:first-child) > .toggleAssistant,
 .doku_form .no > .input-group-prepend:not(:first-child) > button,
@@ -4912,9 +5060,12 @@ input[type=button].btn-block {
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .doku_form .no > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+#dw__login .input-group > .input-group-prepend:first-child > button:not(:first-child),
 .input-group > .input-group-prepend:first-child > .qq-upload-button:not(:first-child),
 .input-group > .input-group-prepend:first-child > .toggleAssistant:not(:first-child),
 .doku_form .no > .input-group-prepend:first-child > .btn:not(:first-child),
+.doku_form #dw__login .no > .input-group-prepend:first-child > button:not(:first-child),
+#dw__login .doku_form .no > .input-group-prepend:first-child > button:not(:first-child),
 .doku_form .no > .input-group-prepend:first-child > .qq-upload-button:not(:first-child),
 .doku_form .no > .input-group-prepend:first-child > .toggleAssistant:not(:first-child),
 .doku_form .no > .input-group-prepend:first-child > button:not(:first-child),
@@ -5864,7 +6015,7 @@ input[type=button].btn-block {
   color: rgba(255, 255, 255, 0.65);
 }
 
-.card {
+.card, #dw__login {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -5876,17 +6027,17 @@ input[type=button].btn-block {
   border-radius: 0.25rem;
 }
 
-.card > hr {
+.card > hr, #dw__login > hr {
   margin-right: 0;
   margin-left: 0;
 }
 
-.card > .list-group:first-child .list-group-item:first-child {
+.card > .list-group:first-child .list-group-item:first-child, #dw__login > .list-group:first-child .list-group-item:first-child {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
 
-.card > .list-group:last-child .list-group-item:last-child {
+.card > .list-group:last-child .list-group-item:last-child, #dw__login > .list-group:last-child .list-group-item:last-child {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
@@ -5917,18 +6068,18 @@ input[type=button].btn-block {
   margin-left: 1.5rem;
 }
 
-.card-header {
+.card-header, #dw__login legend {
   padding: 1.25rem 1.5rem;
   margin-bottom: 0;
   background-color: #f6f9fc;
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.05);
 }
 
-.card-header:first-child {
+.card-header:first-child, #dw__login legend:first-child {
   border-radius: calc(0.25rem - 0.0625rem) calc(0.25rem - 0.0625rem) 0 0;
 }
 
-.card-header + .list-group .list-group-item:first-child {
+.card-header + .list-group .list-group-item:first-child, #dw__login legend + .list-group .list-group-item:first-child {
   border-top: 0;
 }
 
@@ -5985,7 +6136,7 @@ input[type=button].btn-block {
   flex-direction: column;
 }
 
-.card-deck .card {
+.card-deck .card, .card-deck #dw__login {
   margin-bottom: 15px;
 }
 
@@ -5996,7 +6147,7 @@ input[type=button].btn-block {
     margin-left: -15px;
   }
 
-  .card-deck .card {
+  .card-deck .card, .card-deck #dw__login {
     display: flex;
     flex: 1 0 0%;
     flex-direction: column;
@@ -6010,7 +6161,7 @@ input[type=button].btn-block {
   flex-direction: column;
 }
 
-.card-group > .card {
+.card-group > .card, .card-group > #dw__login {
   margin-bottom: 15px;
 }
 
@@ -6019,47 +6170,57 @@ input[type=button].btn-block {
     flex-flow: row wrap;
   }
 
-  .card-group > .card {
+  .card-group > .card, .card-group > #dw__login {
     flex: 1 0 0%;
     margin-bottom: 0;
   }
 
-  .card-group > .card + .card {
+  .card-group > .card + .card, .card-group > #dw__login + .card, .card-group > .card + #dw__login, .card-group > #dw__login + #dw__login {
     margin-left: 0;
     border-left: 0;
   }
 
-  .card-group > .card:not(:last-child) {
+  .card-group > .card:not(:last-child), .card-group > #dw__login:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  .card-group > .card:not(:last-child) .card-img-top,
-.card-group > .card:not(:last-child) .card-header {
+  .card-group > .card:not(:last-child) .card-img-top, .card-group > #dw__login:not(:last-child) .card-img-top,
+.card-group > .card:not(:last-child) .card-header,
+.card-group > .card:not(:last-child) #dw__login legend,
+#dw__login .card-group > .card:not(:last-child) legend,
+.card-group > #dw__login:not(:last-child) .card-header,
+.card-group > #dw__login:not(:last-child) legend {
     border-top-right-radius: 0;
   }
 
-  .card-group > .card:not(:last-child) .card-img-bottom,
-.card-group > .card:not(:last-child) .card-footer {
+  .card-group > .card:not(:last-child) .card-img-bottom, .card-group > #dw__login:not(:last-child) .card-img-bottom,
+.card-group > .card:not(:last-child) .card-footer,
+.card-group > #dw__login:not(:last-child) .card-footer {
     border-bottom-right-radius: 0;
   }
 
-  .card-group > .card:not(:first-child) {
+  .card-group > .card:not(:first-child), .card-group > #dw__login:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 
-  .card-group > .card:not(:first-child) .card-img-top,
-.card-group > .card:not(:first-child) .card-header {
+  .card-group > .card:not(:first-child) .card-img-top, .card-group > #dw__login:not(:first-child) .card-img-top,
+.card-group > .card:not(:first-child) .card-header,
+.card-group > .card:not(:first-child) #dw__login legend,
+#dw__login .card-group > .card:not(:first-child) legend,
+.card-group > #dw__login:not(:first-child) .card-header,
+.card-group > #dw__login:not(:first-child) legend {
     border-top-left-radius: 0;
   }
 
-  .card-group > .card:not(:first-child) .card-img-bottom,
-.card-group > .card:not(:first-child) .card-footer {
+  .card-group > .card:not(:first-child) .card-img-bottom, .card-group > #dw__login:not(:first-child) .card-img-bottom,
+.card-group > .card:not(:first-child) .card-footer,
+.card-group > #dw__login:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
 }
-.card-columns .card {
+.card-columns .card, .card-columns #dw__login {
   margin-bottom: 1.25rem;
 }
 
@@ -6071,36 +6232,36 @@ input[type=button].btn-block {
     widows: 1;
   }
 
-  .card-columns .card {
+  .card-columns .card, .card-columns #dw__login {
     display: inline-block;
     width: 100%;
   }
 }
-.accordion > .card {
+.accordion > .card, .accordion > #dw__login {
   overflow: hidden;
 }
 
-.accordion > .card:not(:first-of-type) .card-header:first-child {
+.accordion > .card:not(:first-of-type) .card-header:first-child, .accordion > .card:not(:first-of-type) #dw__login legend:first-child, #dw__login .accordion > .card:not(:first-of-type) legend:first-child, .accordion > #dw__login:not(:first-of-type) .card-header:first-child, .accordion > #dw__login:not(:first-of-type) legend:first-child {
   border-radius: 0;
 }
 
-.accordion > .card:not(:first-of-type):not(:last-of-type) {
+.accordion > .card:not(:first-of-type):not(:last-of-type), .accordion > #dw__login:not(:first-of-type):not(:last-of-type) {
   border-bottom: 0;
   border-radius: 0;
 }
 
-.accordion > .card:first-of-type {
+.accordion > .card:first-of-type, .accordion > #dw__login:first-of-type {
   border-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.accordion > .card:last-of-type {
+.accordion > .card:last-of-type, .accordion > #dw__login:last-of-type {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.accordion > .card .card-header {
+.accordion > .card .card-header, #dw__login .accordion > .card legend, .accordion > #dw__login .card-header, .accordion > #dw__login legend {
   margin-bottom: -0.0625rem;
 }
 
@@ -6254,7 +6415,7 @@ a.badge:focus {
   display: none;
 }
 
-.btn .badge, .qq-upload-button .badge, .toggleAssistant .badge, .doku_form .no button .badge, #tool__bar button .badge, #dokuwiki__content .editButtons button .badge, #dokuwiki__content #page__revisions button .badge, #dokuwiki__content .secedit button .badge, button .badge {
+.btn .badge, #dw__login button .badge, .qq-upload-button .badge, .toggleAssistant .badge, .doku_form .no button .badge, #tool__bar button .badge, #dokuwiki__content .editButtons button .badge, #dokuwiki__content #page__revisions button .badge, #dokuwiki__content .secedit button .badge, button .badge {
   position: relative;
   top: -1px;
 }
@@ -7994,14 +8155,17 @@ button.bg-primary:focus {
   background-color: #324cdd !important;
 }
 
-.bg-secondary {
+.bg-secondary, #dw__login {
   background-color: #f4f5f7 !important;
 }
 
-a.bg-secondary:hover,
+a.bg-secondary:hover, a#dw__login:hover,
 a.bg-secondary:focus,
+a#dw__login:focus,
 button.bg-secondary:hover,
-button.bg-secondary:focus {
+button#dw__login:hover,
+button.bg-secondary:focus,
+button#dw__login:focus {
   background-color: #d6dae2 !important;
 }
 
@@ -8082,7 +8246,7 @@ button.bg-default:focus {
   background-color: #0b1526 !important;
 }
 
-.bg-white {
+.bg-white, #dw__login legend {
   background-color: #fff !important;
 }
 
@@ -8115,7 +8279,7 @@ button.bg-darker:focus {
   background-color: black !important;
 }
 
-.bg-white {
+.bg-white, #dw__login legend {
   background-color: #fff !important;
 }
 
@@ -8143,7 +8307,7 @@ button.bg-darker:focus {
   border-left: 0.0625rem solid #e9ecef !important;
 }
 
-.border-0 {
+.border-0, #dw__login {
   border: 0 !important;
 }
 
@@ -9355,7 +9519,7 @@ button.bg-darker:focus {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow,
+.shadow, #dw__login,
 .profile-page .card-profile .card-profile-image img {
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
 }
@@ -10034,7 +10198,7 @@ button.bg-darker:focus {
   padding-right: 3rem !important;
 }
 
-.pb-5,
+.pb-5, #dw__login legend,
 .py-5 {
   padding-bottom: 3rem !important;
 }
@@ -16973,7 +17137,7 @@ button.bg-cyan:focus {
   background-color: #00f7b5 !important;
 }
 
-.bg-white {
+.bg-white, #dw__login legend {
   background-color: #fff !important;
 }
 
@@ -18427,15 +18591,15 @@ a.text-lighter:focus {
   color: #32325d;
 }
 
-.btn .badge:not(:first-child), .qq-upload-button .badge:not(:first-child), .toggleAssistant .badge:not(:first-child), #tool__bar button .badge:not(:first-child), #dokuwiki__content .editButtons button .badge:not(:first-child), #dokuwiki__content #page__revisions button .badge:not(:first-child), #dokuwiki__content .secedit button .badge:not(:first-child), button .badge:not(:first-child) {
+.btn .badge:not(:first-child), #dw__login button .badge:not(:first-child), .qq-upload-button .badge:not(:first-child), .toggleAssistant .badge:not(:first-child), #tool__bar button .badge:not(:first-child), #dokuwiki__content .editButtons button .badge:not(:first-child), #dokuwiki__content #page__revisions button .badge:not(:first-child), #dokuwiki__content .secedit button .badge:not(:first-child), button .badge:not(:first-child) {
   margin-left: 0.5rem;
 }
 
-.btn .badge:not(:last-child), .qq-upload-button .badge:not(:last-child), .toggleAssistant .badge:not(:last-child), #tool__bar button .badge:not(:last-child), #dokuwiki__content .editButtons button .badge:not(:last-child), #dokuwiki__content #page__revisions button .badge:not(:last-child), #dokuwiki__content .secedit button .badge:not(:last-child), button .badge:not(:last-child) {
+.btn .badge:not(:last-child), #dw__login button .badge:not(:last-child), .qq-upload-button .badge:not(:last-child), .toggleAssistant .badge:not(:last-child), #tool__bar button .badge:not(:last-child), #dokuwiki__content .editButtons button .badge:not(:last-child), #dokuwiki__content #page__revisions button .badge:not(:last-child), #dokuwiki__content .secedit button .badge:not(:last-child), button .badge:not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.btn, .qq-upload-button, .search-results-form .toggleAssistant, .toggleAssistant, .doku_form .no button, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button, button {
+.btn, #dw__login button, .qq-upload-button, .search-results-form .toggleAssistant, .toggleAssistant, .doku_form .no button, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button, button {
   position: relative;
   text-transform: uppercase;
   will-change: transform;
@@ -18443,20 +18607,24 @@ a.text-lighter:focus {
   font-size: 0.875rem;
 }
 
-.btn:hover, .qq-upload-button:hover, .toggleAssistant:hover, .doku_form .no button:hover, #tool__bar button:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover, button:hover {
+.btn:hover, #dw__login button:hover, .qq-upload-button:hover, .toggleAssistant:hover, .doku_form .no button:hover, #tool__bar button:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover, button:hover {
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
   transform: translateY(-1px);
 }
 
-.btn:not(:last-child), .qq-upload-button:not(:last-child), .toggleAssistant:not(:last-child), .doku_form .no button:not(:last-child), #tool__bar button:not(:last-child), #dokuwiki__content .editButtons button:not(:last-child), #dokuwiki__content #page__revisions button:not(:last-child), #dokuwiki__content .secedit button:not(:last-child), button:not(:last-child) {
+.btn:not(:last-child), #dw__login button:not(:last-child), .qq-upload-button:not(:last-child), .toggleAssistant:not(:last-child), .doku_form .no button:not(:last-child), #tool__bar button:not(:last-child), #dokuwiki__content .editButtons button:not(:last-child), #dokuwiki__content #page__revisions button:not(:last-child), #dokuwiki__content .secedit button:not(:last-child), button:not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.btn-group .btn, .btn-group .qq-upload-button, .btn-group .toggleAssistant, .btn-group #tool__bar button, #tool__bar .btn-group button, .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .btn-group button, .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .btn-group button, .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .btn-group button, .btn-group button,
+.btn-group .btn, .btn-group #dw__login button, #dw__login .btn-group button, .btn-group .qq-upload-button, .btn-group .toggleAssistant, .btn-group #tool__bar button, #tool__bar .btn-group button, .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .btn-group button, .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .btn-group button, .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .btn-group button, .btn-group button,
 .input-group .btn,
+.input-group #dw__login button,
+#dw__login .input-group button,
 .input-group .qq-upload-button,
 .input-group .toggleAssistant,
 .doku_form .no .btn,
+.doku_form .no #dw__login button,
+#dw__login .doku_form .no button,
 .doku_form .no .qq-upload-button,
 .doku_form .no .toggleAssistant,
 .doku_form .no button,
@@ -18487,6 +18655,7 @@ a.text-lighter:focus {
 
 .btn-sm, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content .secedit button,
 .btn-group-sm > .btn,
+#dw__login .btn-group-sm > button,
 .btn-group-sm > .qq-upload-button,
 .search-results-form .btn-group-sm > .toggleAssistant,
 .btn-group-sm > .toggleAssistant,
@@ -18498,6 +18667,7 @@ a.text-lighter:focus {
 
 .btn-sm.btn-icon-only, #tool__bar button.btn-icon-only, #dokuwiki__content .editButtons button.btn-icon-only, #dokuwiki__content .secedit button.btn-icon-only,
 .btn-group-sm > .btn-icon-only.btn,
+#dw__login .btn-group-sm > button.btn-icon-only,
 .btn-group-sm > .btn-icon-only.qq-upload-button,
 .search-results-form .btn-group-sm > .btn-icon-only.toggleAssistant,
 .btn-group-sm > .btn-icon-only.toggleAssistant,
@@ -18510,6 +18680,7 @@ a.text-lighter:focus {
 
 .btn-sm .btn-inner--icon, #tool__bar button .btn-inner--icon, #dokuwiki__content .editButtons button .btn-inner--icon, #dokuwiki__content .secedit button .btn-inner--icon,
 .btn-group-sm > .btn .btn-inner--icon,
+#dw__login .btn-group-sm > button .btn-inner--icon,
 .btn-group-sm > .qq-upload-button .btn-inner--icon,
 .btn-group-sm > .toggleAssistant .btn-inner--icon,
 #dokuwiki__content #page__revisions .btn-group-sm > button .btn-inner--icon,
@@ -18519,6 +18690,7 @@ a.text-lighter:focus {
 
 .btn-lg.btn-icon-only,
 .btn-group-lg > .btn-icon-only.btn,
+#dw__login .btn-group-lg > button.btn-icon-only,
 .btn-group-lg > .btn-icon-only.qq-upload-button,
 .search-results-form .btn-group-lg > .btn-icon-only.toggleAssistant,
 .btn-group-lg > .btn-icon-only.toggleAssistant,
@@ -18534,6 +18706,7 @@ a.text-lighter:focus {
 
 .btn-lg .btn-inner--icon,
 .btn-group-lg > .btn .btn-inner--icon,
+#dw__login .btn-group-lg > button .btn-inner--icon,
 .btn-group-lg > .qq-upload-button .btn-inner--icon,
 .btn-group-lg > .toggleAssistant .btn-inner--icon,
 #tool__bar .btn-group-lg > button .btn-inner--icon,
@@ -18576,8 +18749,9 @@ a.text-lighter:focus {
   color: #5e72e4;
 }
 
-.btn svg:not(:first-child), .qq-upload-button svg:not(:first-child), .toggleAssistant svg:not(:first-child), .doku_form .no button svg:not(:first-child), #tool__bar button svg:not(:first-child), #dokuwiki__content .editButtons button svg:not(:first-child), #dokuwiki__content #page__revisions button svg:not(:first-child), #dokuwiki__content .secedit button svg:not(:first-child), button svg:not(:first-child),
+.btn svg:not(:first-child), #dw__login button svg:not(:first-child), .qq-upload-button svg:not(:first-child), .toggleAssistant svg:not(:first-child), .doku_form .no button svg:not(:first-child), #tool__bar button svg:not(:first-child), #dokuwiki__content .editButtons button svg:not(:first-child), #dokuwiki__content #page__revisions button svg:not(:first-child), #dokuwiki__content .secedit button svg:not(:first-child), button svg:not(:first-child),
 .btn i:not(:first-child),
+#dw__login button i:not(:first-child),
 .qq-upload-button i:not(:first-child),
 .toggleAssistant i:not(:first-child),
 .doku_form .no button i:not(:first-child),
@@ -18589,8 +18763,9 @@ button i:not(:first-child) {
   margin-left: 0.5rem;
 }
 
-.btn svg:not(:last-child), .qq-upload-button svg:not(:last-child), .toggleAssistant svg:not(:last-child), .doku_form .no button svg:not(:last-child), #tool__bar button svg:not(:last-child), #dokuwiki__content .editButtons button svg:not(:last-child), #dokuwiki__content #page__revisions button svg:not(:last-child), #dokuwiki__content .secedit button svg:not(:last-child), button svg:not(:last-child),
+.btn svg:not(:last-child), #dw__login button svg:not(:last-child), .qq-upload-button svg:not(:last-child), .toggleAssistant svg:not(:last-child), .doku_form .no button svg:not(:last-child), #tool__bar button svg:not(:last-child), #dokuwiki__content .editButtons button svg:not(:last-child), #dokuwiki__content #page__revisions button svg:not(:last-child), #dokuwiki__content .secedit button svg:not(:last-child), button svg:not(:last-child),
 .btn i:not(:last-child),
+#dw__login button i:not(:last-child),
 .qq-upload-button i:not(:last-child),
 .toggleAssistant i:not(:last-child),
 .doku_form .no button i:not(:last-child),
@@ -18669,6 +18844,7 @@ a.btn-icon-only {
 
 .btn-icon-only.btn-sm, #tool__bar button.btn-icon-only, #dokuwiki__content .editButtons button.btn-icon-only, #dokuwiki__content .secedit button.btn-icon-only,
 .btn-group-sm > .btn-icon-only.btn,
+#dw__login .btn-group-sm > button.btn-icon-only,
 .btn-group-sm > .btn-icon-only.qq-upload-button,
 .search-results-form .btn-group-sm > .btn-icon-only.toggleAssistant,
 .btn-group-sm > .btn-icon-only.toggleAssistant,
@@ -19030,11 +19206,11 @@ a.btn-icon-only {
   box-shadow: none, 0 0 0 0 rgba(34, 34, 34, 0.5);
 }
 
-.card {
+.card, #dw__login {
   position: relative;
 }
 
-.card.card-plain {
+.card.card-plain, .card-plain#dw__login {
   background: transparent;
   box-shadow: none;
   border: none;
@@ -19100,12 +19276,12 @@ a.btn-icon-only {
     margin-top: 30px;
   }
 }
-.card .card-blockquote {
+.card .card-blockquote, #dw__login .card-blockquote {
   padding: 2rem;
   position: relative;
 }
 
-.card .card-blockquote .svg-bg {
+.card .card-blockquote .svg-bg, #dw__login .card-blockquote .svg-bg {
   display: block;
   width: 100%;
   height: 95px;
@@ -19390,8 +19566,10 @@ a.btn-icon-only {
   font-size: 0.875rem;
 }
 
-.footer .dropdown .btn:not(:disabled):not(.disabled):active:focus, .footer .dropdown .qq-upload-button:not(:disabled):not(.disabled):active:focus, .footer .dropdown .toggleAssistant:not(:disabled):not(.disabled):active:focus, .footer .dropdown #tool__bar button:not(:disabled):not(.disabled):active:focus, #tool__bar .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown button:not(:disabled):not(.disabled):active:focus,
+.footer .dropdown .btn:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dw__login button:not(:disabled):not(.disabled):active:focus, #dw__login .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown .qq-upload-button:not(:disabled):not(.disabled):active:focus, .footer .dropdown .toggleAssistant:not(:disabled):not(.disabled):active:focus, .footer .dropdown #tool__bar button:not(:disabled):not(.disabled):active:focus, #tool__bar .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown button:not(:disabled):not(.disabled):active:focus,
 .footer .dropdown .btn:not(:disabled):not(.disabled).active:focus,
+.footer .dropdown #dw__login button:not(:disabled):not(.disabled).active:focus,
+#dw__login .footer .dropdown button:not(:disabled):not(.disabled).active:focus,
 .footer .dropdown .qq-upload-button:not(:disabled):not(.disabled).active:focus,
 .footer .dropdown .toggleAssistant:not(:disabled):not(.disabled).active:focus,
 .footer .dropdown #tool__bar button:not(:disabled):not(.disabled).active:focus,
@@ -19448,17 +19626,18 @@ label {
   font-size: 0.875rem;
 }
 
-.form-control, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
+.form-control, #dw__login input, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
   font-size: 0.875rem;
   transition: all 0.15s ease;
 }
 
-.form-control:focus::placeholder, textarea:focus::placeholder, .search-results-form fieldset input:focus::placeholder, .doku_form .no #qsearch__in:focus::placeholder {
+.form-control:focus::placeholder, #dw__login input:focus::placeholder, textarea:focus::placeholder, .search-results-form fieldset input:focus::placeholder, .doku_form .no #qsearch__in:focus::placeholder {
   color: #adb5bd;
 }
 
-.form-control.is-valid, textarea.is-valid, .search-results-form fieldset input.is-valid, .doku_form .no .is-valid#qsearch__in,
+.form-control.is-valid, #dw__login input.is-valid, textarea.is-valid, .search-results-form fieldset input.is-valid, .doku_form .no .is-valid#qsearch__in,
 .form-control.is-invalid,
+#dw__login input.is-invalid,
 textarea.is-invalid,
 .search-results-form fieldset input.is-invalid,
 .doku_form .no .is-invalid#qsearch__in {
@@ -19542,15 +19721,15 @@ textarea[resize=horizontal] {
   background-color: #69deac;
 }
 
-.has-success .form-control, .has-success textarea, .has-success .search-results-form fieldset input, .search-results-form fieldset .has-success input, .has-success .doku_form .no #qsearch__in, .doku_form .no .has-success #qsearch__in {
+.has-success .form-control, .has-success #dw__login input, #dw__login .has-success input, .has-success textarea, .has-success .search-results-form fieldset input, .search-results-form fieldset .has-success input, .has-success .doku_form .no #qsearch__in, .doku_form .no .has-success #qsearch__in {
   background-color: #fff;
 }
 
-.has-success .form-control:focus, .has-success textarea:focus, .has-success .search-results-form fieldset input:focus, .search-results-form fieldset .has-success input:focus, .has-success .doku_form .no #qsearch__in:focus, .doku_form .no .has-success #qsearch__in:focus {
+.has-success .form-control:focus, .has-success #dw__login input:focus, #dw__login .has-success input:focus, .has-success textarea:focus, .has-success .search-results-form fieldset input:focus, .search-results-form fieldset .has-success input:focus, .has-success .doku_form .no #qsearch__in:focus, .doku_form .no .has-success #qsearch__in:focus {
   border-color: rgba(50, 151, 211, 0.25);
 }
 
-.has-success .form-control::placeholder, .has-success textarea::placeholder, .has-success .search-results-form fieldset input::placeholder, .search-results-form fieldset .has-success input::placeholder, .has-success .doku_form .no #qsearch__in::placeholder, .doku_form .no .has-success #qsearch__in::placeholder {
+.has-success .form-control::placeholder, .has-success #dw__login input::placeholder, #dw__login .has-success input::placeholder, .has-success textarea::placeholder, .has-success .search-results-form fieldset input::placeholder, .search-results-form fieldset .has-success input::placeholder, .has-success .doku_form .no #qsearch__in::placeholder, .doku_form .no .has-success #qsearch__in::placeholder {
   color: #2dce89;
 }
 
@@ -19560,15 +19739,15 @@ textarea[resize=horizontal] {
   background-color: #fda08b;
 }
 
-.has-danger .form-control, .has-danger textarea, .has-danger .search-results-form fieldset input, .search-results-form fieldset .has-danger input, .has-danger .doku_form .no #qsearch__in, .doku_form .no .has-danger #qsearch__in {
+.has-danger .form-control, .has-danger #dw__login input, #dw__login .has-danger input, .has-danger textarea, .has-danger .search-results-form fieldset input, .search-results-form fieldset .has-danger input, .has-danger .doku_form .no #qsearch__in, .doku_form .no .has-danger #qsearch__in {
   background-color: #fff;
 }
 
-.has-danger .form-control:focus, .has-danger textarea:focus, .has-danger .search-results-form fieldset input:focus, .search-results-form fieldset .has-danger input:focus, .has-danger .doku_form .no #qsearch__in:focus, .doku_form .no .has-danger #qsearch__in:focus {
+.has-danger .form-control:focus, .has-danger #dw__login input:focus, #dw__login .has-danger input:focus, .has-danger textarea:focus, .has-danger .search-results-form fieldset input:focus, .search-results-form fieldset .has-danger input:focus, .has-danger .doku_form .no #qsearch__in:focus, .doku_form .no .has-danger #qsearch__in:focus {
   border-color: rgba(50, 151, 211, 0.25);
 }
 
-.has-danger .form-control::placeholder, .has-danger textarea::placeholder, .has-danger .search-results-form fieldset input::placeholder, .search-results-form fieldset .has-danger input::placeholder, .has-danger .doku_form .no #qsearch__in::placeholder, .doku_form .no .has-danger #qsearch__in::placeholder {
+.has-danger .form-control::placeholder, .has-danger #dw__login input::placeholder, #dw__login .has-danger input::placeholder, .has-danger textarea::placeholder, .has-danger .search-results-form fieldset input::placeholder, .search-results-form fieldset .has-danger input::placeholder, .has-danger .doku_form .no #qsearch__in::placeholder, .doku_form .no .has-danger #qsearch__in::placeholder {
   color: #fb6340;
 }
 
@@ -19743,21 +19922,21 @@ textarea[resize=horizontal] {
   transition: all 0.15s ease;
 }
 
-.input-group .form-control, .input-group textarea, .input-group .search-results-form fieldset input, .search-results-form fieldset .input-group input, .doku_form .no .form-control, .doku_form .no textarea, .doku_form .no .search-results-form fieldset input, .search-results-form fieldset .doku_form .no input, .doku_form .no #qsearch__in {
+.input-group .form-control, .input-group #dw__login input, #dw__login .input-group input, .input-group textarea, .input-group .search-results-form fieldset input, .search-results-form fieldset .input-group input, .doku_form .no .form-control, .doku_form .no #dw__login input, #dw__login .doku_form .no input, .doku_form .no textarea, .doku_form .no .search-results-form fieldset input, .search-results-form fieldset .doku_form .no input, .doku_form .no #qsearch__in {
   box-shadow: none;
 }
 
-.input-group .form-control:not(:first-child), .input-group textarea:not(:first-child), .input-group .search-results-form fieldset input:not(:first-child), .search-results-form fieldset .input-group input:not(:first-child), .doku_form .no .form-control:not(:first-child), .doku_form .no textarea:not(:first-child), .doku_form .no .search-results-form fieldset input:not(:first-child), .search-results-form fieldset .doku_form .no input:not(:first-child), .doku_form .no #qsearch__in:not(:first-child) {
+.input-group .form-control:not(:first-child), .input-group #dw__login input:not(:first-child), #dw__login .input-group input:not(:first-child), .input-group textarea:not(:first-child), .input-group .search-results-form fieldset input:not(:first-child), .search-results-form fieldset .input-group input:not(:first-child), .doku_form .no .form-control:not(:first-child), .doku_form .no #dw__login input:not(:first-child), #dw__login .doku_form .no input:not(:first-child), .doku_form .no textarea:not(:first-child), .doku_form .no .search-results-form fieldset input:not(:first-child), .search-results-form fieldset .doku_form .no input:not(:first-child), .doku_form .no #qsearch__in:not(:first-child) {
   border-left: 0;
   padding-left: 0;
 }
 
-.input-group .form-control:not(:last-child), .input-group textarea:not(:last-child), .input-group .search-results-form fieldset input:not(:last-child), .search-results-form fieldset .input-group input:not(:last-child), .doku_form .no .form-control:not(:last-child), .doku_form .no textarea:not(:last-child), .doku_form .no .search-results-form fieldset input:not(:last-child), .search-results-form fieldset .doku_form .no input:not(:last-child), .doku_form .no #qsearch__in:not(:last-child) {
+.input-group .form-control:not(:last-child), .input-group #dw__login input:not(:last-child), #dw__login .input-group input:not(:last-child), .input-group textarea:not(:last-child), .input-group .search-results-form fieldset input:not(:last-child), .search-results-form fieldset .input-group input:not(:last-child), .doku_form .no .form-control:not(:last-child), .doku_form .no #dw__login input:not(:last-child), #dw__login .doku_form .no input:not(:last-child), .doku_form .no textarea:not(:last-child), .doku_form .no .search-results-form fieldset input:not(:last-child), .search-results-form fieldset .doku_form .no input:not(:last-child), .doku_form .no #qsearch__in:not(:last-child) {
   border-right: 0;
   padding-right: 0;
 }
 
-.input-group .form-control:focus, .input-group textarea:focus, .input-group .search-results-form fieldset input:focus, .search-results-form fieldset .input-group input:focus, .doku_form .no .form-control:focus, .doku_form .no textarea:focus, .doku_form .no .search-results-form fieldset input:focus, .search-results-form fieldset .doku_form .no input:focus, .doku_form .no #qsearch__in:focus {
+.input-group .form-control:focus, .input-group #dw__login input:focus, #dw__login .input-group input:focus, .input-group textarea:focus, .input-group .search-results-form fieldset input:focus, .search-results-form fieldset .input-group input:focus, .doku_form .no .form-control:focus, .doku_form .no #dw__login input:focus, #dw__login .doku_form .no input:focus, .doku_form .no textarea:focus, .doku_form .no .search-results-form fieldset input:focus, .search-results-form fieldset .doku_form .no input:focus, .doku_form .no #qsearch__in:focus {
   box-shadow: none;
 }
 
@@ -19779,7 +19958,7 @@ textarea[resize=horizontal] {
   transition: box-shadow 0.15s ease;
 }
 
-.input-group-alternative .form-control, .input-group-alternative textarea, .input-group-alternative .search-results-form fieldset input, .search-results-form fieldset .input-group-alternative input, .input-group-alternative .doku_form .no #qsearch__in, .doku_form .no .input-group-alternative #qsearch__in,
+.input-group-alternative .form-control, .input-group-alternative #dw__login input, #dw__login .input-group-alternative input, .input-group-alternative textarea, .input-group-alternative .search-results-form fieldset input, .search-results-form fieldset .input-group-alternative input, .input-group-alternative .doku_form .no #qsearch__in, .doku_form .no .input-group-alternative #qsearch__in,
 .input-group-alternative .input-group-text {
   border: 0;
   box-shadow: none;
@@ -19799,7 +19978,7 @@ textarea[resize=horizontal] {
   border-color: #5e72e4;
 }
 
-.focused .form-control, .focused textarea, .focused .search-results-form fieldset input, .search-results-form fieldset .focused input, .focused .doku_form .no #qsearch__in, .doku_form .no .focused #qsearch__in {
+.focused .form-control, .focused #dw__login input, #dw__login .focused input, .focused textarea, .focused .search-results-form fieldset input, .search-results-form fieldset .focused input, .focused .doku_form .no #qsearch__in, .doku_form .no .focused #qsearch__in {
   border-color: #5e72e4;
 }
 
@@ -20186,7 +20365,7 @@ textarea[resize=horizontal] {
   border-top-right-radius: 0.25rem;
 }
 
-.nav-wrapper + .card {
+.nav-wrapper + .card, .nav-wrapper + #dw__login {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0.25rem;
@@ -20375,7 +20554,7 @@ textarea[resize=horizontal] {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-.bg-white .navbar-toggler-icon {
+.bg-white .navbar-toggler-icon, #dw__login legend .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
@@ -21562,7 +21741,7 @@ textarea[resize=horizontal] {
     height: 400px;
   }
 }
-.section-components > .form-control + .form-control, .section-components > textarea + .form-control, .section-components > .form-control + textarea, .section-components > textarea + textarea, .search-results-form fieldset .section-components > input + .form-control, .search-results-form fieldset .section-components > input + textarea, .search-results-form fieldset .section-components > .form-control + input, .search-results-form fieldset .section-components > textarea + input, .search-results-form fieldset .section-components > input + input, .doku_form .no .section-components > #qsearch__in + .form-control, .doku_form .no .section-components > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .section-components > #qsearch__in + input, .search-results-form fieldset .doku_form .no .section-components > #qsearch__in + input, .doku_form .no .section-components > .form-control + #qsearch__in, .doku_form .no .section-components > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .section-components > input + #qsearch__in, .search-results-form fieldset .doku_form .no .section-components > input + #qsearch__in, .doku_form .no .section-components > #qsearch__in + #qsearch__in {
+.section-components > .form-control + .form-control, #dw__login .section-components > input + .form-control, #dw__login .section-components > .form-control + input, #dw__login .section-components > input + input, .section-components > textarea + .form-control, #dw__login .section-components > textarea + input, .section-components > .form-control + textarea, #dw__login .section-components > input + textarea, .section-components > textarea + textarea, .search-results-form fieldset .section-components > input + .form-control, .search-results-form fieldset .section-components > input + textarea, .search-results-form fieldset .section-components > .form-control + input, .search-results-form fieldset .section-components > textarea + input, .search-results-form fieldset .section-components > input + input, .doku_form .no .section-components > #qsearch__in + .form-control, .doku_form .no #dw__login .section-components > #qsearch__in + input, #dw__login .doku_form .no .section-components > #qsearch__in + input, .doku_form .no .section-components > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .section-components > #qsearch__in + input, .search-results-form fieldset .doku_form .no .section-components > #qsearch__in + input, .doku_form .no .section-components > .form-control + #qsearch__in, .doku_form .no #dw__login .section-components > input + #qsearch__in, #dw__login .doku_form .no .section-components > input + #qsearch__in, .doku_form .no .section-components > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .section-components > input + #qsearch__in, .search-results-form fieldset .doku_form .no .section-components > input + #qsearch__in, .doku_form .no .section-components > #qsearch__in + #qsearch__in {
   margin-top: 0.5rem;
 }
 
@@ -21573,6 +21752,8 @@ textarea[resize=horizontal] {
 .section-components > .progress + .btn,
 .section-components .badge,
 .section-components .btn,
+.section-components #dw__login button,
+#dw__login .section-components button,
 .section-components .qq-upload-button,
 .section-components .toggleAssistant,
 .section-components .doku_form .no button,
@@ -21595,7 +21776,7 @@ textarea[resize=horizontal] {
   margin-bottom: 0.5rem;
 }
 
-.section-components .btn-group .btn, .section-components .btn-group .qq-upload-button, .section-components .btn-group .toggleAssistant, .section-components .btn-group #tool__bar button, #tool__bar .section-components .btn-group button, .section-components .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .section-components .btn-group button, .section-components .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .section-components .btn-group button, .section-components .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .section-components .btn-group button, .section-components .btn-group button {
+.section-components .btn-group .btn, .section-components .btn-group #dw__login button, #dw__login .section-components .btn-group button, .section-components .btn-group .qq-upload-button, .section-components .btn-group .toggleAssistant, .section-components .btn-group #tool__bar button, #tool__bar .section-components .btn-group button, .section-components .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .section-components .btn-group button, .section-components .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .section-components .btn-group button, .section-components .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .section-components .btn-group button, .section-components .btn-group button {
   margin: 0;
 }
 
@@ -21611,7 +21792,7 @@ textarea[resize=horizontal] {
   margin-right: 0.1rem;
 }
 
-.section-components .modal-footer .btn, .section-components .modal-footer .qq-upload-button, .section-components .modal-footer .toggleAssistant, .section-components .modal-footer #tool__bar button, #tool__bar .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content .secedit button, #dokuwiki__content .secedit .section-components .modal-footer button, .section-components .modal-footer button {
+.section-components .modal-footer .btn, .section-components .modal-footer #dw__login button, #dw__login .section-components .modal-footer button, .section-components .modal-footer .qq-upload-button, .section-components .modal-footer .toggleAssistant, .section-components .modal-footer #tool__bar button, #tool__bar .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content .secedit button, #dokuwiki__content .secedit .section-components .modal-footer button, .section-components .modal-footer button {
   margin: 0;
 }
 
@@ -22795,7 +22976,7 @@ span.flatpickr-weekday {
   background: rgba(94, 114, 228, 0.28);
 }
 
-.flatpickr.form-control, textarea.flatpickr, .search-results-form fieldset input.flatpickr, .doku_form .no .flatpickr#qsearch__in {
+.flatpickr.form-control, #dw__login input.flatpickr, textarea.flatpickr, .search-results-form fieldset input.flatpickr, .doku_form .no .flatpickr#qsearch__in {
   background: #fff;
 }
 
@@ -23766,7 +23947,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   content: "Elegir";
 }
 
-.ct-example > .form-control + .form-control, .ct-example > textarea + .form-control, .ct-example > .form-control + textarea, .ct-example > textarea + textarea, .search-results-form fieldset .ct-example > input + .form-control, .search-results-form fieldset .ct-example > input + textarea, .search-results-form fieldset .ct-example > .form-control + input, .search-results-form fieldset .ct-example > textarea + input, .search-results-form fieldset .ct-example > input + input, .doku_form .no .ct-example > #qsearch__in + .form-control, .doku_form .no .ct-example > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .ct-example > #qsearch__in + input, .search-results-form fieldset .doku_form .no .ct-example > #qsearch__in + input, .doku_form .no .ct-example > .form-control + #qsearch__in, .doku_form .no .ct-example > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .ct-example > input + #qsearch__in, .search-results-form fieldset .doku_form .no .ct-example > input + #qsearch__in, .doku_form .no .ct-example > #qsearch__in + #qsearch__in {
+.ct-example > .form-control + .form-control, #dw__login .ct-example > input + .form-control, #dw__login .ct-example > .form-control + input, #dw__login .ct-example > input + input, .ct-example > textarea + .form-control, #dw__login .ct-example > textarea + input, .ct-example > .form-control + textarea, #dw__login .ct-example > input + textarea, .ct-example > textarea + textarea, .search-results-form fieldset .ct-example > input + .form-control, .search-results-form fieldset .ct-example > input + textarea, .search-results-form fieldset .ct-example > .form-control + input, .search-results-form fieldset .ct-example > textarea + input, .search-results-form fieldset .ct-example > input + input, .doku_form .no .ct-example > #qsearch__in + .form-control, .doku_form .no #dw__login .ct-example > #qsearch__in + input, #dw__login .doku_form .no .ct-example > #qsearch__in + input, .doku_form .no .ct-example > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .ct-example > #qsearch__in + input, .search-results-form fieldset .doku_form .no .ct-example > #qsearch__in + input, .doku_form .no .ct-example > .form-control + #qsearch__in, .doku_form .no #dw__login .ct-example > input + #qsearch__in, #dw__login .doku_form .no .ct-example > input + #qsearch__in, .doku_form .no .ct-example > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .ct-example > input + #qsearch__in, .search-results-form fieldset .doku_form .no .ct-example > input + #qsearch__in, .doku_form .no .ct-example > #qsearch__in + #qsearch__in {
   margin-top: 0.5rem;
 }
 
@@ -23777,6 +23958,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .ct-example > .progress + .btn,
 .ct-example .badge,
 .ct-example .btn,
+.ct-example #dw__login button,
+#dw__login .ct-example button,
 .ct-example .qq-upload-button,
 .ct-example .toggleAssistant,
 .ct-example .doku_form .no button,
@@ -23799,7 +23982,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   margin-bottom: 0.5rem;
 }
 
-.ct-example .btn-group .btn, .ct-example .btn-group .qq-upload-button, .ct-example .btn-group .toggleAssistant, .ct-example .btn-group #tool__bar button, #tool__bar .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .ct-example .btn-group button, .ct-example .btn-group button {
+.ct-example .btn-group .btn, .ct-example .btn-group #dw__login button, #dw__login .ct-example .btn-group button, .ct-example .btn-group .qq-upload-button, .ct-example .btn-group .toggleAssistant, .ct-example .btn-group #tool__bar button, #tool__bar .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .ct-example .btn-group button, .ct-example .btn-group button {
   margin: 0;
 }
 
@@ -24890,7 +25073,7 @@ pre > code.highlight {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.ct-search .form-control:focus, .ct-search textarea:focus, .ct-search .search-results-form fieldset input:focus, .search-results-form fieldset .ct-search input:focus, .ct-search .doku_form .no #qsearch__in:focus, .doku_form .no .ct-search #qsearch__in:focus {
+.ct-search .form-control:focus, .ct-search #dw__login input:focus, #dw__login .ct-search input:focus, .ct-search textarea:focus, .ct-search .search-results-form fieldset input:focus, .search-results-form fieldset .ct-search input:focus, .ct-search .doku_form .no #qsearch__in:focus, .doku_form .no .ct-search #qsearch__in:focus {
   border-color: #9da9f2;
   box-shadow: 0 0 0 3px rgba(157, 169, 242, 0.25);
 }
@@ -25167,6 +25350,45 @@ textarea {
 }
 #dw__register label input, #dw__profiledelete label input {
   float: right;
+}
+
+#dw__login {
+  width: 100%;
+  float: left;
+  left: 0%;
+  margin: 0%;
+}
+#dw__login label {
+  width: 90%;
+}
+#dw__login legend {
+  font-size: 2rem;
+  margin-bottom: 5%;
+  font-style: normal;
+}
+#dw__login span {
+  float: left;
+  font-size: 1.15rem;
+}
+#dw__login input {
+  display: block;
+  float: right;
+  width: 90%;
+  height: 1.15rem;
+  top: 50%;
+}
+#dw__login .simple {
+  width: 50%;
+  margin-left: unset !important;
+}
+#dw__login #remember__me {
+  width: unset;
+  float: unset;
+  height: unset;
+  margin-top: 1rem;
+}
+#dw__login label[for=remember__me] {
+  margin-left: unset !important;
 }
 
 /*# sourceMappingURL=doku.css.map */
