@@ -34,11 +34,12 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 			<?php echo strip_tags($conf['title']) ?>]</title>
 		<?php tpl_metaheaders() ?>
 		<?php echo tpl_favicon(array(
-      'favicon',
-      'mobile'
-    )) ?>
+		'favicon',
+		'mobile'
+		)) 
+		?>
 		<?php tpl_includeFile('meta.html') ?>
-		<!--     Fonts and icons     -->
+		<!--     Fonts and icons  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 		<!-- Nucleo Icons -->
@@ -50,7 +51,6 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 		<!-- CSS Files -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/doku.css" rel="stylesheet" />
 
-		<script src="<?php echo tpl_basedir(); ?>assets/js/core/jquery.min.js" type="text/javascript"></script>
 		<script src="<?php echo tpl_basedir(); ?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
 		<script src="<?php echo tpl_basedir(); ?>assets/js/argon-design-system.min.js" type="text/javascript"></script> 
 
@@ -136,127 +136,135 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 				<div class="row flex-xl-nowrap">
 
 
+				<!-- Render Content and store at the start -->
+				<?php
+					// render the content into buffer for later use
+					ob_start();
+					tpl_content(false);
+					$buffer = ob_get_clean();
+				?>
 
-					<!-- left sidebar -->
-					<div class="col-12 col-md-3 col-xl-2 ct-sidebar">
-						<nav class="collapse ct-links" id="ct-docs-nav">
-						<?php
-						if (!empty($_SERVER['REMOTE_USER'])) {
-							echo '<li class="nav-item nav-link"> ';
-							tpl_userinfo();
-							echo '</li>';
-						}
-						?>
-							<!-- PAGE ACTIONS -->
-							<?php if ($showTools): ?>
-							<div id="dokuwiki__pagetools" class="ct-toc-item active">
-								<a class="ct-toc-link">
-									<?php echo $lang['page_tools'] ?>
+
+
+
+				<!-- left sidebar -->
+				<div class="col-12 col-md-3 col-xl-2 ct-sidebar">
+					<nav class="collapse ct-links" id="ct-docs-nav">
+					<?php
+					if (!empty($_SERVER['REMOTE_USER'])) {
+						echo '<li class="nav-item nav-link"> ';
+						tpl_userinfo();
+						echo '</li>';
+					}
+					?>
+						<!-- PAGE ACTIONS -->
+						<?php if ($showTools): ?>
+						<div id="dokuwiki__pagetools" class="ct-toc-item active">
+							<a class="ct-toc-link">
+								<?php echo $lang['page_tools'] ?>
+							</a>
+							<ul class="nav ct-sidenav">
+								<?php tpl_toolsevent('pagetools', array(
+									'edit' => tpl_action('edit', 1, 'li', 1) ,
+									'revisions' => tpl_action('revisions', 1, 'li', 1) ,
+									'backlink' => tpl_action('backlink', 1, 'li', 1) ,
+									'subscribe' => tpl_action('subscribe', 1, 'li', 1) ,
+									'revert' => tpl_action('revert', 1, 'li', 1) ,
+									'top' => tpl_action('top', 1, 'li', 1) ,
+									)); 
+								?> 
+							</ul>
+						</div>
+						<?php endif; ?> 
+						
+						<div class="ct-toc-item active">
+							<ul class="nav ct-sidenav">
+							<a class="ct-toc-link">
+									<?php echo $lang['site_tools'] ?>
 								</a>
-								<ul class="nav ct-sidenav">
-									<?php tpl_toolsevent('pagetools', array(
-										'edit' => tpl_action('edit', 1, 'li', 1) ,
-										'revisions' => tpl_action('revisions', 1, 'li', 1) ,
-										'backlink' => tpl_action('backlink', 1, 'li', 1) ,
-										'subscribe' => tpl_action('subscribe', 1, 'li', 1) ,
-										'revert' => tpl_action('revert', 1, 'li', 1) ,
-										'top' => tpl_action('top', 1, 'li', 1) ,
-										)); 
-									?> 
-								</ul>
+							<?php tpl_toolsevent('sitetools', array(
+									'recent' => tpl_action('recent', 1, 'li', 1),
+									'media' => tpl_action('media', 1, 'li', 1),
+									'index' => tpl_action('index', 1, 'li', 1),
+							));?>
+							</ul>
+						</div>
+
+
+
+						<?php if ($showSidebar): ?>
+							<div id="dokuwiki__aside" class="ct-toc-item active">
+							<a class="ct-toc-link">
+									<?php echo "Sidebar" ?>
+							</a>
+							<div class="nav ct-sidenav">
+									<?php tpl_includeFile('sidebarheader.html') ?>
+									<?php tpl_include_page($conf['sidebar'], 1, 1) /* includes the nearest sidebar page */ ?>
+									<?php tpl_includeFile('sidebarfooter.html') ?>
 							</div>
-							<?php endif; ?> 
-							
-							<div class="ct-toc-item active">
-								<ul class="nav ct-sidenav">
-								<a class="ct-toc-link">
-										<?php echo $lang['site_tools'] ?>
-									</a>
-								<?php tpl_toolsevent('sitetools', array(
-										'recent' => tpl_action('recent', 1, 'li', 1),
-										'media' => tpl_action('media', 1, 'li', 1),
-										'index' => tpl_action('index', 1, 'li', 1),
-								));?>
-								</ul>
-							</div>
+							</div><!-- /aside -->
+						<?php endif; ?>
+					</nav>
+				</div>
 
 
 
-							<?php if ($showSidebar): ?>
-								<div id="dokuwiki__aside" class="ct-toc-item active">
-								<a class="ct-toc-link">
-										<?php echo "Sidebar" ?>
-								</a>
-								<div class="nav ct-sidenav">
-										<?php tpl_includeFile('sidebarheader.html') ?>
-										<?php tpl_include_page($conf['sidebar'], 1, 1) /* includes the nearest sidebar page */ ?>
-										<?php tpl_includeFile('sidebarfooter.html') ?>
-								</div>
-								</div><!-- /aside -->
-							<?php endif; ?>
-						</nav>
+
+					
+
+
+				<!-- main contentet -->
+
+
+				<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
+				
+					<div id="dokuwiki__top" class="site 
+						<?php echo tpl_classes(); ?> 
+						<?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
 					</div>
-
-
-
-
+					
+					<?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
+					<?php tpl_includeFile('header.html') ?>
+					
+					<!-- <div class="ct-page-title">
+						<h1 class="ct-title" id="content">
+							<?php /* tpl_link(wl(), $conf['title'], 'accesskey="h" title="[H]"') */ ?>
+						</h1>
+					</div> -->
+					
+					<!-- BREADCRUMBS -->
+					<nav aria-label="breadcrumb" role="navigation">
+					<ol class="breadcrumb">
+						<?php if ($conf['breadcrumbs']) {?>
+							<div class="breadcrumbs"><?php tpl_breadcrumbs()?></div>
+						<?php }?>
+						<?php if ($conf['youarehere']) {?>
+							<div class="breadcrumbs"><?php tpl_youarehere()?></div>
+						<?php }?>
+					</ol>
+					</nav>
 					
 
-
-					<!-- main contentet -->
-
-
-					<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
-					
-						<div id="dokuwiki__top" class="site 
-							<?php echo tpl_classes(); ?> 
-							<?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
-						</div>
-						
-						<?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
-						<?php tpl_includeFile('header.html') ?>
-						
-						<!-- <div class="ct-page-title">
-							<h1 class="ct-title" id="content">
-								<?php /* tpl_link(wl(), $conf['title'], 'accesskey="h" title="[H]"') */ ?>
-							</h1>
-						</div> -->
-						
-						<!-- BREADCRUMBS -->
-						<nav aria-label="breadcrumb" role="navigation">
-						<ol class="breadcrumb">
-							<?php if ($conf['breadcrumbs']) {?>
-								<div class="breadcrumbs"><?php tpl_breadcrumbs()?></div>
-							<?php }?>
-							<?php if ($conf['youarehere']) {?>
-								<div class="breadcrumbs"><?php tpl_youarehere()?></div>
-							<?php }?>
-						</ol>
-						</nav>
-						
-
-						<!-- ********** CONTENT ********** -->
-						<div id="dokuwiki__content">
-							<div class="pad">
-								<?php tpl_flush() /* flush the output buffer */ ?>
-								<?php tpl_includeFile('pageheader.html') ?>
-								<div class="page">
-									<!-- wikipage start -->
-									<?php tpl_content(false) /* the main content */ ?>
-									<!-- wikipage stop -->
-								</div>
-								<?php tpl_flush() ?>
-								<?php tpl_includeFile('pagefooter.html') ?> </div>
-						</div>
-						<!-- /content -->
-					</main>
+					<!-- ********** CONTENT ********** -->
+					<div id="dokuwiki__content">
+						<div class="pad">
+							
+							<div class="page">
+								<!-- wikipage start -->
+								
+								<?php echo $buffer?>
+								<!-- wikipage stop -->
+							</div>
+					</div>
+					<!-- /content -->
+				</main>
 
 
 
 
 					<!-- right sidebar -->
 					<div class="d-none d-xl-block col-xl-2 ct-toc">
-						<ul class="section-nav">
+						<!-- <ul class="section-nav">
 							<li class="toc-entry toc-h6"><a href="#developer-first">Developer First</a></li>
 							<li class="toc-entry toc-h6"><a href="#high-quality-before-everything">High quality before everything</a> </li>
 							<li class="toc-entry toc-h6"><a href="#community-helpers">Community helpers</a></li>
@@ -265,10 +273,14 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 									<li class="toc-entry toc-h3"><a href="#learn-more">Learn more</a></li>
 								</ul>
 							</li>
-						</ul>
-						<div class="section-nav">
+						</ul> -->
+
+						<div>
 							<!-- Check the table of contents section in https://www.dokuwiki.org/devel:templates -->
-						<?php tpl_toc()?>
+
+		
+							<?php tpl_toc()?>
+							
 						</div>
 						
 					</div>

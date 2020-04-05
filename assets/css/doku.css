@@ -24252,16 +24252,16 @@ pre > code.highlight {
     overflow-y: auto;
   }
 }
-.section-nav {
+.section-nav, .ct-toc .clear {
   padding-left: 0;
   border-left: 1px solid #eee;
 }
 
-.section-nav ul {
+.section-nav ul, .ct-toc .clear ul {
   padding-left: 1rem;
 }
 
-.section-nav ul ul {
+.section-nav ul ul, .ct-toc .clear ul ul {
   display: none;
 }
 
@@ -24497,11 +24497,50 @@ pre > code.highlight {
   padding: 1.25rem;
   margin: 0;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   overflow: auto;
 }
 
 #tool__bar button {
   margin-bottom: 2em;
+}
+
+.ct-toc #dw__toc {
+  float: inherit;
+  margin: inherit;
+  width: inherit;
+  background-color: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  margin-right: 0em;
+  padding-left: 0;
+  border-left: 1px solid #eee;
+}
+.ct-toc #dw__toc h3 {
+  display: none;
+}
+.ct-toc #dw__toc a {
+  display: block;
+  padding: 0.125rem 1rem;
+  color: #99979c;
+  font-size: 100%;
+}
+.ct-toc #dw__toc a:hover {
+  color: #5e72e4;
+  text-decoration: none;
+}
+.ct-toc #dw__toc ol, .ct-toc #dw__toc ul, .ct-toc #dw__toc dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.ct-toc #dw__toc ul {
+  margin-bottom: 0.5rem;
+}
+.ct-toc #dw__toc ul {
+  list-style: disc outside;
+  list-style-position: outside;
+  list-style-image: none;
+  list-style-type: disc;
 }
 
 /*# sourceMappingURL=doku.css.map */

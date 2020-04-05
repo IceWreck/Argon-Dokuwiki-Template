@@ -2,7 +2,7 @@
 
 ## SCSS
 ```
-sass --watch doku.scss doku.css
+sass --watch assets/css/doku.scss assets/css/doku.css
 
 ```
 

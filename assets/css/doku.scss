@@ -10,10 +10,6 @@
     background: #dfe2f1;
 }
 
-button {
-    
-}
-
 
 #dokuwiki__content {
 
@@ -75,6 +71,7 @@ button {
         padding: 1.25rem;
         margin: 0;
         margin-bottom: 1rem;
+        margin-top: 1rem;
         overflow: auto;
 
     }
@@ -89,3 +86,70 @@ button {
     margin-bottom: 2em;
 }
 
+.ct-toc {
+    #dw__toc {
+
+        float:inherit;
+        margin:inherit;
+        width:inherit;
+        background-color:inherit;
+        color:inherit;
+        box-sizing: border-box;
+        margin-right: 0em;
+        padding-left: 0;
+        border-left: 1px solid #eee;
+
+        
+
+        h3 {
+            display: none;
+        }
+
+        a {
+            display: block;
+            padding: .125rem 1rem;
+            color: #99979c;
+            font-size: 100%;
+        }
+          
+        a:hover {
+            color:#5e72e4;
+            text-decoration: none;
+        }
+
+
+        ol, ul, dl {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style: disc outside;
+            list-style-position: outside;
+            list-style-image: none;
+            list-style-type: disc;
+        }
+        
+
+
+    }
+    .clear {
+
+        @extend .section-nav;
+        
+        // .li {
+        //     @extend .toc-entry;
+        //     @extend .toc-h6 !optional;
+            
+        // }
+
+        // display: content;
+
+        
+    }
+
+}
