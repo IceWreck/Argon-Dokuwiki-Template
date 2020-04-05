@@ -2592,7 +2592,7 @@ textarea.form-control.is-invalid {
     margin-bottom: 0;
   }
 }
-.btn, #tool__bar button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
+.btn, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
   display: inline-block;
   font-weight: 600;
   color: #525f7f;
@@ -2609,44 +2609,48 @@ textarea.form-control.is-invalid {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn, #tool__bar button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
+  .btn, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
     transition: none;
   }
 }
-.btn:hover, #tool__bar button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover {
+.btn:hover, #tool__bar button:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover {
   color: #525f7f;
   text-decoration: none;
 }
 
-.btn:focus, #tool__bar button:focus, #dokuwiki__content #page__revisions button:focus, #dokuwiki__content .secedit button:focus,
+.btn:focus, #tool__bar button:focus, #dokuwiki__content .editButtons button:focus, #dokuwiki__content #page__revisions button:focus, #dokuwiki__content .secedit button:focus,
 .btn.focus,
 #tool__bar button.focus,
+#dokuwiki__content .editButtons button.focus,
 #dokuwiki__content #page__revisions button.focus,
 #dokuwiki__content .secedit button.focus {
   outline: 0;
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-.btn.disabled, #tool__bar button.disabled, #dokuwiki__content #page__revisions button.disabled, #dokuwiki__content .secedit button.disabled,
+.btn.disabled, #tool__bar button.disabled, #dokuwiki__content .editButtons button.disabled, #dokuwiki__content #page__revisions button.disabled, #dokuwiki__content .secedit button.disabled,
 .btn:disabled,
 #tool__bar button:disabled,
+#dokuwiki__content .editButtons button:disabled,
 #dokuwiki__content #page__revisions button:disabled,
 #dokuwiki__content .secedit button:disabled {
   opacity: 0.65;
   box-shadow: none;
 }
 
-.btn:not(:disabled):not(.disabled):active, #tool__bar button:not(:disabled):not(.disabled):active, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active,
+.btn:not(:disabled):not(.disabled):active, #tool__bar button:not(:disabled):not(.disabled):active, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active,
 .btn:not(:disabled):not(.disabled).active,
 #tool__bar button:not(:disabled):not(.disabled).active,
+#dokuwiki__content .editButtons button:not(:disabled):not(.disabled).active,
 #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled).active,
 #dokuwiki__content .secedit button:not(:disabled):not(.disabled).active {
   box-shadow: none;
 }
 
-.btn:not(:disabled):not(.disabled):active:focus, #tool__bar button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus,
+.btn:not(:disabled):not(.disabled):active:focus, #tool__bar button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus,
 .btn:not(:disabled):not(.disabled).active:focus,
 #tool__bar button:not(:disabled):not(.disabled).active:focus,
+#dokuwiki__content .editButtons button:not(:disabled):not(.disabled).active:focus,
 #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled).active:focus,
 #dokuwiki__content .secedit button:not(:disabled):not(.disabled).active:focus {
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
@@ -2657,28 +2661,30 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-.btn-primary, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
+.btn-primary, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
   color: #fff;
   background-color: #5e72e4;
   border-color: #5e72e4;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.btn-primary:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover {
+.btn-primary:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover {
   color: #fff;
   background-color: #3d55df;
   border-color: #324cdd;
 }
 
-.btn-primary:focus, #dokuwiki__content #page__revisions button:focus, #dokuwiki__content .secedit button:focus,
+.btn-primary:focus, #dokuwiki__content .editButtons button:focus, #dokuwiki__content #page__revisions button:focus, #dokuwiki__content .secedit button:focus,
 .btn-primary.focus,
+#dokuwiki__content .editButtons button.focus,
 #dokuwiki__content #page__revisions button.focus,
 #dokuwiki__content .secedit button.focus {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 0 rgba(118, 135, 232, 0.5);
 }
 
-.btn-primary.disabled, #dokuwiki__content #page__revisions button.disabled, #dokuwiki__content .secedit button.disabled,
+.btn-primary.disabled, #dokuwiki__content .editButtons button.disabled, #dokuwiki__content #page__revisions button.disabled, #dokuwiki__content .secedit button.disabled,
 .btn-primary:disabled,
+#dokuwiki__content .editButtons button:disabled,
 #dokuwiki__content #page__revisions button:disabled,
 #dokuwiki__content .secedit button:disabled {
   color: #fff;
@@ -2686,11 +2692,13 @@ fieldset:disabled a.btn {
   border-color: #5e72e4;
 }
 
-.btn-primary:not(:disabled):not(.disabled):active, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
+#dokuwiki__content .editButtons button:not(:disabled):not(.disabled).active,
 #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled).active,
 #dokuwiki__content .secedit button:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle,
+#dokuwiki__content .editButtons .show > button.dropdown-toggle,
 #dokuwiki__content #page__revisions .show > button.dropdown-toggle,
 #dokuwiki__content .secedit .show > button.dropdown-toggle {
   color: #fff;
@@ -2698,11 +2706,13 @@ fieldset:disabled a.btn {
   border-color: #2742db;
 }
 
-.btn-primary:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
+#dokuwiki__content .editButtons button:not(:disabled):not(.disabled).active:focus,
 #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled).active:focus,
 #dokuwiki__content .secedit button:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus,
+#dokuwiki__content .editButtons .show > button.dropdown-toggle:focus,
 #dokuwiki__content #page__revisions .show > button.dropdown-toggle:focus,
 #dokuwiki__content .secedit .show > button.dropdown-toggle:focus {
   box-shadow: 0 0 0 0 rgba(118, 135, 232, 0.5);
@@ -3601,6 +3611,7 @@ fieldset:disabled a.btn {
 .btn-lg,
 .btn-group-lg > .btn,
 #tool__bar .btn-group-lg > button,
+#dokuwiki__content .editButtons .btn-group-lg > button,
 #dokuwiki__content #page__revisions .btn-group-lg > button,
 #dokuwiki__content .secedit .btn-group-lg > button {
   padding: 0.875rem 1rem;
@@ -3609,7 +3620,7 @@ fieldset:disabled a.btn {
   border-radius: 0.3rem;
 }
 
-.btn-sm, #tool__bar button, #dokuwiki__content .secedit button,
+.btn-sm, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content .secedit button,
 .btn-group-sm > .btn,
 #dokuwiki__content #page__revisions .btn-group-sm > button {
   padding: 0.25rem 0.5rem;
@@ -3924,42 +3935,49 @@ input[type=button].btn-block {
   vertical-align: middle;
 }
 
-.btn-group > .btn, #tool__bar .btn-group > button, #dokuwiki__content #page__revisions .btn-group > button, #dokuwiki__content .secedit .btn-group > button,
+.btn-group > .btn, #tool__bar .btn-group > button, #dokuwiki__content .editButtons .btn-group > button, #dokuwiki__content #page__revisions .btn-group > button, #dokuwiki__content .secedit .btn-group > button,
 .btn-group-vertical > .btn,
 #tool__bar .btn-group-vertical > button,
+#dokuwiki__content .editButtons .btn-group-vertical > button,
 #dokuwiki__content #page__revisions .btn-group-vertical > button,
 #dokuwiki__content .secedit .btn-group-vertical > button {
   position: relative;
   flex: 1 1 auto;
 }
 
-.btn-group > .btn:hover, #tool__bar .btn-group > button:hover, #dokuwiki__content #page__revisions .btn-group > button:hover, #dokuwiki__content .secedit .btn-group > button:hover,
+.btn-group > .btn:hover, #tool__bar .btn-group > button:hover, #dokuwiki__content .editButtons .btn-group > button:hover, #dokuwiki__content #page__revisions .btn-group > button:hover, #dokuwiki__content .secedit .btn-group > button:hover,
 .btn-group-vertical > .btn:hover,
 #tool__bar .btn-group-vertical > button:hover,
+#dokuwiki__content .editButtons .btn-group-vertical > button:hover,
 #dokuwiki__content #page__revisions .btn-group-vertical > button:hover,
 #dokuwiki__content .secedit .btn-group-vertical > button:hover {
   z-index: 1;
 }
 
-.btn-group > .btn:focus, #tool__bar .btn-group > button:focus, #dokuwiki__content #page__revisions .btn-group > button:focus, #dokuwiki__content .secedit .btn-group > button:focus,
+.btn-group > .btn:focus, #tool__bar .btn-group > button:focus, #dokuwiki__content .editButtons .btn-group > button:focus, #dokuwiki__content #page__revisions .btn-group > button:focus, #dokuwiki__content .secedit .btn-group > button:focus,
 .btn-group > .btn:active,
 #tool__bar .btn-group > button:active,
+#dokuwiki__content .editButtons .btn-group > button:active,
 #dokuwiki__content #page__revisions .btn-group > button:active,
 #dokuwiki__content .secedit .btn-group > button:active,
 .btn-group > .btn.active,
 #tool__bar .btn-group > button.active,
+#dokuwiki__content .editButtons .btn-group > button.active,
 #dokuwiki__content #page__revisions .btn-group > button.active,
 #dokuwiki__content .secedit .btn-group > button.active,
 .btn-group-vertical > .btn:focus,
 #tool__bar .btn-group-vertical > button:focus,
+#dokuwiki__content .editButtons .btn-group-vertical > button:focus,
 #dokuwiki__content #page__revisions .btn-group-vertical > button:focus,
 #dokuwiki__content .secedit .btn-group-vertical > button:focus,
 .btn-group-vertical > .btn:active,
 #tool__bar .btn-group-vertical > button:active,
+#dokuwiki__content .editButtons .btn-group-vertical > button:active,
 #dokuwiki__content #page__revisions .btn-group-vertical > button:active,
 #dokuwiki__content .secedit .btn-group-vertical > button:active,
 .btn-group-vertical > .btn.active,
 #tool__bar .btn-group-vertical > button.active,
+#dokuwiki__content .editButtons .btn-group-vertical > button.active,
 #dokuwiki__content #page__revisions .btn-group-vertical > button.active,
 #dokuwiki__content .secedit .btn-group-vertical > button.active {
   z-index: 1;
@@ -3975,23 +3993,25 @@ input[type=button].btn-block {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), #tool__bar .btn-group > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group > button:not(:first-child), #dokuwiki__content .secedit .btn-group > button:not(:first-child),
+.btn-group > .btn:not(:first-child), #tool__bar .btn-group > button:not(:first-child), #dokuwiki__content .editButtons .btn-group > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group > button:not(:first-child), #dokuwiki__content .secedit .btn-group > button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), #tool__bar .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content #page__revisions .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .secedit .btn-group > button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), #tool__bar .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .editButtons .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content #page__revisions .btn-group > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .secedit .btn-group > button:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
 #tool__bar .btn-group > .btn-group:not(:last-child) > button,
+#dokuwiki__content .editButtons .btn-group > .btn-group:not(:last-child) > button,
 #dokuwiki__content #page__revisions .btn-group > .btn-group:not(:last-child) > button,
 #dokuwiki__content .secedit .btn-group > .btn-group:not(:last-child) > button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn:not(:first-child), #tool__bar .btn-group > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group > button:not(:first-child), #dokuwiki__content .secedit .btn-group > button:not(:first-child),
+.btn-group > .btn:not(:first-child), #tool__bar .btn-group > button:not(:first-child), #dokuwiki__content .editButtons .btn-group > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group > button:not(:first-child), #dokuwiki__content .secedit .btn-group > button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn,
 #tool__bar .btn-group > .btn-group:not(:first-child) > button,
+#dokuwiki__content .editButtons .btn-group > .btn-group:not(:first-child) > button,
 #dokuwiki__content #page__revisions .btn-group > .btn-group:not(:first-child) > button,
 #dokuwiki__content .secedit .btn-group > .btn-group:not(:first-child) > button {
   border-top-left-radius: 0;
@@ -4013,9 +4033,10 @@ input[type=button].btn-block {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, #tool__bar button + .dropdown-toggle-split, #dokuwiki__content .secedit button + .dropdown-toggle-split,
+.btn-sm + .dropdown-toggle-split, #tool__bar button + .dropdown-toggle-split, #dokuwiki__content .editButtons button + .dropdown-toggle-split, #dokuwiki__content .secedit button + .dropdown-toggle-split,
 .btn-group-sm > .btn + .dropdown-toggle-split,
 #tool__bar .btn-group-sm > button + .dropdown-toggle-split,
+#dokuwiki__content .editButtons .btn-group-sm > button + .dropdown-toggle-split,
 #dokuwiki__content #page__revisions .btn-group-sm > button + .dropdown-toggle-split,
 #dokuwiki__content .secedit .btn-group-sm > button + .dropdown-toggle-split {
   padding-right: 0.375rem;
@@ -4025,6 +4046,7 @@ input[type=button].btn-block {
 .btn-lg + .dropdown-toggle-split,
 .btn-group-lg > .btn + .dropdown-toggle-split,
 #tool__bar .btn-group-lg > button + .dropdown-toggle-split,
+#dokuwiki__content .editButtons .btn-group-lg > button + .dropdown-toggle-split,
 #dokuwiki__content #page__revisions .btn-group-lg > button + .dropdown-toggle-split,
 #dokuwiki__content .secedit .btn-group-lg > button + .dropdown-toggle-split {
   padding-right: 0.75rem;
@@ -4045,45 +4067,49 @@ input[type=button].btn-block {
   justify-content: center;
 }
 
-.btn-group-vertical > .btn, #tool__bar .btn-group-vertical > button, #dokuwiki__content #page__revisions .btn-group-vertical > button, #dokuwiki__content .secedit .btn-group-vertical > button,
+.btn-group-vertical > .btn, #tool__bar .btn-group-vertical > button, #dokuwiki__content .editButtons .btn-group-vertical > button, #dokuwiki__content #page__revisions .btn-group-vertical > button, #dokuwiki__content .secedit .btn-group-vertical > button,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
 
-.btn-group-vertical > .btn:not(:first-child), #tool__bar .btn-group-vertical > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:first-child), #dokuwiki__content .secedit .btn-group-vertical > button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), #tool__bar .btn-group-vertical > button:not(:first-child), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:first-child), #dokuwiki__content .secedit .btn-group-vertical > button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), #tool__bar .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .secedit .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), #tool__bar .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle), #dokuwiki__content .secedit .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
 #tool__bar .btn-group-vertical > .btn-group:not(:last-child) > button,
+#dokuwiki__content .editButtons .btn-group-vertical > .btn-group:not(:last-child) > button,
 #dokuwiki__content #page__revisions .btn-group-vertical > .btn-group:not(:last-child) > button,
 #dokuwiki__content .secedit .btn-group-vertical > .btn-group:not(:last-child) > button {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn:not(:first-child), #tool__bar .btn-group-vertical > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:first-child), #dokuwiki__content .secedit .btn-group-vertical > button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), #tool__bar .btn-group-vertical > button:not(:first-child), #dokuwiki__content .editButtons .btn-group-vertical > button:not(:first-child), #dokuwiki__content #page__revisions .btn-group-vertical > button:not(:first-child), #dokuwiki__content .secedit .btn-group-vertical > button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
 #tool__bar .btn-group-vertical > .btn-group:not(:first-child) > button,
+#dokuwiki__content .editButtons .btn-group-vertical > .btn-group:not(:first-child) > button,
 #dokuwiki__content #page__revisions .btn-group-vertical > .btn-group:not(:first-child) > button,
 #dokuwiki__content .secedit .btn-group-vertical > .btn-group:not(:first-child) > button {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group-toggle > .btn, #tool__bar .btn-group-toggle > button, #dokuwiki__content #page__revisions .btn-group-toggle > button, #dokuwiki__content .secedit .btn-group-toggle > button,
+.btn-group-toggle > .btn, #tool__bar .btn-group-toggle > button, #dokuwiki__content .editButtons .btn-group-toggle > button, #dokuwiki__content #page__revisions .btn-group-toggle > button, #dokuwiki__content .secedit .btn-group-toggle > button,
 .btn-group-toggle > .btn-group > .btn,
 #tool__bar .btn-group-toggle > .btn-group > button,
+#dokuwiki__content .editButtons .btn-group-toggle > .btn-group > button,
 #dokuwiki__content #page__revisions .btn-group-toggle > .btn-group > button,
 #dokuwiki__content .secedit .btn-group-toggle > .btn-group > button {
   margin-bottom: 0;
 }
 
-.btn-group-toggle > .btn input[type=radio], #tool__bar .btn-group-toggle > button input[type=radio], #dokuwiki__content #page__revisions .btn-group-toggle > button input[type=radio], #dokuwiki__content .secedit .btn-group-toggle > button input[type=radio],
+.btn-group-toggle > .btn input[type=radio], #tool__bar .btn-group-toggle > button input[type=radio], #dokuwiki__content .editButtons .btn-group-toggle > button input[type=radio], #dokuwiki__content #page__revisions .btn-group-toggle > button input[type=radio], #dokuwiki__content .secedit .btn-group-toggle > button input[type=radio],
 .btn-group-toggle > .btn input[type=checkbox],
 #tool__bar .btn-group-toggle > button input[type=checkbox],
+#dokuwiki__content .editButtons .btn-group-toggle > button input[type=checkbox],
 #dokuwiki__content #page__revisions .btn-group-toggle > button input[type=checkbox],
 #dokuwiki__content .secedit .btn-group-toggle > button input[type=checkbox],
 .btn-group-toggle > .btn-group > .btn input[type=radio],
@@ -4169,10 +4195,12 @@ input[type=button].btn-block {
   display: flex;
 }
 
-.input-group-prepend .btn, .input-group-prepend #tool__bar button, #tool__bar .input-group-prepend button, .input-group-prepend #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .input-group-prepend button, .input-group-prepend #dokuwiki__content .secedit button, #dokuwiki__content .secedit .input-group-prepend button,
+.input-group-prepend .btn, .input-group-prepend #tool__bar button, #tool__bar .input-group-prepend button, .input-group-prepend #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .input-group-prepend button, .input-group-prepend #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .input-group-prepend button, .input-group-prepend #dokuwiki__content .secedit button, #dokuwiki__content .secedit .input-group-prepend button,
 .input-group-append .btn,
 .input-group-append #tool__bar button,
 #tool__bar .input-group-append button,
+.input-group-append #dokuwiki__content .editButtons button,
+#dokuwiki__content .editButtons .input-group-append button,
 .input-group-append #dokuwiki__content #page__revisions button,
 #dokuwiki__content #page__revisions .input-group-append button,
 .input-group-append #dokuwiki__content .secedit button,
@@ -4181,10 +4209,12 @@ input[type=button].btn-block {
   z-index: 2;
 }
 
-.input-group-prepend .btn:focus, .input-group-prepend #tool__bar button:focus, #tool__bar .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content #page__revisions button:focus, #dokuwiki__content #page__revisions .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content .secedit button:focus, #dokuwiki__content .secedit .input-group-prepend button:focus,
+.input-group-prepend .btn:focus, .input-group-prepend #tool__bar button:focus, #tool__bar .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content .editButtons button:focus, #dokuwiki__content .editButtons .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content #page__revisions button:focus, #dokuwiki__content #page__revisions .input-group-prepend button:focus, .input-group-prepend #dokuwiki__content .secedit button:focus, #dokuwiki__content .secedit .input-group-prepend button:focus,
 .input-group-append .btn:focus,
 .input-group-append #tool__bar button:focus,
 #tool__bar .input-group-append button:focus,
+.input-group-append #dokuwiki__content .editButtons button:focus,
+#dokuwiki__content .editButtons .input-group-append button:focus,
 .input-group-append #dokuwiki__content #page__revisions button:focus,
 #dokuwiki__content #page__revisions .input-group-append button:focus,
 .input-group-append #dokuwiki__content .secedit button:focus,
@@ -4192,10 +4222,12 @@ input[type=button].btn-block {
   z-index: 3;
 }
 
-.input-group-prepend .btn + .btn, .input-group-prepend #tool__bar button + .btn, #tool__bar .input-group-prepend button + .btn, .input-group-prepend #tool__bar .btn + button, #tool__bar .input-group-prepend .btn + button, .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions button + .btn, .input-group-prepend #dokuwiki__content #page__revisions #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend button + .btn, #dokuwiki__content #page__revisions .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions .btn + button, .input-group-prepend #dokuwiki__content #page__revisions #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend .btn + button, #dokuwiki__content #page__revisions .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .secedit button + .btn, .input-group-prepend #dokuwiki__content .secedit #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content #page__revisions .secedit button + button, #dokuwiki__content .secedit .input-group-prepend button + .btn, #dokuwiki__content .secedit .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend #page__revisions button + button, .input-group-prepend #dokuwiki__content .secedit .btn + button, .input-group-prepend #dokuwiki__content .secedit #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .secedit button + button, #dokuwiki__content .secedit .input-group-prepend .btn + button, #dokuwiki__content .secedit .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .secedit .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .secedit button + button, #dokuwiki__content .secedit .input-group-prepend button + button,
+.input-group-prepend .btn + .btn, .input-group-prepend #tool__bar button + .btn, #tool__bar .input-group-prepend button + .btn, .input-group-prepend #tool__bar .btn + button, #tool__bar .input-group-prepend .btn + button, .input-group-prepend #tool__bar button + button, #tool__bar .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + .btn, .input-group-prepend #dokuwiki__content .editButtons #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + .btn, #dokuwiki__content .editButtons .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons .btn + button, .input-group-prepend #dokuwiki__content .editButtons #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend .btn + button, #dokuwiki__content .editButtons .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .editButtons button + button, #dokuwiki__content .editButtons .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions button + .btn, .input-group-prepend #dokuwiki__content #page__revisions #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend button + .btn, #dokuwiki__content #page__revisions .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions .btn + button, .input-group-prepend #dokuwiki__content #page__revisions #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content #page__revisions button + button, .input-group-prepend #dokuwiki__content #page__revisions .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend .btn + button, #dokuwiki__content #page__revisions .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content #page__revisions .input-group-prepend button + button, #dokuwiki__content #page__revisions .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content #page__revisions button + button, #dokuwiki__content #page__revisions .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .secedit button + .btn, .input-group-prepend #dokuwiki__content .secedit #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons .secedit button + button, .input-group-prepend #dokuwiki__content #page__revisions .secedit button + button, #dokuwiki__content .secedit .input-group-prepend button + .btn, #dokuwiki__content .secedit .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend #page__revisions button + button, .input-group-prepend #dokuwiki__content .secedit .btn + button, .input-group-prepend #dokuwiki__content .secedit #tool__bar button + button, #tool__bar .input-group-prepend #dokuwiki__content .secedit button + button, .input-group-prepend #dokuwiki__content .secedit .editButtons button + button, .input-group-prepend #dokuwiki__content .editButtons .secedit button + button, #dokuwiki__content .secedit .input-group-prepend .btn + button, #dokuwiki__content .secedit .input-group-prepend #tool__bar button + button, #tool__bar #dokuwiki__content .secedit .input-group-prepend button + button, #dokuwiki__content .secedit .input-group-prepend .editButtons button + button, #dokuwiki__content .editButtons .secedit .input-group-prepend button + button, .input-group-prepend #dokuwiki__content .secedit button + button, #dokuwiki__content .secedit .input-group-prepend button + button,
 .input-group-prepend .btn + .input-group-text,
 .input-group-prepend #tool__bar button + .input-group-text,
 #tool__bar .input-group-prepend button + .input-group-text,
+.input-group-prepend #dokuwiki__content .editButtons button + .input-group-text,
+#dokuwiki__content .editButtons .input-group-prepend button + .input-group-text,
 .input-group-prepend #dokuwiki__content #page__revisions button + .input-group-text,
 #dokuwiki__content #page__revisions .input-group-prepend button + .input-group-text,
 .input-group-prepend #dokuwiki__content .secedit button + .input-group-text,
@@ -4204,6 +4236,8 @@ input[type=button].btn-block {
 .input-group-prepend .input-group-text + .btn,
 .input-group-prepend #tool__bar .input-group-text + button,
 #tool__bar .input-group-prepend .input-group-text + button,
+.input-group-prepend #dokuwiki__content .editButtons .input-group-text + button,
+#dokuwiki__content .editButtons .input-group-prepend .input-group-text + button,
 .input-group-prepend #dokuwiki__content #page__revisions .input-group-text + button,
 #dokuwiki__content #page__revisions .input-group-prepend .input-group-text + button,
 .input-group-prepend #dokuwiki__content .secedit .input-group-text + button,
@@ -4215,39 +4249,71 @@ input[type=button].btn-block {
 #tool__bar .input-group-append .btn + button,
 .input-group-append #tool__bar button + button,
 #tool__bar .input-group-append button + button,
+.input-group-append #dokuwiki__content .editButtons button + .btn,
+.input-group-append #dokuwiki__content .editButtons #tool__bar button + button,
+#tool__bar .input-group-append #dokuwiki__content .editButtons button + button,
+#dokuwiki__content .editButtons .input-group-append button + .btn,
+#dokuwiki__content .editButtons .input-group-append #tool__bar button + button,
+#tool__bar #dokuwiki__content .editButtons .input-group-append button + button,
+.input-group-append #dokuwiki__content .editButtons .btn + button,
+.input-group-append #dokuwiki__content .editButtons #tool__bar button + button,
+#tool__bar .input-group-append #dokuwiki__content .editButtons button + button,
+#dokuwiki__content .editButtons .input-group-append .btn + button,
+#dokuwiki__content .editButtons .input-group-append #tool__bar button + button,
+#tool__bar #dokuwiki__content .editButtons .input-group-append button + button,
+.input-group-append #dokuwiki__content .editButtons button + button,
+#dokuwiki__content .editButtons .input-group-append button + button,
 .input-group-append #dokuwiki__content #page__revisions button + .btn,
 .input-group-append #dokuwiki__content #page__revisions #tool__bar button + button,
 #tool__bar .input-group-append #dokuwiki__content #page__revisions button + button,
+.input-group-append #dokuwiki__content #page__revisions .editButtons button + button,
+.input-group-append #dokuwiki__content .editButtons #page__revisions button + button,
 #dokuwiki__content #page__revisions .input-group-append button + .btn,
 #dokuwiki__content #page__revisions .input-group-append #tool__bar button + button,
 #tool__bar #dokuwiki__content #page__revisions .input-group-append button + button,
+#dokuwiki__content #page__revisions .input-group-append .editButtons button + button,
+#dokuwiki__content .editButtons #page__revisions .input-group-append button + button,
 .input-group-append #dokuwiki__content #page__revisions .btn + button,
 .input-group-append #dokuwiki__content #page__revisions #tool__bar button + button,
 #tool__bar .input-group-append #dokuwiki__content #page__revisions button + button,
+.input-group-append #dokuwiki__content #page__revisions .editButtons button + button,
+.input-group-append #dokuwiki__content .editButtons #page__revisions button + button,
 #dokuwiki__content #page__revisions .input-group-append .btn + button,
 #dokuwiki__content #page__revisions .input-group-append #tool__bar button + button,
 #tool__bar #dokuwiki__content #page__revisions .input-group-append button + button,
+#dokuwiki__content #page__revisions .input-group-append .editButtons button + button,
+#dokuwiki__content .editButtons #page__revisions .input-group-append button + button,
 .input-group-append #dokuwiki__content #page__revisions button + button,
 #dokuwiki__content #page__revisions .input-group-append button + button,
 .input-group-append #dokuwiki__content .secedit button + .btn,
 .input-group-append #dokuwiki__content .secedit #tool__bar button + button,
 #tool__bar .input-group-append #dokuwiki__content .secedit button + button,
+.input-group-append #dokuwiki__content .secedit .editButtons button + button,
+.input-group-append #dokuwiki__content .editButtons .secedit button + button,
 .input-group-append #dokuwiki__content #page__revisions .secedit button + button,
 #dokuwiki__content .secedit .input-group-append button + .btn,
 #dokuwiki__content .secedit .input-group-append #tool__bar button + button,
 #tool__bar #dokuwiki__content .secedit .input-group-append button + button,
+#dokuwiki__content .secedit .input-group-append .editButtons button + button,
+#dokuwiki__content .editButtons .secedit .input-group-append button + button,
 #dokuwiki__content .secedit .input-group-append #page__revisions button + button,
 .input-group-append #dokuwiki__content .secedit .btn + button,
 .input-group-append #dokuwiki__content .secedit #tool__bar button + button,
 #tool__bar .input-group-append #dokuwiki__content .secedit button + button,
+.input-group-append #dokuwiki__content .secedit .editButtons button + button,
+.input-group-append #dokuwiki__content .editButtons .secedit button + button,
 #dokuwiki__content .secedit .input-group-append .btn + button,
 #dokuwiki__content .secedit .input-group-append #tool__bar button + button,
 #tool__bar #dokuwiki__content .secedit .input-group-append button + button,
+#dokuwiki__content .secedit .input-group-append .editButtons button + button,
+#dokuwiki__content .editButtons .secedit .input-group-append button + button,
 .input-group-append #dokuwiki__content .secedit button + button,
 #dokuwiki__content .secedit .input-group-append button + button,
 .input-group-append .btn + .input-group-text,
 .input-group-append #tool__bar button + .input-group-text,
 #tool__bar .input-group-append button + .input-group-text,
+.input-group-append #dokuwiki__content .editButtons button + .input-group-text,
+#dokuwiki__content .editButtons .input-group-append button + .input-group-text,
 .input-group-append #dokuwiki__content #page__revisions button + .input-group-text,
 #dokuwiki__content #page__revisions .input-group-append button + .input-group-text,
 .input-group-append #dokuwiki__content .secedit button + .input-group-text,
@@ -4256,6 +4322,8 @@ input[type=button].btn-block {
 .input-group-append .input-group-text + .btn,
 .input-group-append #tool__bar .input-group-text + button,
 #tool__bar .input-group-append .input-group-text + button,
+.input-group-append #dokuwiki__content .editButtons .input-group-text + button,
+#dokuwiki__content .editButtons .input-group-append .input-group-text + button,
 .input-group-append #dokuwiki__content #page__revisions .input-group-text + button,
 #dokuwiki__content #page__revisions .input-group-append .input-group-text + button,
 .input-group-append #dokuwiki__content .secedit .input-group-text + button,
@@ -4303,10 +4371,12 @@ input[type=button].btn-block {
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
 #tool__bar .input-group-lg > .input-group-prepend > button,
+#dokuwiki__content .editButtons .input-group-lg > .input-group-prepend > button,
 #dokuwiki__content #page__revisions .input-group-lg > .input-group-prepend > button,
 #dokuwiki__content .secedit .input-group-lg > .input-group-prepend > button,
 .input-group-lg > .input-group-append > .btn,
 #tool__bar .input-group-lg > .input-group-append > button,
+#dokuwiki__content .editButtons .input-group-lg > .input-group-append > button,
 #dokuwiki__content #page__revisions .input-group-lg > .input-group-append > button,
 #dokuwiki__content .secedit .input-group-lg > .input-group-append > button {
   padding: 0.875rem 1rem;
@@ -4326,10 +4396,12 @@ input[type=button].btn-block {
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
 #tool__bar .input-group-sm > .input-group-prepend > button,
+#dokuwiki__content .editButtons .input-group-sm > .input-group-prepend > button,
 #dokuwiki__content #page__revisions .input-group-sm > .input-group-prepend > button,
 #dokuwiki__content .secedit .input-group-sm > .input-group-prepend > button,
 .input-group-sm > .input-group-append > .btn,
 #tool__bar .input-group-sm > .input-group-append > button,
+#dokuwiki__content .editButtons .input-group-sm > .input-group-append > button,
 #dokuwiki__content #page__revisions .input-group-sm > .input-group-append > button,
 #dokuwiki__content .secedit .input-group-sm > .input-group-append > button {
   padding: 0.25rem 0.5rem;
@@ -4343,15 +4415,17 @@ input[type=button].btn-block {
   padding-right: 1.75rem;
 }
 
-.input-group > .input-group-prepend > .btn, #tool__bar .input-group > .input-group-prepend > button, #dokuwiki__content #page__revisions .input-group > .input-group-prepend > button, #dokuwiki__content .secedit .input-group > .input-group-prepend > button,
+.input-group > .input-group-prepend > .btn, #tool__bar .input-group > .input-group-prepend > button, #dokuwiki__content .editButtons .input-group > .input-group-prepend > button, #dokuwiki__content #page__revisions .input-group > .input-group-prepend > button, #dokuwiki__content .secedit .input-group > .input-group-prepend > button,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
 #tool__bar .input-group > .input-group-append:not(:last-child) > button,
+#dokuwiki__content .editButtons .input-group > .input-group-append:not(:last-child) > button,
 #dokuwiki__content #page__revisions .input-group > .input-group-append:not(:last-child) > button,
 #dokuwiki__content .secedit .input-group > .input-group-append:not(:last-child) > button,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 #tool__bar .input-group > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
+#dokuwiki__content .editButtons .input-group > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
 #dokuwiki__content #page__revisions .input-group > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
 #dokuwiki__content .secedit .input-group > .input-group-append:last-child > button:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
@@ -4359,15 +4433,17 @@ input[type=button].btn-block {
   border-bottom-right-radius: 0;
 }
 
-.input-group > .input-group-append > .btn, #tool__bar .input-group > .input-group-append > button, #dokuwiki__content #page__revisions .input-group > .input-group-append > button, #dokuwiki__content .secedit .input-group > .input-group-append > button,
+.input-group > .input-group-append > .btn, #tool__bar .input-group > .input-group-append > button, #dokuwiki__content .editButtons .input-group > .input-group-append > button, #dokuwiki__content #page__revisions .input-group > .input-group-append > button, #dokuwiki__content .secedit .input-group > .input-group-append > button,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
 #tool__bar .input-group > .input-group-prepend:not(:first-child) > button,
+#dokuwiki__content .editButtons .input-group > .input-group-prepend:not(:first-child) > button,
 #dokuwiki__content #page__revisions .input-group > .input-group-prepend:not(:first-child) > button,
 #dokuwiki__content .secedit .input-group > .input-group-prepend:not(:first-child) > button,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
 #tool__bar .input-group > .input-group-prepend:first-child > button:not(:first-child),
+#dokuwiki__content .editButtons .input-group > .input-group-prepend:first-child > button:not(:first-child),
 #dokuwiki__content #page__revisions .input-group > .input-group-prepend:first-child > button:not(:first-child),
 #dokuwiki__content .secedit .input-group > .input-group-prepend:first-child > button:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
@@ -5692,7 +5768,7 @@ a.badge:focus {
   display: none;
 }
 
-.btn .badge, #tool__bar button .badge, #dokuwiki__content #page__revisions button .badge, #dokuwiki__content .secedit button .badge {
+.btn .badge, #tool__bar button .badge, #dokuwiki__content .editButtons button .badge, #dokuwiki__content #page__revisions button .badge, #dokuwiki__content .secedit button .badge {
   position: relative;
   top: -1px;
 }
@@ -17865,15 +17941,15 @@ a.text-lighter:focus {
   color: #32325d;
 }
 
-.btn .badge:not(:first-child), #tool__bar button .badge:not(:first-child), #dokuwiki__content #page__revisions button .badge:not(:first-child), #dokuwiki__content .secedit button .badge:not(:first-child) {
+.btn .badge:not(:first-child), #tool__bar button .badge:not(:first-child), #dokuwiki__content .editButtons button .badge:not(:first-child), #dokuwiki__content #page__revisions button .badge:not(:first-child), #dokuwiki__content .secedit button .badge:not(:first-child) {
   margin-left: 0.5rem;
 }
 
-.btn .badge:not(:last-child), #tool__bar button .badge:not(:last-child), #dokuwiki__content #page__revisions button .badge:not(:last-child), #dokuwiki__content .secedit button .badge:not(:last-child) {
+.btn .badge:not(:last-child), #tool__bar button .badge:not(:last-child), #dokuwiki__content .editButtons button .badge:not(:last-child), #dokuwiki__content #page__revisions button .badge:not(:last-child), #dokuwiki__content .secedit button .badge:not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.btn, #tool__bar button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
+.btn, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content #page__revisions button, #dokuwiki__content .secedit button {
   position: relative;
   text-transform: uppercase;
   will-change: transform;
@@ -17881,19 +17957,21 @@ a.text-lighter:focus {
   font-size: 0.875rem;
 }
 
-.btn:hover, #tool__bar button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover {
+.btn:hover, #tool__bar button:hover, #dokuwiki__content .editButtons button:hover, #dokuwiki__content #page__revisions button:hover, #dokuwiki__content .secedit button:hover {
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
   transform: translateY(-1px);
 }
 
-.btn:not(:last-child), #tool__bar button:not(:last-child), #dokuwiki__content #page__revisions button:not(:last-child), #dokuwiki__content .secedit button:not(:last-child) {
+.btn:not(:last-child), #tool__bar button:not(:last-child), #dokuwiki__content .editButtons button:not(:last-child), #dokuwiki__content #page__revisions button:not(:last-child), #dokuwiki__content .secedit button:not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.btn-group .btn, .btn-group #tool__bar button, #tool__bar .btn-group button, .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .btn-group button, .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .btn-group button,
+.btn-group .btn, .btn-group #tool__bar button, #tool__bar .btn-group button, .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .btn-group button, .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .btn-group button, .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .btn-group button,
 .input-group .btn,
 .input-group #tool__bar button,
 #tool__bar .input-group button,
+.input-group #dokuwiki__content .editButtons button,
+#dokuwiki__content .editButtons .input-group button,
 .input-group #dokuwiki__content #page__revisions button,
 #dokuwiki__content #page__revisions .input-group button,
 .input-group #dokuwiki__content .secedit button,
@@ -17902,20 +17980,20 @@ a.text-lighter:focus {
   transform: translateY(0);
 }
 
-.btn-sm, #tool__bar button, #dokuwiki__content .secedit button,
+.btn-sm, #tool__bar button, #dokuwiki__content .editButtons button, #dokuwiki__content .secedit button,
 .btn-group-sm > .btn,
 #dokuwiki__content #page__revisions .btn-group-sm > button {
   font-size: 0.75rem;
 }
 
-.btn-sm.btn-icon-only, #tool__bar button.btn-icon-only, #dokuwiki__content .secedit button.btn-icon-only,
+.btn-sm.btn-icon-only, #tool__bar button.btn-icon-only, #dokuwiki__content .editButtons button.btn-icon-only, #dokuwiki__content .secedit button.btn-icon-only,
 .btn-group-sm > .btn-icon-only.btn,
 #dokuwiki__content #page__revisions .btn-group-sm > button.btn-icon-only {
   width: 35px;
   height: 35px;
 }
 
-.btn-sm .btn-inner--icon, #tool__bar button .btn-inner--icon, #dokuwiki__content .secedit button .btn-inner--icon,
+.btn-sm .btn-inner--icon, #tool__bar button .btn-inner--icon, #dokuwiki__content .editButtons button .btn-inner--icon, #dokuwiki__content .secedit button .btn-inner--icon,
 .btn-group-sm > .btn .btn-inner--icon,
 #dokuwiki__content #page__revisions .btn-group-sm > button .btn-inner--icon {
   font-size: 0.5rem;
@@ -17924,6 +18002,7 @@ a.text-lighter:focus {
 .btn-lg.btn-icon-only,
 .btn-group-lg > .btn-icon-only.btn,
 #tool__bar .btn-group-lg > button.btn-icon-only,
+#dokuwiki__content .editButtons .btn-group-lg > button.btn-icon-only,
 #dokuwiki__content #page__revisions .btn-group-lg > button.btn-icon-only,
 #dokuwiki__content .secedit .btn-group-lg > button.btn-icon-only {
   width: 52px;
@@ -17933,6 +18012,7 @@ a.text-lighter:focus {
 .btn-lg .btn-inner--icon,
 .btn-group-lg > .btn .btn-inner--icon,
 #tool__bar .btn-group-lg > button .btn-inner--icon,
+#dokuwiki__content .editButtons .btn-group-lg > button .btn-inner--icon,
 #dokuwiki__content #page__revisions .btn-group-lg > button .btn-inner--icon,
 #dokuwiki__content .secedit .btn-group-lg > button .btn-inner--icon {
   font-size: 1.2rem;
@@ -17970,17 +18050,19 @@ a.text-lighter:focus {
   color: #5e72e4;
 }
 
-.btn svg:not(:first-child), #tool__bar button svg:not(:first-child), #dokuwiki__content #page__revisions button svg:not(:first-child), #dokuwiki__content .secedit button svg:not(:first-child),
+.btn svg:not(:first-child), #tool__bar button svg:not(:first-child), #dokuwiki__content .editButtons button svg:not(:first-child), #dokuwiki__content #page__revisions button svg:not(:first-child), #dokuwiki__content .secedit button svg:not(:first-child),
 .btn i:not(:first-child),
 #tool__bar button i:not(:first-child),
+#dokuwiki__content .editButtons button i:not(:first-child),
 #dokuwiki__content #page__revisions button i:not(:first-child),
 #dokuwiki__content .secedit button i:not(:first-child) {
   margin-left: 0.5rem;
 }
 
-.btn svg:not(:last-child), #tool__bar button svg:not(:last-child), #dokuwiki__content #page__revisions button svg:not(:last-child), #dokuwiki__content .secedit button svg:not(:last-child),
+.btn svg:not(:last-child), #tool__bar button svg:not(:last-child), #dokuwiki__content .editButtons button svg:not(:last-child), #dokuwiki__content #page__revisions button svg:not(:last-child), #dokuwiki__content .secedit button svg:not(:last-child),
 .btn i:not(:last-child),
 #tool__bar button i:not(:last-child),
+#dokuwiki__content .editButtons button i:not(:last-child),
 #dokuwiki__content #page__revisions button i:not(:last-child),
 #dokuwiki__content .secedit button i:not(:last-child) {
   margin-right: 0.5rem;
@@ -18051,7 +18133,7 @@ a.btn-icon-only {
   line-height: 2.5;
 }
 
-.btn-icon-only.btn-sm, #tool__bar button.btn-icon-only, #dokuwiki__content .secedit button.btn-icon-only,
+.btn-icon-only.btn-sm, #tool__bar button.btn-icon-only, #dokuwiki__content .editButtons button.btn-icon-only, #dokuwiki__content .secedit button.btn-icon-only,
 .btn-group-sm > .btn-icon-only.btn,
 #dokuwiki__content #page__revisions .btn-group-sm > button.btn-icon-only {
   width: 2rem;
@@ -18769,10 +18851,12 @@ a.btn-icon-only {
   font-size: 0.875rem;
 }
 
-.footer .dropdown .btn:not(:disabled):not(.disabled):active:focus, .footer .dropdown #tool__bar button:not(:disabled):not(.disabled):active:focus, #tool__bar .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit .footer .dropdown button:not(:disabled):not(.disabled):active:focus,
+.footer .dropdown .btn:not(:disabled):not(.disabled):active:focus, .footer .dropdown #tool__bar button:not(:disabled):not(.disabled):active:focus, #tool__bar .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content .editButtons button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .editButtons .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content #page__revisions .footer .dropdown button:not(:disabled):not(.disabled):active:focus, .footer .dropdown #dokuwiki__content .secedit button:not(:disabled):not(.disabled):active:focus, #dokuwiki__content .secedit .footer .dropdown button:not(:disabled):not(.disabled):active:focus,
 .footer .dropdown .btn:not(:disabled):not(.disabled).active:focus,
 .footer .dropdown #tool__bar button:not(:disabled):not(.disabled).active:focus,
 #tool__bar .footer .dropdown button:not(:disabled):not(.disabled).active:focus,
+.footer .dropdown #dokuwiki__content .editButtons button:not(:disabled):not(.disabled).active:focus,
+#dokuwiki__content .editButtons .footer .dropdown button:not(:disabled):not(.disabled).active:focus,
 .footer .dropdown #dokuwiki__content #page__revisions button:not(:disabled):not(.disabled).active:focus,
 #dokuwiki__content #page__revisions .footer .dropdown button:not(:disabled):not(.disabled).active:focus,
 .footer .dropdown #dokuwiki__content .secedit button:not(:disabled):not(.disabled).active:focus,
@@ -20946,6 +21030,8 @@ textarea[resize=horizontal] {
 .section-components .btn,
 .section-components #tool__bar button,
 #tool__bar .section-components button,
+.section-components #dokuwiki__content .editButtons button,
+#dokuwiki__content .editButtons .section-components button,
 .section-components #dokuwiki__content #page__revisions button,
 #dokuwiki__content #page__revisions .section-components button,
 .section-components #dokuwiki__content .secedit button,
@@ -20959,7 +21045,7 @@ textarea[resize=horizontal] {
   margin-bottom: 0.5rem;
 }
 
-.section-components .btn-group .btn, .section-components .btn-group #tool__bar button, #tool__bar .section-components .btn-group button, .section-components .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .section-components .btn-group button, .section-components .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .section-components .btn-group button {
+.section-components .btn-group .btn, .section-components .btn-group #tool__bar button, #tool__bar .section-components .btn-group button, .section-components .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .section-components .btn-group button, .section-components .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .section-components .btn-group button, .section-components .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .section-components .btn-group button {
   margin: 0;
 }
 
@@ -20975,7 +21061,7 @@ textarea[resize=horizontal] {
   margin-right: 0.1rem;
 }
 
-.section-components .modal-footer .btn, .section-components .modal-footer #tool__bar button, #tool__bar .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content .secedit button, #dokuwiki__content .secedit .section-components .modal-footer button {
+.section-components .modal-footer .btn, .section-components .modal-footer #tool__bar button, #tool__bar .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .section-components .modal-footer button, .section-components .modal-footer #dokuwiki__content .secedit button, #dokuwiki__content .secedit .section-components .modal-footer button {
   margin: 0;
 }
 
@@ -23143,6 +23229,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .ct-example .btn,
 .ct-example #tool__bar button,
 #tool__bar .ct-example button,
+.ct-example #dokuwiki__content .editButtons button,
+#dokuwiki__content .editButtons .ct-example button,
 .ct-example #dokuwiki__content #page__revisions button,
 #dokuwiki__content #page__revisions .ct-example button,
 .ct-example #dokuwiki__content .secedit button,
@@ -23156,7 +23244,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   margin-bottom: 0.5rem;
 }
 
-.ct-example .btn-group .btn, .ct-example .btn-group #tool__bar button, #tool__bar .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .ct-example .btn-group button {
+.ct-example .btn-group .btn, .ct-example .btn-group #tool__bar button, #tool__bar .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content .editButtons button, #dokuwiki__content .editButtons .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content #page__revisions button, #dokuwiki__content #page__revisions .ct-example .btn-group button, .ct-example .btn-group #dokuwiki__content .secedit button, #dokuwiki__content .secedit .ct-example .btn-group button {
   margin: 0;
 }
 
@@ -24376,6 +24464,10 @@ pre > code.highlight {
 #dokuwiki__content .secedit button {
   margin-bottom: 1em;
   float: right;
+}
+#dokuwiki__content .editButtons button {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 #dokuwiki__content :not(pre) > code {
   background-color: inherit;
