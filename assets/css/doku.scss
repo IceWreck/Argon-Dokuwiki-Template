@@ -158,6 +158,15 @@ legend {
 
 }
 
+// Navbar Icons
+
+.argon-doku-navbar-icon {
+    fill: white;
+    :hover {
+        fill: #e6e6e6;
+    }
+}
+
 
 // Search Bar
 .doku_form{
@@ -360,3 +369,4 @@ textarea {
     }
 
 }
+

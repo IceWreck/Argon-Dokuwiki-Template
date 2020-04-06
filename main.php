@@ -89,16 +89,15 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				</div>
 
 
-
+<!-- 
 				<ul class="navbar-nav flex-row mr-auto ml-4 d-none d-md-flex">
 
 					<li class="nav-item"> <a class="nav-link"
 							href="https://github.com/creativetimofficial/ct-argon-design-system-pro/issues"
 							rel="nofollow" target="_blank">Support</a> </li>
 
-					<?php echo (new \dokuwiki\Menu\UserMenu())->getListItems(); ?>
 
-				</ul>
+				</ul> -->
 				<div class="d-none d-sm-block ml-auto">
 					<ul class="navbar-nav ct-navbar-nav flex-row align-items-center">
 						<!-- <li class="nav-item"> <a class="nav-link nav-link-icon"
@@ -106,6 +105,18 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								<i class="fab fa-facebook-square"></i>
 							</a>
 						</li> -->
+
+						<?php
+						$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
+						foreach($menu_items as $item) {
+						echo '<li>'
+							.'<a class="nav-link" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+							.'<i class="argon-doku-navbar-icon">'.inlineSVG($item->getSvg()).'</i>'
+							. '<span class="a11y">'.$item->getLabel().'</span>'
+							. '</a></li>';
+						}
+
+						?>
 
 
 					

@@ -25287,6 +25287,13 @@ legend {
   list-style-type: disc;
 }
 
+.argon-doku-navbar-icon {
+  fill: white;
+}
+.argon-doku-navbar-icon :hover {
+  fill: #e6e6e6;
+}
+
 .doku_form .no {
   margin: 0rem;
   height: 1.5rem;
