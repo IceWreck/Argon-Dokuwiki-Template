@@ -13,7 +13,7 @@ legend {
 
 // Fix Content Hidden behind navbar when you reach via anchor
 :target {
-    padding-top: 100px;
+    padding-top: 6rem;
  }
 
 // Selection
@@ -190,11 +190,14 @@ legend {
             margin-right: 1rem;
             margin-left: 1rem;
             border-radius: 0.25rem !important;
+            overflow: hidden;
         }
         button {
             @extend .btn;
             @extend .btn-neutral;
             margin: 0rem;
+            overflow: hidden;
+
         }
     }
     
@@ -375,3 +378,7 @@ textarea {
 
 }
 
+
+.footer-card {
+    background-color: #f4f5f7;
+}

@@ -264,19 +264,35 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								</div>
 							</div>
 							<!-- /content -->
-							<!-- ********** FOOTER ********** -->
 							<hr/>
-									<div id="dokuwiki__footer">
-										<div class="pad">
-										<div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
-										<?php tpl_license('0') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
-									</div>
-									</div>
-							<!-- /footer -->
+							<div class="card footer-card">
+								<div class="card-body">
+									<div class="container">
+										<div class="row">
+											<div class="col">
+											<div id="dokuwiki__footer">
+												<div class="pad">
+												<div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
+												<?php tpl_license('0') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+												</div>
+											</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											
+											<div class="footer-search">
+												<?php tpl_searchform()?>
+											</div>
+											
+										</div>
 
+									</div>
 
+								</div>
+							</div>
+							<?php tpl_indexerWebBug(); ?>
 						</div>
-						
 					</main>
 
 
