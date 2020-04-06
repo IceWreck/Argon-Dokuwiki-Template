@@ -11,6 +11,11 @@ legend {
     font-style: normal;
 }
 
+// Fix Content Hidden behind navbar when you reach via anchor
+:target {
+    padding-top: 100px;
+ }
+
 // Selection
 ::-moz-selection {
     text-shadow: none;
