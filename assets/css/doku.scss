@@ -191,6 +191,7 @@ legend {
             margin-left: 1rem;
             border-radius: 0.25rem !important;
             overflow: hidden;
+            border: none;
         }
         button {
             @extend .btn;
@@ -381,4 +382,14 @@ textarea {
 
 .footer-card {
     background-color: #f4f5f7;
+
+    .footer-search {
+        // center the bottom search bar
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.search_hit {
+    @extend mark;
 }

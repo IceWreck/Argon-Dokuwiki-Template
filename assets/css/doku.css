@@ -493,7 +493,7 @@ small,
   font-weight: 400;
 }
 
-mark,
+mark, .search_hit,
 .mark {
   padding: 0.2em;
   background-color: #fcf8e3;
@@ -25310,6 +25310,7 @@ legend {
   margin-left: 1rem;
   border-radius: 0.25rem !important;
   overflow: hidden;
+  border: none;
 }
 .doku_form .no button {
   margin: 0rem;
@@ -25427,6 +25428,10 @@ textarea {
 
 .footer-card {
   background-color: #f4f5f7;
+}
+.footer-card .footer-search {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*# sourceMappingURL=doku.css.map */

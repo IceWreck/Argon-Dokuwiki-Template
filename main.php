@@ -89,7 +89,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				</div>
 
 
-<!-- 
+				<!-- 
 				<ul class="navbar-nav flex-row mr-auto ml-4 d-none d-md-flex">
 
 					<li class="nav-item"> <a class="nav-link"
@@ -119,21 +119,23 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						?>
 
 
-					
+
 						<li class="nav-item">
 							<div class="search-form">
 								<?php tpl_searchform()?>
 							</div>
 						</li>
-						
+
 
 
 					</ul>
 				</div>
-					<button class="navbar-toggler ct-search-docs-toggle d-block d-md-none ml-auto ml-sm-0" type="button" data-toggle="collapse" data-target="#ct-docs-nav" aria-controls="ct-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-			
+				<button class="navbar-toggler ct-search-docs-toggle d-block d-md-none ml-auto ml-sm-0" type="button"
+					data-toggle="collapse" data-target="#ct-docs-nav" aria-controls="ct-docs-nav" aria-expanded="false"
+					aria-label="Toggle docs navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
 			</header>
 
 
@@ -184,11 +186,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							<?php endif;?>
 
 							<div class="ct-toc-item active">
-								
-									<a class="ct-toc-link">
-										<?php echo $lang['site_tools'] ?>
-									</a>
-									<ul class="nav ct-sidenav">
+
+								<a class="ct-toc-link">
+									<?php echo $lang['site_tools'] ?>
+								</a>
+								<ul class="nav ct-sidenav">
 									<?php tpl_toolsevent('sitetools', array(
 										'recent' => tpl_action('recent', 1, 'li', 1),
 										'media' => tpl_action('media', 1, 'li', 1),
@@ -230,7 +232,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						<?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
 						</div>
 
-						<?php html_msgarea() /* occasional error and info messages on top of the page */?>
+						<?php html_msgarea()?>
 						<?php tpl_includeFile('header.html')?>
 
 						<!-- <div class="ct-page-title">
@@ -264,27 +266,28 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								</div>
 							</div>
 							<!-- /content -->
-							<hr/>
+							<hr />
 							<div class="card footer-card">
 								<div class="card-body">
 									<div class="container">
 										<div class="row">
 											<div class="col">
-											<div id="dokuwiki__footer">
-												<div class="pad">
-												<div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
-												<?php tpl_license('0') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+												<div id="dokuwiki__footer">
+													<div class="pad">
+														<div class="doc">
+															<?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
+														<?php tpl_license('0') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+													</div>
 												</div>
 											</div>
-											</div>
 										</div>
-										
+
 										<div class="row">
-											
+
 											<div class="footer-search">
 												<?php tpl_searchform()?>
 											</div>
-											
+
 										</div>
 
 									</div>
@@ -328,7 +331,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 
 
-					
+
 
 
 
