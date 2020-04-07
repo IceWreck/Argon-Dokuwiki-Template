@@ -34,17 +34,22 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
     'mobile',
 ))
 ?>
-		<?php tpl_includeFile('meta.html')?>
+				<?php tpl_includeFile('meta.html')?>
 		<!--     Fonts and icons  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-
+		<!-- Nucleo Icons -->
+		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
+		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
 		<!-- Font Awesome Icons -->
-		<link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />		<!-- CSS Files -->
+		<link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />
+		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
+		<!-- CSS Files -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/doku.css" rel="stylesheet" />
 
 		<script src="<?php echo tpl_basedir(); ?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
 		<script src="<?php echo tpl_basedir(); ?>assets/js/argon-design-system.min.js" type="text/javascript"></script>
+
 
 		<!-- Documentation extras -->
 		<style>
