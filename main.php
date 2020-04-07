@@ -30,17 +30,18 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 			<?php echo strip_tags($conf['title']) ?>]</title>
 		<?php tpl_metaheaders()?>
 		<?php echo tpl_favicon(array(
-    'favicon',
-    'mobile',
-))
-?>
-				<?php tpl_includeFile('meta.html')?>
+			'favicon',
+			'mobile',
+		))
+		?>
+
+		<?php tpl_includeFile('meta.html')?>
 		<!--     Fonts and icons  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 		<!-- Nucleo Icons -->
-		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
-		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
+		<!-- <link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
+		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" /> -->
 		<!-- Font Awesome Icons -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />
 		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -52,8 +53,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 
 		<!-- Documentation extras -->
-		<style>
-			/* .navbar-absolute-logo {
+		<!-- <style>
+			.navbar-absolute-logo {
 				padding-left: 45px;
 			}
 
@@ -61,13 +62,13 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				position: absolute;
 				left: 15px;
 				margin-top: -6px;
-			} */
+			}
 
 			body {
 				background: white;
 			}
 
-		</style>
+		</style> -->
 	</head>
 
 	<body class="docs ">
@@ -298,7 +299,21 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 										</div>
 
 									</div>
-									
+									<br/>
+									<div class="row">
+									<div class="argon-doku-footer-fullmenu">
+										<?php
+										$menu_items = (new \dokuwiki\Menu\MobileMenu())->getItems();
+										foreach($menu_items as $item) {
+										echo '<li>'
+											.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+											.'<i class="">'.inlineSVG($item->getSvg()).'</i>'
+											. '<span class="a11y">'.$item->getLabel().'</span>'
+											. '</a></li>';
+										}
+										?>
+									</div>
+									</div>
 
 								</div>
 

@@ -1,5 +1,14 @@
+/*
+=========================================================
+*  Argon Dokuwiki Template
+*  Based on the Argon Design System by Creative Tim
+*  Ported to Dokuwiki by Anchit (@IceWreck)
+=========================================================
+*/
 
 @import 'argon-design-system';
+
+// ------ General ------
 
 button {
     @extend .btn;
@@ -9,6 +18,11 @@ button {
 legend {
     @extend .h3;
     font-style: normal;
+}
+
+// Highlight Search Results
+.search_hit {
+    @extend mark;
 }
 
 // Fix Content Hidden behind navbar when you reach via anchor
@@ -28,7 +42,8 @@ legend {
 }
 
 
-// Main Content
+// ------ Main Content ------
+
 #dokuwiki__content {
     p {
         font-weight: 400;
@@ -99,6 +114,8 @@ legend {
     
 }
 
+// ------ Editor ------
+
 // Tool Bar Buttons
 #tool__bar button {
     @extend .btn; 
@@ -107,7 +124,15 @@ legend {
     margin-bottom: 2em;
 }
 
-// Right Sidebar Table of Contents
+// Edit Area
+
+textarea {
+    @extend .form-control;
+    width: 95%;
+    max-width: 100%;
+}
+
+// ------ Table of Contents ------
 .ct-toc {
     #dw__toc {
 
@@ -166,15 +191,15 @@ legend {
 
 }
 
-// Navbar Icons
+// ------ Navbar ------
 
+// Navbar Icons
 .argon-doku-navbar-icon {
     fill: white;
     :hover {
         fill: #e6e6e6;
     }
 }
-
 
 // Search Bar
 .doku_form{
@@ -207,7 +232,8 @@ legend {
     
 }
 
-// Search Form
+// ------ Search Form ------
+
 .search-form {
     top:50%;
     position: relative;
@@ -255,16 +281,9 @@ legend {
     }
 }
 
-// Edit Area
 
-textarea {
-    @extend .form-control;
-    width: 95%;
-    max-width: 100%;
-}
+// ------ Admin Area ------
 
-
-// Admin Area
 .ui-admin {
     ul li {
         list-style-type: none;
@@ -277,15 +296,24 @@ textarea {
     }
 }
 
-// Media Uploads
+// Config Panel
+
+#config__manager td input.edit {
+    @extend .form-control;
+    width: 30em;
+    padding: 0.0rem 0.75rem;
+}
+
+// ------ Media Uploads ------
 
 .qq-upload-button{
     @extend .btn;
     @extend .btn-neutral;
 }
 
-// Registration and User Forms
+// ------ Registration and User Forms ------
 
+// Modify user, delete user
 #dw__register, #dw__profiledelete {
     text-align: left !important; 
     legend {
@@ -357,7 +385,7 @@ textarea {
     }
 }
 
-// Left Sidebar
+// ------ Left Sidebar ------
 
 .leftsidebar {
     .leftsidebar ul {
@@ -382,23 +410,33 @@ textarea {
 
 }
 
+// ------ Footer ------
 
 .footer-card {
     background-color: #f4f5f7;
+    text-align: center;
 
     .footer-search {
-        // center the bottom search bar
+        // center-align the bottom search bar
         margin-left: auto;
         margin-right: auto;
     }
+    
+    .argon-doku-footer-fullmenu {
+        margin-left: auto;
+        margin-right: auto;
+
+        li {
+            display: inline;
+            fill: #6c757d;
+            :hover {
+                fill:#525f7f;
+            }
+        }
+
+        li:nth-of-type(1) {
+            margin-left: 0em;
+        }
+    }
 }
 
-.search_hit {
-    @extend mark;
-}
-
-
-// #config__manager td input.edit {
-//     @extend .form-control;
-//     width: 30em;
-// }

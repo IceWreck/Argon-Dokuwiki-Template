@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/*
+=========================================================
+*  Argon Dokuwiki Template
+*  Based on the Argon Design System by Creative Tim
+*  Ported to Dokuwiki by Anchit (@IceWreck)
+=========================================================
+*/
 /*!
 =========================================================
 *  Argon Design System  - v 1.2.0
@@ -2071,7 +2078,7 @@ pre code {
   border: 0;
 }
 
-.form-control, #dw__login input, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
+.form-control, #dw__login input, #config__manager td input.edit, .search-results-form fieldset input, .doku_form .no #qsearch__in, textarea {
   display: block;
   width: 100%;
   height: calc(1.5em + 1.25rem + 2px);
@@ -2089,16 +2096,16 @@ pre code {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .form-control, #dw__login input, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
+  .form-control, #dw__login input, #config__manager td input.edit, .search-results-form fieldset input, .doku_form .no #qsearch__in, textarea {
     transition: none;
   }
 }
-.form-control::-ms-expand, #dw__login input::-ms-expand, textarea::-ms-expand, .search-results-form fieldset input::-ms-expand, .doku_form .no #qsearch__in::-ms-expand {
+.form-control::-ms-expand, #dw__login input::-ms-expand, #config__manager td input.edit::-ms-expand, .search-results-form fieldset input::-ms-expand, .doku_form .no #qsearch__in::-ms-expand, textarea::-ms-expand {
   background-color: transparent;
   border: 0;
 }
 
-.form-control:focus, #dw__login input:focus, textarea:focus, .search-results-form fieldset input:focus, .doku_form .no #qsearch__in:focus {
+.form-control:focus, #dw__login input:focus, #config__manager td input.edit:focus, .search-results-form fieldset input:focus, .doku_form .no #qsearch__in:focus, textarea:focus {
   color: #8898aa;
   background-color: #fff;
   border-color: rgba(50, 151, 211, 0.25);
@@ -2106,17 +2113,18 @@ pre code {
   box-shadow: none, none;
 }
 
-.form-control::placeholder, #dw__login input::placeholder, textarea::placeholder, .search-results-form fieldset input::placeholder, .doku_form .no #qsearch__in::placeholder {
+.form-control::placeholder, #dw__login input::placeholder, #config__manager td input.edit::placeholder, .search-results-form fieldset input::placeholder, .doku_form .no #qsearch__in::placeholder, textarea::placeholder {
   color: #adb5bd;
   opacity: 1;
 }
 
-.form-control:disabled, #dw__login input:disabled, textarea:disabled, .search-results-form fieldset input:disabled, .doku_form .no #qsearch__in:disabled,
+.form-control:disabled, #dw__login input:disabled, #config__manager td input.edit:disabled, .search-results-form fieldset input:disabled, .doku_form .no #qsearch__in:disabled, textarea:disabled,
 .form-control[readonly],
 #dw__login input[readonly],
-textarea[readonly],
+#config__manager td input[readonly].edit,
 .search-results-form fieldset input[readonly],
-.doku_form .no [readonly]#qsearch__in {
+.doku_form .no [readonly]#qsearch__in,
+textarea[readonly] {
   background-color: #e9ecef;
   opacity: 1;
 }
@@ -2195,7 +2203,7 @@ select.form-control[multiple],
   height: auto;
 }
 
-textarea.form-control, textarea, .doku_form .no textarea#qsearch__in {
+textarea.form-control, .doku_form .no textarea#qsearch__in, textarea {
   height: auto;
 }
 
@@ -2278,12 +2286,13 @@ textarea.form-control, textarea, .doku_form .no textarea#qsearch__in {
   border-radius: 0.25rem;
 }
 
-.was-validated .form-control:valid, .was-validated #dw__login input:valid, #dw__login .was-validated input:valid, .was-validated textarea:valid, .was-validated .search-results-form fieldset input:valid, .search-results-form fieldset .was-validated input:valid, .was-validated .doku_form .no #qsearch__in:valid, .doku_form .no .was-validated #qsearch__in:valid,
+.was-validated .form-control:valid, .was-validated #dw__login input:valid, #dw__login .was-validated input:valid, .was-validated #config__manager td input.edit:valid, #config__manager td .was-validated input.edit:valid, .was-validated .search-results-form fieldset input:valid, .search-results-form fieldset .was-validated input:valid, .was-validated .doku_form .no #qsearch__in:valid, .doku_form .no .was-validated #qsearch__in:valid, .was-validated textarea:valid,
 .form-control.is-valid,
 #dw__login input.is-valid,
-textarea.is-valid,
+#config__manager td input.is-valid.edit,
 .search-results-form fieldset input.is-valid,
-.doku_form .no .is-valid#qsearch__in {
+.doku_form .no .is-valid#qsearch__in,
+textarea.is-valid {
   border-color: #2dce89;
   padding-right: calc(1.5em + 1.25rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%232dce89' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -2292,42 +2301,47 @@ textarea.is-valid,
   background-size: calc(0.75em + 0.625rem) calc(0.75em + 0.625rem);
 }
 
-.was-validated .form-control:valid:focus, .was-validated #dw__login input:valid:focus, #dw__login .was-validated input:valid:focus, .was-validated textarea:valid:focus, .was-validated .search-results-form fieldset input:valid:focus, .search-results-form fieldset .was-validated input:valid:focus, .was-validated .doku_form .no #qsearch__in:valid:focus, .doku_form .no .was-validated #qsearch__in:valid:focus,
+.was-validated .form-control:valid:focus, .was-validated #dw__login input:valid:focus, #dw__login .was-validated input:valid:focus, .was-validated #config__manager td input.edit:valid:focus, #config__manager td .was-validated input.edit:valid:focus, .was-validated .search-results-form fieldset input:valid:focus, .search-results-form fieldset .was-validated input:valid:focus, .was-validated .doku_form .no #qsearch__in:valid:focus, .doku_form .no .was-validated #qsearch__in:valid:focus, .was-validated textarea:valid:focus,
 .form-control.is-valid:focus,
 #dw__login input.is-valid:focus,
-textarea.is-valid:focus,
+#config__manager td input.is-valid.edit:focus,
 .search-results-form fieldset input.is-valid:focus,
-.doku_form .no .is-valid#qsearch__in:focus {
+.doku_form .no .is-valid#qsearch__in:focus,
+textarea.is-valid:focus {
   border-color: #2dce89;
   box-shadow: 0 0 0 0 rgba(45, 206, 137, 0.25);
 }
 
-.was-validated .form-control:valid ~ .valid-feedback, .was-validated #dw__login input:valid ~ .valid-feedback, #dw__login .was-validated input:valid ~ .valid-feedback, .was-validated textarea:valid ~ .valid-feedback, .was-validated .search-results-form fieldset input:valid ~ .valid-feedback, .search-results-form fieldset .was-validated input:valid ~ .valid-feedback, .was-validated .doku_form .no #qsearch__in:valid ~ .valid-feedback, .doku_form .no .was-validated #qsearch__in:valid ~ .valid-feedback,
+.was-validated .form-control:valid ~ .valid-feedback, .was-validated #dw__login input:valid ~ .valid-feedback, #dw__login .was-validated input:valid ~ .valid-feedback, .was-validated #config__manager td input.edit:valid ~ .valid-feedback, #config__manager td .was-validated input.edit:valid ~ .valid-feedback, .was-validated .search-results-form fieldset input:valid ~ .valid-feedback, .search-results-form fieldset .was-validated input:valid ~ .valid-feedback, .was-validated .doku_form .no #qsearch__in:valid ~ .valid-feedback, .doku_form .no .was-validated #qsearch__in:valid ~ .valid-feedback, .was-validated textarea:valid ~ .valid-feedback,
 .was-validated .form-control:valid ~ .valid-tooltip,
 .was-validated #dw__login input:valid ~ .valid-tooltip,
 #dw__login .was-validated input:valid ~ .valid-tooltip,
-.was-validated textarea:valid ~ .valid-tooltip,
+.was-validated #config__manager td input.edit:valid ~ .valid-tooltip,
+#config__manager td .was-validated input.edit:valid ~ .valid-tooltip,
 .was-validated .search-results-form fieldset input:valid ~ .valid-tooltip,
 .search-results-form fieldset .was-validated input:valid ~ .valid-tooltip,
 .was-validated .doku_form .no #qsearch__in:valid ~ .valid-tooltip,
 .doku_form .no .was-validated #qsearch__in:valid ~ .valid-tooltip,
+.was-validated textarea:valid ~ .valid-tooltip,
 .form-control.is-valid ~ .valid-feedback,
 #dw__login input.is-valid ~ .valid-feedback,
-textarea.is-valid ~ .valid-feedback,
+#config__manager td input.is-valid.edit ~ .valid-feedback,
 .search-results-form fieldset input.is-valid ~ .valid-feedback,
 .doku_form .no .is-valid#qsearch__in ~ .valid-feedback,
+textarea.is-valid ~ .valid-feedback,
 .form-control.is-valid ~ .valid-tooltip,
 #dw__login input.is-valid ~ .valid-tooltip,
-textarea.is-valid ~ .valid-tooltip,
+#config__manager td input.is-valid.edit ~ .valid-tooltip,
 .search-results-form fieldset input.is-valid ~ .valid-tooltip,
-.doku_form .no .is-valid#qsearch__in ~ .valid-tooltip {
+.doku_form .no .is-valid#qsearch__in ~ .valid-tooltip,
+textarea.is-valid ~ .valid-tooltip {
   display: block;
 }
 
-.was-validated textarea.form-control:valid, .was-validated textarea:valid, .was-validated .doku_form .no textarea#qsearch__in:valid, .doku_form .no .was-validated textarea#qsearch__in:valid,
+.was-validated textarea.form-control:valid, .was-validated .doku_form .no textarea#qsearch__in:valid, .doku_form .no .was-validated textarea#qsearch__in:valid, .was-validated textarea:valid,
 textarea.form-control.is-valid,
-textarea.is-valid,
-.doku_form .no textarea.is-valid#qsearch__in {
+.doku_form .no textarea.is-valid#qsearch__in,
+textarea.is-valid {
   padding-right: calc(1.5em + 1.25rem);
   background-position: top calc(0.375em + 0.3125rem) right calc(0.375em + 0.3125rem);
 }
@@ -2445,12 +2459,13 @@ textarea.is-valid,
   border-radius: 0.25rem;
 }
 
-.was-validated .form-control:invalid, .was-validated #dw__login input:invalid, #dw__login .was-validated input:invalid, .was-validated textarea:invalid, .was-validated .search-results-form fieldset input:invalid, .search-results-form fieldset .was-validated input:invalid, .was-validated .doku_form .no #qsearch__in:invalid, .doku_form .no .was-validated #qsearch__in:invalid,
+.was-validated .form-control:invalid, .was-validated #dw__login input:invalid, #dw__login .was-validated input:invalid, .was-validated #config__manager td input.edit:invalid, #config__manager td .was-validated input.edit:invalid, .was-validated .search-results-form fieldset input:invalid, .search-results-form fieldset .was-validated input:invalid, .was-validated .doku_form .no #qsearch__in:invalid, .doku_form .no .was-validated #qsearch__in:invalid, .was-validated textarea:invalid,
 .form-control.is-invalid,
 #dw__login input.is-invalid,
-textarea.is-invalid,
+#config__manager td input.is-invalid.edit,
 .search-results-form fieldset input.is-invalid,
-.doku_form .no .is-invalid#qsearch__in {
+.doku_form .no .is-invalid#qsearch__in,
+textarea.is-invalid {
   border-color: #fb6340;
   padding-right: calc(1.5em + 1.25rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fb6340' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23fb6340' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
@@ -2459,42 +2474,47 @@ textarea.is-invalid,
   background-size: calc(0.75em + 0.625rem) calc(0.75em + 0.625rem);
 }
 
-.was-validated .form-control:invalid:focus, .was-validated #dw__login input:invalid:focus, #dw__login .was-validated input:invalid:focus, .was-validated textarea:invalid:focus, .was-validated .search-results-form fieldset input:invalid:focus, .search-results-form fieldset .was-validated input:invalid:focus, .was-validated .doku_form .no #qsearch__in:invalid:focus, .doku_form .no .was-validated #qsearch__in:invalid:focus,
+.was-validated .form-control:invalid:focus, .was-validated #dw__login input:invalid:focus, #dw__login .was-validated input:invalid:focus, .was-validated #config__manager td input.edit:invalid:focus, #config__manager td .was-validated input.edit:invalid:focus, .was-validated .search-results-form fieldset input:invalid:focus, .search-results-form fieldset .was-validated input:invalid:focus, .was-validated .doku_form .no #qsearch__in:invalid:focus, .doku_form .no .was-validated #qsearch__in:invalid:focus, .was-validated textarea:invalid:focus,
 .form-control.is-invalid:focus,
 #dw__login input.is-invalid:focus,
-textarea.is-invalid:focus,
+#config__manager td input.is-invalid.edit:focus,
 .search-results-form fieldset input.is-invalid:focus,
-.doku_form .no .is-invalid#qsearch__in:focus {
+.doku_form .no .is-invalid#qsearch__in:focus,
+textarea.is-invalid:focus {
   border-color: #fb6340;
   box-shadow: 0 0 0 0 rgba(251, 99, 64, 0.25);
 }
 
-.was-validated .form-control:invalid ~ .invalid-feedback, .was-validated #dw__login input:invalid ~ .invalid-feedback, #dw__login .was-validated input:invalid ~ .invalid-feedback, .was-validated textarea:invalid ~ .invalid-feedback, .was-validated .search-results-form fieldset input:invalid ~ .invalid-feedback, .search-results-form fieldset .was-validated input:invalid ~ .invalid-feedback, .was-validated .doku_form .no #qsearch__in:invalid ~ .invalid-feedback, .doku_form .no .was-validated #qsearch__in:invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-feedback, .was-validated #dw__login input:invalid ~ .invalid-feedback, #dw__login .was-validated input:invalid ~ .invalid-feedback, .was-validated #config__manager td input.edit:invalid ~ .invalid-feedback, #config__manager td .was-validated input.edit:invalid ~ .invalid-feedback, .was-validated .search-results-form fieldset input:invalid ~ .invalid-feedback, .search-results-form fieldset .was-validated input:invalid ~ .invalid-feedback, .was-validated .doku_form .no #qsearch__in:invalid ~ .invalid-feedback, .doku_form .no .was-validated #qsearch__in:invalid ~ .invalid-feedback, .was-validated textarea:invalid ~ .invalid-feedback,
 .was-validated .form-control:invalid ~ .invalid-tooltip,
 .was-validated #dw__login input:invalid ~ .invalid-tooltip,
 #dw__login .was-validated input:invalid ~ .invalid-tooltip,
-.was-validated textarea:invalid ~ .invalid-tooltip,
+.was-validated #config__manager td input.edit:invalid ~ .invalid-tooltip,
+#config__manager td .was-validated input.edit:invalid ~ .invalid-tooltip,
 .was-validated .search-results-form fieldset input:invalid ~ .invalid-tooltip,
 .search-results-form fieldset .was-validated input:invalid ~ .invalid-tooltip,
 .was-validated .doku_form .no #qsearch__in:invalid ~ .invalid-tooltip,
 .doku_form .no .was-validated #qsearch__in:invalid ~ .invalid-tooltip,
+.was-validated textarea:invalid ~ .invalid-tooltip,
 .form-control.is-invalid ~ .invalid-feedback,
 #dw__login input.is-invalid ~ .invalid-feedback,
-textarea.is-invalid ~ .invalid-feedback,
+#config__manager td input.is-invalid.edit ~ .invalid-feedback,
 .search-results-form fieldset input.is-invalid ~ .invalid-feedback,
 .doku_form .no .is-invalid#qsearch__in ~ .invalid-feedback,
+textarea.is-invalid ~ .invalid-feedback,
 .form-control.is-invalid ~ .invalid-tooltip,
 #dw__login input.is-invalid ~ .invalid-tooltip,
-textarea.is-invalid ~ .invalid-tooltip,
+#config__manager td input.is-invalid.edit ~ .invalid-tooltip,
 .search-results-form fieldset input.is-invalid ~ .invalid-tooltip,
-.doku_form .no .is-invalid#qsearch__in ~ .invalid-tooltip {
+.doku_form .no .is-invalid#qsearch__in ~ .invalid-tooltip,
+textarea.is-invalid ~ .invalid-tooltip {
   display: block;
 }
 
-.was-validated textarea.form-control:invalid, .was-validated textarea:invalid, .was-validated .doku_form .no textarea#qsearch__in:invalid, .doku_form .no .was-validated textarea#qsearch__in:invalid,
+.was-validated textarea.form-control:invalid, .was-validated .doku_form .no textarea#qsearch__in:invalid, .doku_form .no .was-validated textarea#qsearch__in:invalid, .was-validated textarea:invalid,
 textarea.form-control.is-invalid,
-textarea.is-invalid,
-.doku_form .no textarea.is-invalid#qsearch__in {
+.doku_form .no textarea.is-invalid#qsearch__in,
+textarea.is-invalid {
   padding-right: calc(1.5em + 1.25rem);
   background-position: top calc(0.375em + 0.3125rem) right calc(0.375em + 0.3125rem);
 }
@@ -2615,7 +2635,7 @@ textarea.is-invalid,
     margin-bottom: 0;
   }
 
-  .form-inline .form-control, .form-inline #dw__login input, #dw__login .form-inline input, .form-inline textarea, .form-inline .search-results-form fieldset input, .search-results-form fieldset .form-inline input, .form-inline .doku_form .no #qsearch__in, .doku_form .no .form-inline #qsearch__in {
+  .form-inline .form-control, .form-inline #dw__login input, #dw__login .form-inline input, .form-inline #config__manager td input.edit, #config__manager td .form-inline input.edit, .form-inline .search-results-form fieldset input, .search-results-form fieldset .form-inline input, .form-inline .doku_form .no #qsearch__in, .doku_form .no .form-inline #qsearch__in, .form-inline textarea {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -4326,7 +4346,7 @@ input[type=button].btn-block {
   width: 100%;
 }
 
-.input-group > .form-control, #dw__login .input-group > input, .input-group > textarea, .search-results-form fieldset .input-group > input, .doku_form .no .input-group > #qsearch__in, .doku_form .no > .form-control, .doku_form #dw__login .no > input, #dw__login .doku_form .no > input, .doku_form .no > textarea, .doku_form .search-results-form fieldset .no > input, .search-results-form fieldset .doku_form .no > input, .doku_form .no > #qsearch__in,
+.input-group > .form-control, #dw__login .input-group > input, #config__manager td .input-group > input.edit, .search-results-form fieldset .input-group > input, .doku_form .no .input-group > #qsearch__in, .doku_form .no > .form-control, .doku_form #dw__login .no > input, #dw__login .doku_form .no > input, .doku_form #config__manager td .no > input.edit, #config__manager td .doku_form .no > input.edit, .doku_form .search-results-form fieldset .no > input, .search-results-form fieldset .doku_form .no > input, .doku_form .no > #qsearch__in, .input-group > textarea, .doku_form .no > textarea,
 .input-group > .form-control-plaintext,
 .doku_form .no > .form-control-plaintext,
 .input-group > .custom-select,
@@ -4339,75 +4359,90 @@ input[type=button].btn-block {
   margin-bottom: 0;
 }
 
-.input-group > .form-control + .form-control, #dw__login .input-group > input + .form-control, #dw__login .input-group > .form-control + input, #dw__login .input-group > input + input, .input-group > textarea + .form-control, #dw__login .input-group > textarea + input, .input-group > .form-control + textarea, #dw__login .input-group > input + textarea, .input-group > textarea + textarea, .search-results-form fieldset .input-group > input + .form-control, .search-results-form fieldset #dw__login .input-group > input + input, #dw__login .search-results-form fieldset .input-group > input + input, .search-results-form fieldset .input-group > input + textarea, .search-results-form fieldset .input-group > .form-control + input, .search-results-form fieldset #dw__login .input-group > input + input, #dw__login .search-results-form fieldset .input-group > input + input, .search-results-form fieldset .input-group > textarea + input, .search-results-form fieldset .input-group > input + input, .doku_form .no .input-group > #qsearch__in + .form-control, .doku_form .no #dw__login .input-group > #qsearch__in + input, #dw__login .doku_form .no .input-group > #qsearch__in + input, .doku_form .no .input-group > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .input-group > #qsearch__in + input, .search-results-form fieldset .doku_form .no .input-group > #qsearch__in + input, .doku_form .no .input-group > .form-control + #qsearch__in, .doku_form .no #dw__login .input-group > input + #qsearch__in, #dw__login .doku_form .no .input-group > input + #qsearch__in, .doku_form .no .input-group > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .input-group > input + #qsearch__in, .search-results-form fieldset .doku_form .no .input-group > input + #qsearch__in, .doku_form .no .input-group > #qsearch__in + #qsearch__in, .doku_form .no > .form-control + .form-control, .doku_form #dw__login .no > input + .form-control, #dw__login .doku_form .no > input + .form-control, .doku_form #dw__login .no > .form-control + input, #dw__login .doku_form .no > .form-control + input, .doku_form #dw__login .no > input + input, #dw__login .doku_form .no > input + input, .doku_form .no > textarea + .form-control, .doku_form #dw__login .no > textarea + input, #dw__login .doku_form .no > textarea + input, .doku_form .no > .form-control + textarea, .doku_form #dw__login .no > input + textarea, #dw__login .doku_form .no > input + textarea, .doku_form .no > textarea + textarea, .doku_form .search-results-form fieldset .no > input + .form-control, .doku_form .search-results-form fieldset #dw__login .no > input + input, #dw__login .doku_form .search-results-form fieldset .no > input + input, .doku_form .search-results-form fieldset .no > input + textarea, .search-results-form fieldset .doku_form .no > input + .form-control, .search-results-form fieldset .doku_form #dw__login .no > input + input, #dw__login .search-results-form fieldset .doku_form .no > input + input, .search-results-form fieldset .doku_form .no > input + textarea, .doku_form .search-results-form fieldset .no > .form-control + input, .doku_form .search-results-form fieldset #dw__login .no > input + input, #dw__login .doku_form .search-results-form fieldset .no > input + input, .doku_form .search-results-form fieldset .no > textarea + input, .search-results-form fieldset .doku_form .no > .form-control + input, .search-results-form fieldset .doku_form #dw__login .no > input + input, #dw__login .search-results-form fieldset .doku_form .no > input + input, .search-results-form fieldset .doku_form .no > textarea + input, .doku_form .search-results-form fieldset .no > input + input, .search-results-form fieldset .doku_form .no > input + input, .doku_form .no > #qsearch__in + .form-control, .doku_form #dw__login .no > #qsearch__in + input, #dw__login .doku_form .no > #qsearch__in + input, .doku_form .no > #qsearch__in + textarea, .doku_form .search-results-form fieldset .no > #qsearch__in + input, .search-results-form fieldset .doku_form .no > #qsearch__in + input, .doku_form .no > .form-control + #qsearch__in, .doku_form #dw__login .no > input + #qsearch__in, #dw__login .doku_form .no > input + #qsearch__in, .doku_form .no > textarea + #qsearch__in, .doku_form .search-results-form fieldset .no > input + #qsearch__in, .search-results-form fieldset .doku_form .no > input + #qsearch__in, .doku_form .no > #qsearch__in + #qsearch__in,
+.input-group > .form-control + .form-control, #dw__login .input-group > input + .form-control, #dw__login .input-group > .form-control + input, #dw__login .input-group > input + input, #config__manager td .input-group > input.edit + .form-control, #config__manager td #dw__login .input-group > input.edit + input, #dw__login #config__manager td .input-group > input.edit + input, #config__manager td .input-group > .form-control + input.edit, #config__manager td #dw__login .input-group > input + input.edit, #dw__login #config__manager td .input-group > input + input.edit, #config__manager td .input-group > input.edit + input.edit, .search-results-form fieldset .input-group > input + .form-control, .search-results-form fieldset #dw__login .input-group > input + input, #dw__login .search-results-form fieldset .input-group > input + input, .search-results-form fieldset #config__manager td .input-group > input + input.edit, #config__manager td .search-results-form fieldset .input-group > input + input.edit, .search-results-form fieldset .input-group > .form-control + input, .search-results-form fieldset #dw__login .input-group > input + input, #dw__login .search-results-form fieldset .input-group > input + input, .search-results-form fieldset #config__manager td .input-group > input.edit + input, #config__manager td .search-results-form fieldset .input-group > input.edit + input, .search-results-form fieldset .input-group > input + input, .doku_form .no .input-group > #qsearch__in + .form-control, .doku_form .no #dw__login .input-group > #qsearch__in + input, #dw__login .doku_form .no .input-group > #qsearch__in + input, .doku_form .no #config__manager td .input-group > #qsearch__in + input.edit, #config__manager td .doku_form .no .input-group > #qsearch__in + input.edit, .doku_form .no .search-results-form fieldset .input-group > #qsearch__in + input, .search-results-form fieldset .doku_form .no .input-group > #qsearch__in + input, .doku_form .no .input-group > .form-control + #qsearch__in, .doku_form .no #dw__login .input-group > input + #qsearch__in, #dw__login .doku_form .no .input-group > input + #qsearch__in, .doku_form .no #config__manager td .input-group > input.edit + #qsearch__in, #config__manager td .doku_form .no .input-group > input.edit + #qsearch__in, .doku_form .no .search-results-form fieldset .input-group > input + #qsearch__in, .search-results-form fieldset .doku_form .no .input-group > input + #qsearch__in, .doku_form .no .input-group > #qsearch__in + #qsearch__in, .doku_form .no > .form-control + .form-control, .doku_form #dw__login .no > input + .form-control, #dw__login .doku_form .no > input + .form-control, .doku_form #dw__login .no > .form-control + input, #dw__login .doku_form .no > .form-control + input, .doku_form #dw__login .no > input + input, #dw__login .doku_form .no > input + input, .doku_form #config__manager td .no > input.edit + .form-control, .doku_form #config__manager td #dw__login .no > input.edit + input, #dw__login .doku_form #config__manager td .no > input.edit + input, #config__manager td .doku_form .no > input.edit + .form-control, #config__manager td .doku_form #dw__login .no > input.edit + input, #dw__login #config__manager td .doku_form .no > input.edit + input, .doku_form #config__manager td .no > .form-control + input.edit, .doku_form #config__manager td #dw__login .no > input + input.edit, #dw__login .doku_form #config__manager td .no > input + input.edit, #config__manager td .doku_form .no > .form-control + input.edit, #config__manager td .doku_form #dw__login .no > input + input.edit, #dw__login #config__manager td .doku_form .no > input + input.edit, .doku_form #config__manager td .no > input.edit + input.edit, #config__manager td .doku_form .no > input.edit + input.edit, .doku_form .search-results-form fieldset .no > input + .form-control, .doku_form .search-results-form fieldset #dw__login .no > input + input, #dw__login .doku_form .search-results-form fieldset .no > input + input, .doku_form .search-results-form fieldset #config__manager td .no > input + input.edit, #config__manager td .doku_form .search-results-form fieldset .no > input + input.edit, .search-results-form fieldset .doku_form .no > input + .form-control, .search-results-form fieldset .doku_form #dw__login .no > input + input, #dw__login .search-results-form fieldset .doku_form .no > input + input, .search-results-form fieldset .doku_form #config__manager td .no > input + input.edit, #config__manager td .search-results-form fieldset .doku_form .no > input + input.edit, .doku_form .search-results-form fieldset .no > .form-control + input, .doku_form .search-results-form fieldset #dw__login .no > input + input, #dw__login .doku_form .search-results-form fieldset .no > input + input, .doku_form .search-results-form fieldset #config__manager td .no > input.edit + input, #config__manager td .doku_form .search-results-form fieldset .no > input.edit + input, .search-results-form fieldset .doku_form .no > .form-control + input, .search-results-form fieldset .doku_form #dw__login .no > input + input, #dw__login .search-results-form fieldset .doku_form .no > input + input, .search-results-form fieldset .doku_form #config__manager td .no > input.edit + input, #config__manager td .search-results-form fieldset .doku_form .no > input.edit + input, .doku_form .search-results-form fieldset .no > input + input, .search-results-form fieldset .doku_form .no > input + input, .doku_form .no > #qsearch__in + .form-control, .doku_form #dw__login .no > #qsearch__in + input, #dw__login .doku_form .no > #qsearch__in + input, .doku_form #config__manager td .no > #qsearch__in + input.edit, #config__manager td .doku_form .no > #qsearch__in + input.edit, .doku_form .search-results-form fieldset .no > #qsearch__in + input, .search-results-form fieldset .doku_form .no > #qsearch__in + input, .doku_form .no > .form-control + #qsearch__in, .doku_form #dw__login .no > input + #qsearch__in, #dw__login .doku_form .no > input + #qsearch__in, .doku_form #config__manager td .no > input.edit + #qsearch__in, #config__manager td .doku_form .no > input.edit + #qsearch__in, .doku_form .search-results-form fieldset .no > input + #qsearch__in, .search-results-form fieldset .doku_form .no > input + #qsearch__in, .doku_form .no > #qsearch__in + #qsearch__in, .input-group > textarea + .form-control, #dw__login .input-group > textarea + input, #config__manager td .input-group > textarea + input.edit, .search-results-form fieldset .input-group > textarea + input, .doku_form .no .input-group > textarea + #qsearch__in, .doku_form .no > textarea + .form-control, .doku_form #dw__login .no > textarea + input, #dw__login .doku_form .no > textarea + input, .doku_form #config__manager td .no > textarea + input.edit, #config__manager td .doku_form .no > textarea + input.edit, .doku_form .search-results-form fieldset .no > textarea + input, .search-results-form fieldset .doku_form .no > textarea + input, .doku_form .no > textarea + #qsearch__in, .input-group > .form-control + textarea, #dw__login .input-group > input + textarea, #config__manager td .input-group > input.edit + textarea, .search-results-form fieldset .input-group > input + textarea, .doku_form .no .input-group > #qsearch__in + textarea, .doku_form .no > .form-control + textarea, .doku_form #dw__login .no > input + textarea, #dw__login .doku_form .no > input + textarea, .doku_form #config__manager td .no > input.edit + textarea, #config__manager td .doku_form .no > input.edit + textarea, .doku_form .search-results-form fieldset .no > input + textarea, .search-results-form fieldset .doku_form .no > input + textarea, .doku_form .no > #qsearch__in + textarea, .input-group > textarea + textarea, .doku_form .no > textarea + textarea,
 .input-group > .form-control + .custom-select,
 #dw__login .input-group > input + .custom-select,
-.input-group > textarea + .custom-select,
+#config__manager td .input-group > input.edit + .custom-select,
 .search-results-form fieldset .input-group > input + .custom-select,
 .doku_form .no .input-group > #qsearch__in + .custom-select,
 .doku_form .no > .form-control + .custom-select,
 .doku_form #dw__login .no > input + .custom-select,
 #dw__login .doku_form .no > input + .custom-select,
-.doku_form .no > textarea + .custom-select,
+.doku_form #config__manager td .no > input.edit + .custom-select,
+#config__manager td .doku_form .no > input.edit + .custom-select,
 .doku_form .search-results-form fieldset .no > input + .custom-select,
 .search-results-form fieldset .doku_form .no > input + .custom-select,
 .doku_form .no > #qsearch__in + .custom-select,
+.input-group > textarea + .custom-select,
+.doku_form .no > textarea + .custom-select,
 .input-group > .form-control + .custom-file,
 #dw__login .input-group > input + .custom-file,
-.input-group > textarea + .custom-file,
+#config__manager td .input-group > input.edit + .custom-file,
 .search-results-form fieldset .input-group > input + .custom-file,
 .doku_form .no .input-group > #qsearch__in + .custom-file,
 .doku_form .no > .form-control + .custom-file,
 .doku_form #dw__login .no > input + .custom-file,
 #dw__login .doku_form .no > input + .custom-file,
-.doku_form .no > textarea + .custom-file,
+.doku_form #config__manager td .no > input.edit + .custom-file,
+#config__manager td .doku_form .no > input.edit + .custom-file,
 .doku_form .search-results-form fieldset .no > input + .custom-file,
 .search-results-form fieldset .doku_form .no > input + .custom-file,
 .doku_form .no > #qsearch__in + .custom-file,
+.input-group > textarea + .custom-file,
+.doku_form .no > textarea + .custom-file,
 .input-group > .form-control-plaintext + .form-control,
 #dw__login .input-group > .form-control-plaintext + input,
-.input-group > .form-control-plaintext + textarea,
+#config__manager td .input-group > .form-control-plaintext + input.edit,
 .search-results-form fieldset .input-group > .form-control-plaintext + input,
 .doku_form .no .input-group > .form-control-plaintext + #qsearch__in,
 .doku_form .no > .form-control-plaintext + .form-control,
 .doku_form #dw__login .no > .form-control-plaintext + input,
 #dw__login .doku_form .no > .form-control-plaintext + input,
-.doku_form .no > .form-control-plaintext + textarea,
+.doku_form #config__manager td .no > .form-control-plaintext + input.edit,
+#config__manager td .doku_form .no > .form-control-plaintext + input.edit,
 .doku_form .search-results-form fieldset .no > .form-control-plaintext + input,
 .search-results-form fieldset .doku_form .no > .form-control-plaintext + input,
 .doku_form .no > .form-control-plaintext + #qsearch__in,
+.input-group > .form-control-plaintext + textarea,
+.doku_form .no > .form-control-plaintext + textarea,
 .input-group > .form-control-plaintext + .custom-select,
 .doku_form .no > .form-control-plaintext + .custom-select,
 .input-group > .form-control-plaintext + .custom-file,
 .doku_form .no > .form-control-plaintext + .custom-file,
 .input-group > .custom-select + .form-control,
 #dw__login .input-group > .custom-select + input,
-.input-group > .custom-select + textarea,
+#config__manager td .input-group > .custom-select + input.edit,
 .search-results-form fieldset .input-group > .custom-select + input,
 .doku_form .no .input-group > .custom-select + #qsearch__in,
 .doku_form .no > .custom-select + .form-control,
 .doku_form #dw__login .no > .custom-select + input,
 #dw__login .doku_form .no > .custom-select + input,
-.doku_form .no > .custom-select + textarea,
+.doku_form #config__manager td .no > .custom-select + input.edit,
+#config__manager td .doku_form .no > .custom-select + input.edit,
 .doku_form .search-results-form fieldset .no > .custom-select + input,
 .search-results-form fieldset .doku_form .no > .custom-select + input,
 .doku_form .no > .custom-select + #qsearch__in,
+.input-group > .custom-select + textarea,
+.doku_form .no > .custom-select + textarea,
 .input-group > .custom-select + .custom-select,
 .doku_form .no > .custom-select + .custom-select,
 .input-group > .custom-select + .custom-file,
 .doku_form .no > .custom-select + .custom-file,
 .input-group > .custom-file + .form-control,
 #dw__login .input-group > .custom-file + input,
-.input-group > .custom-file + textarea,
+#config__manager td .input-group > .custom-file + input.edit,
 .search-results-form fieldset .input-group > .custom-file + input,
 .doku_form .no .input-group > .custom-file + #qsearch__in,
 .doku_form .no > .custom-file + .form-control,
 .doku_form #dw__login .no > .custom-file + input,
 #dw__login .doku_form .no > .custom-file + input,
-.doku_form .no > .custom-file + textarea,
+.doku_form #config__manager td .no > .custom-file + input.edit,
+#config__manager td .doku_form .no > .custom-file + input.edit,
 .doku_form .search-results-form fieldset .no > .custom-file + input,
 .search-results-form fieldset .doku_form .no > .custom-file + input,
 .doku_form .no > .custom-file + #qsearch__in,
+.input-group > .custom-file + textarea,
+.doku_form .no > .custom-file + textarea,
 .input-group > .custom-file + .custom-select,
 .doku_form .no > .custom-file + .custom-select,
 .input-group > .custom-file + .custom-file,
@@ -4415,7 +4450,7 @@ input[type=button].btn-block {
   margin-left: -1px;
 }
 
-.input-group > .form-control:focus, #dw__login .input-group > input:focus, .input-group > textarea:focus, .search-results-form fieldset .input-group > input:focus, .doku_form .no .input-group > #qsearch__in:focus, .doku_form .no > .form-control:focus, .doku_form #dw__login .no > input:focus, #dw__login .doku_form .no > input:focus, .doku_form .no > textarea:focus, .doku_form .search-results-form fieldset .no > input:focus, .search-results-form fieldset .doku_form .no > input:focus, .doku_form .no > #qsearch__in:focus,
+.input-group > .form-control:focus, #dw__login .input-group > input:focus, #config__manager td .input-group > input.edit:focus, .search-results-form fieldset .input-group > input:focus, .doku_form .no .input-group > #qsearch__in:focus, .doku_form .no > .form-control:focus, .doku_form #dw__login .no > input:focus, #dw__login .doku_form .no > input:focus, .doku_form #config__manager td .no > input.edit:focus, #config__manager td .doku_form .no > input.edit:focus, .doku_form .search-results-form fieldset .no > input:focus, .search-results-form fieldset .doku_form .no > input:focus, .doku_form .no > #qsearch__in:focus, .input-group > textarea:focus, .doku_form .no > textarea:focus,
 .input-group > .custom-select:focus,
 .doku_form .no > .custom-select:focus,
 .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label,
@@ -4427,14 +4462,14 @@ input[type=button].btn-block {
   z-index: 4;
 }
 
-.input-group > .form-control:not(:last-child), #dw__login .input-group > input:not(:last-child), .input-group > textarea:not(:last-child), .search-results-form fieldset .input-group > input:not(:last-child), .doku_form .no .input-group > #qsearch__in:not(:last-child), .doku_form .no > .form-control:not(:last-child), .doku_form #dw__login .no > input:not(:last-child), #dw__login .doku_form .no > input:not(:last-child), .doku_form .no > textarea:not(:last-child), .doku_form .search-results-form fieldset .no > input:not(:last-child), .search-results-form fieldset .doku_form .no > input:not(:last-child), .doku_form .no > #qsearch__in:not(:last-child),
+.input-group > .form-control:not(:last-child), #dw__login .input-group > input:not(:last-child), #config__manager td .input-group > input.edit:not(:last-child), .search-results-form fieldset .input-group > input:not(:last-child), .doku_form .no .input-group > #qsearch__in:not(:last-child), .doku_form .no > .form-control:not(:last-child), .doku_form #dw__login .no > input:not(:last-child), #dw__login .doku_form .no > input:not(:last-child), .doku_form #config__manager td .no > input.edit:not(:last-child), #config__manager td .doku_form .no > input.edit:not(:last-child), .doku_form .search-results-form fieldset .no > input:not(:last-child), .search-results-form fieldset .doku_form .no > input:not(:last-child), .doku_form .no > #qsearch__in:not(:last-child), .input-group > textarea:not(:last-child), .doku_form .no > textarea:not(:last-child),
 .input-group > .custom-select:not(:last-child),
 .doku_form .no > .custom-select:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.input-group > .form-control:not(:first-child), #dw__login .input-group > input:not(:first-child), .input-group > textarea:not(:first-child), .search-results-form fieldset .input-group > input:not(:first-child), .doku_form .no .input-group > #qsearch__in:not(:first-child), .doku_form .no > .form-control:not(:first-child), .doku_form #dw__login .no > input:not(:first-child), #dw__login .doku_form .no > input:not(:first-child), .doku_form .no > textarea:not(:first-child), .doku_form .search-results-form fieldset .no > input:not(:first-child), .search-results-form fieldset .doku_form .no > input:not(:first-child), .doku_form .no > #qsearch__in:not(:first-child),
+.input-group > .form-control:not(:first-child), #dw__login .input-group > input:not(:first-child), #config__manager td .input-group > input.edit:not(:first-child), .search-results-form fieldset .input-group > input:not(:first-child), .doku_form .no .input-group > #qsearch__in:not(:first-child), .doku_form .no > .form-control:not(:first-child), .doku_form #dw__login .no > input:not(:first-child), #dw__login .doku_form .no > input:not(:first-child), .doku_form #config__manager td .no > input.edit:not(:first-child), #config__manager td .doku_form .no > input.edit:not(:first-child), .doku_form .search-results-form fieldset .no > input:not(:first-child), .search-results-form fieldset .doku_form .no > input:not(:first-child), .doku_form .no > #qsearch__in:not(:first-child), .input-group > textarea:not(:first-child), .doku_form .no > textarea:not(:first-child),
 .input-group > .custom-select:not(:first-child),
 .doku_form .no > .custom-select:not(:first-child) {
   border-top-left-radius: 0;
@@ -4905,12 +4940,12 @@ input[type=button].btn-block {
   margin-top: 0;
 }
 
-.input-group-lg > .form-control:not(textarea), #dw__login .input-group-lg > input:not(textarea), .input-group-lg > textarea:not(textarea), .search-results-form fieldset .input-group-lg > input:not(textarea), .doku_form .no .input-group-lg > #qsearch__in:not(textarea),
+.input-group-lg > .form-control:not(textarea), #dw__login .input-group-lg > input:not(textarea), #config__manager td .input-group-lg > input.edit:not(textarea), .search-results-form fieldset .input-group-lg > input:not(textarea), .doku_form .no .input-group-lg > #qsearch__in:not(textarea), .input-group-lg > textarea:not(textarea),
 .input-group-lg > .custom-select {
   height: calc(1.5em + 1.75rem + 2px);
 }
 
-.input-group-lg > .form-control, #dw__login .input-group-lg > input, .input-group-lg > textarea, .search-results-form fieldset .input-group-lg > input, .doku_form .no .input-group-lg > #qsearch__in,
+.input-group-lg > .form-control, #dw__login .input-group-lg > input, #config__manager td .input-group-lg > input.edit, .search-results-form fieldset .input-group-lg > input, .doku_form .no .input-group-lg > #qsearch__in, .input-group-lg > textarea,
 .input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
@@ -4938,12 +4973,12 @@ input[type=button].btn-block {
   border-radius: 0.3rem;
 }
 
-.input-group-sm > .form-control:not(textarea), #dw__login .input-group-sm > input:not(textarea), .input-group-sm > textarea:not(textarea), .search-results-form fieldset .input-group-sm > input:not(textarea), .doku_form .no .input-group-sm > #qsearch__in:not(textarea),
+.input-group-sm > .form-control:not(textarea), #dw__login .input-group-sm > input:not(textarea), #config__manager td .input-group-sm > input.edit:not(textarea), .search-results-form fieldset .input-group-sm > input:not(textarea), .doku_form .no .input-group-sm > #qsearch__in:not(textarea), .input-group-sm > textarea:not(textarea),
 .input-group-sm > .custom-select {
   height: calc(1.5em + 0.5rem + 2px);
 }
 
-.input-group-sm > .form-control, #dw__login .input-group-sm > input, .input-group-sm > textarea, .search-results-form fieldset .input-group-sm > input, .doku_form .no .input-group-sm > #qsearch__in,
+.input-group-sm > .form-control, #dw__login .input-group-sm > input, #config__manager td .input-group-sm > input.edit, .search-results-form fieldset .input-group-sm > input, .doku_form .no .input-group-sm > #qsearch__in, .input-group-sm > textarea,
 .input-group-sm > .custom-select,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
@@ -19628,21 +19663,22 @@ label {
   font-size: 0.875rem;
 }
 
-.form-control, #dw__login input, textarea, .search-results-form fieldset input, .doku_form .no #qsearch__in {
+.form-control, #dw__login input, #config__manager td input.edit, .search-results-form fieldset input, .doku_form .no #qsearch__in, textarea {
   font-size: 0.875rem;
   transition: all 0.15s ease;
 }
 
-.form-control:focus::placeholder, #dw__login input:focus::placeholder, textarea:focus::placeholder, .search-results-form fieldset input:focus::placeholder, .doku_form .no #qsearch__in:focus::placeholder {
+.form-control:focus::placeholder, #dw__login input:focus::placeholder, #config__manager td input.edit:focus::placeholder, .search-results-form fieldset input:focus::placeholder, .doku_form .no #qsearch__in:focus::placeholder, textarea:focus::placeholder {
   color: #adb5bd;
 }
 
-.form-control.is-valid, #dw__login input.is-valid, textarea.is-valid, .search-results-form fieldset input.is-valid, .doku_form .no .is-valid#qsearch__in,
+.form-control.is-valid, #dw__login input.is-valid, #config__manager td input.is-valid.edit, .search-results-form fieldset input.is-valid, .doku_form .no .is-valid#qsearch__in, textarea.is-valid,
 .form-control.is-invalid,
 #dw__login input.is-invalid,
-textarea.is-invalid,
+#config__manager td input.is-invalid.edit,
 .search-results-form fieldset input.is-invalid,
-.doku_form .no .is-invalid#qsearch__in {
+.doku_form .no .is-invalid#qsearch__in,
+textarea.is-invalid {
   background-image: none;
 }
 
@@ -19723,15 +19759,15 @@ textarea[resize=horizontal] {
   background-color: #69deac;
 }
 
-.has-success .form-control, .has-success #dw__login input, #dw__login .has-success input, .has-success textarea, .has-success .search-results-form fieldset input, .search-results-form fieldset .has-success input, .has-success .doku_form .no #qsearch__in, .doku_form .no .has-success #qsearch__in {
+.has-success .form-control, .has-success #dw__login input, #dw__login .has-success input, .has-success #config__manager td input.edit, #config__manager td .has-success input.edit, .has-success .search-results-form fieldset input, .search-results-form fieldset .has-success input, .has-success .doku_form .no #qsearch__in, .doku_form .no .has-success #qsearch__in, .has-success textarea {
   background-color: #fff;
 }
 
-.has-success .form-control:focus, .has-success #dw__login input:focus, #dw__login .has-success input:focus, .has-success textarea:focus, .has-success .search-results-form fieldset input:focus, .search-results-form fieldset .has-success input:focus, .has-success .doku_form .no #qsearch__in:focus, .doku_form .no .has-success #qsearch__in:focus {
+.has-success .form-control:focus, .has-success #dw__login input:focus, #dw__login .has-success input:focus, .has-success #config__manager td input.edit:focus, #config__manager td .has-success input.edit:focus, .has-success .search-results-form fieldset input:focus, .search-results-form fieldset .has-success input:focus, .has-success .doku_form .no #qsearch__in:focus, .doku_form .no .has-success #qsearch__in:focus, .has-success textarea:focus {
   border-color: rgba(50, 151, 211, 0.25);
 }
 
-.has-success .form-control::placeholder, .has-success #dw__login input::placeholder, #dw__login .has-success input::placeholder, .has-success textarea::placeholder, .has-success .search-results-form fieldset input::placeholder, .search-results-form fieldset .has-success input::placeholder, .has-success .doku_form .no #qsearch__in::placeholder, .doku_form .no .has-success #qsearch__in::placeholder {
+.has-success .form-control::placeholder, .has-success #dw__login input::placeholder, #dw__login .has-success input::placeholder, .has-success #config__manager td input.edit::placeholder, #config__manager td .has-success input.edit::placeholder, .has-success .search-results-form fieldset input::placeholder, .search-results-form fieldset .has-success input::placeholder, .has-success .doku_form .no #qsearch__in::placeholder, .doku_form .no .has-success #qsearch__in::placeholder, .has-success textarea::placeholder {
   color: #2dce89;
 }
 
@@ -19741,15 +19777,15 @@ textarea[resize=horizontal] {
   background-color: #fda08b;
 }
 
-.has-danger .form-control, .has-danger #dw__login input, #dw__login .has-danger input, .has-danger textarea, .has-danger .search-results-form fieldset input, .search-results-form fieldset .has-danger input, .has-danger .doku_form .no #qsearch__in, .doku_form .no .has-danger #qsearch__in {
+.has-danger .form-control, .has-danger #dw__login input, #dw__login .has-danger input, .has-danger #config__manager td input.edit, #config__manager td .has-danger input.edit, .has-danger .search-results-form fieldset input, .search-results-form fieldset .has-danger input, .has-danger .doku_form .no #qsearch__in, .doku_form .no .has-danger #qsearch__in, .has-danger textarea {
   background-color: #fff;
 }
 
-.has-danger .form-control:focus, .has-danger #dw__login input:focus, #dw__login .has-danger input:focus, .has-danger textarea:focus, .has-danger .search-results-form fieldset input:focus, .search-results-form fieldset .has-danger input:focus, .has-danger .doku_form .no #qsearch__in:focus, .doku_form .no .has-danger #qsearch__in:focus {
+.has-danger .form-control:focus, .has-danger #dw__login input:focus, #dw__login .has-danger input:focus, .has-danger #config__manager td input.edit:focus, #config__manager td .has-danger input.edit:focus, .has-danger .search-results-form fieldset input:focus, .search-results-form fieldset .has-danger input:focus, .has-danger .doku_form .no #qsearch__in:focus, .doku_form .no .has-danger #qsearch__in:focus, .has-danger textarea:focus {
   border-color: rgba(50, 151, 211, 0.25);
 }
 
-.has-danger .form-control::placeholder, .has-danger #dw__login input::placeholder, #dw__login .has-danger input::placeholder, .has-danger textarea::placeholder, .has-danger .search-results-form fieldset input::placeholder, .search-results-form fieldset .has-danger input::placeholder, .has-danger .doku_form .no #qsearch__in::placeholder, .doku_form .no .has-danger #qsearch__in::placeholder {
+.has-danger .form-control::placeholder, .has-danger #dw__login input::placeholder, #dw__login .has-danger input::placeholder, .has-danger #config__manager td input.edit::placeholder, #config__manager td .has-danger input.edit::placeholder, .has-danger .search-results-form fieldset input::placeholder, .search-results-form fieldset .has-danger input::placeholder, .has-danger .doku_form .no #qsearch__in::placeholder, .doku_form .no .has-danger #qsearch__in::placeholder, .has-danger textarea::placeholder {
   color: #fb6340;
 }
 
@@ -19924,21 +19960,21 @@ textarea[resize=horizontal] {
   transition: all 0.15s ease;
 }
 
-.input-group .form-control, .input-group #dw__login input, #dw__login .input-group input, .input-group textarea, .input-group .search-results-form fieldset input, .search-results-form fieldset .input-group input, .doku_form .no .form-control, .doku_form .no #dw__login input, #dw__login .doku_form .no input, .doku_form .no textarea, .doku_form .no .search-results-form fieldset input, .search-results-form fieldset .doku_form .no input, .doku_form .no #qsearch__in {
+.input-group .form-control, .input-group #dw__login input, #dw__login .input-group input, .input-group #config__manager td input.edit, #config__manager td .input-group input.edit, .input-group .search-results-form fieldset input, .search-results-form fieldset .input-group input, .doku_form .no .form-control, .doku_form .no #dw__login input, #dw__login .doku_form .no input, .doku_form .no #config__manager td input.edit, #config__manager td .doku_form .no input.edit, .doku_form .no .search-results-form fieldset input, .search-results-form fieldset .doku_form .no input, .doku_form .no #qsearch__in, .input-group textarea, .doku_form .no textarea {
   box-shadow: none;
 }
 
-.input-group .form-control:not(:first-child), .input-group #dw__login input:not(:first-child), #dw__login .input-group input:not(:first-child), .input-group textarea:not(:first-child), .input-group .search-results-form fieldset input:not(:first-child), .search-results-form fieldset .input-group input:not(:first-child), .doku_form .no .form-control:not(:first-child), .doku_form .no #dw__login input:not(:first-child), #dw__login .doku_form .no input:not(:first-child), .doku_form .no textarea:not(:first-child), .doku_form .no .search-results-form fieldset input:not(:first-child), .search-results-form fieldset .doku_form .no input:not(:first-child), .doku_form .no #qsearch__in:not(:first-child) {
+.input-group .form-control:not(:first-child), .input-group #dw__login input:not(:first-child), #dw__login .input-group input:not(:first-child), .input-group #config__manager td input.edit:not(:first-child), #config__manager td .input-group input.edit:not(:first-child), .input-group .search-results-form fieldset input:not(:first-child), .search-results-form fieldset .input-group input:not(:first-child), .doku_form .no .form-control:not(:first-child), .doku_form .no #dw__login input:not(:first-child), #dw__login .doku_form .no input:not(:first-child), .doku_form .no #config__manager td input.edit:not(:first-child), #config__manager td .doku_form .no input.edit:not(:first-child), .doku_form .no .search-results-form fieldset input:not(:first-child), .search-results-form fieldset .doku_form .no input:not(:first-child), .doku_form .no #qsearch__in:not(:first-child), .input-group textarea:not(:first-child), .doku_form .no textarea:not(:first-child) {
   border-left: 0;
   padding-left: 0;
 }
 
-.input-group .form-control:not(:last-child), .input-group #dw__login input:not(:last-child), #dw__login .input-group input:not(:last-child), .input-group textarea:not(:last-child), .input-group .search-results-form fieldset input:not(:last-child), .search-results-form fieldset .input-group input:not(:last-child), .doku_form .no .form-control:not(:last-child), .doku_form .no #dw__login input:not(:last-child), #dw__login .doku_form .no input:not(:last-child), .doku_form .no textarea:not(:last-child), .doku_form .no .search-results-form fieldset input:not(:last-child), .search-results-form fieldset .doku_form .no input:not(:last-child), .doku_form .no #qsearch__in:not(:last-child) {
+.input-group .form-control:not(:last-child), .input-group #dw__login input:not(:last-child), #dw__login .input-group input:not(:last-child), .input-group #config__manager td input.edit:not(:last-child), #config__manager td .input-group input.edit:not(:last-child), .input-group .search-results-form fieldset input:not(:last-child), .search-results-form fieldset .input-group input:not(:last-child), .doku_form .no .form-control:not(:last-child), .doku_form .no #dw__login input:not(:last-child), #dw__login .doku_form .no input:not(:last-child), .doku_form .no #config__manager td input.edit:not(:last-child), #config__manager td .doku_form .no input.edit:not(:last-child), .doku_form .no .search-results-form fieldset input:not(:last-child), .search-results-form fieldset .doku_form .no input:not(:last-child), .doku_form .no #qsearch__in:not(:last-child), .input-group textarea:not(:last-child), .doku_form .no textarea:not(:last-child) {
   border-right: 0;
   padding-right: 0;
 }
 
-.input-group .form-control:focus, .input-group #dw__login input:focus, #dw__login .input-group input:focus, .input-group textarea:focus, .input-group .search-results-form fieldset input:focus, .search-results-form fieldset .input-group input:focus, .doku_form .no .form-control:focus, .doku_form .no #dw__login input:focus, #dw__login .doku_form .no input:focus, .doku_form .no textarea:focus, .doku_form .no .search-results-form fieldset input:focus, .search-results-form fieldset .doku_form .no input:focus, .doku_form .no #qsearch__in:focus {
+.input-group .form-control:focus, .input-group #dw__login input:focus, #dw__login .input-group input:focus, .input-group #config__manager td input.edit:focus, #config__manager td .input-group input.edit:focus, .input-group .search-results-form fieldset input:focus, .search-results-form fieldset .input-group input:focus, .doku_form .no .form-control:focus, .doku_form .no #dw__login input:focus, #dw__login .doku_form .no input:focus, .doku_form .no #config__manager td input.edit:focus, #config__manager td .doku_form .no input.edit:focus, .doku_form .no .search-results-form fieldset input:focus, .search-results-form fieldset .doku_form .no input:focus, .doku_form .no #qsearch__in:focus, .input-group textarea:focus, .doku_form .no textarea:focus {
   box-shadow: none;
 }
 
@@ -19960,7 +19996,7 @@ textarea[resize=horizontal] {
   transition: box-shadow 0.15s ease;
 }
 
-.input-group-alternative .form-control, .input-group-alternative #dw__login input, #dw__login .input-group-alternative input, .input-group-alternative textarea, .input-group-alternative .search-results-form fieldset input, .search-results-form fieldset .input-group-alternative input, .input-group-alternative .doku_form .no #qsearch__in, .doku_form .no .input-group-alternative #qsearch__in,
+.input-group-alternative .form-control, .input-group-alternative #dw__login input, #dw__login .input-group-alternative input, .input-group-alternative #config__manager td input.edit, #config__manager td .input-group-alternative input.edit, .input-group-alternative .search-results-form fieldset input, .search-results-form fieldset .input-group-alternative input, .input-group-alternative .doku_form .no #qsearch__in, .doku_form .no .input-group-alternative #qsearch__in, .input-group-alternative textarea,
 .input-group-alternative .input-group-text {
   border: 0;
   box-shadow: none;
@@ -19980,7 +20016,7 @@ textarea[resize=horizontal] {
   border-color: #5e72e4;
 }
 
-.focused .form-control, .focused #dw__login input, #dw__login .focused input, .focused textarea, .focused .search-results-form fieldset input, .search-results-form fieldset .focused input, .focused .doku_form .no #qsearch__in, .doku_form .no .focused #qsearch__in {
+.focused .form-control, .focused #dw__login input, #dw__login .focused input, .focused #config__manager td input.edit, #config__manager td .focused input.edit, .focused .search-results-form fieldset input, .search-results-form fieldset .focused input, .focused .doku_form .no #qsearch__in, .doku_form .no .focused #qsearch__in, .focused textarea {
   border-color: #5e72e4;
 }
 
@@ -21743,7 +21779,7 @@ textarea[resize=horizontal] {
     height: 400px;
   }
 }
-.section-components > .form-control + .form-control, #dw__login .section-components > input + .form-control, #dw__login .section-components > .form-control + input, #dw__login .section-components > input + input, .section-components > textarea + .form-control, #dw__login .section-components > textarea + input, .section-components > .form-control + textarea, #dw__login .section-components > input + textarea, .section-components > textarea + textarea, .search-results-form fieldset .section-components > input + .form-control, .search-results-form fieldset .section-components > input + textarea, .search-results-form fieldset .section-components > .form-control + input, .search-results-form fieldset .section-components > textarea + input, .search-results-form fieldset .section-components > input + input, .doku_form .no .section-components > #qsearch__in + .form-control, .doku_form .no #dw__login .section-components > #qsearch__in + input, #dw__login .doku_form .no .section-components > #qsearch__in + input, .doku_form .no .section-components > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .section-components > #qsearch__in + input, .search-results-form fieldset .doku_form .no .section-components > #qsearch__in + input, .doku_form .no .section-components > .form-control + #qsearch__in, .doku_form .no #dw__login .section-components > input + #qsearch__in, #dw__login .doku_form .no .section-components > input + #qsearch__in, .doku_form .no .section-components > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .section-components > input + #qsearch__in, .search-results-form fieldset .doku_form .no .section-components > input + #qsearch__in, .doku_form .no .section-components > #qsearch__in + #qsearch__in {
+.section-components > .form-control + .form-control, #dw__login .section-components > input + .form-control, #dw__login .section-components > .form-control + input, #dw__login .section-components > input + input, #config__manager td .section-components > input.edit + .form-control, #config__manager td .section-components > .form-control + input.edit, #config__manager td .section-components > input.edit + input.edit, .search-results-form fieldset .section-components > input + .form-control, .search-results-form fieldset #config__manager td .section-components > input + input.edit, #config__manager td .search-results-form fieldset .section-components > input + input.edit, .search-results-form fieldset .section-components > .form-control + input, .search-results-form fieldset #config__manager td .section-components > input.edit + input, #config__manager td .search-results-form fieldset .section-components > input.edit + input, .search-results-form fieldset .section-components > input + input, .doku_form .no .section-components > #qsearch__in + .form-control, .doku_form .no #dw__login .section-components > #qsearch__in + input, #dw__login .doku_form .no .section-components > #qsearch__in + input, .doku_form .no #config__manager td .section-components > #qsearch__in + input.edit, #config__manager td .doku_form .no .section-components > #qsearch__in + input.edit, .doku_form .no .search-results-form fieldset .section-components > #qsearch__in + input, .search-results-form fieldset .doku_form .no .section-components > #qsearch__in + input, .doku_form .no .section-components > .form-control + #qsearch__in, .doku_form .no #dw__login .section-components > input + #qsearch__in, #dw__login .doku_form .no .section-components > input + #qsearch__in, .doku_form .no #config__manager td .section-components > input.edit + #qsearch__in, #config__manager td .doku_form .no .section-components > input.edit + #qsearch__in, .doku_form .no .search-results-form fieldset .section-components > input + #qsearch__in, .search-results-form fieldset .doku_form .no .section-components > input + #qsearch__in, .doku_form .no .section-components > #qsearch__in + #qsearch__in, .section-components > textarea + .form-control, #dw__login .section-components > textarea + input, #config__manager td .section-components > textarea + input.edit, .search-results-form fieldset .section-components > textarea + input, .doku_form .no .section-components > textarea + #qsearch__in, .section-components > .form-control + textarea, #dw__login .section-components > input + textarea, #config__manager td .section-components > input.edit + textarea, .search-results-form fieldset .section-components > input + textarea, .doku_form .no .section-components > #qsearch__in + textarea, .section-components > textarea + textarea {
   margin-top: 0.5rem;
 }
 
@@ -22978,7 +23014,7 @@ span.flatpickr-weekday {
   background: rgba(94, 114, 228, 0.28);
 }
 
-.flatpickr.form-control, #dw__login input.flatpickr, textarea.flatpickr, .search-results-form fieldset input.flatpickr, .doku_form .no .flatpickr#qsearch__in {
+.flatpickr.form-control, #dw__login input.flatpickr, #config__manager td input.flatpickr.edit, .search-results-form fieldset input.flatpickr, .doku_form .no .flatpickr#qsearch__in, textarea.flatpickr {
   background: #fff;
 }
 
@@ -23949,7 +23985,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   content: "Elegir";
 }
 
-.ct-example > .form-control + .form-control, #dw__login .ct-example > input + .form-control, #dw__login .ct-example > .form-control + input, #dw__login .ct-example > input + input, .ct-example > textarea + .form-control, #dw__login .ct-example > textarea + input, .ct-example > .form-control + textarea, #dw__login .ct-example > input + textarea, .ct-example > textarea + textarea, .search-results-form fieldset .ct-example > input + .form-control, .search-results-form fieldset .ct-example > input + textarea, .search-results-form fieldset .ct-example > .form-control + input, .search-results-form fieldset .ct-example > textarea + input, .search-results-form fieldset .ct-example > input + input, .doku_form .no .ct-example > #qsearch__in + .form-control, .doku_form .no #dw__login .ct-example > #qsearch__in + input, #dw__login .doku_form .no .ct-example > #qsearch__in + input, .doku_form .no .ct-example > #qsearch__in + textarea, .doku_form .no .search-results-form fieldset .ct-example > #qsearch__in + input, .search-results-form fieldset .doku_form .no .ct-example > #qsearch__in + input, .doku_form .no .ct-example > .form-control + #qsearch__in, .doku_form .no #dw__login .ct-example > input + #qsearch__in, #dw__login .doku_form .no .ct-example > input + #qsearch__in, .doku_form .no .ct-example > textarea + #qsearch__in, .doku_form .no .search-results-form fieldset .ct-example > input + #qsearch__in, .search-results-form fieldset .doku_form .no .ct-example > input + #qsearch__in, .doku_form .no .ct-example > #qsearch__in + #qsearch__in {
+.ct-example > .form-control + .form-control, #dw__login .ct-example > input + .form-control, #dw__login .ct-example > .form-control + input, #dw__login .ct-example > input + input, #config__manager td .ct-example > input.edit + .form-control, #config__manager td .ct-example > .form-control + input.edit, #config__manager td .ct-example > input.edit + input.edit, .search-results-form fieldset .ct-example > input + .form-control, .search-results-form fieldset #config__manager td .ct-example > input + input.edit, #config__manager td .search-results-form fieldset .ct-example > input + input.edit, .search-results-form fieldset .ct-example > .form-control + input, .search-results-form fieldset #config__manager td .ct-example > input.edit + input, #config__manager td .search-results-form fieldset .ct-example > input.edit + input, .search-results-form fieldset .ct-example > input + input, .doku_form .no .ct-example > #qsearch__in + .form-control, .doku_form .no #dw__login .ct-example > #qsearch__in + input, #dw__login .doku_form .no .ct-example > #qsearch__in + input, .doku_form .no #config__manager td .ct-example > #qsearch__in + input.edit, #config__manager td .doku_form .no .ct-example > #qsearch__in + input.edit, .doku_form .no .search-results-form fieldset .ct-example > #qsearch__in + input, .search-results-form fieldset .doku_form .no .ct-example > #qsearch__in + input, .doku_form .no .ct-example > .form-control + #qsearch__in, .doku_form .no #dw__login .ct-example > input + #qsearch__in, #dw__login .doku_form .no .ct-example > input + #qsearch__in, .doku_form .no #config__manager td .ct-example > input.edit + #qsearch__in, #config__manager td .doku_form .no .ct-example > input.edit + #qsearch__in, .doku_form .no .search-results-form fieldset .ct-example > input + #qsearch__in, .search-results-form fieldset .doku_form .no .ct-example > input + #qsearch__in, .doku_form .no .ct-example > #qsearch__in + #qsearch__in, .ct-example > textarea + .form-control, #dw__login .ct-example > textarea + input, #config__manager td .ct-example > textarea + input.edit, .search-results-form fieldset .ct-example > textarea + input, .doku_form .no .ct-example > textarea + #qsearch__in, .ct-example > .form-control + textarea, #dw__login .ct-example > input + textarea, #config__manager td .ct-example > input.edit + textarea, .search-results-form fieldset .ct-example > input + textarea, .doku_form .no .ct-example > #qsearch__in + textarea, .ct-example > textarea + textarea {
   margin-top: 0.5rem;
 }
 
@@ -24063,7 +24099,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   margin-bottom: 0.5rem;
 }
 
-.ct-example > textarea.form-control, .ct-example > textarea, .doku_form .no .ct-example > textarea#qsearch__in {
+.ct-example > textarea.form-control, .doku_form .no .ct-example > textarea#qsearch__in, .ct-example > textarea {
   resize: vertical;
 }
 
@@ -25075,7 +25111,7 @@ pre > code.highlight {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.ct-search .form-control:focus, .ct-search #dw__login input:focus, #dw__login .ct-search input:focus, .ct-search textarea:focus, .ct-search .search-results-form fieldset input:focus, .search-results-form fieldset .ct-search input:focus, .ct-search .doku_form .no #qsearch__in:focus, .doku_form .no .ct-search #qsearch__in:focus {
+.ct-search .form-control:focus, .ct-search #dw__login input:focus, #dw__login .ct-search input:focus, .ct-search #config__manager td input.edit:focus, #config__manager td .ct-search input.edit:focus, .ct-search .search-results-form fieldset input:focus, .search-results-form fieldset .ct-search input:focus, .ct-search .doku_form .no #qsearch__in:focus, .doku_form .no .ct-search #qsearch__in:focus, .ct-search textarea:focus {
   border-color: #9da9f2;
   box-shadow: 0 0 0 3px rgba(157, 169, 242, 0.25);
 }
@@ -25256,6 +25292,11 @@ legend {
   margin-bottom: 2em;
 }
 
+textarea {
+  width: 95%;
+  max-width: 100%;
+}
+
 .ct-toc #dw__toc {
   float: inherit;
   margin: inherit;
@@ -25348,17 +25389,17 @@ legend {
   list-style-type: disclosure-closed;
 }
 
-textarea {
-  width: 95%;
-  max-width: 100%;
-}
-
 .ui-admin ul li {
   list-style-type: none;
 }
 
 .tabs li {
   list-style-type: disclosure-closed;
+}
+
+#config__manager td input.edit {
+  width: 30em;
+  padding: 0rem 0.75rem;
 }
 
 #dw__register, #dw__profiledelete {
@@ -25431,10 +25472,25 @@ textarea {
 
 .footer-card {
   background-color: #f4f5f7;
+  text-align: center;
 }
 .footer-card .footer-search {
   margin-left: auto;
   margin-right: auto;
+}
+.footer-card .argon-doku-footer-fullmenu {
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-card .argon-doku-footer-fullmenu li {
+  display: inline;
+  fill: #6c757d;
+}
+.footer-card .argon-doku-footer-fullmenu li :hover {
+  fill: #525f7f;
+}
+.footer-card .argon-doku-footer-fullmenu li:nth-of-type(1) {
+  margin-left: 0em;
 }
 
 /*# sourceMappingURL=doku.css.map */
