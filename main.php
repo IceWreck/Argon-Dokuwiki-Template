@@ -38,13 +38,9 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		<!--     Fonts and icons  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-		<!-- Nucleo Icons -->
-		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
-		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
+
 		<!-- Font Awesome Icons -->
-		<link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />
-		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
-		<!-- CSS Files -->
+		<link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />		<!-- CSS Files -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/doku.css" rel="stylesheet" />
 
 		<script src="<?php echo tpl_basedir(); ?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
@@ -52,7 +48,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 		<!-- Documentation extras -->
 		<style>
-			.navbar-absolute-logo {
+			/* .navbar-absolute-logo {
 				padding-left: 45px;
 			}
 
@@ -60,7 +56,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				position: absolute;
 				left: 15px;
 				margin-top: -6px;
-			}
+			} */
 
 			body {
 				background: white;
@@ -172,14 +168,14 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 									<?php echo $lang['page_tools'] ?>
 								</a>
 								<ul class="nav ct-sidenav">
-									<?php tpl_toolsevent('pagetools', array(
-										'edit' => tpl_action('edit', 1, 'li', 1),
-										'revisions' => tpl_action('revisions', 1, 'li', 1),
-										'backlink' => tpl_action('backlink', 1, 'li', 1),
-										'subscribe' => tpl_action('subscribe', 1, 'li', 1),
-										'revert' => tpl_action('revert', 1, 'li', 1),
-										'top' => tpl_action('top', 1, 'li', 1),
-									));
+									<?php
+									$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
+									foreach($menu_items as $item) {
+									echo '<li>'
+										.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+										. $item->getLabel()
+										. '</a></li>';
+									}
 									?>
 								</ul>
 							</div>
@@ -191,11 +187,16 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 									<?php echo $lang['site_tools'] ?>
 								</a>
 								<ul class="nav ct-sidenav">
-									<?php tpl_toolsevent('sitetools', array(
-										'recent' => tpl_action('recent', 1, 'li', 1),
-										'media' => tpl_action('media', 1, 'li', 1),
-										'index' => tpl_action('index', 1, 'li', 1),
-									));?>
+									<?php
+									$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
+									foreach($menu_items as $item) {
+									echo '<li>'
+										.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+										. $item->getLabel()
+										. '</a></li>';
+									}
+
+									?>
 								</ul>
 							</div>
 
@@ -266,36 +267,39 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								</div>
 							</div>
 							<!-- /content -->
-							<hr />
-							<div class="card footer-card">
-								<div class="card-body">
-									<div class="container">
-										<div class="row">
-											<div class="col">
-												<div id="dokuwiki__footer">
-													<div class="pad">
-														<div class="doc">
-															<?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
-														<?php tpl_license('0') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
-													</div>
+							
+						</div>
+
+						<hr />
+						<div class="card footer-card">
+							<div class="card-body">
+								<div class="container">
+									<div class="row">
+										<div class="col">
+											<div id="dokuwiki__footer">
+												<div class="pad">
+													<div class="doc">
+														<?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
+													<?php tpl_license('0') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
 												</div>
 											</div>
 										</div>
+									</div>
+									<br/>
+									<div class="row">
 
-										<div class="row">
-
-											<div class="footer-search">
-												<?php tpl_searchform()?>
-											</div>
-
+										<div class="footer-search">
+											<?php tpl_searchform()?>
 										</div>
 
 									</div>
+									
 
 								</div>
+
 							</div>
-							<?php tpl_indexerWebBug(); ?>
 						</div>
+						<?php tpl_indexerWebBug(); ?>
 					</main>
 
 
