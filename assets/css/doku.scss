@@ -30,7 +30,10 @@ legend {
 
 // Main Content
 #dokuwiki__content {
-
+    p {
+        font-weight: 400;
+    }
+    
     // Edit Button
     .secedit button {
         @extend .btn; 

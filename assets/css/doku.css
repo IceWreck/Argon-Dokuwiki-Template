@@ -25209,6 +25209,9 @@ legend {
   background: #dfe2f1;
 }
 
+#dokuwiki__content p {
+  font-weight: 400;
+}
 #dokuwiki__content .secedit button {
   margin-bottom: 1em;
   float: right;
