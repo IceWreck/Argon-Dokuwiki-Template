@@ -184,13 +184,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 					</div>
 
 
-
-
-
-
-
 					<!-- center content -->
-
 
 					<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
 
@@ -266,6 +260,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 										}
 										?>
 									</div>
+									<?php tpl_includeFile('footer.html') ?>
 									</div>
 
 								</div>
