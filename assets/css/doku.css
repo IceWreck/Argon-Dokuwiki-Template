@@ -25231,6 +25231,12 @@ legend {
   font-style: normal;
 }
 
+input, select {
+  background-color: white !important;
+  border-radius: 0.25rem;
+  border-color: #5e72e4;
+}
+
 :target {
   padding-top: 6rem;
 }
@@ -25389,6 +25395,10 @@ textarea {
   list-style-type: disclosure-closed;
 }
 
+.admin_tasks svg {
+  margin-right: 1rem;
+}
+
 .ui-admin ul li {
   list-style-type: none;
 }
@@ -25400,6 +25410,11 @@ textarea {
 #config__manager td input.edit {
   width: 30em;
   padding: 0rem 0.75rem;
+  background-color: white !important;
+}
+
+#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault {
+  background-color: inherit;
 }
 
 #dw__register, #dw__profiledelete {
@@ -25409,11 +25424,15 @@ textarea {
   font-style: normal;
 }
 #dw__register label, #dw__profiledelete label {
-  font-size: 1.15rem;
+  font-size: 1rem;
   width: 95%;
 }
 #dw__register label input, #dw__profiledelete label input {
   float: right;
+  background-color: white !important;
+  border-radius: 0.25rem;
+  border-color: #99979c;
+  border-width: thin;
 }
 
 #dw__login {

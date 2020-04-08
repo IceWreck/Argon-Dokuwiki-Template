@@ -20,6 +20,12 @@ legend {
     font-style: normal;
 }
 
+input, select {
+    background-color: white !important;
+    border-radius: 0.25rem;
+    border-color: #5e72e4;
+}
+
 // Highlight Search Results
 .search_hit {
     @extend mark;
@@ -284,6 +290,12 @@ textarea {
 
 // ------ Admin Area ------
 
+.admin_tasks {
+    svg {
+        margin-right: 1rem;
+    }
+}
+
 .ui-admin {
     ul li {
         list-style-type: none;
@@ -302,6 +314,10 @@ textarea {
     @extend .form-control;
     width: 30em;
     padding: 0.0rem 0.75rem;
+    background-color: white !important;
+}
+#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault {
+    background-color: inherit;
 }
 
 // ------ Media Uploads ------
@@ -321,12 +337,17 @@ textarea {
         font-style: normal;
     }
     label {
-        font-size: 1.15rem;
+        font-size: 1rem;
         width: 95%;
         input {
             float: right;
-            
+            background-color: white !important;
+            border-radius: 0.25rem;
+            border-color: #99979c;
+            border-width: thin;
         }
+
+
     }
 }
 

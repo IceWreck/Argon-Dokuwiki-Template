@@ -36,39 +36,22 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		?>
 
 		<?php tpl_includeFile('meta.html')?>
+
+		<!-- 
+		I know the CSS and JS imports can be done within the style.ini and script.js files,
+		but I had some issues with styling (and import order) there, so I'm doing those imports here. 
+		-->
 		<!--     Fonts and icons  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-		<!-- Nucleo Icons -->
-		<!-- <link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
-		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" /> -->
 		<!-- Font Awesome Icons -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />
-		<link href="<?php echo tpl_basedir(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
 		<!-- CSS Files -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/doku.css" rel="stylesheet" />
-
+		<!-- JS -->
 		<script src="<?php echo tpl_basedir(); ?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
 		<script src="<?php echo tpl_basedir(); ?>assets/js/argon-design-system.min.js" type="text/javascript"></script>
 
-
-		<!-- Documentation extras -->
-		<!-- <style>
-			.navbar-absolute-logo {
-				padding-left: 45px;
-			}
-
-			.navbar-absolute-logo img {
-				position: absolute;
-				left: 15px;
-				margin-top: -6px;
-			}
-
-			body {
-				background: white;
-			}
-
-		</style> -->
 	</head>
 
 	<body class="docs ">
@@ -77,8 +60,6 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 			<header
 				class="navbar navbar-horizontal navbar-expand navbar-dark flex-row align-items-md-center ct-navbar bg-primary py-2">
-
-
 
 
 				<div class="btn btn-neutral btn-icon">
@@ -91,22 +72,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				</div>
 
 
-				<!-- 
-				<ul class="navbar-nav flex-row mr-auto ml-4 d-none d-md-flex">
-
-					<li class="nav-item"> <a class="nav-link"
-							href="https://github.com/creativetimofficial/ct-argon-design-system-pro/issues"
-							rel="nofollow" target="_blank">Support</a> </li>
-
-
-				</ul> -->
 				<div class="d-none d-sm-block ml-auto">
 					<ul class="navbar-nav ct-navbar-nav flex-row align-items-center">
-						<!-- <li class="nav-item"> <a class="nav-link nav-link-icon"
-								href="https://www.facebook.com/creativetim" rel="nofollow" target="_blank">
-								<i class="fab fa-facebook-square"></i>
-							</a>
-						</li> -->
 
 						<?php
 						$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
@@ -121,13 +88,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						?>
 
 
-
 						<li class="nav-item">
 							<div class="search-form">
 								<?php tpl_searchform()?>
 							</div>
 						</li>
-
 
 
 					</ul>
@@ -146,16 +111,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				<div class="row flex-xl-nowrap">
 
 
-					<!-- Render Content and store at the start -->
 					<?php
-					// render the content into buffer for later use
+					// Render the content initially
 					ob_start();
 					tpl_content(false);
 					$buffer = ob_get_clean();
 					?>
-
-
-
 
 					<!-- left sidebar -->
 					<div class="col-12 col-md-3 col-xl-2 ct-sidebar">
@@ -167,7 +128,6 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								echo '</li>';
 							}
 							?>
-							<!-- PAGE ACTIONS -->
 							<?php if ($showTools): ?>
 							<div id="dokuwiki__pagetools" class="ct-toc-item active">
 								<a class="ct-toc-link">
@@ -215,10 +175,10 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								</a>
 								<div class="leftsidebar">
 									<?php tpl_includeFile('sidebarheader.html')?>
-									<?php tpl_include_page($conf['sidebar'], 1, 1) /* includes the nearest sidebar page */?>
+									<?php tpl_include_page($conf['sidebar'], 1, 1)?>
 									<?php tpl_includeFile('sidebarfooter.html')?>
 								</div>
-							</div><!-- /aside -->
+							</div>
 							<?php endif;?>
 						</nav>
 					</div>
@@ -229,7 +189,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 
 
-					<!-- main contentet -->
+					<!-- center content -->
 
 
 					<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
@@ -242,13 +202,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						<?php html_msgarea()?>
 						<?php tpl_includeFile('header.html')?>
 
-						<!-- <div class="ct-page-title">
-						<h1 class="ct-title" id="content">
-							<?php /* tpl_link(wl(), $conf['title'], 'accesskey="h" title="[H]"') */?>
-						</h1>
-					</div> -->
 
-						<!-- BREADCRUMBS -->
+						<!-- Trace/Navigation -->
 						<nav aria-label="breadcrumb" role="navigation">
 							<ol class="breadcrumb">
 								<?php if ($conf['breadcrumbs']) {?>
@@ -261,22 +216,20 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						</nav>
 
 
-						<!-- ********** CONTENT ********** -->
+						<!-- Wiki Contents -->
 						<div id="dokuwiki__content">
 							<div class="pad">
 
 								<div class="page">
-									<!-- wikipage start -->
 
 									<?php echo $buffer ?>
-									<!-- wikipage stop -->
 								</div>
-							</div>
-							<!-- /content -->
-							
+							</div>							
 						</div>
 
 						<hr />
+						
+						<!-- Footer -->
 						<div class="card footer-card">
 							<div class="card-body">
 								<div class="container">
@@ -325,40 +278,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 
 
-					<!-- right sidebar -->
+					<!-- Right Sidebar -->
 					<div class="d-none d-xl-block col-xl-2 ct-toc">
-						<!-- <ul class="section-nav">
-							<li class="toc-entry toc-h6"><a href="#developer-first">Developer First</a></li>
-							<li class="toc-entry toc-h6"><a href="#high-quality-before-everything">High quality before everything</a> </li>
-							<li class="toc-entry toc-h6"><a href="#community-helpers">Community helpers</a></li>
-							<li class="toc-entry toc-h2"><a href="#resources-and-credits">Resources and credits</a>
-								<ul>
-									<li class="toc-entry toc-h3"><a href="#learn-more">Learn more</a></li>
-								</ul>
-							</li>
-						</ul> -->
-
 						<div>
-							<!-- Check the table of contents section in https://www.dokuwiki.org/devel:templates -->
-
-
 							<?php tpl_toc()?>
-
 						</div>
-
 					</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 				</div>
 			</div>
