@@ -25258,6 +25258,9 @@ input, select {
   margin-bottom: 1em;
   float: right;
 }
+#dokuwiki__content .wikilink2 {
+  color: #dc3545;
+}
 #dokuwiki__content .editButtons button {
   margin-top: 1em;
   margin-bottom: 1em;

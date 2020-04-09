@@ -64,6 +64,11 @@ input, select {
         float: right;
     }
 
+    // Non-existant links
+    .wikilink2 {
+        color: #dc3545;
+    }
+
     // Page Revisions Button
     #page__revisions button {
         @extend .btn; 
