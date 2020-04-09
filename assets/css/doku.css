@@ -25251,6 +25251,10 @@ input, select {
   background: #dfe2f1;
 }
 
+.breadcrumb {
+  flex-direction: column;
+}
+
 #dokuwiki__content p {
   font-weight: 400;
 }
