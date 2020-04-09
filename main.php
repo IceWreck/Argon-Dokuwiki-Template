@@ -43,9 +43,6 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		-->
 		<!--     Fonts and icons  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-		<!-- Font Awesome Icons -->
-		<link href="<?php echo tpl_basedir(); ?>assets/css/font-awesome.css" rel="stylesheet" />
 		<!-- CSS Files -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/doku.css" rel="stylesheet" />
 		<!-- JS -->
@@ -64,7 +61,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 				<div class="btn btn-neutral btn-icon">
 					<span class="btn-inner--icon">
-						<i class="fa fa-book"></i>
+						<!-- <i class=""></i> -->
 					</span>
 					<span
 						class="nav-link-inner--text"><?php tpl_link(wl(), $conf['title'], 'accesskey="h" title="[H]"')?></span>
