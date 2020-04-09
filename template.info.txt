@@ -3,5 +3,5 @@ author   Anchit
 email    ab@abifog.com
 date     2020-04-08
 name     Argon Dokuwiki
-desc     Argon - clean modern template for Dokuwiki based.
+desc     Argon - clean modern template for Dokuwiki.
 url      https://github.com/IceWreck/Argon-Dokuwiki-Template

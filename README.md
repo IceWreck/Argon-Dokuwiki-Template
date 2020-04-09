@@ -1,5 +1,7 @@
 # Argon Dokuwiki Template
 
+Argon - a clean modern template for Dokuwiki.
+
 ![Screenshot](screenshots/1.png)
 
 ## Sidebar
