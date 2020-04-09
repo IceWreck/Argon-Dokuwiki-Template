@@ -1,6 +1,6 @@
 # Argon Dokuwiki Template
 
-## Screenshots
+![Screenshot](screenshots/1.png)
 
 ## Sidebar
 
@@ -16,5 +16,12 @@ sass --watch assets/css/doku.scss assets/css/doku.css
 ```
 
 ## Credits
-* Creative Tim for the [Argon Design System](https://github.com/creativetimofficial/argon-design-system) stylesheet.
+* Creative Tim for the [Argon Design System](https://github.com/creativetimofficial/argon-design-system) stylesheet. 
 * [Anika Henke](https://github.com/selfthinker) for her starter dokuwiki template.
+
+## More Screenshots
+
+![Screenshot](screenshots/2.png)
+![Screenshot](screenshots/3.png)
+![Screenshot](screenshots/4.png)
+![Screenshot](screenshots/5.png)
