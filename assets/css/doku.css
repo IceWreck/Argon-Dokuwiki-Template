@@ -1646,26 +1646,27 @@ pre code {
     margin-left: 91.666667%;
   }
 }
-.table {
+.table, #dokuwiki__content table {
   width: 100%;
   margin-bottom: 1rem;
   color: #525f7f;
   background-color: transparent;
 }
 
-.table th,
-.table td {
+.table th, #dokuwiki__content table th,
+.table td,
+#dokuwiki__content table td {
   padding: 1rem;
   vertical-align: top;
   border-top: 0.0625rem solid #dee2e6;
 }
 
-.table thead th {
+.table thead th, #dokuwiki__content table thead th {
   vertical-align: bottom;
   border-bottom: 0.125rem solid #dee2e6;
 }
 
-.table tbody + tbody {
+.table tbody + tbody, #dokuwiki__content table tbody + tbody {
   border-top: 0.125rem solid #dee2e6;
 }
 
@@ -1983,13 +1984,13 @@ pre code {
   background-color: rgba(0, 0, 0, 0.075);
 }
 
-.table .thead-dark th {
+.table .thead-dark th, #dokuwiki__content table .thead-dark th {
   color: #fff;
   background-color: #212529;
   border-color: #32383e;
 }
 
-.table .thead-light th {
+.table .thead-light th, #dokuwiki__content table .thead-light th {
   color: #525f7f;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -2067,14 +2068,14 @@ pre code {
     border: 0;
   }
 }
-.table-responsive {
+.table-responsive, #dokuwiki__content table {
   display: block;
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-.table-responsive > .table-bordered {
+.table-responsive > .table-bordered, #dokuwiki__content table > .table-bordered {
   border: 0;
 }
 
@@ -16834,12 +16835,13 @@ h3 {
     border: 0.0625rem solid #000;
   }
 
-  .table {
+  .table, #dokuwiki__content table {
     border-collapse: collapse !important;
   }
 
-  .table td,
-.table th {
+  .table td, #dokuwiki__content table td,
+.table th,
+#dokuwiki__content table th {
     background-color: #fff !important;
   }
 
@@ -16859,7 +16861,7 @@ h3 {
     border-color: #dee2e6;
   }
 
-  .table .thead-dark th {
+  .table .thead-dark th, #dokuwiki__content table .thead-dark th {
     color: inherit;
     border-color: #dee2e6;
   }
@@ -24049,17 +24051,17 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   float: none;
 }
 
-.ct-example-type .table .type-info {
+.ct-example-type .table .type-info, .ct-example-type #dokuwiki__content table .type-info, #dokuwiki__content .ct-example-type table .type-info {
   color: #999;
   vertical-align: middle;
 }
 
-.ct-example-type .table td {
+.ct-example-type .table td, .ct-example-type #dokuwiki__content table td, #dokuwiki__content .ct-example-type table td {
   padding: 1rem 0;
   border-color: #eee;
 }
 
-.ct-example-type .table tr:first-child td {
+.ct-example-type .table tr:first-child td, .ct-example-type #dokuwiki__content table tr:first-child td, #dokuwiki__content .ct-example-type table tr:first-child td {
   border-top: 0;
 }
 
@@ -25277,6 +25279,9 @@ input, select {
 #dokuwiki__content img.icon {
   width: 1.5rem;
   height: 1.5rem;
+}
+#dokuwiki__content .table-responsive, #dokuwiki__content table {
+  border-width: 0rem;
 }
 #dokuwiki__content pre {
   font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;

@@ -105,6 +105,15 @@ input, select {
         width: 1.5rem;
         height: 1.5rem; 
     }
+    
+    // Tables
+    .table-responsive {
+        border-width: 0rem;
+    }
+    table {
+        @extend .table-responsive;
+        @extend .table;
+    }
 
     // Code Blocks
     pre {
