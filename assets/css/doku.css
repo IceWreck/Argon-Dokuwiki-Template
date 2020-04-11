@@ -25274,6 +25274,10 @@ input, select {
   padding: 0.1em;
   border-radius: 0.3em;
 }
+#dokuwiki__content img.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
 #dokuwiki__content pre {
   font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
   font-size: 14px;
