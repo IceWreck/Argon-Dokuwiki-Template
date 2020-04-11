@@ -42,7 +42,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		but I had some issues with styling (and import order) there, so I'm doing those imports here. 
 		-->
 		<!--     Fonts and icons  -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> -->
+		<link href="<?php echo tpl_basedir(); ?>assets/css/fonts.css" rel="stylesheet">
 		<!-- CSS Files -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/doku.css" rel="stylesheet" />
 		<!-- JS -->
