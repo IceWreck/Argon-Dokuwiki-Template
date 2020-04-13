@@ -1,12 +1,12 @@
 # Argon Dokuwiki Template
 
-Argon - a clean modern template for Dokuwiki.
+Argon - a clean, responsive, modern template for Dokuwiki.
 
 ![Screenshot](screenshots/1.png)
 
 ## Sidebar
 
-If you have a sidebar, then links in bullet points will have consistent styling with the rest of the template.
+If you have a sidebar, then put your links (in the sidebar) in bullet points to ensure consistent styling with the rest of the template.
 
 ## Styling
 
