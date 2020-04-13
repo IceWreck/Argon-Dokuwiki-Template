@@ -25277,8 +25277,8 @@ input, select {
   border-radius: 0.3em;
 }
 #dokuwiki__content img.icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
 }
 #dokuwiki__content .table-responsive, #dokuwiki__content table {
   border-width: 0rem;
@@ -25367,6 +25367,7 @@ textarea {
 .doku_form .no {
   margin: 0rem;
   height: 1.5rem;
+  padding: 0rem;
 }
 .doku_form .no #qsearch__in {
   width: 10rem;
@@ -25381,6 +25382,7 @@ textarea {
 .doku_form .no button {
   margin: 0rem;
   overflow: hidden;
+  height: 92%;
 }
 
 .search-form {

@@ -102,8 +102,8 @@ input, select {
 
     // Emoticons
     img.icon {
-        width: 1.5rem;
-        height: 1.5rem; 
+        width: 1rem;
+        height: 1rem; 
     }
     
     // Tables
@@ -241,6 +241,7 @@ textarea {
         @extend .mb-4;
         margin: 0rem;
         height: 1.5rem;
+        padding: 0rem;
 
         #qsearch__in {
             @extend .form-control;
@@ -258,7 +259,7 @@ textarea {
             @extend .btn-neutral;
             margin: 0rem;
             overflow: hidden;
-
+            height: 92%;
         }
     }
     
