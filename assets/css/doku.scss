@@ -32,9 +32,10 @@ input, select {
 }
 
 // Fix Content Hidden behind navbar when you reach via anchor
-:target {
-    padding-top: 6rem;
- }
+// Fixed somewhere else. 
+// :target {
+//     padding-top: 6rem;
+//  }
 
 // Selection
 ::-moz-selection {
@@ -60,7 +61,19 @@ input, select {
     p {
         font-weight: 400;
     }
-    
+
+    // HAX. Still don't understand why it works, but it does.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+    h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+        content: '';
+        display: block;
+        height:      6rem;
+        margin-top: -6rem;
+        visibility: hidden;
+
+    }
+
+
     // Edit Button
     .secedit button {
         @extend .btn; 

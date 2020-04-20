@@ -25239,10 +25239,6 @@ input, select {
   border-color: #5e72e4;
 }
 
-:target {
-  padding-top: 6rem;
-}
-
 ::-moz-selection {
   text-shadow: none;
   background: #dfe2f1;
@@ -25259,6 +25255,13 @@ input, select {
 
 #dokuwiki__content p {
   font-weight: 400;
+}
+#dokuwiki__content h1::before, #dokuwiki__content h2::before, #dokuwiki__content h3::before, #dokuwiki__content h4::before, #dokuwiki__content h5::before, #dokuwiki__content h6::before {
+  content: "";
+  display: block;
+  height: 6rem;
+  margin-top: -6rem;
+  visibility: hidden;
 }
 #dokuwiki__content .secedit button {
   margin-bottom: 1em;

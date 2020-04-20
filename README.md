@@ -1,6 +1,7 @@
 # Argon Dokuwiki Template
 
 Argon - a clean, responsive, modern template for Dokuwiki.
+https://www.dokuwiki.org/template:argon
 
 ![Screenshot](screenshots/1.png)
 
