@@ -25312,6 +25312,9 @@ input, select {
   margin-top: 1rem;
   overflow: auto;
 }
+#dokuwiki__content .mf_pdf {
+  display: inline;
+}
 
 #tool__bar button {
   margin-bottom: 2em;
