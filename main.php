@@ -183,7 +183,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 					<!-- center content -->
 
-					<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
+					<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content dokuwiki" role="main">
 
 						<div id="dokuwiki__top" class="site
 						<?php echo tpl_classes(); ?>

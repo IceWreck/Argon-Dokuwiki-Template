@@ -6,6 +6,10 @@
 *  Ported to Dokuwiki by Anchit (@IceWreck)
 =========================================================
 */
+/*
+* I know using important at multiple places is a bad thing, but 
+* I need to overrule the css already provided by dokuwiki
+*/
 /*!
 =========================================================
 *  Argon Design System  - v 1.2.0
@@ -411,8 +415,8 @@ h6,
 .h2,
 #dw__login legend label,
 .h3,
-#dw__register legend,
-#dw__profiledelete legend,
+.dokuwiki #dw__register fieldset legend,
+#dw__profiledelete fieldset legend,
 legend,
 .h4,
 .h5,
@@ -437,8 +441,8 @@ h2,
 
 h3,
 .h3,
-#dw__register legend,
-#dw__profiledelete legend,
+.dokuwiki #dw__register fieldset legend,
+#dw__profiledelete fieldset legend,
 legend {
   font-size: 1.75rem;
 }
@@ -25321,8 +25325,12 @@ input, select {
 }
 
 textarea {
-  width: 95%;
-  max-width: 100%;
+  width: 95% !important;
+  max-width: 100% !important;
+}
+
+.editBar .summary {
+  display: block !important;
 }
 
 .ct-toc #dw__toc {
@@ -25441,22 +25449,30 @@ textarea {
   background-color: inherit;
 }
 
-#dw__register, #dw__profiledelete {
+.dokuwiki #dw__register fieldset, #dw__profiledelete fieldset {
+  width: 100%;
+  border: 0rem;
+  padding: 0rem;
   text-align: left !important;
 }
-#dw__register legend, #dw__profiledelete legend {
+.dokuwiki #dw__register fieldset legend, #dw__profiledelete fieldset legend {
   font-style: normal;
 }
-#dw__register label, #dw__profiledelete label {
+.dokuwiki #dw__register fieldset label, #dw__profiledelete fieldset label {
   font-size: 1rem;
+  font-weight: normal;
   width: 95%;
+  text-align: left !important;
 }
-#dw__register label input, #dw__profiledelete label input {
+.dokuwiki #dw__register fieldset label input, #dw__profiledelete fieldset label input {
   float: right;
   background-color: white !important;
   border-radius: 0.25rem;
   border-color: #99979c;
   border-width: thin;
+}
+.dokuwiki #dw__register label.block, #dw__profiledelete label.block {
+  display: inline-block !important;
 }
 
 #dw__login {

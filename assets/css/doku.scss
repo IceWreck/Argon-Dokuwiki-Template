@@ -6,6 +6,11 @@
 =========================================================
 */
 
+/*
+* I know using important at multiple places is a bad thing, but 
+* I need to overrule the css already provided by dokuwiki
+*/
+
 @import 'argon-design-system';
 
 // ------ General ------
@@ -56,6 +61,7 @@ input, select {
 
 
 // ------ Main Content ------
+
 
 #dokuwiki__content {
     p {
@@ -177,10 +183,15 @@ input, select {
 
 textarea {
     @extend .form-control;
-    width: 95%;
-    max-width: 100%;
+    width: 95% !important;
+    max-width: 100% !important;
 }
 
+.editBar {
+    .summary {
+        display: block !important;
+    }
+}
 // ------ Table of Contents ------
 .ct-toc {
     #dw__toc {
@@ -374,24 +385,37 @@ textarea {
 // ------ Registration and User Forms ------
 
 // Modify user, delete user
-#dw__register, #dw__profiledelete {
-    text-align: left !important; 
-    legend {
-        @extend .h3;
-        font-style: normal;
-    }
-    label {
-        font-size: 1rem;
-        width: 95%;
-        input {
-            float: right;
-            background-color: white !important;
-            border-radius: 0.25rem;
-            border-color: #99979c;
-            border-width: thin;
+
+
+.dokuwiki #dw__register, #dw__profiledelete {
+    fieldset {
+        width: 100%;
+        border: 0rem;
+        padding: 0rem;
+        text-align: left !important; 
+        legend {
+            @extend .h3;
+            font-style: normal;
         }
+        label {
 
+            font-size: 1rem;
+            font-weight: normal;
+            width: 95%;
+            text-align: left !important; 
+            input {
+                float: right;
+                background-color: white !important;
+                border-radius: 0.25rem;
+                border-color: #99979c;
+                border-width: thin;
+            }
+            
+        }
+    }
 
+    label.block {
+        display: inline-block !important;
     }
 }
 
