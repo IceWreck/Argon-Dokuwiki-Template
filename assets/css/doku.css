@@ -25241,7 +25241,7 @@ input,
 select {
   background-color: white !important;
   border-radius: 0.25rem;
-  border-color: #5e72e4;
+  border-color: #99979c;
 }
 
 ::-moz-selection {
@@ -25435,16 +25435,37 @@ textarea {
   list-style-type: disclosure-closed;
 }
 
-.admin_tasks svg {
-  margin-right: 1rem;
-}
-
-.ui-admin ul li {
+.dokuwiki .ui-admin ul li {
   list-style-type: none;
 }
-
-.tabs li {
+.dokuwiki .ui-admin ul .admin_tasks svg {
+  margin-right: 1rem;
+  width: 1px;
+  height: 1px;
+}
+.dokuwiki .tabs li {
   list-style-type: disclosure-closed;
+}
+.dokuwiki div.ui-admin ul li {
+  margin: 0rem;
+  vertical-align: middle !important;
+}
+.dokuwiki div.ui-admin ul li a {
+  vertical-align: middle;
+}
+.dokuwiki div.ui-admin ul li a span.icon svg {
+  margin-right: 1rem;
+  width: inherit;
+  height: inherit;
+  vertical-align: middle !important;
+}
+.dokuwiki div.ui-admin ul li a span.icon svg path {
+  fill: #32325d;
+}
+.dokuwiki div.ui-admin ul li a span.prompt {
+  font-size: 1rem;
+  font-weight: normal;
+  vertical-align: middle !important;
 }
 
 #config__manager td input.edit {

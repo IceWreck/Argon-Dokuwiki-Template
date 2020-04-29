@@ -29,7 +29,7 @@ input,
 select {
     background-color: white !important;
     border-radius: 0.25rem;
-    border-color: #5e72e4;
+    border-color: #99979c;
 }
 
 // Highlight Search Results
@@ -359,24 +359,64 @@ textarea {
 
 // ------ Admin Area ------
 
-.admin_tasks {
-    svg {
-        margin-right: 1rem;
-    }
-}
+.dokuwiki {
+    
 
-.ui-admin {
-    ul li {
-        list-style-type: none;
-    }
-}
+    .ui-admin {
+        ul li {
+            list-style-type: none;
+        }
 
-.tabs {
-    li {
-        list-style-type: disclosure-closed;
+        ul .admin_tasks {
+            svg {
+                margin-right: 1rem;
+                width: 1px;
+                height: 1px;
+            }
+        }
     }
-}
 
+    .tabs {
+        li {
+            list-style-type: disclosure-closed;
+        }
+    }
+
+    div.ui-admin ul li {
+
+        margin: 0rem;
+        vertical-align: middle !important; 
+
+        a {
+            vertical-align: middle;
+            span.icon svg {
+                margin-right: 1rem;
+                width: inherit;
+                height: inherit;
+                vertical-align: middle !important; 
+                path {
+                    fill: #32325d;
+                }
+                
+    
+    
+            }
+    
+            span.prompt {
+                font-size: 1rem;
+                font-weight: normal;
+                vertical-align: middle !important; 
+
+            }
+    
+        }
+
+    } 
+    
+    
+
+
+}
 // Config Panel
 
 #config__manager td input.edit {
