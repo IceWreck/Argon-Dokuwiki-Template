@@ -25,7 +25,8 @@ legend {
     font-style: normal;
 }
 
-input, select {
+input,
+select {
     background-color: white !important;
     border-radius: 0.25rem;
     border-color: #5e72e4;
@@ -70,10 +71,15 @@ input, select {
 
     // HAX. Still don't understand why it works, but it does.
     // https://developer.mozilla.org/en-US/docs/Web/CSS/::before
-    h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+    h1::before,
+    h2::before,
+    h3::before,
+    h4::before,
+    h5::before,
+    h6::before {
         content: '';
         display: block;
-        height:      6rem;
+        height: 6rem;
         margin-top: -6rem;
         visibility: hidden;
 
@@ -82,7 +88,7 @@ input, select {
 
     // Edit Button
     .secedit button {
-        @extend .btn; 
+        @extend .btn;
         @extend .btn-primary;
         @extend .btn-sm;
         margin-bottom: 1em;
@@ -96,39 +102,40 @@ input, select {
 
     // Page Revisions Button
     #page__revisions button {
-        @extend .btn; 
+        @extend .btn;
         @extend .btn-primary;
     }
 
     // Wiki Edit Menu Buttons
-    .editButtons button{
-        @extend .btn; 
+    .editButtons button {
+        @extend .btn;
         @extend .btn-primary;
         @extend .btn-sm;
         margin-top: 1em;
         margin-bottom: 1em;
     }
 
-    
+
     // Inline Code
     :not(pre)>code {
         background-color: inherit;
         padding: .1em;
         border-radius: .3em;
 
-        
+
     }
 
     // Emoticons
     img.icon {
         width: 1rem;
-        height: 1rem; 
+        height: 1rem;
     }
-    
+
     // Tables
     .table-responsive {
         border-width: 0rem;
     }
+
     table {
         @extend .table-responsive;
         @extend .table;
@@ -166,14 +173,14 @@ input, select {
     .mf_pdf {
         display: inline;
     }
-    
+
 }
 
 // ------ Editor ------
 
 // Tool Bar Buttons
 #tool__bar button {
-    @extend .btn; 
+    @extend .btn;
     @extend .btn-secondary;
     @extend .btn-sm;
     margin-bottom: 2em;
@@ -192,21 +199,22 @@ textarea {
         display: block !important;
     }
 }
+
 // ------ Table of Contents ------
 .ct-toc {
     #dw__toc {
 
-        float:inherit;
-        margin:inherit;
-        width:inherit;
-        background-color:inherit;
-        color:inherit;
+        float: inherit;
+        margin: inherit;
+        width: inherit;
+        background-color: inherit;
+        color: inherit;
         box-sizing: border-box;
         margin-right: 0em;
         padding-left: 0;
         border-left: 1px solid #eee;
 
-        
+
         h3 {
             display: none;
         }
@@ -217,14 +225,16 @@ textarea {
             color: #99979c;
             font-size: 100%;
         }
-          
+
         a:hover {
-            color:#5e72e4;
+            color: #5e72e4;
             text-decoration: none;
         }
 
 
-        ol, ul, dl {
+        ol,
+        ul,
+        dl {
             margin-top: 0;
             margin-bottom: 1rem;
         }
@@ -240,6 +250,7 @@ textarea {
             list-style-type: disc;
         }
     }
+
     // .clear {
     //     @extend .section-nav;    
     //     .li {
@@ -256,13 +267,14 @@ textarea {
 // Navbar Icons
 .argon-doku-navbar-icon {
     fill: white;
+
     :hover {
         fill: #e6e6e6;
     }
 }
 
 // Search Bar
-.doku_form{
+.doku_form {
     .no {
         @extend .form-group;
         @extend .input-group;
@@ -273,8 +285,8 @@ textarea {
 
         #qsearch__in {
             @extend .form-control;
-            width: 10rem; 
-            height:1.5rem;
+            width: 10rem;
+            height: 1.5rem;
             margin: 0rem;
             margin-right: 1rem;
             margin-left: 1rem;
@@ -282,6 +294,7 @@ textarea {
             overflow: hidden;
             border: none;
         }
+
         button {
             @extend .btn;
             @extend .btn-neutral;
@@ -290,13 +303,13 @@ textarea {
             height: 92%;
         }
     }
-    
+
 }
 
 // ------ Search Form ------
 
 .search-form {
-    top:50%;
+    top: 50%;
     position: relative;
 }
 
@@ -306,7 +319,7 @@ textarea {
     @extend .btn-default;
 }
 
-.search-results-form{
+.search-results-form {
     // button {
     //     @extend .btn;
     //     @extend .btn-primary;
@@ -320,13 +333,13 @@ textarea {
     fieldset input {
         @extend .form-control;
         display: block;
-        width: 90%; 
-        height:1.5rem;
+        width: 90%;
+        height: 1.5rem;
         margin-top: 2rem;
         margin-bottom: 2rem;
         margin-left: 5%;
         margin-right: 5%;
-    } 
+    }
 }
 
 .advancedOptions {
@@ -337,7 +350,8 @@ textarea {
     margin-top: 1rem;
     padding: 1rem;
     margin-left: 5rem;
-    .toggle > ul > li {
+
+    .toggle>ul>li {
         list-style-type: disclosure-closed;
     }
 }
@@ -371,13 +385,18 @@ textarea {
     padding: 0.0rem 0.75rem;
     background-color: white !important;
 }
-#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault {
+
+#config__manager tr.default .input,
+#config__manager tr.default input,
+#config__manager tr.default textarea,
+#config__manager tr.default select,
+#config__manager .selectiondefault {
     background-color: inherit;
 }
 
 // ------ Media Uploads ------
 
-.qq-upload-button{
+.qq-upload-button {
     @extend .btn;
     @extend .btn-neutral;
 }
@@ -387,22 +406,26 @@ textarea {
 // Modify user, delete user
 
 
-.dokuwiki #dw__register, #dw__profiledelete {
+.dokuwiki #dw__register,
+#dw__profiledelete {
     fieldset {
         width: 100%;
         border: 0rem;
         padding: 0rem;
-        text-align: left !important; 
+        text-align: left !important;
+
         legend {
             @extend .h3;
             font-style: normal;
         }
+
         label {
 
             font-size: 1rem;
             font-weight: normal;
             width: 95%;
-            text-align: left !important; 
+            text-align: left !important;
+
             input {
                 float: right;
                 background-color: white !important;
@@ -410,7 +433,7 @@ textarea {
                 border-color: #99979c;
                 border-width: thin;
             }
-            
+
         }
     }
 
@@ -423,50 +446,63 @@ textarea {
 #dw__login {
     width: 100%;
     float: left;
-        left: 0%;
-    margin:0%;
+    left: 0%;
+    margin: 0%;
     @extend .card;
-    @extend .bg-secondary, .shadow, .border-0;
+    @extend .bg-secondary,
+    .shadow,
+    .border-0;
+
     label {
         width: 90%;
     }
 
     legend {
-        @extend .card-header, .bg-white, .pb-5;
+        @extend .card-header,
+        .bg-white,
+        .pb-5;
         font-size: 2rem;
+
         label {
             @extend .h2;
         }
+
         margin-bottom: 5%;
         font-style: normal;
     }
+
     span {
         float: left;
         font-size: 1.15rem;
     }
-    input{
+
+    input {
         display: block;
-        float: right ;
+        float: right;
         @extend .form-control;
         width: 90%;
         height: 1.15rem;
         top: 50%;
-        
+
     }
+
     .simple {
         width: 50%;
         margin-left: unset !important;
-        
+
     }
+
     #remember__me {
         width: unset;
         float: unset;
         height: unset;
         margin-top: 1rem;
     }
+
     label[for="remember__me"] {
         margin-left: unset !important;
     }
+
     button {
         // margin-top: 5rem;
         @extend .btn;
@@ -478,21 +514,25 @@ textarea {
 
 .leftsidebar {
     .leftsidebar ul {
-        @extend .nav, .ct-sidenav;
+        @extend .nav,
+        .ct-sidenav;
     }
+
     li {
         list-style-type: none;
         display: block;
         font-size: 84%;
         padding: 0.25rem;
-        color:#4c555a;
+        color: #4c555a;
         font-weight: 400;
     }
 
-    a:link, a:visited {
+    a:link,
+    a:visited {
         text-decoration: none;
-        color:#4c555a;
+        color: #4c555a;
     }
+
     a:hover {
         color: #212529;
     }
@@ -510,7 +550,7 @@ textarea {
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .argon-doku-footer-fullmenu {
         margin-left: auto;
         margin-right: auto;
@@ -518,8 +558,9 @@ textarea {
         li {
             display: inline;
             fill: #6c757d;
+
             :hover {
-                fill:#525f7f;
+                fill: #525f7f;
             }
         }
 
@@ -528,4 +569,3 @@ textarea {
         }
     }
 }
-

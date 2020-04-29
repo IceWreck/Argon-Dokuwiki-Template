@@ -25237,7 +25237,8 @@ legend {
   font-style: normal;
 }
 
-input, select {
+input,
+select {
   background-color: white !important;
   border-radius: 0.25rem;
   border-color: #5e72e4;
@@ -25260,7 +25261,12 @@ input, select {
 #dokuwiki__content p {
   font-weight: 400;
 }
-#dokuwiki__content h1::before, #dokuwiki__content h2::before, #dokuwiki__content h3::before, #dokuwiki__content h4::before, #dokuwiki__content h5::before, #dokuwiki__content h6::before {
+#dokuwiki__content h1::before,
+#dokuwiki__content h2::before,
+#dokuwiki__content h3::before,
+#dokuwiki__content h4::before,
+#dokuwiki__content h5::before,
+#dokuwiki__content h6::before {
   content: "";
   display: block;
   height: 6rem;
@@ -25357,7 +25363,9 @@ textarea {
   color: #5e72e4;
   text-decoration: none;
 }
-.ct-toc #dw__toc ol, .ct-toc #dw__toc ul, .ct-toc #dw__toc dl {
+.ct-toc #dw__toc ol,
+.ct-toc #dw__toc ul,
+.ct-toc #dw__toc dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -25445,33 +25453,42 @@ textarea {
   background-color: white !important;
 }
 
-#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault {
+#config__manager tr.default .input,
+#config__manager tr.default input,
+#config__manager tr.default textarea,
+#config__manager tr.default select,
+#config__manager .selectiondefault {
   background-color: inherit;
 }
 
-.dokuwiki #dw__register fieldset, #dw__profiledelete fieldset {
+.dokuwiki #dw__register fieldset,
+#dw__profiledelete fieldset {
   width: 100%;
   border: 0rem;
   padding: 0rem;
   text-align: left !important;
 }
-.dokuwiki #dw__register fieldset legend, #dw__profiledelete fieldset legend {
+.dokuwiki #dw__register fieldset legend,
+#dw__profiledelete fieldset legend {
   font-style: normal;
 }
-.dokuwiki #dw__register fieldset label, #dw__profiledelete fieldset label {
+.dokuwiki #dw__register fieldset label,
+#dw__profiledelete fieldset label {
   font-size: 1rem;
   font-weight: normal;
   width: 95%;
   text-align: left !important;
 }
-.dokuwiki #dw__register fieldset label input, #dw__profiledelete fieldset label input {
+.dokuwiki #dw__register fieldset label input,
+#dw__profiledelete fieldset label input {
   float: right;
   background-color: white !important;
   border-radius: 0.25rem;
   border-color: #99979c;
   border-width: thin;
 }
-.dokuwiki #dw__register label.block, #dw__profiledelete label.block {
+.dokuwiki #dw__register label.block,
+#dw__profiledelete label.block {
   display: inline-block !important;
 }
 
@@ -25521,7 +25538,8 @@ textarea {
   color: #4c555a;
   font-weight: 400;
 }
-.leftsidebar a:link, .leftsidebar a:visited {
+.leftsidebar a:link,
+.leftsidebar a:visited {
   text-decoration: none;
   color: #4c555a;
 }
