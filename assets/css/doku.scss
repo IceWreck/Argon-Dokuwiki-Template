@@ -308,54 +308,32 @@ textarea {
 
 // ------ Search Form ------
 
-.search-form {
-    top: 50%;
-    position: relative;
-}
-
-
 .toggleAssistant {
     @extend .btn;
     @extend .btn-default;
 }
 
 .search-results-form {
-    // button {
-    //     @extend .btn;
-    //     @extend .btn-primary;
-    // }
+    button {
+        @extend .btn;
+        @extend .btn-primary;
+        margin-left: 3rem;
+    }
 
     .toggleAssistant {
         @extend .btn;
         @extend .btn-default;
+        display: block;
+        float: none !important;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 
     fieldset input {
         @extend .form-control;
-        display: block;
-        width: 90%;
-        height: 1.5rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        margin-left: 5%;
-        margin-right: 5%;
+        display: inline-block;
     }
 }
-
-.advancedOptions {
-    width: 30%;
-    border-style: dotted;
-    border-width: 0.01rem;
-    border-radius: 0.45rem;
-    margin-top: 1rem;
-    padding: 1rem;
-    margin-left: 5rem;
-
-    .toggle>ul>li {
-        list-style-type: disclosure-closed;
-    }
-}
-
 
 // ------ Admin Area ------
 
