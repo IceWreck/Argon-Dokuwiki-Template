@@ -413,7 +413,6 @@ h5,
 h6,
 .h1,
 .h2,
-#dw__login legend label,
 .h3,
 .dokuwiki #dw__register fieldset legend,
 #dw__profiledelete fieldset legend,
@@ -434,8 +433,7 @@ h1,
 }
 
 h2,
-.h2,
-#dw__login legend label {
+.h2 {
   font-size: 2rem;
 }
 
@@ -6203,18 +6201,18 @@ input[type=button].btn-block {
   margin-left: 1.5rem;
 }
 
-.card-header, #dw__login legend {
+.card-header {
   padding: 1.25rem 1.5rem;
   margin-bottom: 0;
   background-color: #f6f9fc;
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.05);
 }
 
-.card-header:first-child, #dw__login legend:first-child {
+.card-header:first-child {
   border-radius: calc(0.25rem - 0.0625rem) calc(0.25rem - 0.0625rem) 0 0;
 }
 
-.card-header + .list-group .list-group-item:first-child, #dw__login legend + .list-group .list-group-item:first-child {
+.card-header + .list-group .list-group-item:first-child {
   border-top: 0;
 }
 
@@ -6322,10 +6320,7 @@ input[type=button].btn-block {
 
   .card-group > .card:not(:last-child) .card-img-top, .card-group > #dw__login:not(:last-child) .card-img-top,
 .card-group > .card:not(:last-child) .card-header,
-.card-group > .card:not(:last-child) #dw__login legend,
-#dw__login .card-group > .card:not(:last-child) legend,
-.card-group > #dw__login:not(:last-child) .card-header,
-.card-group > #dw__login:not(:last-child) legend {
+.card-group > #dw__login:not(:last-child) .card-header {
     border-top-right-radius: 0;
   }
 
@@ -6342,10 +6337,7 @@ input[type=button].btn-block {
 
   .card-group > .card:not(:first-child) .card-img-top, .card-group > #dw__login:not(:first-child) .card-img-top,
 .card-group > .card:not(:first-child) .card-header,
-.card-group > .card:not(:first-child) #dw__login legend,
-#dw__login .card-group > .card:not(:first-child) legend,
-.card-group > #dw__login:not(:first-child) .card-header,
-.card-group > #dw__login:not(:first-child) legend {
+.card-group > #dw__login:not(:first-child) .card-header {
     border-top-left-radius: 0;
   }
 
@@ -6376,7 +6368,7 @@ input[type=button].btn-block {
   overflow: hidden;
 }
 
-.accordion > .card:not(:first-of-type) .card-header:first-child, .accordion > .card:not(:first-of-type) #dw__login legend:first-child, #dw__login .accordion > .card:not(:first-of-type) legend:first-child, .accordion > #dw__login:not(:first-of-type) .card-header:first-child, .accordion > #dw__login:not(:first-of-type) legend:first-child {
+.accordion > .card:not(:first-of-type) .card-header:first-child, .accordion > #dw__login:not(:first-of-type) .card-header:first-child {
   border-radius: 0;
 }
 
@@ -6396,7 +6388,7 @@ input[type=button].btn-block {
   border-top-right-radius: 0;
 }
 
-.accordion > .card .card-header, #dw__login .accordion > .card legend, .accordion > #dw__login .card-header, .accordion > #dw__login legend {
+.accordion > .card .card-header, .accordion > #dw__login .card-header {
   margin-bottom: -0.0625rem;
 }
 
@@ -8381,7 +8373,7 @@ button.bg-default:focus {
   background-color: #0b1526 !important;
 }
 
-.bg-white, #dw__login legend {
+.bg-white {
   background-color: #fff !important;
 }
 
@@ -8414,7 +8406,7 @@ button.bg-darker:focus {
   background-color: black !important;
 }
 
-.bg-white, #dw__login legend {
+.bg-white {
   background-color: #fff !important;
 }
 
@@ -10333,7 +10325,7 @@ button.bg-darker:focus {
   padding-right: 3rem !important;
 }
 
-.pb-5, #dw__login legend,
+.pb-5,
 .py-5 {
   padding-bottom: 3rem !important;
 }
@@ -17273,7 +17265,7 @@ button.bg-cyan:focus {
   background-color: #00f7b5 !important;
 }
 
-.bg-white, #dw__login legend {
+.bg-white {
   background-color: #fff !important;
 }
 
@@ -20695,7 +20687,7 @@ textarea[resize=horizontal] {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-.bg-white .navbar-toggler-icon, #dw__login legend .navbar-toggler-icon {
+.bg-white .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
@@ -25604,11 +25596,6 @@ textarea {
 #dw__login label {
   width: 90%;
 }
-#dw__login legend {
-  font-size: 2rem;
-  margin-bottom: 5%;
-  font-style: normal;
-}
 #dw__login span {
   float: left;
   font-size: 1.15rem;
@@ -25622,15 +25609,6 @@ textarea {
 }
 #dw__login .simple {
   width: 50%;
-  margin-left: unset !important;
-}
-#dw__login #remember__me {
-  width: unset;
-  float: unset;
-  height: unset;
-  margin-top: 1rem;
-}
-#dw__login label[for=remember__me] {
   margin-left: unset !important;
 }
 .leftsidebar li {

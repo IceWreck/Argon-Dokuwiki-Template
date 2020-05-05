@@ -475,19 +475,19 @@ textarea {
         width: 90%;
     }
 
-    legend {
-        @extend .card-header,
-        .bg-white,
-        .pb-5;
-        font-size: 2rem;
+    // legend {
+    //     @extend .card-header,
+    //     .bg-white,
+    //     .pb-5;
+    //     font-size: 2rem;
 
-        label {
-            @extend .h2;
-        }
+    //     label {
+    //         @extend .h2;
+    //     }
 
-        margin-bottom: 5%;
-        font-style: normal;
-    }
+    //     margin-bottom: 5%;
+    //     font-style: normal;
+    // }
 
     span {
         float: left;
@@ -510,16 +510,16 @@ textarea {
 
     }
 
-    #remember__me {
-        width: unset;
-        float: unset;
-        height: unset;
-        margin-top: 1rem;
-    }
+    // #remember__me {
+    //     width: unset;
+    //     float: unset;
+    //     height: unset;
+    //     margin-top: 1rem;
+    // }
 
-    label[for="remember__me"] {
-        margin-left: unset !important;
-    }
+    // label[for="remember__me"] {
+    //     margin-left: unset !important;
+    // }
 
     button {
         // margin-top: 5rem;
