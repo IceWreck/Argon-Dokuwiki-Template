@@ -25611,6 +25611,9 @@ textarea {
   width: 50%;
   margin-left: unset !important;
 }
+#dw__login #remember__me {
+  margin-top: 1rem;
+}
 .leftsidebar li {
   list-style-type: none;
   display: block;

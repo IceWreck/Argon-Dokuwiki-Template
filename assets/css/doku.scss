@@ -510,19 +510,11 @@ textarea {
 
     }
 
-    // #remember__me {
-    //     width: unset;
-    //     float: unset;
-    //     height: unset;
-    //     margin-top: 1rem;
-    // }
-
-    // label[for="remember__me"] {
-    //     margin-left: unset !important;
-    // }
+    #remember__me {
+        margin-top: 1rem;
+    }
 
     button {
-        // margin-top: 5rem;
         @extend .btn;
         @extend .btn-primary;
     }
