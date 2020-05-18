@@ -1,7 +1,7 @@
 base     argon
 author   Anchit
 email    ab@abifog.com
-date     2020-04-13
+date     2020-05-19
 name     Argon Template
 desc     Argon - clean, responsive, modern template for Dokuwiki.
 url      https://www.dokuwiki.org/template:argon
