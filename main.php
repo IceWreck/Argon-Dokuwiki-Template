@@ -1,11 +1,3 @@
-<!--
-=========================================================
-*  Argon Dokuwiki Template
-*  Based on the Argon Design System by Creative Tim
-*  Ported to Dokuwiki by Anchit (@IceWreck)
-=========================================================
- -->
-
 <?php
 if (!defined('DOKU_INC')) {
     die();
@@ -18,7 +10,13 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<!--
+=========================================================
+*  Argon Dokuwiki Template
+*  Based on the Argon Design System by Creative Tim
+*  Ported to Dokuwiki by Anchit (@IceWreck)
+=========================================================
+ -->
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
