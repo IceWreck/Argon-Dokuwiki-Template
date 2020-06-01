@@ -124,7 +124,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								echo '</li>';
 							}
 							?>
-							<?php if ($showTools): ?>
+							<?php if ($showTools && !tpl_getConf('movePageTools')): ?>
 							<div id="dokuwiki__pagetools" class="ct-toc-item active">
 								<a class="ct-toc-link">
 									<?php echo $lang['page_tools'] ?>
@@ -205,6 +205,21 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							</ol>
 						</nav>
 
+						<?php if ($showTools && tpl_getConf('movePageTools')): ?>
+						<!-- Page Menu -->
+                        <div class="argon-doku-page-menu">
+                            <?php
+                            $menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
+                            foreach($menu_items as $item) {
+                                echo '<li>'
+                                    .'<a class="page-menu__link" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+                                    .'<i class="">'.inlineSVG($item->getSvg()).'</i>'
+                                    . '<span class="a11y">'.$item->getLabel().'</span>'
+                                    . '</a></li>';
+                            }
+                            ?>
+						</div>
+						<?php endif;?>
 
 						<!-- Wiki Contents -->
 						<div id="dokuwiki__content">
