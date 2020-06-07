@@ -9,7 +9,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && !empty($_
 $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $conf['lang'] ?>">
 <!--
 =========================================================
 *  Argon Dokuwiki Template
