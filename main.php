@@ -9,7 +9,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && !empty($_
 $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>">
 <!--
 =========================================================
 *  Argon Dokuwiki Template
@@ -76,7 +76,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						foreach($menu_items as $item) {
 						echo '<li class="'.$item->getType().'">'
 							.'<a class="nav-link" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-							.'<i class="argon-doku-navbar-icon">'.inlineSVG($item->getSvg()).'</i>'
+							.'<i class="argon-doku-navbar-icon" aria-hidden="true">'.inlineSVG($item->getSvg()).'</i>'
 							. '<span class="a11y">'.$item->getLabel().'</span>'
 							. '</a></li>';
 						}
@@ -233,7 +233,6 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						</div>
 
 						<hr />
-						
 						<!-- Footer -->
 						<div class="card footer-card">
 							<div class="card-body">
@@ -265,7 +264,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 										foreach($menu_items as $item) {
 										echo '<li class="'.$item->getType().'">'
 											.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-											.'<i class="">'.inlineSVG($item->getSvg()).'</i>'
+											.'<i class="" aria-hidden="true">'.inlineSVG($item->getSvg()).'</i>'
 											. '<span class="a11y">'.$item->getLabel().'</span>'
 											. '</a></li>';
 										}
