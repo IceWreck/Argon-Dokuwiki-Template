@@ -550,7 +550,7 @@ textarea {
     li {
         list-style-type: none;
         display: block;
-        font-size: 84%;
+        font-size: 12px;
         padding: 0.25rem;
         color: #4c555a;
         font-weight: 400;
@@ -567,6 +567,11 @@ textarea {
     }
 
 }
+
+.ct-sidebar .nav>li>a {
+    font-size: 12px;
+}
+
 
 // ------ Footer ------
 

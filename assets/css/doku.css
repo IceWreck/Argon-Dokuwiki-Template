@@ -25634,7 +25634,7 @@ textarea {
 .leftsidebar li {
   list-style-type: none;
   display: block;
-  font-size: 84%;
+  font-size: 12px;
   padding: 0.25rem;
   color: #4c555a;
   font-weight: 400;
@@ -25646,6 +25646,10 @@ textarea {
 }
 .leftsidebar a:hover {
   color: #212529;
+}
+
+.ct-sidebar .nav > li > a, .ct-sidebar .leftsidebar .leftsidebar ul > li > a, .leftsidebar .leftsidebar .ct-sidebar ul > li > a {
+  font-size: 12px;
 }
 
 .footer-card {
