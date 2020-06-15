@@ -25485,6 +25485,12 @@ textarea {
   list-style-type: disc;
 }
 
+.header-title a {
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
 .argon-doku-navbar-icon {
   fill: white;
 }

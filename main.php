@@ -7,6 +7,7 @@ if (!defined('DOKU_INC')) {
 
 $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && !empty($_SERVER['REMOTE_USER']));
 $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
+$showIcon = tpl_getConf('showIcon');
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>">
@@ -57,15 +58,32 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 			<header
 				class="navbar navbar-horizontal navbar-expand navbar-dark flex-row align-items-md-center ct-navbar bg-primary py-2">
 
+				<?php
+				if ($showIcon) {
+				?>
+					<div class="header-title">
+						<?php
+						// get logo either out of the template images folder or data/media folder
+						$logoSize = array();
+						$logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png', ':wiki:dokuwiki-128.png'), false, $logoSize);
+						// display logo and wiki title in a link to the home page
+						tpl_link(
+							wl(),
+							'<img src="'.$logo.'" width="30px" alt="" /> <span>'.$conf['title'].'</span>',
+							'accesskey="h" title="[H]"'
+						);
+						?>
+					</div>
+				<?php }else{?>
+					<div class="btn btn-neutral btn-icon">
+						<span class="btn-inner--icon">
+							<!-- <i class=""></i> -->
+						</span>
+						<span
+							class="nav-link-inner--text"><?php tpl_link(wl(), $conf['title'], 'accesskey="h" title="[H]"')?></span>
 
-				<div class="btn btn-neutral btn-icon">
-					<span class="btn-inner--icon">
-						<!-- <i class=""></i> -->
-					</span>
-					<span
-						class="nav-link-inner--text"><?php tpl_link(wl(), $conf['title'], 'accesskey="h" title="[H]"')?></span>
-
-				</div>
+					</div>
+				<?php }?>
 
 
 				<div class="d-none d-sm-block ml-auto">
