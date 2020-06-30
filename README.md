@@ -18,6 +18,12 @@ To do changes and have it compile live, do
 sass --watch assets/css/doku.scss assets/css/doku.css
 ```
 
+## Contributors
+
+- [IceWreck](https://github.com/IceWreck)
+- [SoarinFerret](https://github.com/SoarinFerret)
+- [llune](https://github.com/llune)
+
 ## Credits
 * Creative Tim for the [Argon Design System](https://github.com/creativetimofficial/argon-design-system) stylesheet. 
 * [Anika Henke](https://github.com/selfthinker) for her starter dokuwiki template.
