@@ -87,15 +87,7 @@ $showIcon = tpl_getConf('showIcon');
 					<ul class="navbar-nav ct-navbar-nav flex-row align-items-center">
 
 						<?php
-						$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
-						foreach($menu_items as $item) {
-						echo '<li class="'.$item->getType().'">'
-							.'<a class="nav-link" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-							.'<i class="argon-doku-navbar-icon" aria-hidden="true">'.inlineSVG($item->getSvg()).'</i>'
-							. '<span class="a11y">'.$item->getLabel().'</span>'
-							. '</a></li>';
-						}
-
+						echo (new \dokuwiki\Menu\UserMenu())->getListItems('action ');
 						?>
 
 
@@ -146,13 +138,7 @@ $showIcon = tpl_getConf('showIcon');
 								</a>
 								<ul class="nav ct-sidenav">
 									<?php
-									$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
-									foreach($menu_items as $item) {
-									echo '<li class="'.$item->getType().'">'
-										.'<a class="'.$item->getLinkAttributes('')['class'].'" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-										. $item->getLabel()
-										. '</a></li>';
-									}
+									echo (new \dokuwiki\Menu\PageMenu())->getListItems();
 									?>
 								</ul>
 							</div>
@@ -165,14 +151,7 @@ $showIcon = tpl_getConf('showIcon');
 								</a>
 								<ul class="nav ct-sidenav">
 									<?php
-									$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
-									foreach($menu_items as $item) {
-									echo '<li class="'.$item->getType().'">'
-										.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-										. $item->getLabel()
-										. '</a></li>';
-									}
-
+									echo (new \dokuwiki\Menu\SiteMenu())->getListItems();
 									?>
 								</ul>
 							</div>
@@ -222,17 +201,10 @@ $showIcon = tpl_getConf('showIcon');
 
 						<?php if ($showTools && tpl_getConf('movePageTools')): ?>
 						<!-- Page Menu -->
-                        <div class="argon-doku-page-menu">
-                            <?php
-                            $menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
-                            foreach($menu_items as $item) {
-                                echo '<li class="'.$item->getType().'">'
-                                    .'<a class="page-menu__link '.$item->getLinkAttributes('')['class'].'" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-                                    .'<i class="">'.inlineSVG($item->getSvg()).'</i>'
-                                    . '<span class="a11y">'.$item->getLabel().'</span>'
-                                    . '</a></li>';
-                            }
-                            ?>
+						<div class="argon-doku-page-menu">
+							<?php
+							echo (new \dokuwiki\Menu\PageMenu())->getListItems();
+							?>
 						</div>
 						<?php endif;?>
 
@@ -244,7 +216,7 @@ $showIcon = tpl_getConf('showIcon');
 
 									<?php echo $buffer ?>
 								</div>
-							</div>							
+							</div>
 						</div>
 
 						<hr />
@@ -275,14 +247,7 @@ $showIcon = tpl_getConf('showIcon');
 									<div class="row">
 									<div class="argon-doku-footer-fullmenu">
 										<?php
-										$menu_items = (new \dokuwiki\Menu\MobileMenu())->getItems();
-										foreach($menu_items as $item) {
-										echo '<li class="'.$item->getType().'">'
-											.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-											.'<i class="" aria-hidden="true">'.inlineSVG($item->getSvg()).'</i>'
-											. '<span class="a11y">'.$item->getLabel().'</span>'
-											. '</a></li>';
-										}
+										echo (new \dokuwiki\Menu\MobileMenu())->getListItems();
 										?>
 									</div>
 									<?php tpl_includeFile('footer.html') ?>
