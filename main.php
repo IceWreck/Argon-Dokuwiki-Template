@@ -87,7 +87,7 @@ $showIcon = tpl_getConf('showIcon');
 					<ul class="navbar-nav ct-navbar-nav flex-row align-items-center">
 
 						<?php
-						echo (new \dokuwiki\Menu\UserMenu())->getListItems('action ');
+						echo (new \dokuwiki\Menu\UserMenu())->getListItems('argon-doku-navbar-icon nav-link ');
 						?>
 
 
