@@ -148,11 +148,16 @@ $showIcon = tpl_getConf('showIcon');
 									<?php
 									$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
 									foreach($menu_items as $item) {
-									echo '<li class="'.$item->getType().'">'
-										.'<a class="'.$item->getLinkAttributes('')['class'].'" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-										. $item->getLabel()
-										. '</a></li>';
-									}
+										$accesskey = $item->getAccesskey();
+										$akey = '';
+										if($accesskey) {
+											$akey = 'accesskey="'.$accesskey.'" ';
+										}			
+										echo '<li class="'.$item->getType().'">'
+											.'<a class="'.$item->getLinkAttributes('')['class'].'" href="'.$item->getLink().'" title="'.$item->getTitle().'" '.$akey.'>'
+											. $item->getLabel()
+											. '</a></li>';
+										}
 									?>
 								</ul>
 							</div>
@@ -226,8 +231,13 @@ $showIcon = tpl_getConf('showIcon');
                             <?php
                             $menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
                             foreach($menu_items as $item) {
+								$accesskey = $item->getAccesskey();
+								$akey = '';
+								if($accesskey) {
+									$akey = 'accesskey="'.$accesskey.'" ';
+								}				
                                 echo '<li class="'.$item->getType().'">'
-                                    .'<a class="page-menu__link '.$item->getLinkAttributes('')['class'].'" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+									.'<a class="page-menu__link '.$item->getLinkAttributes('')['class'].'" href="'.$item->getLink().'" title="'.$item->getTitle().'" '.$akey.'>'
                                     .'<i class="">'.inlineSVG($item->getSvg()).'</i>'
                                     . '<span class="a11y">'.$item->getLabel().'</span>'
                                     . '</a></li>';
