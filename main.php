@@ -187,7 +187,7 @@ $showIcon = tpl_getConf('showIcon');
 							<?php if ($showSidebar): ?>
 							<div id="dokuwiki__aside" class="ct-toc-item active">
 								<a class="ct-toc-link">
-									<?php echo "Sidebar" ?>
+									<?php echo $lang['sidebar'] ?>
 								</a>
 								<div class="leftsidebar">
 									<?php tpl_includeFile('sidebarheader.html')?>
