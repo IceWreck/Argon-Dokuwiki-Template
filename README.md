@@ -1,6 +1,6 @@
 # Argon Dokuwiki Template
 
-_This template is unmaintained. Consider using a more maintained fork like [dokuwiki-krypton](https://github.com/fablab-luenen/dokuwiki-krypton), [UmanIT-Argon-Dokuwiki-Template](https://github.com/umanit/UmanIT-Argon-Dokuwiki-Template), [eduardomozart's fork](https://github.com/eduardomozart/Argon-Dokuwiki-Template/tree/patch-4), [SimpleDoku](https://github.com/kalenpw/SimpleDoku), [jacksitlab's fork](https://github.com/jacksitlab/Argon-Dokuwiki-Template/tree/v1.3-patch) or [others](https://github.com/IceWreck/Argon-Dokuwiki-Template/network)._
+_This template is unmaintained. Consider using a more maintained fork like [dokuwiki-krypton](https://github.com/fablab-luenen/dokuwiki-krypton), [UmanIT-Argon-Dokuwiki-Template](https://github.com/umanit/UmanIT-Argon-Dokuwiki-Template), [eduardomozart's fork](https://github.com/eduardomozart/Argon-Dokuwiki-Template/tree/patch-4), [SimpleDoku](https://github.com/kalenpw/SimpleDoku), [jacksitlab's fork](https://github.com/jacksitlab/Argon-Dokuwiki-Template/tree/v1.3-patch), [Destwin-Dokuwiki-Template](https://github.com/evanmeier/Destwin-Dokuwiki-Template), or [others](https://github.com/IceWreck/Argon-Dokuwiki-Template/network)._
 
 
 Argon - a clean, responsive, modern template for Dokuwiki.
